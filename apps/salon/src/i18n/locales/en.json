@@ -1,0 +1,1835 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "reset": "Reset",
+    "refresh": "Refresh",
+    "open": "Open",
+    "find": "Find",
+    "active": "Active",
+    "inactive": "Inactive",
+    "noResults": "No results found",
+    "tryDifferentFilters": "Try adjusting your search filters",
+    "weekdays": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "calendar": {
+    "loading": "Loading calendar...",
+    "weekdays": {
+      "short": {
+        "monday": "Mon",
+        "tuesday": "Tue",
+        "wednesday": "Wed",
+        "thursday": "Thu",
+        "friday": "Fri",
+        "saturday": "Sat",
+        "sunday": "Sun"
+      }
+    }
+  },
+  "schedule": {
+    "common": {
+      "timezoneLabel": "Time zone: {{timezone}}",
+      "start": "Start",
+      "end": "End",
+      "off": "—",
+      "offDay": "Day off",
+      "working": "Working day"
+    },
+    "unavailable": {
+      "appointmentConflict": "Booked with another appointment",
+      "salonClosed": "Salon closed",
+      "staffOff": "Staff member unavailable",
+      "outsideHours": "Outside working hours",
+      "default": "Unavailable"
+    },
+    "availability": {
+      "checking": "Checking slot availability...",
+      "loadFailed": "Could not load availability: {{error}}",
+      "slotAvailable": "This slot is available",
+      "slotUnavailableHint": "Choose another time or staff member.",
+      "legendTitle": "Availability legend",
+      "selectPrompt": "Select services and staff to check availability.",
+      "timezoneLabel": "Time zone: {{timezone}}",
+      "dateMismatch": "Select a date to check availability",
+      "slotNotFound": "Slot not available"
+    },
+    "working_hours": "Working hours",
+    "working_hours_legend": "Set working hours for each day of the week",
+    "start_time_aria": "Start time for {{day}}",
+    "end_time_aria": "End time for {{day}}",
+    "is_working_day_aria": "Is {{day}} a working day?",
+    "save_schedule": "Save schedule",
+    "cancel": "Cancel",
+    "time_format_hint": "Format: HH:mm (24-hour)",
+    "field_required": "This field is required",
+    "error_invalid_time": "Invalid time format (HH:mm)",
+    "error_end_before_start": "End time must be after start time",
+    "error_overlap": "Time overlaps with another interval"
+  },
+  "app": {
+    "title": "Beauty CRM",
+    "subtitle": "Beauty Salon",
+    "adminProfile": "Admin",
+    "adminEmail": "admin@salon.com",
+    "user": "User",
+    "userRole": "user"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "calendar": "Calendar",
+    "appointments": "Appointments",
+    "services": "Services",
+    "clients": "Clients",
+    "team": "Team",
+    "salon": "Salon",
+    "payments": "Payments",
+    "analytics": "Analytics",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "salonSettings": "Salon settings",
+    "help": "Help",
+    "profile": "Profile",
+    "logout": "Logout",
+    "addSalon": "Add Salon"
+  },
+  "salonSettings": {
+    "schedule": {
+      "title": "Salon working hours",
+      "subtitle": "These hours are used by the calendar and client portal.",
+      "help": "Changes take effect immediately and hide time slots outside of working hours.",
+      "unsaved": "Unsaved changes",
+      "synced": "Schedule is synced",
+      "reset": "Reset",
+      "save": "Save schedule",
+      "success": "Working hours updated",
+      "error": "Failed to save working hours",
+      "resetToast": "Schedule changes were reverted"
+    }
+  },
+  "tenantSwitcher": {
+    "dropdown": {
+      "current": "Current salon",
+      "other": "Other salons",
+      "noOther": "No other salons",
+      "actions": "Actions"
+    },
+    "actions": {
+      "register": "Register new salon",
+      "inviteOwner": "To add an owner, go to salon settings",
+      "openSettings": "Open salon settings",
+      "addExisting": "Add existing salon",
+      "theme": "Theme"
+    },
+    "toast": {
+      "loading": "Switching salon...",
+      "switched": "Salon switched",
+      "error": "Failed to switch salon"
+    },
+    "roles": {
+      "OWNER": "Owner",
+      "MANAGER": "Manager",
+      "STAFF": "Staff",
+      "RECEPTIONIST": "Receptionist",
+      "ACCOUNTANT": "Accountant",
+      "owner": "Owner",
+      "manager": "Manager",
+      "staff": "Staff",
+      "receptionist": "Receptionist",
+      "accountant": "Accountant"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome to Beauty CRM!",
+    "subtitle": "Beauty salon management panel",
+    "stats": {
+      "appointmentsToday": "Appointments today",
+      "activeClients": "Active clients",
+      "monthlyRevenue": "Monthly revenue",
+      "staffOccupancy": "Staff occupancy"
+    },
+    "quickActions": "Quick Actions",
+    "quickActionsDescription": "Main CRM system operations",
+    "newAppointment": "New appointment",
+    "addClient": "Add client",
+    "exportCsv": "Export CSV",
+    "exportXlsx": "Export XLSX",
+    "exportSuccess": "Client export is ready",
+    "exportError": "Failed to export clients",
+    "exporting": "Exporting...",
+    "reportsAnalytics": "Reports and analytics",
+    "clientSearch": "Client Search",
+    "clientSearchDescription": "Find client by name or phone",
+    "clientSearchPlaceholder": "Enter name or phone number...",
+    "findClient": "Find client",
+    "recentClients": "Recent clients:",
+    "emptyState": {
+      "title": "Create your first salon",
+      "subtitle": "You're logged in but still need to complete onboarding to unlock the CRM.",
+      "stepsTitle": "What happens next?",
+      "stepsSubtitle": "The wizard will configure your salon, services, and team within minutes.",
+      "steps": {
+        "owners": "Confirm owner details and verify your password",
+        "ownersDescription": "We use the email from your account and keep it locked for security.",
+        "salon": "Describe the salon and choose offered services",
+        "salonDescription": "We will preconfigure categories and presets based on the directions you choose.",
+        "finish": "Get full access to the CRM workspace",
+        "finishDescription": "After finishing the wizard you'll be redirected straight to the dashboard."
+      },
+      "cta": "Create salon"
+    }
+  },
+  "calendar": {
+    "title": "Calendar",
+    "subtitle": "Appointment management",
+    "monthNames": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "dayNames": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "dayNamesShort": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "today": "Today",
+    "newAppointment": "New Appointment",
+    "noAppointments": "No appointments for this day",
+    "filters": "Filters",
+    "views": {
+      "day": "Day",
+      "week": "Week",
+      "month": "Month",
+      "staff": "By Staff"
+    },
+    "errorLoading": "Failed to load appointments",
+    "offlineMode": "Calendar is working in offline mode",
+    "retry": "Try again"
+  },
+  "appointments": {
+    "title": "Appointments",
+    "subtitle": "Schedule overview",
+    "description": "{{count}} appointments in the selected range",
+    "newAppointment": "New appointment",
+    "createAppointment": "Create appointment",
+    "refresh": "Refresh",
+    "view": "View",
+    "edit": "Edit",
+    "searchPlaceholder": "Search by client, service, or staff member...",
+    "filterByDate": "Filter by date",
+    "filterByStatus": "Filter by status",
+    "allStatuses": "All statuses",
+    "loading": "Loading appointments...",
+    "errorLoading": "Failed to load appointments",
+    "retry": "Try again",
+    "noAppointments": "No appointments",
+    "noAppointmentsFound": "No appointments found",
+    "noResults": "No results for \"{{query}}\"",
+    "emptyStateMessage": "Create the first appointment to get started",
+    "minutesShort": "min",
+    "stats": {
+      "total": "Total",
+      "active": "Active",
+      "cancelled": "Canceled",
+      "revenue": "Revenue"
+    },
+    "dateFilter": "Date filter",
+    "datePresets": {
+      "any": "Any date",
+      "today": "Today",
+      "tomorrow": "Tomorrow"
+    },
+    "count": "{{count}} appointments",
+    "items": "appointments",
+    "statuses": {
+      "PENDING": "Pending",
+      "CONFIRMED": "Confirmed",
+      "IN_PROGRESS": "In progress",
+      "COMPLETED": "Completed",
+      "CANCELED": "Canceled"
+    },
+    "statusShort": {
+      "PENDING": "Pend.",
+      "CONFIRMED": "Conf.",
+      "IN_PROGRESS": "Progress",
+      "COMPLETED": "Done",
+      "CANCELED": "Canceled"
+    }
+  },
+  "appointmentForm": {
+    "createTitle": "New appointment",
+    "editTitle": "Edit appointment",
+  "sections": {
+    "client": "Client",
+    "services": "Services",
+    "staff": "Staff member",
+    "dateTime": "Date and time",
+    "schedule": "Schedule",
+    "notes": "Notes",
+    "status": "Appointment status"
+  },
+  "searchClient": "Search client",
+  "selectedCount": "Selected: {{count}}",
+  "placeholders": {
+    "selectClient": "Select client",
+    "notes": "Additional information about the appointment..."
+  },
+  "messages": {
+      "loading": "Loading...",
+      "formLoadFailed": "Failed to load form data",
+      "appointmentLoadFailed": "Failed to load appointment data",
+      "editNotImplemented": "Appointment editing not yet implemented",
+      "createFailed": "Failed to create appointment",
+      "saveFailed": "Failed to save appointment",
+      "noStaff": "No staff members found",
+      "noStaffAvailable": "No available staff members",
+      "autoRoundedHint": "Time is automatically rounded to 15 minutes (00, 15, 30, 45)",
+      "autoCalculatedHint": "Calculated automatically"
+    },
+    "validation": {
+      "selectClient": "Select a client",
+      "selectService": "Select at least one service",
+      "selectStaff": "Select a staff member",
+      "selectDateTime": "Specify date and time",
+      "serviceNeedsStaff": "Assign staff members for: {{services}}"
+    },
+    "toast": {
+      "createSuccess": "Appointment successfully created! Number: {{number}}",
+      "updateSuccess": "Appointment updated successfully"
+    },
+    "buttons": {
+      "create": "Create appointment",
+      "saveChanges": "Save changes",
+      "creating": "Creating..."
+    },
+  "statusSelected": "Selected: {{status}}",
+  "durationShort": "{{duration}} min",
+  "total": "Total",
+  "date": "Date",
+  "startTime": "Start time",
+  "endTime": "End time",
+  "autoCalculated": "Auto-calculated",
+  "roles": {
+    "SALON_OWNER": "Salon owner",
+    "MANAGER": "Manager",
+    "STAFF_MEMBER": "Staff",
+    "RECEPTIONIST": "Receptionist"
+  },
+  "staff": {
+    "supportsServicesLabel": "Performs: {{services}}",
+    "notAvailableForSelected": "Doesn’t perform the selected services",
+    "noTeamForServices": "No team members can perform: {{services}}. Update the staff profiles to assign services.",
+    "assignStaffHint": "Add staff members for services: {{services}}",
+    "unknownService": "service"
+  },
+  "labels": {
+    "date": "Date",
+    "start": "Start",
+    "end": "End"
+  },
+  "appointmentSummary": {
+    "title": "Appointment summary",
+    "totalDuration": "Total duration",
+    "emptyLine1": "Select client, services and staff",
+    "emptyLine2": "to see the summary"
+  },
+  "fallbacks": {
+    "serviceName": "Service name"
+  },
+  "clientSection": {
+    "emailLabel": "Client email *",
+    "check": "Check client",
+    "checking": "Checking...",
+    "found": "Client found. Data synced from ClientProfile.",
+    "registered": "Client is registered in the platform",
+    "new": "New client — fill in the details below.",
+    "avatarAlt": "Client avatar for {{name}}",
+    "phone": "Phone",
+    "birthdate": "Birthdate",
+    "notesLabel": "Salon notes",
+    "notesPlaceholder": "Add notes that remain visible only in the salon CRM",
+    "newNotesPlaceholder": "Optional note about the client or appointment",
+    "errors": {
+      "empty": "Enter client email",
+      "invalid": "Invalid email format",
+      "notChecked": "Please verify the client email",
+      "checkFailed": "Failed to verify client email"
+    },
+    "toast": {
+      "found": "Client found: {{name}}",
+      "new": "New client — fill in the details",
+      "error": "Email check failed"
+    }
+  },
+    "detailsPage": {
+      "viewTitle": "Appointment details",
+      "subtitle": "Live CRM data for this visit",
+      "backToList": "Appointments",
+      "editAction": "Edit",
+      "refreshAction": "Refresh data",
+      "scheduleCard": "Schedule",
+      "servicesCard": "Services",
+      "clientCard": "Client",
+      "staffCard": "Staff member",
+      "paymentsCard": "Payments",
+      "notesCard": "Notes",
+      "communicationsCard": "Communications",
+      "activityCard": "Activity",
+      "notesEmpty": "No notes yet",
+      "communicationsEmpty": "No communications yet",
+      "activityEmpty": "No activity yet",
+      "dangerZone": "Danger zone",
+      "cancelAction": "Cancel appointment",
+      "cancelDescription": "The slot will be released and the client will be notified.",
+      "cancelConfirm": "Are you sure you want to cancel this appointment?",
+      "cancelSuccess": "Appointment cancelled",
+      "cancelFailed": "Failed to cancel appointment",
+      "statusLabel": "Status",
+      "durationLabel": "Duration",
+      "totalLabel": "Total",
+      "outstandingLabel": "Outstanding balance",
+      "lastUpdated": "Updated {{value}}",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "duration": "Duration",
+      "minutes": "min"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Salon service management",
+    "addService": "Add Service",
+    "editService": "Edit Service",
+    "deleteService": "Delete Service",
+    "serviceName": "Service Name",
+    "servicePrice": "Price",
+    "serviceDuration": "Duration",
+    "serviceDescription": "Description",
+    "serviceCategory": "Category",
+    "emptyTitle": "No services yet",
+    "emptyDescription": "Add your first service to start booking."
+  },
+  "serviceCategories": {
+    "title": "Service categories",
+    "subtitle": "Active services: {{count}}",
+    "actions": {
+      "addCategory": "Add category",
+      "addSubcategory": "Add subcategory",
+      "edit": "Edit",
+      "delete": "Delete",
+      "toggleCategory": "Toggle category",
+      "toggleSubcategory": "Toggle subcategory"
+    },
+    "status": {
+      "active": "Active",
+      "disabled": "Disabled"
+    },
+    "badges": {
+      "defaultCategory": "System category",
+      "defaultSubcategory": "System subcategory",
+      "inactive": "Hidden"
+    },
+    "meta": {
+      "servicesCount": "Services: {{count}}"
+    },
+    "empty": {
+      "subcategories": "No subcategories yet — add one to group your services."
+    },
+    "drag": {
+      "category": "Drag a category to reorder",
+      "subcategory": "Drag a subcategory to reorder"
+    },
+    "confirm": {
+      "deleteCategory": "Delete category \"{{name}}\"? All services will move to \"Without category\".",
+      "deleteSubcategory": "Delete subcategory \"{{name}}\" in category \"{{category}}\"?"
+    },
+    "dialog": {
+      "editCategoryTitle": "Edit category",
+      "createCategoryTitle": "New service category",
+      "editCategoryDescription": "Update category name, icon or visibility.",
+      "createCategoryDescription": "Create a category to group services by business area.",
+      "editSubcategoryTitle": "Edit subcategory in \"{{category}}\"",
+      "createSubcategoryTitle": "New subcategory for \"{{category}}\"",
+      "editSubcategoryDescription": "Update the subcategory name or visibility.",
+      "createSubcategoryDescription": "Add a subcategory to refine how services are grouped."
+    },
+    "form": {
+      "save": "Save",
+      "create": "Create",
+      "cancel": "Cancel",
+      "name": "Name",
+      "namePlaceholder": "e.g. Hair care",
+      "subcategoryName": "Subcategory name",
+      "subcategoryPlaceholder": "e.g. Coloring",
+      "icon": "Icon (optional)",
+      "iconHint": "Short icon name or emoji",
+      "iconPlaceholder": "e.g. scissors",
+      "isActiveLabel": "Category is available",
+      "isActiveHint": "Disabled categories are hidden in the services list and client portal.",
+      "errors": {
+        "requiredName": "Please enter a name",
+        "generic": "Unable to save changes. Please try again."
+      }
+    },
+    "toast": {
+      "categoryUpdated": "Category \"{{name}}\" updated",
+      "categoryCreated": "Category \"{{name}}\" created",
+      "categorySaveError": "Could not save the category",
+      "categoryDeleted": "Category \"{{name}}\" deleted",
+      "categoryDeleteError": "Could not delete the category",
+      "categoryEnabled": "Category \"{{name}}\" enabled",
+      "categoryDisabled": "Category \"{{name}}\" disabled",
+      "categoryToggleError": "Could not update category status",
+      "subcategoryUpdated": "Subcategory \"{{name}}\" updated",
+      "subcategoryCreated": "Subcategory \"{{name}}\" created",
+      "subcategorySaveError": "Could not save the subcategory",
+      "subcategoryDeleted": "Subcategory \"{{name}}\" deleted",
+      "subcategoryDeleteError": "Could not delete the subcategory",
+      "subcategoryEnabled": "Subcategory \"{{name}}\" enabled",
+      "subcategoryDisabled": "Subcategory \"{{name}}\" disabled",
+      "subcategoryToggleError": "Could not update subcategory status",
+      "orderSaved": "Category order updated",
+      "orderError": "Could not save category order",
+      "subcategoryOrderSaved": "Subcategory order updated",
+      "subcategoryOrderError": "Could not save subcategory order"
+    }
+  },
+  "clients": {
+    "title": "Clients",
+    "subtitle": "Client database management",
+    "addClient": "Add client",
+    "importButton": "Import",
+    "import": {
+      "title": "Import clients",
+      "description": "Upload a CSV or XLSX file to validate your data before importing it into the CRM.",
+      "uploadTitle": "Choose a CSV or XLSX file",
+      "uploadHint": "Maximum file size is 5 MB. UTF-8 CSV and XLSX formats are supported.",
+      "selectedFile": "Selected file",
+      "fileRequired": "Please choose a file first",
+      "uploading": "Uploading...",
+      "startCheck": "Validate file",
+      "resetButton": "Reset",
+      "previewReady": "File validation completed",
+      "previewFailed": "Failed to process the file. Check the format and try again.",
+      "previewSubtitle": "Preliminary check completed",
+      "previewDescription": "Review the warnings and errors to get your file ready for import.",
+      "readyRowsTitle": "Rows ready for import",
+      "readyRowsDescription": "By default only rows without errors are imported. You can include rows with warnings.",
+      "includeWarnings": "Import rows with warnings",
+      "commitButton": "Import ready rows",
+      "commitInProgress": "Importing...",
+      "commitSuccess": "Import completed",
+      "commitFailed": "Failed to complete import.",
+      "commitSummaryTitle": "Import completed",
+      "commitSummary": "Imported: {{imported}}, skipped: {{skipped}}",
+      "commitResultTitle": "Row results",
+      "commitResultHint": "Showing first {{count}} rows",
+      "commitReasonTitle": "Reason",
+      "commitReasonImported": "Created new client",
+      "commitReasons": {
+        "NAME_REQUIRED": "Name is required",
+        "DUPLICATE_EMAIL": "Email already exists",
+        "DUPLICATE_PHONE": "Phone already exists",
+        "DUPLICATE_CONSTRAINT": "Duplicate constraint violation",
+        "UNKNOWN_ERROR": "Unknown error"
+      },
+      "previewTableTitle": "First rows of the file",
+      "previewLimited": "Showing {{count}} of {{total}} rows",
+      "previewFull": "Showing all {{count}} rows",
+      "chooseAnother": "Choose another file",
+      "table": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "status": "Status",
+        "issues": "Notes"
+      },
+      "noIssues": "No issues",
+      "status": {
+        "ready": "Ready",
+        "warning": "Check",
+        "error": "Error"
+      },
+      "summary": {
+        "total": "Total rows",
+        "ready": "Ready to import",
+        "warnings": "Needs attention",
+        "errors": "Errors",
+        "duplicates": "Duplicates in salon"
+      },
+      "nextStepTitle": "Next step",
+      "nextStepDescription": "Final import with duplicate handling will be available in the next iteration.",
+      "finishButton": "Done",
+      "fileRequiredShort": "Select a file",
+      "noData": "No data"
+    },
+    "editClient": "Edit client",
+    "deleteClient": "Delete client",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "birthday": "Birthday",
+    "notes": "Notes",
+    "lastVisit": "Last visit",
+    "totalVisits": "Total visits",
+    "searchPlaceholder": "Search clients by name, email or phone...",
+    "filters": "Filters",
+    "loading": "Loading clients...",
+    "errorLoading": "Failed to load clients",
+    "retry": "Try again",
+    "noClients": "No clients",
+    "noClientsFound": "Clients not found",
+    "noResults": "No results for \"{{query}}\"",
+    "emptyStateMessage": "Add the first client to get started",
+    "edit": "Edit",
+    "statusActive": "Active",
+    "statusInactive": "Inactive",
+    "notRecorded": "Not recorded",
+    "registrationDate": "Registration date",
+    "visits": "Visits",
+    "bookAppointment": "Book",
+    "call": "Call"
+  },
+  "team": {
+    "title": "Team",
+    "subtitle": "Manage salon employees",
+    "addEmployee": "Add Employee",
+    "inviteEmployee": "Invite",
+    "addMember": "Add Team Member",
+    "editMember": "Edit Team Member",
+    "deleteMember": "Delete Team Member",
+    "memberName": "Name",
+    "memberRole": "Role",
+    "memberEmail": "Email",
+    "memberPhone": "Phone",
+    "memberSpecialty": "Specialty",
+    "memberSchedule": "Schedule",
+    "search": "Search employees...",
+    "filterByRole": "Filter by Role",
+    "filterByStatus": "Filter by Status",
+    "allRoles": "All Roles",
+    "allStatuses": "All Statuses",
+    "viewProfile": "View Profile",
+    "editProfile": "Edit Profile",
+    "deactivate": "Deactivate",
+    "noEmployees": "No Employees",
+    "noEmployeesDesc": "Add your first employee to get started",
+    "roles": {
+      "SALON_OWNER": "Salon Owner",
+      "MANAGER": "Manager",
+      "STAFF_MEMBER": "Staff Member",
+      "RECEPTIONIST": "Receptionist",
+      "ACCOUNTANT": "Accountant"
+    },
+    "reviews": "reviews",
+    "services": "Services",
+    "years": "Years",
+    "growth": "Growth",
+    "online": "Online",
+    "specialties": {
+      "hair": "Hair",
+      "nails": "Nails",
+      "makeup": "Makeup",
+      "massage": "Massage",
+      "skincare": "Skincare"
+    },
+    "filters": {
+      "allStatuses": "All statuses",
+      "allRoles": "All roles",
+      "role": "Role",
+      "status": "Status",
+      "toggle": "Filters"
+    },
+    "searchPlaceholder": "Search by name or email",
+    "error": {
+      "title": "Failed to load team",
+      "retry": "Try again"
+    },
+    "empty": {
+      "title": "The team is empty for now",
+      "filteredTitle": "No matches found",
+      "subtitle": "Invite your staff to get started with CRM",
+      "filterSubtitle": "Try adjusting your filters"
+    },
+    "card": {
+      "tenureYears": "{{count}} years",
+      "tenureMonths": "{{count}} months",
+      "recently": "Joined recently",
+      "recentlyShort": "Recently",
+      "unknownName": "New employee",
+      "joined": "Member since",
+      "tenureLabel": "Time in CRM",
+      "languages": "Languages",
+      "openProfile": "Open profile"
+    },
+    "profile": {
+      "notFoundTitle": "Team member not found",
+      "notFoundSubtitle": "Choose an employee on the team page",
+      "backToTeam": "Back to team",
+      "back": "Back to team",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "savedTitle": "Profile updated",
+      "savedDescription": "Changes will be saved after API integration",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "subtitle": "Stylist profile and personal CRM settings",
+      "metrics": {
+        "avgTicket": "Average ticket",
+        "monthlyRevenue": "Monthly revenue",
+        "satisfaction": "Customer loyalty"
+      },
+      "joined": "Member since",
+      "tenure": {
+        "years_one": "{{count}} year",
+        "years_other": "{{count}} years",
+        "months_one": "{{count}} month",
+        "months_other": "{{count}} months"
+      },
+      "tabs": {
+        "overview": "Overview",
+        "schedule": "Schedule",
+        "settings": "Settings"
+      },
+      "specialties": "Expertise & services",
+      "specialtiesHint": "Define the stylist's main focus areas and related services",
+      "specialtiesEmpty": "No specialties listed yet",
+      "bioPlaceholder": "Describe the stylist's work style, certifications, and preferred services",
+      "languagesTitle": "Communication languages",
+      "languagesSubtitle": "Select the languages the stylist uses with clients",
+      "accessTitle": "Rights & access",
+      "accessSubtitle": "Control access to financial data and administrative features",
+      "permissions": {
+        "finances": "Access to financial metrics",
+        "pricing": "Permission to change service prices",
+        "availableSoon": "Coming soon"
+      },
+      "scheduleTitle": "Working hours",
+      "scheduleSubtitle": "Manage availability in the CRM calendar",
+      "scheduleEditor": {
+        "title": "Professional schedule",
+        "subtitle": "Customize availability or copy the salon’s working hours.",
+        "readonly": "Only the owner or this professional can edit the schedule.",
+        "unsaved": "Unsaved changes",
+        "synced": "Schedule is synced",
+        "copySalon": "Copy salon hours",
+        "reset": "Reset",
+        "save": "Save schedule",
+        "saveSuccess": "Schedule updated",
+        "saveError": "Failed to save schedule",
+        "loadError": "Failed to load schedule",
+        "exceptions": {
+          "title": "Exceptions & leave",
+          "subtitle": "Add vacations, sick leave, or custom hours.",
+          "add": "Add exception",
+          "hideForm": "Hide form",
+          "typeLabel": "Exception type",
+          "reasonLabel": "Comment",
+          "reasonPlaceholder": "Example: vacation, training, off-site visit",
+          "startDate": "Start date",
+          "endDate": "End date",
+          "customStart": "Start time",
+          "customEnd": "End time",
+          "isWorkingDay": "Working day",
+          "customWorking": "Available at these hours",
+          "customOff": "Busy, no bookings allowed",
+          "save": "Save exception",
+          "validation": "Select a start and end date",
+          "customValidation": "Provide a time range for custom hours",
+          "added": "Exception added",
+          "error": "Failed to create exception",
+          "removed": "Exception removed",
+          "removeError": "Failed to remove exception",
+          "empty": "No exceptions yet",
+          "type": {
+            "day_off": "Day off / vacation",
+            "sick_leave": "Sick leave",
+            "custom_hours": "Custom hours"
+          },
+          "types": {
+            "dayOff": "Day off / vacation",
+            "sick": "Sick leave",
+            "custom": "Custom hours"
+          }
+        }
+      },
+      "weekDays": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      },
+      "dayOff": "Day off",
+      "notesTitle": "Notes for the team",
+      "notesSubtitle": "Share recommendations for working with the stylist",
+      "notesPlaceholder": "Example: prefers appointments before 4 PM, works with VIP clients, mentors juniors",
+      "appearanceTitle": "Style & colors",
+      "appearanceSubtitle": "Adjust the stylist card accent colors in the CRM",
+      "colorLabel": "Accent color",
+      "colorOptions": {
+        "indigo": "Indigo",
+        "violet": "Violet",
+        "pink": "Pink",
+        "coral": "Coral",
+        "amber": "Amber",
+        "emerald": "Emerald",
+        "teal": "Teal",
+        "slate": "Slate"
+      },
+      "currencyTitle": "Performance currency",
+      "currencySubtitle": "Display KPIs in the most convenient currency",
+      "currencyHint": "This setting affects analytics tiles and dashboards",
+      "defaultSpecialties": "Haircuts, coloring, treatments"
+    }
+  },
+  "help": {
+    "sections": {
+      "title": "Help & Support",
+      "description": "Find answers to your questions and get help from our support team.",
+      "categories": "Categories",
+      "contact": "Need help?",
+      "contact_description": "Contact our support team",
+      "links": "Useful links",
+      "faq": "Frequently asked questions"
+    },
+    "categories": {
+      "all": "All",
+      "appointments": "Appointments",
+      "clients": "Clients",
+      "services": "Services",
+      "staff": "Staff",
+      "payments": "Payments",
+      "system": "System",
+      "integrations": "Integrations"
+    },
+    "faq": {
+      "appointments_create": {
+        "question": "How do I create a new appointment for a client?",
+        "answer": "Go to the \"Calendar\" or \"Appointments\" section and click \"New appointment\". Choose the client, service, staff member and time. The system will check availability and suggest suitable time slots."
+      },
+      "appointments_modify": {
+        "question": "How can I change or cancel an existing appointment?",
+        "answer": "Open the appointment in the calendar or list and click \"Edit\". You can change the time, staff or service. To cancel, use the \"Cancel appointment\" button and specify the reason."
+      },
+      "clients_add": {
+        "question": "How do I add a new client to the database?",
+        "answer": "Open the \"Clients\" section and click \"Add client\". Fill in the required fields (first name, last name, phone). You can also add email, birthday and notes."
+      },
+      "clients_history": {
+        "question": "Where can I find a client's visit history?",
+        "answer": "Open the client card and navigate to the \"History\" tab. You'll see all past and upcoming appointments, plus total visits and spend."
+      },
+      "services_create": {
+        "question": "How do I create a new service?",
+        "answer": "In the \"Services\" section click \"Add service\". Provide name, duration, price and description. Assign it to specific staff or make available to all."
+      },
+      "services_price": {
+        "question": "How do I change the price of a service?",
+        "answer": "Open the service card, click \"Edit\" and update the price. Existing appointments keep the price they had when booked."
+      },
+      "staff_add": {
+        "question": "How do I add a new staff member?",
+        "answer": "Go to the \"Team\" section and click \"Add team member\". Enter their details, set their schedule and assign services they can perform."
+      },
+      "staff_schedule": {
+        "question": "How do I configure a staff member's schedule?",
+        "answer": "Within the staff profile open the \"Schedule\" tab. Set working days, start/end times, breaks and days off."
+      },
+      "payments_accept": {
+        "question": "How can I record a payment from a client?",
+        "answer": "Inside the appointment click \"Pay\". Choose the payment method (cash, card, online). After confirmation the status and receipt are updated automatically."
+      },
+      "payments_reports": {
+        "question": "Where can I find financial reports?",
+        "answer": "The \"Analytics\" section provides detailed revenue analytics, popular services and staff workload. You can export to Excel or PDF."
+      },
+      "system_notifications": {
+        "question": "How do I configure notifications?",
+        "answer": "Navigate to \"Settings\" → \"Notifications\". Set automatic reminders for clients via SMS/email and enable staff notifications."
+      },
+      "system_password": {
+        "question": "I forgot my password, how do I restore access?",
+        "answer": "On the login page click \"Forgot password?\" and enter your email. You'll receive a reset link. Check your spam folder if nothing arrives."
+      }
+    },
+    "actions": {
+      "searchPlaceholder": "Search questions and answers...",
+      "contactSupport": "Contact support",
+      "openGuide": "Open guide"
+    },
+    "contact": {
+      "title": "Need help?",
+      "emailLabel": "Email support",
+      "phoneLabel": "Phone support",
+      "hoursLabel": "Mon-Fri: 9:00 AM - 6:00 PM (UTC+1)",
+      "chatLabel": "Live chat",
+      "chatDescription": "Available during business hours"
+    },
+    "resources": {
+      "title": "Useful links",
+      "documentation": "Knowledge base",
+      "videoTutorials": "Video tutorials",
+      "community": "Community forum",
+      "apiDocs": "API documentation"
+    },
+    "emptySearch": {
+      "noResultsTitle": "No results found for \"{{query}}\"",
+      "noResultsDescription": "Try different keywords or check spelling."
+    },
+    "misc": {
+      "lastUpdated": "Last updated",
+      "readMore": "Read more",
+      "found_one": "{{count}} question found",
+      "found_other": "{{count}} questions found",
+      "inCategory": "in category \"{{category}}\""
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "filters": {
+      "title": "Filters",
+      "all": "All",
+      "unread": "Unread",
+      "important": "Important"
+    },
+    "status": {
+      "read": "Read",
+      "delivered": "Delivered",
+      "sent": "Sent",
+      "pending": "Pending",
+      "error": "Error"
+    },
+    "types": {
+      "EMAIL": "Email",
+      "SMS": "SMS",
+      "PUSH": "Push",
+      "IN_APP": "In-app",
+      "WEBHOOK": "Webhook"
+    },
+    "actions": {
+      "markAllAsRead": "Mark all as read",
+      "clearFilters": "Clear filters",
+      "viewDetails": "View details",
+      "retry": "Try again",
+      "markAsRead": "Mark as read",
+      "markAsUnread": "Mark as unread",
+      "delete": "Delete notification"
+    },
+    "emptyState": {
+      "all_title": "You have no notifications yet",
+      "all_description": "New notifications will appear here.",
+      "unread_title": "All notifications have been read",
+      "unread_description": "You are all caught up!",
+      "important_title": "No important notifications",
+      "important_description": "Notifications marked as high or urgent will appear here."
+    },
+    "time": {
+      "justNow": "Just now",
+      "minutesAgo": "{{count}} min ago",
+      "hoursAgo": "{{count}} h ago",
+      "daysAgo": "{{count}} d ago"
+    },
+    "priority": {
+      "URGENT": "Urgent",
+      "HIGH": "High"
+    },
+    "found_plural": "Found {{count}} notifications",
+    "noNotifications": "No notifications to display",
+    "loading": "Loading notifications...",
+    "error_title": "Loading error",
+    "success_marked_as_read": "Marked as read",
+    "error_marked_as_read": "Failed to mark as read",
+    "info_deleted": "Notification deleted",
+    "error_deleted": "Failed to delete notification",
+    "success_marked_all_as_read": "Marked {{count}} notifications as read"
+  },
+  "payments": {
+    "exportReport": "Export report",
+    "metrics": {
+      "today": "Today",
+      "thisWeek": "This week",
+      "thisMonth": "This month",
+      "averageBill": "Average bill"
+    },
+    "filters": {
+      "title": "Filters",
+      "allPeriods": "All periods",
+      "today": "Today",
+      "week": "Week",
+      "month": "Month",
+      "allMethods": "All methods",
+      "card": "Card",
+      "cash": "Cash",
+      "transfer": "Bank transfer"
+    },
+    "recentTransactions": "Recent transactions",
+    "table": {
+      "client": "Client",
+      "service": "Service",
+      "amount": "Amount",
+      "method": "Method",
+      "date": "Date",
+      "status": "Status"
+    },
+    "status": {
+      "completed": "Completed",
+      "pending": "Pending"
+    },
+    "methods": {
+      "card": "Card",
+      "cash": "Cash",
+      "transfer": "Bank transfer"
+    }
+  },
+  "analytics": {
+    "exportReport": "Export report",
+    "metrics": {
+      "revenueMonth": "Revenue (month)",
+      "appointmentsMonth": "Appointments (month)",
+      "newClients": "New clients",
+      "averageBill": "Average bill"
+    },
+    "charts": {
+      "revenueByDay": "Revenue by day",
+      "popularServices": "Popular services",
+      "staffLoad": "Staff workload"
+    },
+    "comparison": {
+      "periodComparison": "Period comparison",
+      "thisMonth": "This month",
+      "lastMonth": "Last month",
+      "growth": "Growth"
+    },
+    "labels": {
+      "vsLastMonth": "vs last month",
+      "total": "Total",
+      "avgTicket": "Avg. ticket",
+      "conversion": "Conversion",
+      "noData": "Chart in development",
+      "workload": "Workload",
+      "revenue": "Revenue",
+      "appointments": "Appointments",
+      "records": "records"
+    }
+  },
+  "language": {
+    "title": "Interface Language",
+    "current": "Current Language",
+    "switch": "Switch Language",
+    "languages": {
+      "en": "English",
+      "pl": "Polish",
+      "ua": "Ukrainian",
+      "ru": "Russian"
+    }
+  },
+  "currency": {
+    "title": "Currency",
+    "current": "Current Currency",
+    "switch": "Switch Currency",
+    "currencies": {
+      "USD": "US Dollar",
+      "EUR": "Euro",
+      "PLN": "Polish Zloty",
+      "UAH": "Ukrainian Hryvnia"
+    }
+  },
+  "messages": {
+    "confirmDelete": "Are you sure you want to delete this?",
+    "deleteSuccess": "Successfully deleted",
+    "saveSuccess": "Changes saved",
+    "networkError": "Network error, check your connection",
+    "serverError": "Server error, please try later",
+    "validationError": "Please check that the fields are filled correctly"
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "subtitle": "Please enter your details.",
+    "tagline": "Beauty Design Corp",
+    "salonLabel": "Salon",
+    "tabs": {
+      "login": "Sign in",
+      "signup": "Create account"
+    },
+    "fields": {
+      "email": "Email address",
+      "emailPlaceholder": "your@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "firstName": "First name",
+      "firstNamePlaceholder": "First name",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Last name",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+48 600 000 000"
+    },
+    "validation": {
+      "required": "Please fill in all required fields",
+      "passwordLength": "Password must contain at least 6 characters"
+    },
+    "buttons": {
+      "signIn": "Sign in",
+      "signingIn": "Signing in...",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot your password?",
+      "or": "or",
+      "google": "Continue with Google",
+      "signUp": "Create account",
+      "signingUp": "Creating account..."
+    },
+    "divider": {
+      "login": "or continue with email",
+      "signup": "Complete the form to create an account"
+    },
+    "password": {
+      "hint": "At least 6 characters. We encrypt your password."
+    },
+    "error": {
+      "title": "Login error",
+      "generic": "An error occurred during login.",
+      "invalidCredentials": "Invalid email or password.",
+      "unexpected": "An unexpected error occurred. Please try again.",
+      "signupFailed": "Registration failed. Please try again.",
+      "mustRegisterSalon": "Create a salon in the CRM to sign in with Google",
+      "mustRegisterFirst": "Create an account to sign in with Google",
+      "emailConflict": "This email is already linked to another Google account",
+      "turnstile": "Please confirm you are not a robot before continuing."
+    },
+    "testData": {
+      "title": "Test data",
+      "email": "Email",
+      "password": "Password",
+      "fill": "Fill with test data"
+    },
+    "debug": {
+      "redirecting": "Redirecting...",
+      "info": "Debug info"
+    },
+    "noPublicRegistration": "No salon account? Sign in with your client profile and use the onboarding wizard inside the CRM.",
+    "links": {
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up",
+      "haveAccount": "Already have an account?",
+      "backToLogin": "Sign in"
+    },
+    "switch": {
+      "haveAccount": "Already have an account?",
+      "needAccount": "New to Beauty Platform?",
+      "login": "Sign in",
+      "signup": "Create account"
+    },
+    "disclaimer": "By continuing you agree to the Beauty Platform Terms and Privacy Policy.",
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Use your client profile credentials to continue onboarding to the CRM.",
+      "passwordHint": "Minimum 6 characters"
+    },
+    "hero": {
+      "highlight": "Beauty Platform • 2025",
+      "title": "Run your salon without stress",
+      "titleLine1": "Run",
+      "titleLine2": "your salon",
+      "titleLine3": "without stress",
+      "subtitle": "Plan schedules, manage staff and automate marketing from one place.",
+      "quote": "Beauty Platform took over the routine. We focused on guests.",
+      "author": "Anna, ManiTime studios",
+      "role": "Founder",
+      "stats": {
+        "salons": "Active salons",
+        "bookings": "Monthly bookings",
+        "countries": "Countries"
+      }
+    }
+  },
+  "registration": {
+    "title": "Create Your Beauty Salon",
+    "subtitle": "Join thousands of salons worldwide",
+    "security": "Your data is protected with 256-bit SSL encryption",
+    "continue": "Continue →",
+    "back": "Back",
+    "saving": "Saving...",
+    "processing": "Processing...",
+    "optional": "optional",
+    "steps": {
+      "owner": "Owner",
+      "salon": "Salon",
+      "location": "Location",
+      "services": "Services",
+      "pricing": "Pricing",
+      "activation": "Activation"
+    },
+    "progress": "Registration Progress",
+    "motivation": {
+      "start": "Let's start creating your salon!",
+      "progress": "Great! Let's continue setup",
+      "final": "Almost done! Just confirm your details"
+    },
+    "owner": {
+      "title": "Tell us about yourself",
+      "subtitle": "This information is needed to create your account",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "language": "Interface Language",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+1 123 456 789",
+      "emailNote": "This email will be used to log into the system",
+      "phoneNote": "Required for SMS verification",
+      "privacy": "By registering, you agree to our terms of service and privacy policy",
+      "checking": "Checking data...",
+      "selected": "selected",
+      "emailNoteAuthenticated": "This email is linked to your account and cannot be changed"
+    },
+    "salon": {
+      "title": "Tell us about your business",
+      "subtitle": "The name your clients will see",
+      "salonName": "Salon Name",
+      "website": "Website",
+      "businessType": "How do you work with clients?",
+      "salonNamePlaceholder": "Beauty Studio \"Glamour\"",
+      "websitePlaceholder": "www.your-salon.com",
+      "websiteNote": "If you don't have a website, we'll help create a beautiful page",
+      "help": "Not sure what to choose? You can always change settings later",
+      "businessTypes": {
+        "salon": {
+          "title": "Clients come to the salon",
+          "description": "Fixed salon with permanent address"
+        },
+        "mobile": {
+          "title": "Mobile master",
+          "description": "I visit clients at home"
+        },
+        "home": {
+          "title": "Work from home",
+          "description": "I receive clients at my home"
+        },
+        "online": {
+          "title": "Online consultations",
+          "description": "Video consultations and online services"
+        }
+      }
+    },
+    "location": {
+      "questionSalon": "Where is your salon located?",
+      "questionMobile": "In which country do you work?",
+      "questionHome": "In which country is your home?",
+      "questionOnline": "In which country are you located?",
+      "subtitle": "This will help configure currency and local features",
+      "country": "Country",
+      "currency": "Currency",
+      "recommended": "Recommended",
+      "addressTitle": "Salon Address",
+      "street": "Street and house number",
+      "city": "City",
+      "postalCode": "Postal Code",
+      "streetPlaceholder": "Main St., 15",
+      "cityPlaceholder": "New York",
+      "postalCodePlaceholder": "10001",
+      "addressNote": "Exact address will help clients easily find your salon"
+    },
+    "services": {
+      "title": "What services do you provide?",
+      "subtitle": "Select up to 5 main areas of your business",
+      "categoriesTitle": "Service Categories",
+      "selected": "selected",
+      "popular": "Popular",
+      "other": "Other Areas",
+      "teamSizeTitle": "Your Team Size",
+      "help": "Selected categories will help configure the system for your business",
+      "categories": {
+        "hair": {
+          "title": "Hair Services",
+          "description": "Cuts, styling, coloring"
+        },
+        "nails": {
+          "title": "Manicure and Pedicure",
+          "description": "Nail care, design"
+        },
+        "brows": {
+          "title": "Brows and Lashes",
+          "description": "Correction, tinting, extensions"
+        },
+        "massage": {
+          "title": "Massage and SPA",
+          "description": "Relaxation, body care"
+        },
+        "makeup": {
+          "title": "Makeup and Visage",
+          "description": "Evening, bridal makeup"
+        },
+        "cosmetology": {
+          "title": "Cosmetology",
+          "description": "Facials, peels, treatments"
+        },
+        "aesthetic": {
+          "title": "Aesthetic Medicine",
+          "description": "Injections, contouring"
+        },
+        "fitness": {
+          "title": "Fitness and Yoga",
+          "description": "Personal training, yoga"
+        }
+      },
+      "teamSizes": {
+        "solo": {
+          "title": "I work alone",
+          "description": "Individual entrepreneur"
+        },
+        "small": {
+          "title": "I have a team of 2-5 people",
+          "description": "Small team of masters"
+        },
+        "medium": {
+          "title": "Medium salon 6-15 people",
+          "description": "Full-service beauty salon"
+        },
+        "large": {
+          "title": "Large salon 16+ people",
+          "description": "Salon chain or large center"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Choose Your Pricing Plan",
+      "subtitle": "Start with a free 7-day trial",
+      "trialTitle": "7 days free for all plans!",
+      "trialFeature1": "Full access to all features",
+      "trialFeature2": "No client limits",
+      "trialFeature3": "Cancel anytime",
+      "popular": "Popular",
+      "recommended": "Recommended",
+      "selectPlan": "Select Plan",
+      "selected": "Selected",
+      "selectedPlan": "You selected plan",
+      "planInfo": "You'll get 7 days of free access to all features. Cancel anytime without fees.",
+      "changeAnytime": "You can change your plan anytime",
+      "noCommitment": "No commitment. Cancel with one click.",
+      "startTrial": "Start Free Trial →",
+      "perMonth": "per month",
+      "month": "mo",
+      "thenPrice": "then",
+      "freeTrial": "7 days free",
+      "plans": {
+        "starter": {
+          "name": "STARTER",
+          "subtitle": "Free for 7 days",
+          "price": "Free",
+          "features": {
+            "team": "1 owner + up to 2 masters",
+            "calendar": "Basic appointment calendar",
+            "clients": "Up to 50 clients",
+            "support": "Email support"
+          }
+        },
+        "team": {
+          "name": "TEAM",
+          "subtitle": "For small teams",
+          "features": {
+            "team": "Up to 5 employees",
+            "calendar": "Full calendar",
+            "clients": "Unlimited clients",
+            "sms": "SMS notifications",
+            "analytics": "Basic analytics",
+            "support": "Priority support"
+          }
+        },
+        "business": {
+          "name": "BUSINESS",
+          "subtitle": "For professional salons",
+          "features": {
+            "team": "Up to 10 employees",
+            "analytics": "Advanced analytics",
+            "social": "Social media integrations",
+            "booking": "Online booking for clients",
+            "multi": "Multi-location",
+            "crm": "Extended CRM"
+          }
+        },
+        "enterprise": {
+          "name": "ENTERPRISE",
+          "subtitle": "For large chains",
+          "features": {
+            "team": "Up to 25 employees",
+            "api": "API access",
+            "manager": "Personal manager",
+            "integrations": "Custom integrations",
+            "whitelabel": "White-label solutions",
+            "priority": "24/7 priority support"
+          }
+        }
+      }
+    },
+    "activation": {
+      "emailTitle": "Verifying your email",
+      "emailSubtitle": "We sent an email to",
+      "emailSent": "Email sent!",
+      "emailSending": "Sending email...",
+      "emailInstructions": "Check your spam folder if the email doesn't arrive",
+      "smsTitle": "Confirm your phone number",
+      "smsSubtitle": "We sent a code to",
+      "sendSMS": "Send SMS code",
+      "smsSending": "Sending SMS...",
+      "enterCode": "Enter the code from SMS",
+      "resendIn": "Resend in",
+      "seconds": "sec",
+      "resendSMS": "Send code again",
+      "testCode": "For testing use code:",
+      "verifyCode": "Verify Code",
+      "termsTitle": "Final step!",
+      "termsSubtitle": "Review the terms of service",
+      "termsOfService": "Beauty Platform Terms of Service",
+      "term1": "You get access to beauty salon management system",
+      "term2": "Personal data is protected according to GDPR",
+      "term3": "Payment is made monthly according to chosen plan",
+      "term4": "Subscription cancellation is possible anytime",
+      "term5": "Technical support is available during business hours",
+      "acceptTerms": "I accept",
+      "termsLink": "terms of service",
+      "and": "and",
+      "privacyLink": "privacy policy",
+      "subscribe": "Subscribe to news about new features and updates",
+      "createSalon": "Create Salon! 🎉",
+      "creating": "Creating your salon...",
+      "creatingSubtitle": "Setting up the system for your needs",
+      "step1": "Creating user",
+      "step2": "Setting up salon",
+      "step3": "Preparing workspace",
+      "waitMessage": "This will only take a few seconds...",
+      "successAuthenticated": "Salon created successfully 🎉",
+      "genericError": "Failed to create salon"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "firstNameTooShort": "First name must be at least 2 characters",
+      "lastNameRequired": "Last name is required",
+      "lastNameTooShort": "Last name must be at least 2 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email",
+      "phoneRequired": "Phone is required",
+      "phoneInvalid": "Enter a valid phone number",
+      "salonNameRequired": "Salon name is required",
+      "salonNameTooShort": "Name must be at least 3 characters",
+      "websiteInvalid": "Enter a valid website URL",
+      "countryRequired": "Select a country",
+      "streetRequired": "Enter address",
+      "cityRequired": "Enter city",
+      "postalCodeRequired": "Enter postal code",
+      "serviceCategoriesRequired": "Select at least one service category",
+      "serviceCategoriesMax": "Select no more than 5 categories",
+      "smsCodeRequired": "Enter 6-digit code from SMS",
+      "smsCodeInvalid": "Code must contain only digits",
+      "smsCodeWrong": "Wrong code. Try again.",
+      "termsRequired": "You must accept the terms of service"
+    }
+  },
+  "settings": {
+    "sections": {
+      "profile": "Salon Profile",
+      "profile_description": "This name is displayed in the interface and documents.",
+      "branding": "Salon Logo",
+      "branding_description": "The image is displayed in the CRM header and on public pages.",
+      "gallery": "Salon Gallery",
+      "gallery_description": "Add photos of your work, interior, and team. Images do not affect the logo.",
+      "security": "Security",
+      "notifications": "Notifications"
+    },
+    "buttons": {
+      "uploadLogo": "Upload Logo",
+      "replaceLogo": "Replace Logo",
+      "removeLogo": "Remove Logo",
+      "saveChanges": "Save",
+      "cancel": "Cancel",
+      "selectFiles": "Select Files"
+    },
+    "toasts": {
+      "logoUpdated": "Logo updated",
+      "logoRemoved": "Logo removed",
+      "galleryUpdated": "Added {{count}} images",
+      "galleryImageDeleted": "Image deleted",
+      "settingsSaved": "Salon name updated!",
+      "errorGeneric": "An error occurred while saving",
+      "errorUpdateName": "Failed to update name",
+      "errorUploadLogo": "Error uploading logo",
+      "errorRemoveLogo": "Failed to remove logo",
+      "errorFetchGallery": "Failed to load image gallery",
+      "errorUploadGallery": "Error uploading images",
+      "errorDeleteGalleryImage": "Failed to delete image"
+    },
+    "validations": {
+      "salonName": "Salon Name",
+      "salonAddress": "Salon Address",
+      "requiredField": "Name must contain at least 3 characters",
+      "unsupportedFileType": "Unsupported file type. Allowed: JPG, PNG, SVG, WebP",
+      "maxSizeExceeded": "File is too large. Maximum size: 5MB"
+    },
+    "gallery": {
+      "addPhoto": "Add Photo",
+      "dragHint": "Drag and drop images here",
+      "orSelect": "Or select from device (JPG, PNG, WebP, SVG)",
+      "emptyStateTitle": "No images yet. Add first salon photos!",
+      "emptyStateDescription": "Your salon photos will be displayed here.",
+      "loading": "Loading images...",
+      "uploading": "Uploading and optimizing images...",
+      "open": "Open",
+      "delete": "Delete"
+    },
+    "toggles": {
+      "darkMode": "Dark Mode",
+      "themeColor": "Theme Color",
+      "staffNotifications": "Staff Notifications",
+      "clientNotifications": "Client Notifications"
+    },
+    "labels": {
+      "noLogo": "Logo not uploaded yet",
+      "nameHint": "Minimum 3 characters. Currency and language can be changed from the top menu."
+    },
+    "roleManagement": {
+      "title": "Role management",
+      "description": "Manage salon owners and team access levels.",
+      "ownersTitle": "Salon owners",
+      "ownersDescription": "Primary owner and co-owners with permission to configure critical settings.",
+      "emptyOwners": "No owners have been added yet.",
+      "addOwner": "Add co-owner",
+      "primaryBadge": "Primary owner",
+      "shareLabel": "{{value}}% ownership",
+      "ownersFallbackEmail": "No email specified",
+      "staffTitle": "Team roles",
+      "staffDescription": "Overview of staff members and their assigned roles.",
+      "emptyStaff": "No staff members yet.",
+      "manageRoles": "Manage roles",
+      "loading": "Loading role data...",
+      "errorLoading": "Failed to load role data.",
+      "retry": "Try again",
+      "rolesLabel": "Roles",
+      "openMenu": "Open menu",
+      "grantRole": "Grant role",
+      "revokeRole": "Revoke role",
+      "noActionsAvailable": "No actions available",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "confirmGrantTitle": "Confirm Grant Role",
+      "confirmGrantDescription": "Are you sure you want to grant {{role}} role to {{name}}? This will give them elevated permissions.",
+      "confirmRevokeTitle": "Confirm Revoke Role",
+      "confirmRevokeDescription": "Are you sure you want to revoke {{role}} role from {{name}}? They will lose associated permissions.",
+      "toast": {
+        "error": "Error",
+        "roleGranted": "Role granted successfully",
+        "roleGrantedDescription": "{{role}} role has been granted to the user",
+        "grantError": "Failed to grant role",
+        "roleRevoked": "Role revoked successfully",
+        "roleRevokedDescription": "{{role}} role has been revoked from the user",
+        "revokeError": "Failed to revoke role",
+        "coOwnerAdded": "Co-owner added successfully",
+        "coOwnerAddedDescription": "New co-owner has been added with {{share}}% ownership share",
+        "addCoOwnerError": "Failed to add co-owner",
+        "alreadyOwner": "User is already an owner",
+        "alreadyOwnerDescription": "This user already has owner privileges",
+        "userNotFound": "User not found",
+        "userNotFoundDescription": "The specified user ID does not exist"
+      },
+      "addCoOwnerModal": {
+        "title": "Add Co-Owner",
+        "description": "Add a new co-owner to this salon with ownership share percentage",
+        "userIdLabel": "User ID",
+        "userIdPlaceholder": "Enter user ID (e.g., cm...)",
+        "userIdHint": "You can find user ID in the staff list or user profile",
+        "userIdRequired": "User ID is required",
+        "shareLabel": "Ownership Share",
+        "shareHint": "Ownership share determines profit distribution percentage",
+        "cancel": "Cancel",
+        "add": "Add Co-Owner",
+        "adding": "Adding...",
+        "error": "Failed to add co-owner"
+      }
+    }
+  },
+  "themeCustomizer": {
+    "title": "Custom theme colors",
+    "description": "Customize semantic colors for your salon brand",
+    "customActive": "Custom theme active",
+    "successColor": "Success color",
+    "successDesc": "Used for positive actions and confirmations",
+    "warningColor": "Warning color",
+    "warningDesc": "Used for caution messages and warnings",
+    "errorColor": "Error color",
+    "errorDesc": "Used for errors and destructive actions",
+    "infoColor": "Info color",
+    "infoDesc": "Used for informational messages and highlights",
+    "preview": "Preview",
+    "previewLabels": {
+      "success": "Success",
+      "warning": "Warning",
+      "error": "Error",
+      "info": "Info"
+    },
+    "apply": "Apply changes",
+    "reset": "Reset to default",
+    "export": "Export",
+    "import": "Import",
+    "importError": "Failed to import theme. Please check the file format.",
+    "note": "Custom colors are saved automatically and applied across the entire CRM interface.",
+    "pickColor": "Pick color for {{label}}",
+    "done": "Done"
+  },
+  "userSettings": {
+    "appearanceTitle": "Interface appearance",
+    "appearanceDescription": "Choose the color theme and display mode",
+    "themeRedirectTitle": "Theme moved to the “Theme” screen",
+    "themeRedirectSubtitle": "Use the salon dropdown → Theme or open the dedicated page to configure salon appearance.",
+    "openTheme": "Open “Theme”",
+    "themeNote": "Theme is applied per salon and shared with all users of that salon.",
+    "displayMode": "Display mode",
+    "modeLight": "Light",
+    "modeDark": "Dark",
+    "modeSystem": "Match system",
+    "themeChanged": "Theme updated",
+    "modeChanged": "Mode set",
+    "languageTitle": "Interface Language",
+    "languageDescription": "Choose the preferred language for the application interface.",
+    "languageNote": "Changes take effect immediately.",
+    "languageChanged": "Language changed to",
+    "languageChangeFailed": "Failed to change language.",
+    "notificationsTitle": "Notification Preferences",
+    "notificationsDescription": "Manage how you receive updates about important events.",
+    "notificationsUnavailable": "Notification preferences are unavailable in this environment.",
+    "emailNotifications": "Email notifications",
+    "emailNotificationsDescription": "Receive alerts to your email address.",
+    "smsNotifications": "SMS notifications",
+    "smsNotificationsDescription": "Receive reminders via SMS.",
+    "pushNotifications": "Push notifications",
+    "pushNotificationsDescription": "Receive browser notifications.",
+    "saveNotifications": "Save notification preferences",
+    "saving": "Saving...",
+    "notificationsSaved": "Notification preferences saved",
+    "notificationsLoadFailed": "Failed to load notification preferences",
+    "notificationsSaveFailed": "Failed to save notification preferences",
+    "additionalSettingsTitle": "Additional settings",
+    "additionalSettingsDescription": "Other personalization options (coming soon)",
+    "additionalSettingsPlaceholder": "Additional settings will be available in future updates."
+  },
+  "servicesPage": {
+    "searchPlaceholder": "Search services...",
+    "filters": "Filters",
+    "priceLabel": "Price",
+    "durationLabel": "Duration",
+    "minutesShort": "min",
+    "price": {
+      "all": "All prices",
+      "low": "Under 50",
+      "medium": "50-150",
+      "high": "Over 150"
+    },
+    "duration": {
+      "all": "Any duration",
+      "short": "Up to 30 minutes",
+      "medium": "30-90 minutes",
+      "long": "Over 90 minutes"
+    },
+    "resetFilters": "Reset filters",
+    "manageCategories": "Manage categories",
+    "onlyActiveLabel": "Active only",
+    "filterAll": "All services",
+    "filterUncategorized": "Without category",
+    "uncategorized": "Without category",
+    "withoutSubcategory": "Without subcategory",
+    "badges": {
+      "defaultService": "Default",
+      "inactive": "Hidden",
+      "defaultCategory": "System",
+      "inactiveCategory": "Category disabled",
+      "defaultSubcategory": "System subcategory",
+      "inactiveSubcategory": "Subcategory disabled"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "toggleAria": "Toggle availability for \"{{name}}\"",
+    "toastEnabled": "Service \"{{name}}\" is visible again",
+    "toastDisabled": "Service \"{{name}}\" has been hidden",
+    "toastDeleted": "Service \"{{name}}\" removed",
+    "errorToggle": "Could not update service status",
+    "emptyFilteredTitle": "No services match the current filters",
+    "emptyFilteredDescription": "Adjust the filters or clear the search to see all services.",
+    "deleteConfirm": "Delete service \"{{name}}\"?",
+    "deleteError": "Failed to delete service."
+  },
+  "createSalon": {
+    "title": "Create a salon in minutes",
+    "subtitle": "We start with your client account data. Add salon info and select service areas — we will prepare categories and presets automatically.",
+    "badge": "New onboarding",
+    "sections": {
+      "owner": {
+        "title": "Salon owner",
+        "subtitle": "These details update your profile and appear inside the CRM."
+      },
+      "salon": {
+        "title": "Salon details",
+        "subtitle": "Country and name help us configure currency and localisation."
+      },
+      "services": {
+        "title": "Choose service areas",
+        "subtitle": "You can pick multiple segments — we will seed categories and default services for each.",
+        "counter": "{{count}} services selected",
+        "defaults": "{{categories}} categories, {{services}} services",
+        "typeSubtitle": "Select the services you want to start with",
+        "serviceMeta": "{{duration}} min · {{price}} ₴"
+      },
+      "confirm": {
+        "title": "Confirmation",
+        "subtitle": "Review the terms and confirm the setup.",
+        "notice": "We will create categories, services and secure access automatically. It takes less than a minute."
+      }
+    },
+    "fields": {
+      "country": "Country",
+      "currency": "Currency",
+      "accountPassword": "Account password",
+      "newPassword": "Create a password",
+      "confirmPassword": "Confirm password"
+    },
+    "hints": {
+      "password": "Enter your current password to confirm the salon creation.",
+      "newPassword": "This password protects your account. Minimum 8 characters.",
+      "confirmPassword": "Repeat the password to avoid typos."
+    },
+    "actions": {
+      "back": "Back to dashboard",
+      "cancel": "Cancel",
+      "create": "Create salon",
+      "creating": "Creating..."
+    },
+    "summary": "Areas: {{types}}, services: {{services}}",
+    "loading": {
+      "salonTypes": "Loading service areas..."
+    },
+    "errors": {
+      "salonTypes": "Failed to load service areas",
+      "servicePresets": "Failed to load service presets"
+    },
+    "validation": {
+      "password": "Enter your account password",
+      "salonTypes": "Choose at least one area",
+      "newPassword": "Create a password for your account",
+      "passwordLength": "Password must contain at least 8 characters",
+      "confirmPassword": "Confirm your password",
+      "confirmPasswordMismatch": "Passwords do not match"
+    },
+    "notifications": {
+      "validationError": "Please check the form fields",
+      "genericError": "Failed to create salon"
+    },
+    "pricing": {
+      "title": "Subscription & team",
+      "subtitle": "Base salon + staff seats. You pay only after the free trial.",
+      "staffCountLabel": "Team members",
+      "staffCountHint": "0 means you work solo. Each staff member adds +25 PLN net per month.",
+      "decreaseStaff": "Decrease staff count",
+      "increaseStaff": "Increase staff count",
+      "staffSoloLabel": "Owner works solo (SOLO)",
+      "staffValueLabel": "{{count}} staff member(s) included",
+      "baseLabel": "Salon subscription",
+      "staffLabel": "Staff seats",
+      "totalLabel": "Monthly total after trial",
+      "totalWithVatLabel": "Total with VAT (23%)",
+      "vatNotice": "Net prices. Stripe adds 23% VAT for Poland.",
+      "trialBadge": "7-day trial",
+      "trialDescription": "We will remind you 3 days before the trial ends.",
+      "staffInfo": "Add staff later inside the Team section — the amount updates automatically."
+    },
+    "salonTypes": {
+      "hair": {
+        "title": "Hair salon",
+        "description": "Cuts, coloring, styling"
+      },
+      "nails": {
+        "title": "Nail salon",
+        "description": "Manicure, pedicure and nail art"
+      },
+      "massage": {
+        "title": "Massage & SPA",
+        "description": "Massage therapy and wellness rituals"
+      },
+      "barbershop": {
+        "title": "Barbershop",
+        "description": "Men’s cuts, beard trimming, grooming"
+      },
+      "pet_grooming": {
+        "title": "Pet grooming",
+        "description": "Dog & cat grooming, specialty care"
+      },
+      "wellness": {
+        "title": "Wellness center",
+        "description": "Holistic relaxation and recovery"
+      },
+      "cosmetology": {
+        "title": "Beauty clinic",
+        "description": "Cosmetology, injections and hardware care"
+      },
+      "brow_lash": {
+        "title": "Brow & lash studio",
+        "description": "Brows, lashes, daily/party make-up"
+      },
+      "mixed": {
+        "title": "Custom salon",
+        "description": "Combine any categories you need"
+      }
+    }
+  }
+}

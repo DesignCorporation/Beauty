@@ -1,0 +1,38 @@
+{
+  "name": "@beauty-platform/monitoring-service",
+  "version": "1.0.0",
+  "description": "Modern monitoring and alerting service for Beauty Platform",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5",
+    "helmet": "^8.0.0",
+    "dotenv": "^16.4.7",
+    "pino": "^8.19.0",
+    "pino-pretty": "^10.3.1",
+    "prom-client": "^15.1.3",
+    "node-telegram-bot-api": "^0.66.0",
+    "discord.js": "^14.14.1",
+    "@slack/web-api": "^7.0.4",
+    "axios": "^1.7.9",
+    "ws": "^8.16.0",
+    "ioredis": "^5.3.2",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^20.11.24",
+    "@types/ws": "^8.5.10",
+    "@types/pg": "^8.11.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2",
+    "jest": "^29.7.0"
+  }
+}

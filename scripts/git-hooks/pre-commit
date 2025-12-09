@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+printf '\n[pre-commit] running pnpm lint\n'
+pnpm lint
+
+printf '\n[pre-commit] running pnpm test:run\n'
+pnpm test:run

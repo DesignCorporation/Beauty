@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "declaration": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "types": ["vitest/globals"],
+    "baseUrl": "../..",
+    "paths": {
+      "@beauty/shared": ["core/shared/src/index.ts"],
+      "@beauty/shared/*": ["core/shared/src/*"],
+      "@beauty-platform/database": ["core/database/src"],
+      "core/shared/src": ["core/shared/src"],
+      "auth-service/src": ["services/auth-service/src"],
+      "auth-service/src/*": ["services/auth-service/src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,824 @@
+// CRM API Service - Production Ready
+// Интеграция с tenantPrisma для real-time работы с БД
+
+import { Client, ClientFormData } from '../hooks/useClients';
+import { Service, ServiceFormData } from '../hooks/useServices';
+import { Appointment, AppointmentFormData } from '../hooks/useAppointments';
+import { tenantPrisma } from '../../../core/database/src';
+import { EntityStatus, AppointmentStatus } from '@prisma/client';
+
+// Utility functions
+function parseTimeFromDate(date: Date): string {
+  return date.toTimeString().slice(0, 5);
+}
+
+function createDateWithTime(dateStr: string, timeStr: string): Date {
+  const [hours, minutes] = timeStr.split(':');
+  const date = new Date(dateStr);
+  date.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+  return date;
+}
+
+// API Service - Production Ready
+export class CrmApiService {
+  // Clients API
+  static async getClients(tenantId: string): Promise<{ success: boolean; clients: Client[] }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbClients = await prismaClient.client.findMany({
+        where: {
+          status: {
+            in: [EntityStatus.ACTIVE, EntityStatus.PENDING]
+          }
+        },
+        orderBy: {
+          createdAt: 'desc'
+        }
+      });
+      
+      // Преобразуем данные из БД в формат Client
+      const clients: Client[] = dbClients.map(dbClient => ({
+        id: dbClient.id,
+        tenantId: dbClient.tenantId,
+        name: dbClient.name,
+        email: dbClient.email || undefined,
+        phone: dbClient.phone || undefined,
+        notes: dbClient.notes || undefined,
+        birthday: dbClient.birthday?.toISOString().split('T')[0] || undefined,
+        status: dbClient.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbClient.createdAt.toISOString(),
+        updatedAt: dbClient.updatedAt.toISOString(),
+      }));
+      
+      return {
+        success: true,
+        clients,
+      };
+    } catch (error) {
+      console.error('Error fetching clients:', error);
+      throw new Error('Failed to fetch clients');
+    }
+  }
+
+  static async createClient(tenantId: string, data: ClientFormData): Promise<{ success: boolean; client: Client }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbClient = await prismaClient.client.create({
+        data: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          notes: data.notes,
+          birthday: data.birthday ? new Date(data.birthday) : undefined,
+          status: EntityStatus.ACTIVE,
+        }
+      });
+      
+      const client: Client = {
+        id: dbClient.id,
+        tenantId: dbClient.tenantId,
+        name: dbClient.name,
+        email: dbClient.email || undefined,
+        phone: dbClient.phone || undefined,
+        notes: dbClient.notes || undefined,
+        birthday: dbClient.birthday?.toISOString().split('T')[0] || undefined,
+        status: dbClient.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbClient.createdAt.toISOString(),
+        updatedAt: dbClient.updatedAt.toISOString(),
+      };
+      
+      return {
+        success: true,
+        client,
+      };
+    } catch (error) {
+      console.error('Error creating client:', error);
+      throw new Error('Failed to create client');
+    }
+  }
+
+  static async updateClient(tenantId: string, clientId: string, data: Partial<ClientFormData>): Promise<{ success: boolean; client: Client }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbClient = await prismaClient.client.update({
+        where: {
+          id: clientId
+        },
+        data: {
+          ...(data.name && { name: data.name }),
+          ...(data.email !== undefined && { email: data.email }),
+          ...(data.phone !== undefined && { phone: data.phone }),
+          ...(data.notes !== undefined && { notes: data.notes }),
+          ...(data.birthday !== undefined && { birthday: data.birthday ? new Date(data.birthday) : null }),
+        }
+      });
+      
+      const client: Client = {
+        id: dbClient.id,
+        tenantId: dbClient.tenantId,
+        name: dbClient.name,
+        email: dbClient.email || undefined,
+        phone: dbClient.phone || undefined,
+        notes: dbClient.notes || undefined,
+        birthday: dbClient.birthday?.toISOString().split('T')[0] || undefined,
+        status: dbClient.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbClient.createdAt.toISOString(),
+        updatedAt: dbClient.updatedAt.toISOString(),
+      };
+      
+      return {
+        success: true,
+        client,
+      };
+    } catch (error) {
+      console.error('Error updating client:', error);
+      throw new Error('Failed to update client');
+    }
+  }
+
+  static async deleteClient(tenantId: string, clientId: string): Promise<{ success: boolean }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      // Soft delete - обновляем статус на DELETED
+      await prismaClient.client.update({
+        where: {
+          id: clientId
+        },
+        data: {
+          status: EntityStatus.DELETED
+        }
+      });
+      
+      return { success: true };
+    } catch (error) {
+      console.error('Error deleting client:', error);
+      throw new Error('Failed to delete client');
+    }
+  }
+
+  // Services API
+  static async getServices(tenantId: string): Promise<{ success: boolean; services: Service[] }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbServices = await prismaClient.service.findMany({
+        where: {
+          status: {
+            in: [EntityStatus.ACTIVE, EntityStatus.PENDING]
+          }
+        },
+        orderBy: {
+          createdAt: 'desc'
+        }
+      });
+      
+      // Преобразуем данные из БД в формат Service
+      const services: Service[] = dbServices.map(dbService => ({
+        id: dbService.id,
+        tenantId: dbService.tenantId,
+        name: dbService.name,
+        description: dbService.description || undefined,
+        duration: dbService.duration,
+        price: parseFloat(dbService.price.toString()),
+        status: dbService.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbService.createdAt.toISOString(),
+        updatedAt: dbService.updatedAt.toISOString(),
+      }));
+      
+      return {
+        success: true,
+        services,
+      };
+    } catch (error) {
+      console.error('Error fetching services:', error);
+      throw new Error('Failed to fetch services');
+    }
+  }
+
+  static async createService(tenantId: string, data: ServiceFormData): Promise<{ success: boolean; service: Service }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbService = await prismaClient.service.create({
+        data: {
+          name: data.name,
+          description: data.description,
+          duration: data.duration,
+          price: data.price,
+          status: EntityStatus.ACTIVE,
+        }
+      });
+      
+      const service: Service = {
+        id: dbService.id,
+        tenantId: dbService.tenantId,
+        name: dbService.name,
+        description: dbService.description || undefined,
+        duration: dbService.duration,
+        price: parseFloat(dbService.price.toString()),
+        status: dbService.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbService.createdAt.toISOString(),
+        updatedAt: dbService.updatedAt.toISOString(),
+      };
+      
+      return {
+        success: true,
+        service,
+      };
+    } catch (error) {
+      console.error('Error creating service:', error);
+      throw new Error('Failed to create service');
+    }
+  }
+
+  // Appointments API
+  static async getAppointments(tenantId: string, filters?: any): Promise<{ success: boolean; appointments: Appointment[] }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      // Строим объект фильтров
+      const whereClause: any = {
+        status: {
+          not: AppointmentStatus.CANCELLED // Исключаем отмененные по умолчанию
+        }
+      };
+      
+      // Применяем фильтры
+      if (filters?.startDate) {
+        whereClause.date = {
+          ...whereClause.date,
+          gte: new Date(filters.startDate)
+        };
+      }
+      if (filters?.endDate) {
+        whereClause.date = {
+          ...whereClause.date,
+          lte: new Date(filters.endDate)
+        };
+      }
+      if (filters?.status) {
+        whereClause.status = filters.status;
+      }
+      if (filters?.clientId) {
+        whereClause.clientId = filters.clientId;
+      }
+      if (filters?.serviceId) {
+        whereClause.serviceId = filters.serviceId;
+      }
+      if (filters?.assignedToId) {
+        whereClause.assignedToId = filters.assignedToId;
+      }
+      
+      const dbAppointments = await prismaClient.appointment.findMany({
+        where: whereClause,
+        include: {
+          client: true,
+          service: true,
+          assignedTo: true,
+        },
+        orderBy: [
+          { date: 'desc' },
+          { startTime: 'asc' }
+        ]
+      });
+      
+      // Преобразуем данные из БД в формат Appointment
+      const appointments: Appointment[] = dbAppointments.map(dbApt => ({
+        id: dbApt.id,
+        appointmentNumber: dbApt.appointmentNumber,
+        tenantId: dbApt.tenantId,
+        date: dbApt.date.toISOString().split('T')[0],
+        startTime: dbApt.startTime.toTimeString().slice(0, 5),
+        endTime: dbApt.endTime.toTimeString().slice(0, 5),
+        clientId: dbApt.clientId,
+        serviceId: dbApt.serviceId,
+        assignedToId: dbApt.assignedToId || undefined,
+        status: dbApt.status as Appointment['status'],
+        notes: dbApt.notes || undefined,
+        createdById: dbApt.createdById || undefined,
+        createdAt: dbApt.createdAt.toISOString(),
+        updatedAt: dbApt.updatedAt.toISOString(),
+        client: dbApt.client ? {
+          id: dbApt.client.id,
+          tenantId: dbApt.client.tenantId,
+          name: dbApt.client.name,
+          email: dbApt.client.email || undefined,
+          phone: dbApt.client.phone || undefined,
+          notes: dbApt.client.notes || undefined,
+          birthday: dbApt.client.birthday?.toISOString().split('T')[0] || undefined,
+          status: dbApt.client.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbApt.client.createdAt.toISOString(),
+          updatedAt: dbApt.client.updatedAt.toISOString(),
+        } : undefined,
+        service: dbApt.service ? {
+          id: dbApt.service.id,
+          tenantId: dbApt.service.tenantId,
+          name: dbApt.service.name,
+          description: dbApt.service.description || undefined,
+          duration: dbApt.service.duration,
+          price: parseFloat(dbApt.service.price.toString()),
+          status: dbApt.service.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbApt.service.createdAt.toISOString(),
+          updatedAt: dbApt.service.updatedAt.toISOString(),
+        } : undefined,
+        assignedTo: dbApt.assignedTo ? {
+          id: dbApt.assignedTo.id,
+          firstName: dbApt.assignedTo.firstName,
+          lastName: dbApt.assignedTo.lastName,
+          color: dbApt.assignedTo.color || undefined,
+        } : undefined,
+      }));
+      
+      return {
+        success: true,
+        appointments,
+      };
+    } catch (error) {
+      console.error('Error fetching appointments:', error);
+      throw new Error('Failed to fetch appointments');
+    }
+  }
+
+  static async createAppointment(tenantId: string, data: AppointmentFormData): Promise<{ success: boolean; appointment: Appointment }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      // Генерируем уникальный номер записи
+      const dateStr = data.date.replace(/-/g, '');
+      const todayAppointments = await prismaClient.appointment.count({
+        where: {
+          date: new Date(data.date)
+        }
+      });
+      const appointmentNumber = `${dateStr}-${String(todayAppointments + 1).padStart(3, '0')}`;
+      
+      // Парсим время
+      const appointmentDate = new Date(data.date);
+      const [startHours, startMinutes] = data.startTime.split(':');
+      const [endHours, endMinutes] = data.endTime.split(':');
+      
+      const startTime = new Date(appointmentDate);
+      startTime.setHours(parseInt(startHours), parseInt(startMinutes), 0, 0);
+      
+      const endTime = new Date(appointmentDate);
+      endTime.setHours(parseInt(endHours), parseInt(endMinutes), 0, 0);
+      
+      const dbAppointment = await prismaClient.appointment.create({
+        data: {
+          appointmentNumber,
+          date: appointmentDate,
+          startTime,
+          endTime,
+          clientId: data.clientId,
+          serviceId: data.serviceId,
+          assignedToId: data.assignedToId,
+          notes: data.notes,
+          status: AppointmentStatus.PENDING,
+        },
+        include: {
+          client: true,
+          service: true,
+          assignedTo: true,
+        }
+      });
+      
+      const appointment: Appointment = {
+        id: dbAppointment.id,
+        appointmentNumber: dbAppointment.appointmentNumber,
+        tenantId: dbAppointment.tenantId,
+        date: dbAppointment.date.toISOString().split('T')[0],
+        startTime: dbAppointment.startTime.toTimeString().slice(0, 5),
+        endTime: dbAppointment.endTime.toTimeString().slice(0, 5),
+        clientId: dbAppointment.clientId,
+        serviceId: dbAppointment.serviceId,
+        assignedToId: dbAppointment.assignedToId || undefined,
+        status: dbAppointment.status as Appointment['status'],
+        notes: dbAppointment.notes || undefined,
+        createdById: dbAppointment.createdById || undefined,
+        createdAt: dbAppointment.createdAt.toISOString(),
+        updatedAt: dbAppointment.updatedAt.toISOString(),
+        client: dbAppointment.client ? {
+          id: dbAppointment.client.id,
+          tenantId: dbAppointment.client.tenantId,
+          name: dbAppointment.client.name,
+          email: dbAppointment.client.email || undefined,
+          phone: dbAppointment.client.phone || undefined,
+          notes: dbAppointment.client.notes || undefined,
+          birthday: dbAppointment.client.birthday?.toISOString().split('T')[0] || undefined,
+          status: dbAppointment.client.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbAppointment.client.createdAt.toISOString(),
+          updatedAt: dbAppointment.client.updatedAt.toISOString(),
+        } : undefined,
+        service: dbAppointment.service ? {
+          id: dbAppointment.service.id,
+          tenantId: dbAppointment.service.tenantId,
+          name: dbAppointment.service.name,
+          description: dbAppointment.service.description || undefined,
+          duration: dbAppointment.service.duration,
+          price: parseFloat(dbAppointment.service.price.toString()),
+          status: dbAppointment.service.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbAppointment.service.createdAt.toISOString(),
+          updatedAt: dbAppointment.service.updatedAt.toISOString(),
+        } : undefined,
+        assignedTo: dbAppointment.assignedTo ? {
+          id: dbAppointment.assignedTo.id,
+          firstName: dbAppointment.assignedTo.firstName,
+          lastName: dbAppointment.assignedTo.lastName,
+          color: dbAppointment.assignedTo.color || undefined,
+        } : undefined,
+      };
+      
+      return {
+        success: true,
+        appointment,
+      };
+    } catch (error) {
+      console.error('Error creating appointment:', error);
+      throw new Error('Failed to create appointment');
+    }
+  }
+
+  static async generateAppointmentNumber(tenantId: string, date: string): Promise<{ success: boolean; appointmentNumber: string }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dateStr = date.replace(/-/g, '');
+      const todayAppointments = await prismaClient.appointment.count({
+        where: {
+          date: new Date(date)
+        }
+      });
+      const nextNumber = String(todayAppointments + 1).padStart(3, '0');
+      
+      return {
+        success: true,
+        appointmentNumber: `${dateStr}-${nextNumber}`,
+      };
+    } catch (error) {
+      console.error('Error generating appointment number:', error);
+      // Fallback - генерируем номер на клиенте
+      const dateStr = date.replace(/-/g, '');
+      const nextNumber = String(Date.now() % 1000).padStart(3, '0');
+      return {
+        success: true,
+        appointmentNumber: `${dateStr}-${nextNumber}`,
+      };
+    }
+  }
+
+  // Search methods
+  static async searchClients(tenantId: string, query: string): Promise<{ success: boolean; clients: Client[] }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbClients = await prismaClient.client.findMany({
+        where: {
+          AND: [
+            {
+              status: {
+                in: [EntityStatus.ACTIVE, EntityStatus.PENDING]
+              }
+            },
+            {
+              OR: [
+                { name: { contains: query, mode: 'insensitive' } },
+                { email: { contains: query, mode: 'insensitive' } },
+                { phone: { contains: query, mode: 'insensitive' } },
+              ]
+            }
+          ]
+        },
+        orderBy: {
+          createdAt: 'desc'
+        }
+      });
+      
+      const clients: Client[] = dbClients.map(dbClient => ({
+        id: dbClient.id,
+        tenantId: dbClient.tenantId,
+        name: dbClient.name,
+        email: dbClient.email || undefined,
+        phone: dbClient.phone || undefined,
+        notes: dbClient.notes || undefined,
+        birthday: dbClient.birthday?.toISOString().split('T')[0] || undefined,
+        status: dbClient.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbClient.createdAt.toISOString(),
+        updatedAt: dbClient.updatedAt.toISOString(),
+      }));
+      
+      return {
+        success: true,
+        clients,
+      };
+    } catch (error) {
+      console.error('Error searching clients:', error);
+      throw new Error('Failed to search clients');
+    }
+  }
+
+  static async searchServices(tenantId: string, query: string): Promise<{ success: boolean; services: Service[] }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbServices = await prismaClient.service.findMany({
+        where: {
+          AND: [
+            {
+              status: {
+                in: [EntityStatus.ACTIVE, EntityStatus.PENDING]
+              }
+            },
+            {
+              OR: [
+                { name: { contains: query, mode: 'insensitive' } },
+                { description: { contains: query, mode: 'insensitive' } },
+              ]
+            }
+          ]
+        },
+        orderBy: {
+          createdAt: 'desc'
+        }
+      });
+      
+      const services: Service[] = dbServices.map(dbService => ({
+        id: dbService.id,
+        tenantId: dbService.tenantId,
+        name: dbService.name,
+        description: dbService.description || undefined,
+        duration: dbService.duration,
+        price: parseFloat(dbService.price.toString()),
+        status: dbService.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbService.createdAt.toISOString(),
+        updatedAt: dbService.updatedAt.toISOString(),
+      }));
+      
+      return {
+        success: true,
+        services,
+      };
+    } catch (error) {
+      console.error('Error searching services:', error);
+      throw new Error('Failed to search services');
+    }
+  }
+
+  // Additional service methods
+  static async updateService(tenantId: string, serviceId: string, data: Partial<ServiceFormData>): Promise<{ success: boolean; service: Service }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbService = await prismaClient.service.update({
+        where: {
+          id: serviceId
+        },
+        data: {
+          ...(data.name && { name: data.name }),
+          ...(data.description !== undefined && { description: data.description }),
+          ...(data.duration && { duration: data.duration }),
+          ...(data.price !== undefined && { price: data.price }),
+        }
+      });
+      
+      const service: Service = {
+        id: dbService.id,
+        tenantId: dbService.tenantId,
+        name: dbService.name,
+        description: dbService.description || undefined,
+        duration: dbService.duration,
+        price: parseFloat(dbService.price.toString()),
+        status: dbService.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+        createdAt: dbService.createdAt.toISOString(),
+        updatedAt: dbService.updatedAt.toISOString(),
+      };
+      
+      return {
+        success: true,
+        service,
+      };
+    } catch (error) {
+      console.error('Error updating service:', error);
+      throw new Error('Failed to update service');
+    }
+  }
+
+  static async deleteService(tenantId: string, serviceId: string): Promise<{ success: boolean }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      // Soft delete - обновляем статус на DELETED
+      await prismaClient.service.update({
+        where: {
+          id: serviceId
+        },
+        data: {
+          status: EntityStatus.DELETED
+        }
+      });
+      
+      return { success: true };
+    } catch (error) {
+      console.error('Error deleting service:', error);
+      throw new Error('Failed to delete service');
+    }
+  }
+
+  // Appointment management methods
+  static async updateAppointment(tenantId: string, appointmentId: string, data: Partial<AppointmentFormData>): Promise<{ success: boolean; appointment: Appointment }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const updateData: any = {};
+      
+      if (data.date) {
+        updateData.date = new Date(data.date);
+      }
+      if (data.startTime) {
+        const appointmentDate = updateData.date || (await prismaClient.appointment.findUnique({ where: { id: appointmentId } }))?.date;
+        if (appointmentDate) {
+          updateData.startTime = createDateWithTime(appointmentDate.toISOString().split('T')[0], data.startTime);
+        }
+      }
+      if (data.endTime) {
+        const appointmentDate = updateData.date || (await prismaClient.appointment.findUnique({ where: { id: appointmentId } }))?.date;
+        if (appointmentDate) {
+          updateData.endTime = createDateWithTime(appointmentDate.toISOString().split('T')[0], data.endTime);
+        }
+      }
+      if (data.clientId) updateData.clientId = data.clientId;
+      if (data.serviceId) updateData.serviceId = data.serviceId;
+      if (data.assignedToId !== undefined) updateData.assignedToId = data.assignedToId;
+      if (data.notes !== undefined) updateData.notes = data.notes;
+      
+      const dbAppointment = await prismaClient.appointment.update({
+        where: {
+          id: appointmentId
+        },
+        data: updateData,
+        include: {
+          client: true,
+          service: true,
+          assignedTo: true,
+        }
+      });
+      
+      const appointment: Appointment = {
+        id: dbAppointment.id,
+        appointmentNumber: dbAppointment.appointmentNumber,
+        tenantId: dbAppointment.tenantId,
+        date: dbAppointment.date.toISOString().split('T')[0],
+        startTime: parseTimeFromDate(dbAppointment.startTime),
+        endTime: parseTimeFromDate(dbAppointment.endTime),
+        clientId: dbAppointment.clientId,
+        serviceId: dbAppointment.serviceId,
+        assignedToId: dbAppointment.assignedToId || undefined,
+        status: dbAppointment.status as Appointment['status'],
+        notes: dbAppointment.notes || undefined,
+        createdById: dbAppointment.createdById || undefined,
+        createdAt: dbAppointment.createdAt.toISOString(),
+        updatedAt: dbAppointment.updatedAt.toISOString(),
+        client: dbAppointment.client ? {
+          id: dbAppointment.client.id,
+          tenantId: dbAppointment.client.tenantId,
+          name: dbAppointment.client.name,
+          email: dbAppointment.client.email || undefined,
+          phone: dbAppointment.client.phone || undefined,
+          notes: dbAppointment.client.notes || undefined,
+          birthday: dbAppointment.client.birthday?.toISOString().split('T')[0] || undefined,
+          status: dbAppointment.client.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbAppointment.client.createdAt.toISOString(),
+          updatedAt: dbAppointment.client.updatedAt.toISOString(),
+        } : undefined,
+        service: dbAppointment.service ? {
+          id: dbAppointment.service.id,
+          tenantId: dbAppointment.service.tenantId,
+          name: dbAppointment.service.name,
+          description: dbAppointment.service.description || undefined,
+          duration: dbAppointment.service.duration,
+          price: parseFloat(dbAppointment.service.price.toString()),
+          status: dbAppointment.service.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbAppointment.service.createdAt.toISOString(),
+          updatedAt: dbAppointment.service.updatedAt.toISOString(),
+        } : undefined,
+        assignedTo: dbAppointment.assignedTo ? {
+          id: dbAppointment.assignedTo.id,
+          firstName: dbAppointment.assignedTo.firstName,
+          lastName: dbAppointment.assignedTo.lastName,
+          color: dbAppointment.assignedTo.color || undefined,
+        } : undefined,
+      };
+      
+      return {
+        success: true,
+        appointment,
+      };
+    } catch (error) {
+      console.error('Error updating appointment:', error);
+      throw new Error('Failed to update appointment');
+    }
+  }
+
+  static async updateAppointmentStatus(tenantId: string, appointmentId: string, status: Appointment['status']): Promise<{ success: boolean; appointment: Appointment }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      const dbAppointment = await prismaClient.appointment.update({
+        where: {
+          id: appointmentId
+        },
+        data: {
+          status: status as AppointmentStatus
+        },
+        include: {
+          client: true,
+          service: true,
+          assignedTo: true,
+        }
+      });
+      
+      const appointment: Appointment = {
+        id: dbAppointment.id,
+        appointmentNumber: dbAppointment.appointmentNumber,
+        tenantId: dbAppointment.tenantId,
+        date: dbAppointment.date.toISOString().split('T')[0],
+        startTime: parseTimeFromDate(dbAppointment.startTime),
+        endTime: parseTimeFromDate(dbAppointment.endTime),
+        clientId: dbAppointment.clientId,
+        serviceId: dbAppointment.serviceId,
+        assignedToId: dbAppointment.assignedToId || undefined,
+        status: dbAppointment.status as Appointment['status'],
+        notes: dbAppointment.notes || undefined,
+        createdById: dbAppointment.createdById || undefined,
+        createdAt: dbAppointment.createdAt.toISOString(),
+        updatedAt: dbAppointment.updatedAt.toISOString(),
+        client: dbAppointment.client ? {
+          id: dbAppointment.client.id,
+          tenantId: dbAppointment.client.tenantId,
+          name: dbAppointment.client.name,
+          email: dbAppointment.client.email || undefined,
+          phone: dbAppointment.client.phone || undefined,
+          notes: dbAppointment.client.notes || undefined,
+          birthday: dbAppointment.client.birthday?.toISOString().split('T')[0] || undefined,
+          status: dbAppointment.client.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbAppointment.client.createdAt.toISOString(),
+          updatedAt: dbAppointment.client.updatedAt.toISOString(),
+        } : undefined,
+        service: dbAppointment.service ? {
+          id: dbAppointment.service.id,
+          tenantId: dbAppointment.service.tenantId,
+          name: dbAppointment.service.name,
+          description: dbAppointment.service.description || undefined,
+          duration: dbAppointment.service.duration,
+          price: parseFloat(dbAppointment.service.price.toString()),
+          status: dbAppointment.service.status as 'ACTIVE' | 'INACTIVE' | 'PENDING',
+          createdAt: dbAppointment.service.createdAt.toISOString(),
+          updatedAt: dbAppointment.service.updatedAt.toISOString(),
+        } : undefined,
+        assignedTo: dbAppointment.assignedTo ? {
+          id: dbAppointment.assignedTo.id,
+          firstName: dbAppointment.assignedTo.firstName,
+          lastName: dbAppointment.assignedTo.lastName,
+          color: dbAppointment.assignedTo.color || undefined,
+        } : undefined,
+      };
+      
+      return {
+        success: true,
+        appointment,
+      };
+    } catch (error) {
+      console.error('Error updating appointment status:', error);
+      throw new Error('Failed to update appointment status');
+    }
+  }
+
+  static async deleteAppointment(tenantId: string, appointmentId: string): Promise<{ success: boolean }> {
+    try {
+      const prismaClient = tenantPrisma(tenantId);
+      
+      // Soft delete - обновляем статус на CANCELLED
+      await prismaClient.appointment.update({
+        where: {
+          id: appointmentId
+        },
+        data: {
+          status: AppointmentStatus.CANCELLED
+        }
+      });
+      
+      return { success: true };
+    } catch (error) {
+      console.error('Error deleting appointment:', error);
+      throw new Error('Failed to delete appointment');
+    }
+  }
+
+  // Integration setup
+  static setupCrmApiInterceptors() {
+    console.log('CRM API with tenantPrisma integration - ready for production!');
+  }
+}

@@ -1,0 +1,17 @@
+# Root dockerignore to keep build contexts small
+.git
+**/.git
+node_modules
+**/node_modules
+coverage
+.cache
+.local
+.pnpm-store
+tmp
+*.log
+Dockerfile.dev
+Dockerfile.local
+**/*.tsbuildinfo
+
+# Keep dist artifacts (used by production Dockerfiles), so do NOT ignore dist
+

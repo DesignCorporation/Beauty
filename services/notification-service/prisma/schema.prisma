@@ -1,0 +1,109 @@
+// Notification Service - Минимальная Prisma схема
+// Будет расширена после интеграции с основной схемой
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ========================================
+// ENUMS
+// ========================================
+
+enum NotificationType {
+  EMAIL
+  SMS
+  PUSH
+  IN_APP
+  WEBHOOK
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  DELIVERED
+  FAILED
+  READ
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+// ========================================
+// MODELS
+// ========================================
+
+// Минимальная модель уведомления для начала
+model Notification {
+  id        String   @id @default(cuid())
+
+  // Tenant Isolation - КРИТИЧНО!
+  tenantId  String
+
+  // Получатель
+  userId    String
+
+  // Содержимое
+  type      NotificationType
+  title     String
+  message   String
+  metadata  Json?    // Дополнительные данные
+
+  // Статус
+  priority  NotificationPriority @default(MEDIUM)
+  status    NotificationStatus @default(PENDING)
+  sentAt    DateTime?
+  readAt    DateTime?
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([tenantId, userId])
+  @@index([tenantId, status])
+  @@map("notifications")
+}
+
+// ========================================
+// NOTIFICATION SETTINGS
+// ========================================
+
+// Настройки уведомлений пользователя
+model NotificationSettings {
+  id        String   @id @default(cuid())
+
+  // Tenant + User (unique constraint)
+  tenantId  String
+  userId    String
+
+  // Каналы уведомлений
+  emailEnabled     Boolean @default(true)
+  smsEnabled       Boolean @default(true)
+  pushEnabled      Boolean @default(true)
+
+  // Типы событий
+  appointmentReminders   Boolean @default(true)
+  promotionalEmails      Boolean @default(false)
+  systemNotifications    Boolean @default(true)
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tenantId, userId])
+  @@index([tenantId])
+  @@map("notification_settings")
+}
+
+// TODO: Добавить остальные модели из архитектурного планирования:
+// - EmailTemplate
+// - NotificationLog
+// - ProcessedWebhook (для idempotency)

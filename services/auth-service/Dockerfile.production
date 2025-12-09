@@ -1,0 +1,93 @@
+# BEAUTY PLATFORM - AUTH SERVICE PRODUCTION DOCKERFILE
+# Optimized: TypeScript compiled on CI, only copy dist to container
+
+# Use bookworm to avoid expired bullseye apt keys
+FROM node:20-bookworm-slim AS builder
+
+# Security: create non-root user
+RUN addgroup --gid 1001 nodejs && adduser --uid 1001 --gid 1001 --disabled-password --gecos "" beauty
+
+# System deps for Prisma (libssl1.1) and curl
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates openssl && rm -rf /var/lib/apt/lists/*
+
+# Install pnpm
+RUN npm install -g pnpm
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+
+# Copy shared workspace packages (prepared by deploy script)
+COPY core ./core
+COPY packages ./packages
+
+# Install ALL dependencies (including prisma CLI)
+# Install dependencies without running postinstall hooks (Prisma generate runs later)
+RUN pnpm install --no-frozen-lockfile --ignore-scripts
+
+# Copy pre-built dist from CI
+COPY dist ./dist
+
+# Copy Prisma schema (from shared core)
+COPY core/database/prisma ./prisma
+
+# Generate Prisma Client
+ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
+# Generate Prisma client explicitly with pinned version
+RUN pnpm dlx prisma@5.22.0 generate --schema=./prisma/schema.prisma
+
+# Prune dev dependencies to keep image small
+RUN CI=true pnpm prune --prod
+
+# ===========================================
+# PRODUCTION STAGE - Minimal attack surface
+# ===========================================
+
+FROM node:20-bookworm-slim AS production
+
+# Install curl and OpenSSL 1.1 (Prisma runtime dependency)
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates openssl && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN addgroup --gid 1001 nodejs && adduser --uid 1001 --gid 1001 --disabled-password --gecos "" beauty
+
+# Set working directory
+WORKDIR /app
+
+# Copy only production files
+COPY --from=builder --chown=beauty:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=beauty:nodejs /app/dist ./dist
+COPY --from=builder --chown=beauty:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=beauty:nodejs /app/package.json ./
+
+# Copy workspace packages (needed because node_modules contains symlinks)
+COPY --from=builder --chown=beauty:nodejs /app/core ./core
+COPY --from=builder --chown=beauty:nodejs /app/packages ./packages
+
+# Create logs directory
+RUN mkdir -p /app/logs && chown beauty:nodejs /app/logs
+
+# Security: switch to non-root user
+USER beauty
+
+# Environment variables with secure defaults
+ENV NODE_ENV=production
+ENV PORT=6021
+ENV ENABLE_TRACING=false
+ENV PRISMA_ENGINE_PROTOCOL=json
+ENV PRISMA_TELEMETRY_DISABLED=true
+
+# Health check
+HEALTHCHECK --interval=15s --timeout=10s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:6021/health || exit 1
+
+# Expose port
+EXPOSE 6021
+
+# Graceful shutdown handling
+STOPSIGNAL SIGTERM
+
+# Start application with proper logging
+CMD ["node", "dist/server.js"]

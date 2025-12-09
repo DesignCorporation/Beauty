@@ -1,0 +1,96 @@
+{
+  "salon_logo": {
+    "maxSize": 800,
+    "quality": 95,
+    "thumbnail": 150,
+    "preserveSVG": true,
+    "maxFileSize": 5242880,
+    "storage": {
+      "baseDir": "salon",
+      "optimizedDir": "salon/optimized",
+      "thumbnailsDir": "salon/thumbnails"
+    }
+  },
+  "staff_avatar": {
+    "maxSize": 800,
+    "quality": 90,
+    "thumbnail": 150,
+    "maxFileSize": 5242880,
+    "fitMode": "cover",
+    "storage": {
+      "baseDir": "staff",
+      "optimizedDir": "staff/optimized",
+      "thumbnailsDir": "staff/thumbnails"
+    }
+  },
+  "client_avatar": {
+    "maxSize": 600,
+    "quality": 85,
+    "thumbnail": 100,
+    "maxFileSize": 5242880,
+    "fitMode": "cover",
+    "storage": {
+      "baseDir": "clients",
+      "optimizedDir": "clients/optimized",
+      "thumbnailsDir": "clients/thumbnails"
+    }
+  },
+  "user_avatar": {
+    "maxSize": 800,
+    "quality": 90,
+    "thumbnail": 120,
+    "maxFileSize": 5242880,
+    "fitMode": "cover",
+    "storage": {
+      "baseDir": "users",
+      "optimizedDir": "users/optimized",
+      "thumbnailsDir": "users/thumbnails"
+    }
+  },
+  "service_photo": {
+    "maxSize": 1200,
+    "quality": 90,
+    "thumbnail": 400,
+    "maxFileSize": 10485760,
+    "storage": {
+      "baseDir": "services",
+      "optimizedDir": "services/optimized",
+      "thumbnailsDir": "services/thumbnails"
+    }
+  },
+  "salon_gallery": {
+    "maxSize": 1600,
+    "quality": 92,
+    "thumbnail": 600,
+    "format": "webp",
+    "maxFileSize": 10485760,
+    "storage": {
+      "baseDir": "gallery",
+      "optimizedDir": "gallery/optimized",
+      "thumbnailsDir": "gallery/thumbnails"
+    }
+  },
+  "admin_gallery": {
+    "maxSize": 1600,
+    "quality": 92,
+    "thumbnail": 600,
+    "format": "webp",
+    "maxFileSize": 10485760,
+    "storage": {
+      "baseDir": "admin-gallery",
+      "optimizedDir": "admin-gallery/optimized",
+      "thumbnailsDir": "admin-gallery/thumbnails"
+    }
+  },
+  "misc": {
+    "maxSize": 1200,
+    "quality": 90,
+    "thumbnail": 300,
+    "maxFileSize": 10485760,
+    "storage": {
+      "baseDir": "misc",
+      "optimizedDir": "misc/optimized",
+      "thumbnailsDir": "misc/thumbnails"
+    }
+  }
+}

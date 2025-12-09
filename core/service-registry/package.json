@@ -1,0 +1,25 @@
+{
+  "name": "@beauty-platform/service-registry",
+  "version": "1.0.0",
+  "description": "Unified service registry for Beauty Platform",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.{js,d.ts,ts,map}",
+    "types.{js,d.ts,ts,map}",
+    "registry.{js,d.ts,ts,map}",
+    "utils.{js,d.ts,ts,map}",
+    "connection-map.{js,d.ts,ts,map}"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}

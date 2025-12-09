@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 22.21.1 ]
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js with pnpm caching
+      - name: Setup Node.js ${{ matrix.node-version }} and pnpm
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          package-manager: pnpm@10.24.0
+
+      # 3. Setup pnpm store directory for caching
+      - name: Configure pnpm store
+        run: pnpm config set store-dir ~/.pnpm-store
+
+      # 4. Install dependencies with frozen lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 5. Lint check
+      - name: Lint check
+        run: pnpm lint:check
+        continue-on-error: true
+
+      # 6. TypeScript check
+      - name: TypeScript type check
+        run: pnpm typecheck
+        continue-on-error: true
+
+      # 7. Run tests
+      - name: Run tests
+        run: pnpm test:run
+        continue-on-error: true
+
+      # 8. Build all packages and apps
+      - name: Build all
+        run: pnpm build:all

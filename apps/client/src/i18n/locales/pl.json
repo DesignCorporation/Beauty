@@ -1,0 +1,1070 @@
+{
+  "welcome": "Witamy",
+  "login": {
+    "title": "Zaloguj się do Beauty Platform",
+    "subtitle": "Kontynuując, akceptujesz regulamin usługi.",
+    "termsLink": "regulamin usługi",
+    "google": {
+      "title": "Logowanie przez Google",
+      "description": "Rekomendowana metoda logowania dla klientów w Europie.",
+      "button": "Zaloguj przez Google"
+    },
+    "form": {
+      "email": {
+        "label": "Adres email",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Hasło",
+        "placeholder": "••••••••"
+      },
+      "submit": "Zaloguj się",
+      "submitting": "Logowanie...",
+      "rememberMe": "Zapamiętaj mnie",
+      "forgotPassword": "Zapomniałeś hasła?"
+    },
+    "divider": "lub",
+    "errors": {
+      "generic": "Logowanie nie powiodło się. Spróbuj ponownie.",
+      "credentials": "Nieprawidłowy email lub hasło."
+    },
+    "demo": {
+      "title": "Dane testowe",
+      "description": "Wypełnia formularz przykładowymi danymi.",
+      "button": "Wypełnij danymi testowymi",
+      "email": "client@example.com",
+      "password": "client123"
+    }
+  },
+  "register": {
+    "title": "Utwórz konto",
+    "subtitle": "Dołącz do Beauty Platform i zarządzaj swoimi wizytami oraz nagrodami.",
+    "loginPrompt": "Masz już konto?",
+    "loginCta": "Zaloguj się",
+    "form": {
+      "title": "Rejestracja klienta",
+      "fields": {
+        "firstName": {
+          "label": "Imię",
+          "placeholder": "Twoje imię"
+        },
+        "lastName": {
+          "label": "Nazwisko",
+          "placeholder": "Twoje nazwisko"
+        },
+        "email": {
+          "label": "Adres email",
+          "placeholder": "you@example.com"
+        },
+        "phone": {
+          "label": "Telefon",
+          "placeholder": "+48 123 456 789"
+        },
+        "password": {
+          "label": "Hasło",
+          "placeholder": "••••••••"
+        },
+        "confirmPassword": {
+          "label": "Potwierdź hasło",
+          "placeholder": "••••••••"
+        }
+      },
+      "terms": {
+        "textPrefix": "Akceptuję",
+        "termsLink": "regulamin",
+        "connector": "oraz",
+        "privacyLink": "politykę prywatności"
+      },
+      "submit": "Utwórz konto",
+      "submitting": "Tworzenie konta...",
+      "errors": {
+        "passwordMismatch": "Hasła nie są takie same.",
+          "passwordLength": "Hasło musi mieć co najmniej 8 znaków oraz zawierać wielką literę i cyfrę.",
+        "generic": "Rejestracja nie powiodła się.",
+        "genericRetry": "Rejestracja nie powiodła się. Spróbuj ponownie."
+      },
+      "successMessage": "Rejestracja zakończona sukcesem! Zaloguj się."
+    },
+    "demo": {
+      "title": "Dane testowe",
+      "button": "Wypełnij",
+      "description": "Wypełni wszystkie pola danymi testowymi, aby przyspieszyć rejestrację.",
+      "data": {
+        "firstName": "Anna",
+        "lastName": "Tester",
+        "email": "anna.test@example.com",
+        "phone": "+48 123 456 789",
+        "password": "test123"
+      }
+    }
+  },
+  "schedule": {
+    "unavailable": {
+      "appointmentConflict": "Zarezerwowane dla innego terminu",
+      "salonClosed": "Salon zamknięty",
+      "staffOff": "Pracownik niedostępny",
+      "outsideHours": "Poza godzinami pracy",
+      "default": "Termin niedostępny"
+    },
+    "availability": {
+      "checking": "Sprawdzanie dostępności slotów...",
+      "loadFailed": "Nie udało się pobrać dostępności: {{error}}",
+      "slotAvailable": "Ten termin jest dostępny",
+      "slotUnavailableHint": "Wybierz inny termin lub pracownika.",
+      "legendTitle": "Legenda dostępności",
+      "selectPrompt": "Wybierz usługę i pracownika, aby zobaczyć dostępne sloty.",
+      "timezoneLabel": "Strefa czasowa: {{timezone}}",
+      "dateMismatch": "Wybierz datę, aby sprawdzić dostępność",
+      "slotNotFound": "Slot nie jest dostępny"
+    }
+  },
+  "client": {
+    "defaultName": "Klient",
+    "portal": "Portal klienta",
+    "nav": {
+      "dashboard": "Panel główny",
+      "mySalons": "Moje salony",
+      "loyalty": "Program lojalnościowy",
+      "referral": "Program poleceń",
+      "appointments": "Moje wizyty",
+      "notifications": "Powiadomienia"
+    },
+    "phoneVerified": "Telefon zweryfikowany",
+    "phoneNotVerified": "Telefon niezweryfikowany",
+    "guest": "Gość",
+    "myAccount": "Moje konto",
+    "verifyPhone": "Zweryfikuj telefon",
+    "profile": "Profil",
+    "settings": "Ustawienia",
+    "loggingOut": "Wylogowywanie...",
+    "logout": "Wyloguj się"
+  },
+  "pages": {
+    "dashboard": {
+      "loading": "Ładujemy Twoje dane...",
+      "error": "Nie udało się wczytać danych",
+      "retry": "Spróbuj ponownie",
+      "metrics": {
+        "salons": "Moje salony",
+        "points": "Punkty bonusowe",
+        "visits": "Łączna liczba wizyt",
+        "spent": "Wydano"
+      },
+      "upcomingAppointments": {
+        "title": "Nadchodzące wizyty",
+        "noAppointments": "Nie masz jeszcze zaplanowanych wizyt",
+        "chooseAndBook": "Wybierz salon i zarezerwuj dogodny termin",
+        "chooseFirst": "Najpierw wybierz salon z katalogu",
+        "bookButton": "Zarezerwuj (wkrótce)",
+        "youHave": "Masz {{count}} nadchodzących wizyt"
+      },
+      "primarySalon": {
+        "title": "Salon główny",
+        "points": "punktów bonusowych",
+        "details": "Szczegóły"
+      },
+      "recentActivity": {
+        "title": "Ostatnie wizyty",
+        "afterFirst": "Po pierwszej wizycie historia pojawi się w tym miejscu",
+        "totalVisits": "Łącznie wizyt: {{count}} w {{salons}} salonie(ach)",
+        "viewAll": "Zobacz wszystkie salony"
+      },
+      "quickActions": {
+        "title": "Szybkie akcje",
+        "mySalons": "Moje salony",
+        "addSalon": "Dodaj salon",
+        "myAppointments": "Moje wizyty",
+        "loyaltyProgram": "Program lojalnościowy",
+        "inviteFriend": "Zaproś znajomego"
+      },
+      "loyaltySummary": {
+        "title": "Program lojalnościowy",
+        "totalPoints": "Razem punktów",
+        "activeSalons": "Aktywne salony",
+        "info": "1 punkt = rabat €0.01",
+        "usage": "Wykorzystuj punkty przy płatności za usługi (do 50% kwoty)",
+        "learnMore": "Dowiedz się więcej o programie"
+      },
+      "referralCta": {
+        "title": "Zaproś znajomych",
+        "description": "Odbieraj bonusy za każdego poleconego!",
+        "comingSoon": "Już wkrótce"
+      }
+    },
+    "mySalons": {
+      "loading": "Ładujemy Twoje salony...",
+      "error": "Nie udało się wczytać salonów",
+      "retry": "Spróbuj ponownie",
+      "actions": {
+        "addSalon": "Dodaj salon"
+      },
+      "noSalons": {
+        "title": "Nie masz jeszcze żadnych salonów",
+        "description": "Poproś salon o udostępnienie kodu zaproszenia i wpisz go, aby natychmiast połączyć konto i zacząć zbierać punkty.",
+        "addButton": "Dodaj salon przy użyciu kodu",
+        "helper": "Kod otrzymasz od obsługi salonu lub w wiadomości SMS z zaproszeniem."
+      },
+      "salonCard": {
+        "primaryBadge": "Salon główny",
+        "stats": {
+          "points": "Punkty",
+          "visits": "Wizyty",
+          "spent": "Wydano"
+        },
+        "lastVisit": "Ostatnia wizyta:",
+        "salonNotes": "Notatki o salonie:",
+        "bookButton": "Zarezerwuj",
+        "clientSince": "Klient od"
+      }
+    },
+    "addSalon": {
+      "badge": "Szybkie połączenie",
+      "title": "Dodaj salon przy użyciu kodu zaproszenia",
+      "subtitle": "Wpisz kod otrzymany od salonu lub zeskanuj kod QR, aby natychmiast połączyć konto i zacząć zbierać punkty lojalnościowe.",
+      "form": {
+        "title": "Kod zaproszenia",
+        "description": "Kody mają 6–12 znaków i nie zawierają O/0. Wielkość liter nie ma znaczenia.",
+        "codeLabel": "Wpisz kod",
+        "codePlaceholder": "ABC12345",
+        "helper": "Poproś salon o wygenerowanie kodu QR w panelu CRM.",
+        "submit": "Dodaj salon",
+        "submitting": "Łączenie...",
+        "cancel": "Anuluj"
+      },
+      "errors": {
+        "empty": "Wprowadź kod zaproszenia",
+        "invalid": "Nie znaleziono kodu. Sprawdź wpis i spróbuj ponownie.",
+        "expired": "Ten kod wygasł. Poproś salon o nowy.",
+        "limit": "Ten kod nie jest już aktywny. Poproś salon o wygenerowanie nowego kodu.",
+        "alreadyAdded": "Ten salon jest już na Twojej liście.",
+        "generic": "Nie udało się dodać salonu. Spróbuj ponownie później."
+      },
+      "success": {
+        "title": "Salon {{salon}} został dodany!",
+        "description": "Salon jest już widoczny na Twoim koncie. Zarządzaj wizytami i punktami w zakładce „Moje salony”.",
+        "viewSalons": "Przejdź do „Moje salony”",
+        "addAnother": "Dodaj kolejny salon",
+        "genericSalon": "salon"
+      }
+    },
+    "loyalty": {
+      "title": "Program lojalnościowy",
+      "subtitle": "Zbieraj punkty za wizyty i otrzymuj zniżki na usługi",
+      "loading": "Ładujemy dane programu lojalnościowego...",
+      "error": "Nie udało się wczytać danych",
+      "retry": "Spróbuj ponownie",
+      "noSalons": {
+        "title": "Nie jesteś jeszcze zapisany do żadnego salonu",
+        "description": "Dodaj salon, aby zacząć zdobywać punkty bonusowe"
+      },
+      "balance": {
+        "title": "Twój bilans",
+        "points": "punktów",
+        "currentLevel": "Aktualny poziom",
+        "nextLevel": "Do kolejnego poziomu",
+        "pointsNeeded": "{{count}} punktów",
+        "progress": "{{percent}}% do poziomu {{tier}}",
+        "discountAvailable": "Dostępny rabat",
+        "info": "1 punkt = rabat €0.01 (do 50% wartości usługi)"
+      },
+      "activeSalons": {
+        "title": "Aktywne salony",
+        "salons": "salonów",
+        "registered": "Jesteś zapisany w {{count}} salonie(ach)"
+      },
+      "pointsBySalons": {
+        "title": "Punkty wg salonów",
+        "primarySalon": "Salon główny",
+        "points": "punkty"
+      },
+      "howToEarn": {
+        "title": "Jak zdobywać punkty",
+        "step1": {
+          "title": "Odwiedzaj salon",
+          "description": "Każda wizyta to dodatkowe punkty"
+        },
+        "step2": {
+          "title": "Wydawaj więcej",
+          "description": "€1 wydane = 1 punkt"
+        },
+        "step3": {
+          "title": "Awansuj",
+          "description": "Wyższy poziom = więcej korzyści"
+        }
+      },
+      "howToUse": {
+        "title": "Jak wykorzystać punkty",
+        "step1": {
+          "title": "Przy płatności za usługi",
+          "description": "Wykorzystaj do 50% kwoty"
+        },
+        "step2": {
+          "title": "Konwersja",
+          "description": "100 punktów = €1 rabatu"
+        },
+        "step3": {
+          "title": "Ważność",
+          "description": "Punkty nie tracą ważności"
+        }
+      },
+      "tiers": {
+        "title": "Poziomy programu lojalnościowego",
+        "bronze": "Brąz",
+        "silver": "Srebro",
+        "gold": "Złoto",
+        "platinum": "Platyna",
+        "range": "{{min}} - {{max}} punktów"
+      },
+      "mockData": {
+        "salon1": {
+          "name": "Salon Piękności Test"
+        },
+        "salon2": {
+          "name": "Test Beauty Salon 2025"
+        }
+      }
+    },
+    "appointments": {
+      "title": "Moje wizyty",
+      "subtitle": "Historia oraz nadchodzące wizyty",
+      "loading": "Ładujemy Twoje wizyty...",
+      "errorTitle": "Nie udało się załadować wizyt",
+      "retry": "Spróbuj ponownie",
+      "filters": {
+        "all": "Wszystkie wizyty",
+        "upcoming": "Nadchodzące",
+        "past": "Zakończone"
+      },
+      "empty": {
+        "noUpcoming": "Brak nadchodzących wizyt",
+        "noPast": "Brak zakończonych wizyt",
+        "noAppointments": "Nie masz jeszcze żadnych wizyt",
+        "description": "Wybierz salon i usługę, aby umówić wizytę",
+        "bookButton": "Zarezerwuj (wkrótce)"
+      },
+      "card": {
+        "status": {
+          "confirmed": "Potwierdzona",
+          "pending": "Oczekuje",
+          "completed": "Zrealizowana",
+          "cancelled": "Anulowana",
+          "noShow": "Nieobecność",
+          "inProgress": "W trakcie"
+        },
+        "cost": "Koszt",
+        "details": "Szczegóły",
+        "minutes": "min",
+        "serviceFallback": "Usługa",
+        "staffFallback": "Dowolny specjalista",
+        "priceFallback": "—"
+      },
+      "devBanner": {
+        "title": "Zarządzanie wizytami wkrótce",
+        "description": "Wizyty są synchronizowane z CRM salonu. Edycja (anulowanie, zmiana terminu) pojawi się w kolejnym wydaniu.",
+        "features": "W planach: anulowanie wizyt, zmiana terminu, szczegółowe informacje o wizytach."
+      },
+      "mockData": {
+        "appointment1": {
+          "salon": "Salon Piękności Test",
+          "service": "Strzyżenie + Stylizacja",
+          "staff": "Anna I."
+        },
+        "appointment2": {
+          "salon": "Salon Piękności Test",
+          "service": "Manicure",
+          "staff": "Maria P.",
+          "firstName": "Maria",
+          "lastName": "P."
+        },
+        "appointment3": {
+          "salon": "Test Beauty Salon 2025",
+          "service": "Koloryzacja włosów",
+          "staff": "Elena S."
+        },
+        "appointment4": {
+          "salon": "Salon Piękności Test",
+          "service": "Pedicure",
+          "staff": "Olga K."
+        },
+        "appointment5": {
+          "salon": "Test Beauty Salon 2025",
+          "service": "Masaż twarzy",
+          "staff": "Svetlana N."
+        }
+      }
+    },
+    "notifications": {
+      "title": "Powiadomienia",
+      "subtitle": "Ważne aktualizacje i przypomnienia",
+      "markAllRead": "Oznacz wszystkie jako przeczytane",
+      "filters": {
+        "all": "Wszystkie",
+        "unread": "Nieprzeczytane"
+      },
+      "empty": {
+        "noUnread": "Brak nieprzeczytanych powiadomień",
+        "noNotifications": "Brak powiadomień",
+        "allRead": "Wszystkie powiadomienia przeczytane",
+        "description": "Tutaj pojawią się ważne aktualizacje i przypomnienia"
+      },
+      "types": {
+        "appointment": "Wizyty",
+        "loyalty": "Lojalność",
+        "referral": "Polecenia",
+        "system": "System",
+        "payment": "Payment",
+        "message": "Message"
+      },
+      "actions": {
+        "markRead": "Oznacz jako przeczytane",
+        "delete": "Usuń"
+      },
+      "timeAgo": {
+        "justNow": "Przed chwilą",
+        "minutesAgo": "{{count}} min temu",
+        "hoursAgo": "{{count}} h temu",
+        "yesterday": "Wczoraj",
+        "daysAgo": "{{count}} dni temu"
+      },
+      "settings": {
+        "title": "Ustawienia powiadomień",
+        "email": {
+          "title": "Powiadomienia email",
+          "description": "Przypomnienia o wizytach i aktualności"
+        },
+        "sms": {
+          "title": "Powiadomienia SMS",
+          "description": "Ważne przypomnienia i potwierdzenia"
+        },
+        "push": {
+          "title": "Powiadomienia push",
+          "description": "Błyskawiczne powiadomienia przeglądarki"
+        },
+        "configureButton": "Konfiguruj (wkrótce)"
+      },
+      "devBanner": {
+        "title": "W przygotowaniu",
+        "description": "Ta strona korzysta z danych testowych. Backend powiadomień klientów zostanie wdrożony w Issue #31 (Client System Backend).",
+        "features": "Po wdrożeniu backendu: powiadomienia w czasie rzeczywistym, ustawienia email/SMS, powiadomienia push, historia powiadomień."
+      },
+      "mockData": {
+        "notification1": {
+          "title": "Przypomnienie o wizycie",
+          "message": "Jutro o 14:00 masz umówioną wizytę \"Strzyżenie + Stylizacja\" w Salonie Piękności Test."
+        },
+        "notification2": {
+          "title": "Nowy poziom lojalności!",
+          "message": "Gratulacje! Osiągnąłeś poziom SREBRNY. Czekają na Ciebie dodatkowe korzyści."
+        },
+        "notification3": {
+          "title": "Bonus za polecenie",
+          "message": "Twoja znajoma Anna K. odbyła pierwszą wizytę. Otrzymujesz +100 punktów!"
+        },
+        "notification4": {
+          "title": "Aktualizacja profilu",
+          "message": "Zweryfikuj swój numer telefonu, aby otrzymywać powiadomienia SMS."
+        },
+        "notification5": {
+          "title": "Wizyta potwierdzona",
+          "message": "Twoja wizyta 15 października o 14:00 została potwierdzona. Czekamy na Ciebie!"
+        }
+      },
+      "loading": "Ładujemy powiadomienia...",
+      "view": "Otwórz",
+      "viewAll": "Wszystkie powiadomienia",
+      "status": {
+        "read": "Przeczytane",
+        "unread": "Nieprzeczytane"
+      },
+      "markAll": "Oznacz wszystkie jako przeczytane"
+    },
+    "referral": {
+      "title": "Program poleceń",
+      "subtitle": "Zaproś znajomych i zdobywajcie punkty razem",
+      "stats": {
+        "invited": "Zaproszeni znajomi",
+        "active": "Aktywni",
+        "pending": "Oczekują",
+        "earned": "Zdobyte punkty"
+      },
+      "code": {
+        "title": "Twój kod polecający",
+        "forFriends": "Kod dla znajomych:",
+        "copy": "Kopiuj",
+        "copied": "Skopiowano",
+        "link": "Link polecający:"
+      },
+      "share": {
+        "email": "Udostępnij mailem",
+        "whatsapp": "Udostępnij na WhatsAppie",
+        "telegram": "Udostępnij w Telegramie"
+      },
+      "shareSubject": "Zaproszenie do Beauty Platform",
+      "shareMessage": "Dołącz do Beauty Platform i zdobywaj bonusy! Użyj mojego kodu polecającego: {{code}}\n\n{{link}}",
+      "friends": {
+        "title": "Zaproszeni znajomi",
+        "empty": {
+          "title": "Brak zaproszonych znajomych",
+          "description": "Udostępnij swój kod, aby zacząć zdobywać bonusy"
+        },
+        "joined": "Dołączył:",
+        "status": {
+          "active": "Aktywny",
+          "pending": "Oczekuje"
+        },
+        "points": "+{{count}} punktów"
+      },
+      "howItWorks": {
+        "title": "Jak to działa",
+        "step1": {
+          "title": "Zaproś znajomego",
+          "description": "Udostępnij kod lub link"
+        },
+        "step2": {
+          "title": "Znajomy się rejestruje",
+          "description": "+50 punktów dla Ciebie"
+        },
+        "step3": {
+          "title": "Pierwsza wizyta",
+          "description": "+100 punktów dla was obojga"
+        }
+      },
+      "rewards": {
+        "title": "Nagrody",
+        "firstVisit": "Pierwsza wizyta znajomego",
+        "registration": "Rejestracja znajomego",
+        "activityBonus": "Bonus za aktywność",
+        "descriptions": {
+          "firstVisit": "Gdy znajomy odbędzie pierwszą wizytę w salonie",
+          "registration": "Gdy znajomy zarejestruje się z Twojego linku",
+          "activityBonus": "Gdy znajomy odbędzie 5 wizyt (jednorazowy bonus)"
+        }
+      },
+      "rules": {
+        "title": "Zasady programu",
+        "rule1": "Punkty naliczane po pierwszej wizycie znajomego",
+        "rule2": "Punkty nie tracą ważności",
+        "rule3": "Dowolna liczba poleceń",
+        "rule4": "Fair play — duplikaty niedozwolone"
+      },
+      "devBanner": {
+        "title": "W przygotowaniu",
+        "description": "Ta strona korzysta z danych testowych. Backend programu poleceń zostanie wdrożony w Issue #31 (Client System Backend - Referral Program).",
+        "features": "Po wdrożeniu backendu: generowanie unikalnych kodów, śledzenie poleceń, automatyczne naliczanie punktów."
+      },
+      "mockData": {
+        "friend1": {
+          "name": "Anna K.",
+          "email": "anna.k@example.com",
+          "status": "active"
+        },
+        "friend2": {
+          "name": "Maria P.",
+          "email": "maria.p@example.com",
+          "status": "active"
+        },
+        "friend3": {
+          "name": "Ekaterina S.",
+          "email": "ekaterina.s@example.com",
+          "status": "pending"
+        },
+        "referralCode": "BEAUTY2025"
+      }
+    },
+    "completeProfile": {
+      "title": "Dokończ konfigurację profilu",
+      "stepBadge": "Krok 2 z 2",
+      "subtitle": "Dodaj numer telefonu, aby otrzymywać przypomnienia o wizytach i potwierdzać logowanie. Wyślemy SMS z kodem na podany numer.",
+      "card": {
+        "title": "Weryfikacja telefonu"
+      },
+      "country": "Kraj",
+      "phone": {
+        "label": "Numer telefonu",
+        "placeholder": "123 456 789",
+        "hint": "Korzystaj z formatu międzynarodowego. Przykład: +48 123 456 789"
+      },
+      "currentPhone": "Aktualny numer: {{phone}}",
+      "notConfirmed": "Numer nie został jeszcze potwierdzony",
+      "sendCode": "Wyślij kod",
+      "sending": "Wysyłamy...",
+      "otp": {
+        "label": "Kod SMS",
+        "placeholder": "••••••",
+        "hint": "Wpisz {{length}}-cyfrowy kod. Masz {{attempts}} prób."
+      },
+      "resend": {
+        "wait": "Wyślij ponownie za {{time}}",
+        "again": "Wyślij kod ponownie"
+      },
+      "attemptsLeft": "Pozostało prób: {{count}}",
+      "confirm": "Potwierdź telefon",
+      "confirming": "Weryfikujemy...",
+      "errors": {
+        "invalidPhone": "Wpisz poprawny międzynarodowy numer telefonu",
+        "sendFirst": "Najpierw wyślij kod na swój numer",
+        "invalidCode": "Wpisz {{length}}-cyfrowy kod z SMS"
+      },
+      "success": {
+        "codeSent": "Kod wysłany. Sprawdź SMS i wpisz kod poniżej.",
+        "phoneConfirmed": "Telefon potwierdzony, aktualizujemy dane..."
+      },
+      "help": "Potrzebujesz pomocy? Napisz do nas na",
+      "errorGeneric": "Operacji nie udało się wykonać. Spróbuj ponownie.",
+      "unlimitedAttempts": "∞",
+      "countryOptions": {
+        "PL": "Polska (+48)",
+        "GB": "Wielka Brytania (+44)",
+        "DE": "Niemcy (+49)",
+        "LT": "Litwa (+370)"
+      }
+    },
+    "settings": {
+      "title": "Ustawienia",
+      "subtitle": "Zarządzaj ustawieniami portalu klienta.",
+      "language": {
+        "title": "Język interfejsu",
+        "description": "Wybierz język używany w portalu klienta.",
+        "select": "Wybierz",
+        "note": "Zmiana działa natychmiast i zostanie zapamiętana przy kolejnym logowaniu.",
+        "success": "Język zmieniono na {{language}}.",
+        "error": "Nie udało się zmienić języka. Spróbuj ponownie.",
+        "languages": {
+          "en": {
+            "label": "Angielski",
+            "native": "English"
+          },
+          "pl": {
+            "label": "Polski",
+            "native": "Polski"
+          },
+          "ru": {
+            "label": "Rosyjski",
+            "native": "Русский"
+          },
+          "ua": {
+            "label": "Ukraiński",
+            "native": "Українська"
+          }
+        }
+      }
+    },
+    "profile": {
+      "title": "Profil",
+      "subtitle": "Zarządzaj danymi osobowymi, kontaktem i preferencjami komunikacji.",
+      "loading": "Ładujemy Twój profil...",
+      "sections": {
+        "personal": {
+          "title": "Dane osobowe",
+          "description": "Aktualizuj imię, nazwisko, datę urodzenia i płeć, aby salon mógł łatwo Cię rozpoznać."
+        },
+        "contact": {
+          "title": "Kontakt i weryfikacja",
+          "description": "Email służy do logowania. Utrzymuj numer telefonu aktualny, aby otrzymywać SMS-y."
+        },
+        "preferences": {
+          "title": "Preferencje",
+          "description": "Wybierz, w jaki sposób Beauty Platform będzie się z Tobą kontaktować."
+        }
+      },
+      "fields": {
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "birthdate": "Data urodzenia",
+        "gender": "Płeć",
+        "email": "Email",
+        "phone": "Numer telefonu",
+        "phonePlaceholder": "Wpisz numer telefonu",
+        "phoneHint": "Numer wykorzystujemy do weryfikacji oraz przypomnień o wizytach.",
+        "language": "Preferowany język",
+        "marketingConsent": "Otrzymuj komunikację marketingową",
+        "marketingConsentDescription": "Zezwól salonom na wysyłkę aktualności, ofert i informacji o programie lojalnościowym."
+      },
+      "gender": {
+        "placeholder": "Wybierz płeć",
+        "options": {
+          "unspecified": "Brak",
+          "female": "Kobieta",
+          "male": "Mężczyzna",
+          "other": "Inna",
+          "preferNot": "Wolę nie podawać"
+        }
+      },
+      "language": {
+        "placeholder": "Wybierz język",
+        "options": {
+          "RU": "Rosyjski",
+          "EN": "Angielski",
+          "PL": "Polski",
+          "UA": "Ukraiński"
+        }
+      },
+      "status": {
+        "phoneVerified": "Telefon zweryfikowany",
+        "phoneNotVerified": "Telefon niezweryfikowany",
+        "phoneVerifiedAt": "Zweryfikowano {{date}}",
+        "phoneNotVerifiedHint": "Potwierdź numer, aby otrzymywać SMS-y i powiadomienia o wizytach."
+      },
+      "account": {
+        "title": "Podsumowanie konta",
+        "description": "Kluczowe informacje o Twoim koncie Beauty Platform.",
+        "joined": "Data rejestracji",
+        "source": "Źródło rejestracji",
+        "notAvailable": "Brak danych",
+        "sourceLabels": {
+          "google": "Google OAuth",
+          "walkIn": "Dodane przez salon",
+          "referral": "Program poleceń",
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "website": "Strona salonu",
+          "other": "Inne"
+        }
+      },
+      "avatar": {
+        "title": "Zdjęcie profilowe",
+        "description": "Prześlij zdjęcie, aby salony i stylistki rozpoznawały Cię bez problemu.",
+        "hint": "Obsługiwane formaty: JPG, PNG, SVG lub WebP do 3 MB.",
+        "upload": "Prześlij zdjęcie",
+        "change": "Zmień zdjęcie",
+        "uploading": "Wgrywanie...",
+        "remove": "Usuń zdjęcie",
+        "removing": "Usuwanie...",
+        "feedback": {
+          "success": "Zdjęcie profilowe zostało zaktualizowane.",
+          "removed": "Zdjęcie profilowe usunięte."
+        },
+        "errors": {
+          "type": "Nieobsługiwany format. Użyj JPG, PNG, SVG albo WebP.",
+          "size": "Plik jest zbyt duży. Maksymalny rozmiar to 3 MB.",
+          "generic": "Nie udało się zaktualizować zdjęcia. Spróbuj ponownie.",
+          "noUser": "Profil nie został jeszcze załadowany. Spróbuj ponownie za chwilę."
+        }
+      },
+      "actions": {
+        "verifyPhone": "Zweryfikuj telefon",
+        "updatePhone": "Zarządzaj telefonem",
+        "saving": "Zapisywanie...",
+        "save": "Zapisz zmiany"
+      },
+      "feedback": {
+        "success": "Profil został zaktualizowany.",
+        "error": "Nie udało się zapisać profilu. Spróbuj ponownie."
+      },
+      "validation": {
+        "namesRequired": "Imię i nazwisko są wymagane."
+      }
+    },
+    "login": {
+      "brand": "Beauty Design Corp",
+      "tagline": "Beauty Design Corp • Portal klienta",
+      "brandLine1": "Beauty Design Corp",
+      "brandLine2": "Portal klienta",
+      "title": "Zaloguj się do swojego konta",
+      "subtitle": "Śledź wizyty, nagrody i wiadomości z ulubionych salonów w jednym miejscu.",
+      "termsLink": "Regulamin",
+      "socialTitle": "Szybkie logowanie",
+      "socialDescription": "Zaloguj się za pomocą konta Google",
+      "googleButton": "Kontynuuj z Google",
+      "divider": "lub",
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Hasło",
+        "placeholder": "Wpisz swoje hasło"
+      },
+      "forgotPassword": "Zapomniałeś hasła?",
+      "fillDemo": "Wypełnij danymi testowymi",
+      "loginButton": "Zaloguj się",
+      "loginButtonLoading": "Logowanie...",
+      "demoTitle": "Dostęp testowy",
+      "demoDescription": "Użyj tych danych, aby przetestować portal klienta",
+      "demo": {
+        "email": "client@example.com",
+        "password": "client123"
+      },
+      "noAccount": "Nie masz konta?",
+      "registerLink": "Zarejestruj się",
+      "hero": {
+        "highlight": "Beauty Design Corp • Portal klienta",
+        "titleLine1": "Piękno",
+        "titleLine2": "zaczyna się",
+        "titleLine3": "od Ciebie",
+        "subtitle": "Rezerwuj rytuały piękna, zbieraj nagrody i bądź w kontakcie z ulubionymi salonami.",
+        "quote": "Wszystkie wizyty i nagrody mam w jednym miejscu — bez stresu.",
+        "author": "Maria, stała klientka",
+        "role": "Członkini Beauty Design Corp",
+        "stats": {
+          "rating": "Średnia ocena klientów",
+          "salons": "Partnerskich salonów",
+          "rewards": "Wykorzystane nagrody"
+        }
+      },
+      "errors": {
+        "unknownError": "Wystąpił błąd. Spróbuj ponownie.",
+        "invalidCredentials": "Nieprawidłowy email lub hasło.",
+        "networkError": "Błąd sieci. Spróbuj ponownie."
+      }
+    },
+    "register": {
+      "tagline": "Beauty Design Corp • Portal klienta",
+      "brandLine1": "Beauty Design Corp",
+      "brandLine2": "Portal klienta",
+      "title": "Utwórz konto",
+      "subtitle": "Dołącz do Beauty Design Corp i trzymaj wizyty, bonusy i wiadomości w jednym portalu.",
+      "haveAccount": "Masz już konto?",
+      "loginLink": "Zaloguj się",
+      "socialTitle": "Szybka rejestracja",
+      "socialDescription": "Zarejestruj się za pomocą konta Google",
+      "googleButton": "Kontynuuj z Google",
+      "divider": "lub",
+      "firstName": {
+        "label": "Imię",
+        "placeholder": "Anna"
+      },
+      "lastName": {
+        "label": "Nazwisko",
+        "placeholder": "Tester"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Hasło",
+        "placeholder": "Utwórz silne hasło",
+        "helper": "Minimum 8 znaków"
+      },
+      "confirmPassword": {
+        "label": "Potwierdź hasło",
+        "placeholder": "Powtórz hasło"
+      },
+      "terms": {
+        "text": "Akceptuję",
+        "termsLink": "Regulamin",
+        "privacyLink": "Politykę prywatności"
+      },
+      "and": "oraz",
+      "registerButton": "Utwórz konto",
+      "registerButtonLoading": "Tworzenie konta...",
+      "fillDemo": "Wypełnij danymi testowymi",
+      "demoTitle": "Dane testowe",
+      "demoDescription": "Kliknij poniżej, aby automatycznie wypełnić formularz",
+      "demo": {
+        "data": {
+          "firstName": "Anna",
+          "lastName": "Tester",
+          "email": "anna.test@example.com",
+          "password": "test1234"
+        }
+      },
+      "support": "Potrzebujesz pomocy? Napisz na support@beauty-platform.com",
+      "successMessage": "Rejestracja zakończona sukcesem! Zaloguj się.",
+      "hero": {
+        "highlight": "Beauty Design Corp • Społeczność gości",
+        "titleLine1": "Dołącz do",
+        "titleLine2": "elitarnego kręgu",
+        "titleLine3": "piękna",
+        "subtitle": "Wcześniejszy dostęp do wizyt, prywatne eventy i przejrzyste nagrody w jednym eleganckim portalu.",
+        "quote": "Beauty Design Corp automatycznie nalicza bonusy — wystarczy potwierdzić wizytę.",
+        "author": "Elena, miłośniczka spa",
+        "role": "Gość Beauty Design Corp",
+        "stats": {
+          "members": "Aktywnych członków",
+          "rituals": "Wykonanych rytuałów",
+          "rewards": "Wykorzystane nagrody"
+        }
+      },
+      "errors": {
+        "unknownError": "Wystąpił błąd. Spróbuj ponownie.",
+        "emailExists": "Ten email jest już zarejestrowany.",
+        "weakPassword": "Hasło musi mieć co najmniej 8 znaków.",
+        "networkError": "Błąd sieci. Spróbuj ponownie.",
+        "nameRequired": "Imię i nazwisko są wymagane.",
+        "passwordMismatch": "Hasła nie są takie same.",
+        "termsRequired": "Musisz zaakceptować warunki."
+      }
+    },
+    "home": {
+      "brand": "Beauty Platform",
+      "header": {
+        "login": "Zaloguj się",
+        "register": "Zarejestruj się"
+      },
+      "hero": {
+        "title": "Umów się do ulubionego salonu piękności",
+        "subtitle": "Znajdź najlepsze salony, rezerwuj online i korzystaj z usług profesjonalnych specjalistów",
+        "cta": "Rozpocznij rezerwację"
+      },
+      "features": {
+        "title": "Dlaczego wybierają nas",
+        "booking": {
+          "title": "Rezerwacja online",
+          "description": "Umów się na wizytę w wygodnym czasie bez telefonów i czekania"
+        },
+        "masters": {
+          "title": "Najlepsi specjaliści",
+          "description": "Współpracujemy wyłącznie ze zweryfikowanymi salonami i wykwalifikowanymi specjalistami"
+        },
+        "reviews": {
+          "title": "Opinie klientów",
+          "description": "Czytaj prawdziwe opinie i wybieraj specjalistów według ocen"
+        }
+      },
+      "cta": {
+        "title": "Gotowy na rezerwację zabiegu?",
+        "subtitle": "Utwórz konto i znajdź idealny salon piękności w pobliżu",
+        "button": "Zarejestruj się teraz"
+      },
+      "footer": {
+        "copyright": "© 2025 Beauty Platform. Twoja droga do piękna zaczyna się tutaj."
+      }
+    },
+    "salonDetails": {
+      "back": "Wróć do moich salonów",
+      "loading": "Ładujemy szczegóły salonu...",
+      "error": {
+        "title": "Nie udało się załadować salonu",
+        "description": "Sprawdź połączenie i spróbuj ponownie."
+      },
+      "notFound": {
+        "title": "Nie znaleziono salonu",
+        "description": "Nie mamy żadnych informacji o tym salonie."
+      },
+      "joinedAt": "Klient od",
+      "rating": "Ocena {{rating}} · {{count}} opinii",
+      "services": {
+        "title": "Usługi",
+        "subtitle": "Wybierz usługę, aby rozpocząć rezerwację.",
+        "noDescription": "Szczegóły pojawią się wkrótce.",
+        "duration": "{{duration}} min",
+        "bookAction": "Zarezerwuj usługę",
+        "empty": "Salon jeszcze nie opublikował usług. Wróć później."
+      },
+      "actions": {
+        "bookFallback": "Zarezerwuj wizytę"
+      }
+    },
+    "booking": {
+      "title": "Zarezerwuj wizytę",
+      "subtitle": "Wybierz usługę, specjalistę oraz termin, który Ci odpowiada.",
+      "back": "Wstecz",
+      "sections": {
+        "client": {
+          "title": "Twoje dane",
+          "description": "Wypełniamy pola danymi z portalu klienta."
+        },
+        "service": {
+          "title": "Usługa",
+          "description": "Wybierz usługę, aby zobaczyć czas trwania i cenę."
+        },
+        "staff": {
+          "title": "Specjalista",
+          "description": "Wybierz specjalistę, z którym chcesz pracować."
+        },
+        "schedule": {
+          "title": "Termin",
+          "description": "Wybierz preferowaną datę i godzinę startu."
+        },
+        "notes": {
+          "title": "Uwagi dla salonu",
+          "placeholder": "Dodaj preferencje lub ważne informacje (opcjonalnie)."
+        },
+        "payment": {
+          "title": "Płatność",
+          "description": "Wybierz preferowaną metodę płatności."
+        }
+      },
+      "labels": {
+        "name": "Imię i nazwisko",
+        "email": "Email",
+        "phone": "Telefon",
+        "selectService": "Wybierz usługę",
+        "selectStaff": "Wybierz specjalistę",
+        "date": "Data",
+        "startTime": "Godzina rozpoczęcia",
+        "endTime": "Godzina zakończenia"
+      },
+      "placeholders": {
+        "service": "Wybierz usługę",
+        "staff": "Wybierz specjalistę",
+        "startTime": "Wybierz godzinę"
+      },
+      "helpers": {
+        "duration": "Szacowany czas trwania: {{duration}} minut"
+      },
+      "messages": {
+        "loadingServices": "Ładujemy usługi...",
+        "loadingStaff": "Ładujemy specjalistów...",
+        "availabilityLoading": "Sprawdzamy dostępność...",
+        "availabilityError": "Nie udało się pobrać dostępności. Spróbuj ponownie.",
+        "noSlotsTitle": "Brak dostępnych terminów",
+        "noSlots": "Brak wolnych terminów w tym dniu. Wybierz inną datę.",
+        "validation": {
+          "service": "Wybierz usługę.",
+          "staff": "Wybierz specjalistę.",
+          "date": "Wybierz datę.",
+          "time": "Wybierz godzinę rozpoczęcia.",
+          "tenant": "Brakuje identyfikatora salonu. Otwórz rezerwację z karty salonu.",
+          "email": "Nie wykryto Twojego adresu e-mail. Zaloguj się ponownie i spróbuj."
+        },
+        "conflict": "Ten termin jest już zajęty. Wybierz inny slot.",
+        "slotUnavailableTitle": "Termin niedostępny",
+        "success": "Wizyta została zapisana! Przenosimy do Twoich rezerwacji...",
+        "errorGeneric": "Nie udało się utworzyć wizyty. Spróbuj ponownie.",
+        "paymentIntentError": "Nie udało się przygotować płatności kartą. Spróbuj ponownie później.",
+        "paymentFailed": "Płatność kartą nie powiodła się. Spróbuj ponownie lub wybierz inną metodę.",
+        "paymentIncomplete": "Płatność nie została zakończona. Spróbuj ponownie.",
+        "invalidPrice": "Wybrana usługa nie ma skonfigurowanej ceny."
+      },
+      "alerts": {
+        "validationTitle": "Sprawdź formularz",
+        "errorTitle": "Coś poszło nie tak",
+        "successTitle": "Gotowe!"
+      },
+      "buttons": {
+        "cancel": "Anuluj",
+        "submit": "Potwierdź rezerwację",
+        "submitting": "Zapisywanie..."
+      },
+      "payment": {
+        "methods": {
+          "card": "Karta (Stripe)",
+          "cash": "Gotówka"
+        },
+        "summary": {
+          "service": "Cena usługi",
+          "total": "Kwota do zapłaty"
+        },
+        "status": {
+          "preparing": "Przygotowujemy bezpieczną płatność...",
+          "processing": "Przetwarzamy płatność..."
+        },
+        "cardUnavailable": "Płatność kartą jest chwilowo niedostępna."
+      }
+    }
+  },
+  "common": {
+    "loyaltyTiers": {
+      "bronze": "Brąz",
+      "silver": "Srebro",
+      "gold": "Złoto",
+      "platinum": "Platyna"
+    },
+    "loading": "Ładowanie...",
+    "notAssigned": "Nieprzypisane",
+    "notAvailable": "Niedostępne"
+  },
+  "email": "Email",
+  "password": "Hasło",
+  "firstName": "Imię",
+  "lastName": "Nazwisko",
+  "phone": "Telefon",
+  "dashboard": "Panel",
+  "bookings": "Wizyty",
+  "favorites": "Ulubione",
+  "profile": "Profil",
+  "logout": "Wyloguj"
+}

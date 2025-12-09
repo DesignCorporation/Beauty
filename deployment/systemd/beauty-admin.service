@@ -1,0 +1,20 @@
+[Unit]
+Description=Beauty Platform - Admin frontend (prod)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/beauty-dev/apps/admin
+Environment=NODE_ENV=production
+Environment=PORT=7002
+EnvironmentFile=/opt/beauty-dev/.env.production
+ExecStart=/usr/bin/node .output/server/index.mjs
+Restart=on-failure
+RestartSec=10s
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beauty-admin
+
+[Install]
+WantedBy=multi-user.target

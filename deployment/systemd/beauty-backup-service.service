@@ -1,0 +1,21 @@
+[Unit]
+Description=Beauty Platform - Backup Service (prod)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/beauty-dev/services/backup-service
+Environment=NODE_ENV=production
+Environment=PORT=7027
+EnvironmentFile=/opt/beauty-dev/.env.production
+ExecStart=/usr/bin/node dist/server.js
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beauty-backup-service
+
+[Install]
+WantedBy=multi-user.target

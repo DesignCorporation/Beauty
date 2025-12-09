@@ -1,0 +1,40 @@
+{
+  "name": "@beauty-platform/client-sdk",
+  "version": "1.0.0",
+  "description": "Unified HTTP/WebSocket client for Beauty Platform frontends",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "beauty-platform",
+    "sdk",
+    "http-client",
+    "socket.io",
+    "csrf",
+    "tenant"
+  ],
+  "author": "Beauty Platform Team",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "@beauty-platform/salon-api",
+  "version": "1.0.0",
+  "description": "Beauty Platform CRM API - Clean architecture with tenant isolation",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/services/salon-api/src/server.js",
+    "test": "vitest",
+    "dev:staff": "tsx src/staff-server.ts"
+  },
+  "dependencies": {
+    "@beauty-platform/database": "workspace:*",
+    "@beauty/shared": "workspace:*",
+    "@prisma/client": "^5.22.0",
+    "@types/cookie-parser": "^1.4.9",
+    "axios": "^1.6.2",
+    "csurf": "^1.11.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "date-fns-tz": "^3.2.0",
+    "csv-parse": "^5.5.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.2",
+    "node-cron": "^3.0.3",
+    "pino": "^8.16.1",
+    "pino-http": "^8.5.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.15",
+    "@types/exceljs": "^1.3.0",
+    "@types/express": "^4.17.20",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^20.8.7",
+    "@types/node-cron": "^3.0.11",
+    "@types/csurf": "^1.11.5",
+    "@vitest/expect": "^0.34.6",
+    "tsx": "^4.1.2",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  }
+}

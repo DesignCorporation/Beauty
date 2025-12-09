@@ -1,0 +1,169 @@
+/* Calendar Grid Styles - Fresha-inspired design */
+.calendar-grid-container {
+  @apply h-full;
+}
+
+.calendar-grid {
+  @apply bg-white rounded-lg border border-gray-200 overflow-hidden;
+}
+
+/* Time Grid Improvements */
+.time-grid {
+  @apply divide-y divide-gray-100;
+}
+
+.time-row {
+  @apply grid h-14;
+  grid-template-columns: 80px repeat(7, 1fr);
+}
+
+.time-label {
+  @apply px-3 pt-2 text-xs font-medium text-gray-500 bg-gray-50 border-r border-gray-200;
+}
+
+.time-cell {
+  @apply border-r border-gray-100 cursor-pointer transition-colors relative;
+}
+
+.time-cell:hover {
+  @apply bg-blue-50;
+}
+
+/* Day Headers */
+.day-header {
+  @apply h-16 p-3 text-center border-r border-gray-200 bg-gray-50;
+}
+
+.day-header.today {
+  @apply bg-blue-50;
+}
+
+.day-header .day-name {
+  @apply text-xs text-gray-500 uppercase font-medium;
+}
+
+.day-header .day-number {
+  @apply text-lg font-bold mt-1 text-gray-900;
+}
+
+.day-header.today .day-number {
+  @apply text-blue-600;
+}
+
+/* Appointment Blocks */
+.appointment-block {
+  @apply rounded-lg shadow-sm border transition-all duration-200 cursor-pointer;
+  min-height: 3.5rem;
+}
+
+.appointment-block:hover {
+  @apply shadow-md transform scale-105;
+}
+
+.appointment-block.status-pending {
+  @apply bg-yellow-100 border-yellow-300 text-yellow-800;
+}
+
+.appointment-block.status-confirmed {
+  @apply bg-blue-100 border-blue-300 text-blue-800;
+}
+
+.appointment-block.status-completed {
+  @apply bg-green-100 border-green-300 text-green-800;
+}
+
+.appointment-block.status-cancelled {
+  @apply bg-gray-100 border-gray-300 text-gray-600;
+}
+
+/* Slot Hover Effects */
+.time-cell::before {
+  @apply absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-30 transition-opacity pointer-events-none;
+}
+
+/* Current Time Line */
+.current-time-line {
+  @apply absolute left-0 right-0 h-0.5 bg-red-500 z-20;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+}
+
+.current-time-line::before {
+  @apply absolute left-0 w-2 h-2 bg-red-500 rounded-full transform -translate-y-1/2;
+  content: '';
+}
+
+/* Loading State */
+.calendar-loading {
+  @apply h-full flex items-center justify-center bg-white rounded-lg border border-gray-200;
+}
+
+.calendar-loading .spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+}
+
+/* Empty State */
+.calendar-empty {
+  @apply absolute inset-0 flex items-center justify-center bg-gray-50 bg-opacity-50;
+}
+
+.calendar-empty .icon {
+  @apply w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center;
+}
+
+.calendar-empty .title {
+  @apply text-sm font-medium text-gray-900 mb-1;
+}
+
+.calendar-empty .subtitle {
+  @apply text-xs text-gray-500 mb-3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .time-row {
+    grid-template-columns: 60px repeat(7, 1fr);
+  }
+  
+  .time-label {
+    @apply px-2 text-xs;
+  }
+  
+  .day-header {
+    @apply p-2;
+  }
+  
+  .day-header .day-number {
+    @apply text-base;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .calendar-grid {
+    @apply bg-gray-900 border-gray-700;
+  }
+  
+  .time-label {
+    @apply bg-gray-800 text-gray-400 border-gray-700;
+  }
+  
+  .day-header {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .day-header .day-name {
+    @apply text-gray-400;
+  }
+  
+  .day-header .day-number {
+    @apply text-gray-100;
+  }
+  
+  .time-cell {
+    @apply border-gray-700;
+  }
+  
+  .time-cell:hover {
+    @apply bg-blue-900 bg-opacity-50;
+  }
+}

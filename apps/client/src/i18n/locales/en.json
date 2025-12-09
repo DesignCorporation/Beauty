@@ -1,0 +1,1068 @@
+{
+  "welcome": "Welcome",
+  "login": {
+    "title": "Sign in to Beauty Platform",
+    "subtitle": "By continuing you agree to our terms of service.",
+    "termsLink": "terms of service",
+    "google": {
+      "title": "Sign in with Google",
+      "description": "Recommended login method for clients in Europe.",
+      "button": "Continue with Google"
+    },
+    "form": {
+      "email": {
+        "label": "Email address",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "••••••••"
+      },
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?"
+    },
+    "divider": "or",
+    "errors": {
+      "generic": "Login failed. Please try again.",
+      "credentials": "Incorrect email or password."
+    },
+    "demo": {
+      "title": "Demo credentials",
+      "description": "Quickly fill in the form with demo data.",
+      "button": "Fill in demo data",
+      "email": "client@example.com",
+      "password": "client123"
+    }
+  },
+  "register": {
+    "title": "Create an account",
+    "subtitle": "Join Beauty Platform to manage your salon visits and rewards.",
+    "loginPrompt": "Already have an account?",
+    "loginCta": "Sign in",
+    "form": {
+      "title": "Client registration",
+      "fields": {
+        "firstName": {
+          "label": "First name",
+          "placeholder": "Your first name"
+        },
+        "lastName": {
+          "label": "Last name",
+          "placeholder": "Your last name"
+        },
+        "email": {
+          "label": "Email address",
+          "placeholder": "you@example.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+48 123 456 789"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "••••••••"
+        },
+        "confirmPassword": {
+          "label": "Confirm password",
+          "placeholder": "••••••••"
+        }
+      },
+      "terms": {
+        "textPrefix": "I agree with the",
+        "termsLink": "terms of service",
+        "connector": "and",
+        "privacyLink": "privacy policy"
+      },
+      "submit": "Create account",
+      "submitting": "Creating account...",
+      "errors": {
+        "passwordMismatch": "Passwords do not match.",
+          "passwordLength": "Password must be at least 8 characters, include an uppercase letter and a number.",
+        "generic": "Registration failed.",
+        "genericRetry": "Registration failed. Please try again."
+      },
+      "successMessage": "Registration successful! Please sign in."
+    },
+    "demo": {
+      "title": "Demo data",
+      "button": "Fill in",
+      "description": "Fill every field with demo data for quick registration.",
+      "data": {
+        "firstName": "Anna",
+        "lastName": "Tester",
+        "email": "anna.test@example.com",
+        "phone": "+48 123 456 789",
+        "password": "test123"
+      }
+    }
+  },
+  "schedule": {
+    "unavailable": {
+      "appointmentConflict": "Booked with another appointment",
+      "salonClosed": "Salon closed",
+      "staffOff": "Specialist unavailable",
+      "outsideHours": "Outside working hours",
+      "default": "Slot unavailable"
+    },
+    "availability": {
+      "checking": "Checking slot availability...",
+      "loadFailed": "Couldn't load availability: {{error}}",
+      "slotAvailable": "This slot is available",
+      "slotUnavailableHint": "Choose another time or specialist.",
+      "legendTitle": "Availability legend",
+      "selectPrompt": "Select a service and specialist to see available slots.",
+      "timezoneLabel": "Time zone: {{timezone}}",
+      "dateMismatch": "Pick a date to check availability",
+      "slotNotFound": "Slot not available"
+    }
+  },
+  "client": {
+    "defaultName": "Client",
+    "portal": "Client Portal",
+    "nav": {
+      "dashboard": "Dashboard",
+      "mySalons": "My Salons",
+      "loyalty": "Loyalty Program",
+      "referral": "Referral Program",
+      "appointments": "My Appointments",
+      "notifications": "Notifications"
+    },
+    "phoneVerified": "Phone Verified",
+    "phoneNotVerified": "Phone not verified",
+    "guest": "Guest",
+    "myAccount": "My Account",
+    "verifyPhone": "Verify Phone",
+    "profile": "Profile",
+    "settings": "Settings",
+    "loggingOut": "Logging out...",
+    "logout": "Log out"
+  },
+  "pages": {
+    "dashboard": {
+      "loading": "Loading your data...",
+      "error": "Failed to load data",
+      "retry": "Try again",
+      "metrics": {
+        "salons": "My salons",
+        "points": "Bonus points",
+        "visits": "Total visits",
+        "spent": "Spent"
+      },
+      "upcomingAppointments": {
+        "title": "Upcoming appointments",
+        "noAppointments": "You have no scheduled appointments yet",
+        "chooseAndBook": "Choose a salon and book at a convenient time",
+        "chooseFirst": "First choose a salon from the catalog",
+        "bookButton": "Book (coming soon)",
+        "youHave": "You have {{count}} upcoming appointments"
+      },
+      "primarySalon": {
+        "title": "Primary salon",
+        "points": "bonus points",
+        "details": "Details"
+      },
+      "recentActivity": {
+        "title": "Recent visits",
+        "afterFirst": "After your first visit, history will appear here",
+        "totalVisits": "Total visits: {{count}} in {{salons}} salon(s)",
+        "viewAll": "View all salons"
+      },
+      "quickActions": {
+        "title": "Quick actions",
+        "mySalons": "My salons",
+        "addSalon": "Add salon",
+        "myAppointments": "My appointments",
+        "loyaltyProgram": "Loyalty program",
+        "inviteFriend": "Invite a friend"
+      },
+      "loyaltySummary": {
+        "title": "Loyalty program",
+        "totalPoints": "Total points",
+        "activeSalons": "Active salons",
+        "info": "1 point = €0.01 discount",
+        "usage": "Use points when paying for services (up to 50% of amount)",
+        "learnMore": "Learn more about the program"
+      },
+      "referralCta": {
+        "title": "Invite friends",
+        "description": "Get bonuses for every friend you invite!",
+        "comingSoon": "Coming soon"
+      }
+    },
+    "mySalons": {
+      "loading": "Loading your salons...",
+      "error": "Failed to load salons",
+      "retry": "Try again",
+      "actions": {
+        "addSalon": "Add salon"
+      },
+      "noSalons": {
+        "title": "You don't have any salons yet",
+        "description": "Ask the salon to share an invite code with you and enter it to connect instantly and start earning loyalty points.",
+        "addButton": "Add salon with invite code",
+        "helper": "You can get the code from the salon team or inside the SMS invite."
+      },
+      "salonCard": {
+        "primaryBadge": "Primary salon",
+        "stats": {
+          "points": "Points",
+          "visits": "Visits",
+          "spent": "Spent"
+        },
+        "lastVisit": "Last visit:",
+        "salonNotes": "Salon notes:",
+        "bookButton": "Book",
+        "clientSince": "Client since"
+      }
+    },
+    "addSalon": {
+      "badge": "Quick connect",
+      "title": "Add a salon using an invite code",
+      "subtitle": "Enter the code you received from the salon owner or scan the QR code to connect and start earning loyalty points immediately.",
+      "form": {
+        "title": "Invite code",
+        "description": "Codes are 6-12 characters long and do not contain O/0. Uppercase and lowercase letters are treated the same.",
+        "codeLabel": "Enter invite code",
+        "codePlaceholder": "ABC12345",
+        "helper": "Ask the salon to generate a QR/invite link via their CRM dashboard.",
+        "submit": "Add salon",
+        "submitting": "Connecting...",
+        "cancel": "Cancel"
+      },
+      "errors": {
+        "empty": "Enter an invite code to continue",
+        "invalid": "Invite code not found. Check the code and try again.",
+        "expired": "This invite code has expired. Ask the salon to generate a new one.",
+        "limit": "This invite code is no longer active. Request a new code from the salon.",
+        "alreadyAdded": "This salon is already in your list.",
+        "generic": "Failed to add salon. Please try again later."
+      },
+      "success": {
+        "title": "You're now connected with {{salon}}!",
+        "description": "The salon is added to your account. You can view upcoming appointments, earn loyalty points, and manage visits from My Salons.",
+        "viewSalons": "Go to My Salons",
+        "addAnother": "Add another salon",
+        "genericSalon": "Your salon"
+      }
+    },
+    "loyalty": {
+      "title": "Loyalty Program",
+      "subtitle": "Earn points for visits and get discounts on services",
+      "loading": "Loading loyalty program data...",
+      "error": "Failed to load data",
+      "retry": "Try again",
+      "noSalons": {
+        "title": "You are not registered in any salon yet",
+        "description": "Add a salon to start earning bonus points"
+      },
+      "balance": {
+        "title": "Your balance",
+        "points": "points",
+        "currentLevel": "Current level",
+        "nextLevel": "To next level",
+        "pointsNeeded": "{{count}} points",
+        "progress": "{{percent}}% to {{tier}}",
+        "discountAvailable": "Discount available",
+        "info": "1 point = €0.01 discount (up to 50% of service cost)"
+      },
+      "activeSalons": {
+        "title": "Active salons",
+        "salons": "salons",
+        "registered": "You are registered in {{count}} salon(s)"
+      },
+      "pointsBySalons": {
+        "title": "Points by salons",
+        "primarySalon": "Primary salon",
+        "points": "points"
+      },
+      "howToEarn": {
+        "title": "How to earn points",
+        "step1": {
+          "title": "Visit the salon",
+          "description": "Each visit brings points"
+        },
+        "step2": {
+          "title": "Spend more",
+          "description": "€1 spent = 1 point earned"
+        },
+        "step3": {
+          "title": "Level up",
+          "description": "Higher tier = more benefits"
+        }
+      },
+      "howToUse": {
+        "title": "How to use points",
+        "step1": {
+          "title": "When paying for services",
+          "description": "Use up to 50% of amount"
+        },
+        "step2": {
+          "title": "Conversion",
+          "description": "100 points = €1 discount"
+        },
+        "step3": {
+          "title": "Validity",
+          "description": "Points are valid indefinitely"
+        }
+      },
+      "tiers": {
+        "title": "Loyalty program levels",
+        "bronze": "Bronze",
+        "silver": "Silver",
+        "gold": "Gold",
+        "platinum": "Platinum",
+        "range": "{{min}} - {{max}} points"
+      },
+      "mockData": {
+        "salon1": {
+          "name": "Beauty Test Salon"
+        },
+        "salon2": {
+          "name": "Test Beauty Salon 2025"
+        }
+      }
+    },
+    "appointments": {
+      "title": "My Appointments",
+      "subtitle": "History and upcoming service appointments",
+      "loading": "Loading your appointments...",
+      "errorTitle": "Failed to load appointments",
+      "retry": "Try again",
+      "filters": {
+        "all": "All appointments",
+        "upcoming": "Upcoming",
+        "past": "Past"
+      },
+      "empty": {
+        "noUpcoming": "No upcoming appointments",
+        "noPast": "No past appointments",
+        "noAppointments": "You have no appointments yet",
+        "description": "Choose a salon and service to book an appointment",
+        "bookButton": "Book (coming soon)"
+      },
+      "card": {
+        "status": {
+          "confirmed": "Confirmed",
+          "pending": "Pending",
+          "completed": "Completed",
+          "cancelled": "Cancelled",
+          "noShow": "No show",
+          "inProgress": "In progress"
+        },
+        "cost": "Cost",
+        "details": "Details",
+        "minutes": "min",
+        "serviceFallback": "Service",
+        "staffFallback": "Any stylist",
+        "priceFallback": "—"
+      },
+      "devBanner": {
+        "title": "Management features coming soon",
+        "description": "Appointments are synced with the salon CRM. Editing (cancel/reschedule) will arrive in the next release.",
+        "features": "On the roadmap: cancel and reschedule appointments, detailed visit information."
+      },
+      "mockData": {
+        "appointment1": {
+          "salon": "Beauty Test Salon",
+          "service": "Haircut + Styling",
+          "staff": "Anna Ivanova"
+        },
+        "appointment2": {
+          "salon": "Beauty Test Salon",
+          "service": "Manicure",
+          "staff": "Maria Petrova"
+        },
+        "appointment3": {
+          "salon": "Test Beauty Salon 2025",
+          "service": "Hair coloring",
+          "staff": "Elena Sidorova"
+        },
+        "appointment4": {
+          "salon": "Beauty Test Salon",
+          "service": "Pedicure",
+          "staff": "Olga Kozlova"
+        },
+        "appointment5": {
+          "salon": "Test Beauty Salon 2025",
+          "service": "Face massage",
+          "staff": "Svetlana Novikova"
+        }
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Important updates and reminders",
+      "markAllRead": "Mark all as read",
+      "filters": {
+        "all": "All",
+        "unread": "Unread"
+      },
+      "empty": {
+        "noUnread": "No unread notifications",
+        "noNotifications": "No notifications",
+        "allRead": "All notifications are read",
+        "description": "Important updates and reminders will be displayed here"
+      },
+      "types": {
+        "appointment": "Appointments",
+        "loyalty": "Loyalty",
+        "referral": "Referrals",
+        "system": "System",
+        "payment": "Payment",
+        "message": "Message"
+      },
+      "actions": {
+        "markRead": "Mark as read",
+        "delete": "Delete"
+      },
+      "timeAgo": {
+        "justNow": "Just now",
+        "minutesAgo": "{{count}} min ago",
+        "hoursAgo": "{{count}} h ago",
+        "yesterday": "Yesterday",
+        "daysAgo": "{{count}} days ago"
+      },
+      "settings": {
+        "title": "Notification settings",
+        "email": {
+          "title": "Email notifications",
+          "description": "Appointment reminders and news"
+        },
+        "sms": {
+          "title": "SMS notifications",
+          "description": "Important reminders and confirmations"
+        },
+        "push": {
+          "title": "Push notifications",
+          "description": "Instant browser notifications"
+        },
+        "configureButton": "Configure (coming soon)"
+      },
+      "devBanner": {
+        "title": "Under development",
+        "description": "This page uses mock data. Backend for client notifications will be implemented in Issue #31 (Client System Backend).",
+        "features": "After backend implementation: real-time notifications, email/SMS settings, push notifications, notification history."
+      },
+      "mockData": {
+        "notification1": {
+          "title": "Appointment reminder",
+          "message": "Tomorrow at 14:00 you have an appointment \"Haircut + Styling\" at Beauty Test Salon."
+        },
+        "notification2": {
+          "title": "New loyalty tier!",
+          "message": "Congratulations! You reached SILVER level. Additional benefits are now available."
+        },
+        "notification3": {
+          "title": "Referral bonus",
+          "message": "Your friend Anna K. had her first visit. You received +100 points!"
+        },
+        "notification4": {
+          "title": "Profile update",
+          "message": "Please verify your phone number to receive SMS notifications."
+        },
+        "notification5": {
+          "title": "Appointment confirmed",
+          "message": "Your appointment on October 15 at 14:00 is confirmed. We are waiting for you!"
+        }
+      },
+      "loading": "Loading notifications...",
+      "view": "Open",
+      "viewAll": "View all notifications",
+      "status": {
+        "read": "Read",
+        "unread": "Unread"
+      },
+      "markAll": "Mark all as read"
+    },
+    "referral": {
+      "title": "Referral Program",
+      "subtitle": "Invite friends and earn bonus points together",
+      "stats": {
+        "invited": "Friends invited",
+        "active": "Active",
+        "pending": "Pending",
+        "earned": "Points earned"
+      },
+      "code": {
+        "title": "Your referral code",
+        "forFriends": "Code for friends:",
+        "copy": "Copy",
+        "copied": "Copied",
+        "link": "Referral link:"
+      },
+      "share": {
+        "email": "Share via email",
+        "whatsapp": "Share to WhatsApp",
+        "telegram": "Share to Telegram"
+      },
+      "shareSubject": "Invitation to Beauty Platform",
+      "shareMessage": "Join Beauty Platform and get bonuses! Use my referral code: {{code}}\n\n{{link}}",
+      "friends": {
+        "title": "Invited friends",
+        "empty": {
+          "title": "No invited friends yet",
+          "description": "Share your referral code to start earning bonuses"
+        },
+        "joined": "Joined:",
+        "status": {
+          "active": "Active",
+          "pending": "Pending"
+        },
+        "points": "+{{count}} points"
+      },
+      "howItWorks": {
+        "title": "How it works",
+        "step1": {
+          "title": "Invite a friend",
+          "description": "Share your code or link"
+        },
+        "step2": {
+          "title": "Friend registers",
+          "description": "+50 points for you"
+        },
+        "step3": {
+          "title": "First visit",
+          "description": "+100 points for both"
+        }
+      },
+      "rewards": {
+        "title": "Rewards",
+        "firstVisit": "Friend's first visit",
+        "registration": "Friend's registration",
+        "activityBonus": "Activity bonus",
+        "descriptions": {
+          "firstVisit": "When your friend makes their first salon visit",
+          "registration": "When friend registers using your link",
+          "activityBonus": "When friend makes 5 visits (one-time bonus)"
+        }
+      },
+      "rules": {
+        "title": "Program rules",
+        "rule1": "Points are credited after friend's first visit",
+        "rule2": "Points validity is unlimited",
+        "rule3": "Unlimited number of referrals",
+        "rule4": "Fair play - duplicates not allowed"
+      },
+      "devBanner": {
+        "title": "Under development",
+        "description": "This page uses mock data. Backend for referral system will be implemented in Issue #31 (Client System Backend - Referral Program).",
+        "features": "After backend implementation: unique code generation, referral tracking, automatic points accrual."
+      },
+      "mockData": {
+        "friend1": {
+          "name": "Anna K.",
+          "status": "active",
+          "email": "anna.k@example.com"
+        },
+        "friend2": {
+          "name": "Maria P.",
+          "status": "active",
+          "email": "maria.p@example.com"
+        },
+        "friend3": {
+          "name": "Ekaterina S.",
+          "status": "pending",
+          "email": "ekaterina.s@example.com"
+        },
+        "referralCode": "BEAUTY2025"
+      }
+    },
+    "completeProfile": {
+      "title": "Complete Profile Setup",
+      "stepBadge": "Step 2 of 2",
+      "subtitle": "Add your mobile phone number to receive appointment reminders and confirm login. We will send an SMS code to the selected number.",
+      "card": {
+        "title": "Phone verification"
+      },
+      "country": "Country",
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "123 456 789",
+        "hint": "Use international format. Example: +48 123 456 789"
+      },
+      "currentPhone": "Current number: {{phone}}",
+      "notConfirmed": "Number not confirmed yet",
+      "sendCode": "Send code",
+      "sending": "Sending...",
+      "otp": {
+        "label": "SMS code",
+        "placeholder": "••••••",
+        "hint": "Enter {{length}}-digit code. You have {{attempts}} attempts."
+      },
+      "resend": {
+        "wait": "Resend in {{time}}",
+        "again": "Send code again"
+      },
+      "attemptsLeft": "Attempts left: {{count}}",
+      "confirm": "Confirm phone",
+      "confirming": "Verifying...",
+      "errors": {
+        "invalidPhone": "Please enter a valid international phone number",
+        "sendFirst": "First send the code to your phone number",
+        "invalidCode": "Enter {{length}}-digit code from SMS"
+      },
+      "success": {
+        "codeSent": "Code sent. Check SMS and enter the code below.",
+        "phoneConfirmed": "Phone confirmed, updating data..."
+      },
+      "help": "Need help? Write to us at",
+      "errorGeneric": "Something went wrong. Please try again later.",
+      "unlimitedAttempts": "∞",
+      "countryOptions": {
+        "PL": "Poland (+48)",
+        "GB": "United Kingdom (+44)",
+        "DE": "Germany (+49)",
+        "LT": "Lithuania (+370)"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage your client portal preferences.",
+      "language": {
+        "title": "Interface language",
+        "description": "Choose the language used across the client portal.",
+        "select": "Select",
+        "note": "Changes apply immediately and will be remembered for your next visit.",
+        "success": "Language changed to {{language}}.",
+        "error": "We couldn’t change the language. Please try again.",
+        "languages": {
+          "en": {
+            "label": "English",
+            "native": "English"
+          },
+          "pl": {
+            "label": "Polish",
+            "native": "Polski"
+          },
+          "ru": {
+            "label": "Russian",
+            "native": "Русский"
+          },
+          "ua": {
+            "label": "Ukrainian",
+            "native": "Українська"
+          }
+        }
+      }
+    },
+    "profile": {
+      "title": "Profile",
+      "subtitle": "Manage your personal details, contact information, and communication preferences.",
+      "loading": "Loading your profile...",
+      "sections": {
+        "personal": {
+          "title": "Personal information",
+          "description": "Update your name, birthdate, and gender so salons can recognize you."
+        },
+        "contact": {
+          "title": "Contact & verification",
+          "description": "Your email is used for login. Keep your phone number up to date for SMS reminders."
+        },
+        "preferences": {
+          "title": "Preferences",
+          "description": "Choose how Beauty Platform communicates with you."
+        }
+      },
+      "fields": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "birthdate": "Birthdate",
+        "gender": "Gender",
+        "email": "Email",
+        "phone": "Phone number",
+        "phonePlaceholder": "Enter your phone number",
+        "phoneHint": "We use your phone for verification and appointment reminders.",
+        "language": "Preferred language",
+        "marketingConsent": "Receive marketing updates",
+        "marketingConsentDescription": "Allow salons to send you news, special offers, and loyalty updates."
+      },
+      "gender": {
+        "placeholder": "Select gender",
+        "options": {
+          "unspecified": "Not specified",
+          "female": "Female",
+          "male": "Male",
+          "other": "Other",
+          "preferNot": "Prefer not to say"
+        }
+      },
+      "language": {
+        "placeholder": "Select language",
+        "options": {
+          "RU": "Russian",
+          "EN": "English",
+          "PL": "Polish",
+          "UA": "Ukrainian"
+        }
+      },
+      "status": {
+        "phoneVerified": "Phone verified",
+        "phoneNotVerified": "Phone not verified",
+        "phoneVerifiedAt": "Verified on {{date}}",
+        "phoneNotVerifiedHint": "Please confirm your phone number to receive SMS reminders and booking updates."
+      },
+      "account": {
+        "title": "Account overview",
+        "description": "Meta information about your Beauty Platform account.",
+        "joined": "Registered",
+        "source": "Registration source",
+        "notAvailable": "Not available",
+        "sourceLabels": {
+          "google": "Google OAuth",
+          "walkIn": "Created by salon",
+          "referral": "Referral program",
+          "instagram": "Instagram",
+          "facebook": "Facebook",
+          "website": "Salon website",
+          "other": "Other"
+        }
+      },
+      "avatar": {
+        "title": "Profile photo",
+        "description": "Upload a photo so salons and stylists recognise you.",
+        "hint": "Supported formats: JPG, PNG, SVG or WebP up to 3MB.",
+        "upload": "Upload photo",
+        "change": "Change photo",
+        "uploading": "Uploading...",
+        "remove": "Remove photo",
+        "removing": "Removing...",
+        "feedback": {
+          "success": "Profile photo updated.",
+          "removed": "Profile photo removed."
+        },
+        "errors": {
+          "type": "Unsupported file type. Please use JPG, PNG, SVG or WebP.",
+          "size": "File is too large. Maximum allowed size is 3MB.",
+          "generic": "Failed to update photo. Please try again.",
+          "noUser": "Profile data is not loaded yet. Please try again in a moment."
+        }
+      },
+      "actions": {
+        "verifyPhone": "Verify phone",
+        "updatePhone": "Manage phone",
+        "saving": "Saving...",
+        "save": "Save changes"
+      },
+      "feedback": {
+        "success": "Profile updated successfully.",
+        "error": "Failed to update profile. Please try again."
+      },
+      "validation": {
+        "namesRequired": "First name and last name are required."
+      }
+    },
+    "login": {
+      "brand": "Beauty Design Corp",
+      "tagline": "Beauty Design Corp • Client Portal",
+      "brandLine1": "Beauty Design Corp",
+      "brandLine2": "Client Portal",
+      "title": "Sign in to your account",
+      "subtitle": "Stay in sync with your salons, rewards and appointments.",
+      "termsLink": "Terms of Service",
+      "socialTitle": "Quick sign in",
+      "socialDescription": "Use your Google account to sign in",
+      "googleButton": "Continue with Google",
+      "divider": "or",
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password"
+      },
+      "forgotPassword": "Forgot password?",
+      "fillDemo": "Fill with demo data",
+      "loginButton": "Sign In",
+      "loginButtonLoading": "Signing in...",
+      "demoTitle": "Demo access",
+      "demoDescription": "Use these credentials to explore the client portal",
+      "demo": {
+        "email": "client@example.com",
+        "password": "client123"
+      },
+      "noAccount": "Don't have an account?",
+      "registerLink": "Register now",
+      "hero": {
+        "highlight": "Beauty Design Corp • Client Portal",
+        "titleLine1": "Beauty",
+        "titleLine2": "starts",
+        "titleLine3": "with you",
+        "subtitle": "Book spa rituals, collect rewards and stay close to your favourite salons.",
+        "quote": "I keep all visits and bonuses in one place — zero stress.",
+        "author": "Maria, loyal guest",
+        "role": "Beauty Design Corp member",
+        "stats": {
+          "rating": "Average guest rating",
+          "salons": "Partner salons",
+          "rewards": "Rewards redeemed"
+        }
+      },
+      "errors": {
+        "unknownError": "Something went wrong. Please try again.",
+        "invalidCredentials": "Invalid email or password.",
+        "networkError": "Network error. Please try again."
+      }
+    },
+    "register": {
+      "tagline": "Beauty Design Corp • Client Portal",
+      "brandLine1": "Beauty Design Corp",
+      "brandLine2": "Client Portal",
+      "title": "Create your account",
+      "subtitle": "Join Beauty Design Corp and keep every ritual, reward and booking together.",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "socialTitle": "Quick sign up",
+      "socialDescription": "Use your Google account to sign up instantly",
+      "googleButton": "Continue with Google",
+      "divider": "or",
+      "firstName": {
+        "label": "First name",
+        "placeholder": "Anna"
+      },
+      "lastName": {
+        "label": "Last name",
+        "placeholder": "Tester"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Create a strong password",
+        "helper": "Minimum 8 characters"
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "placeholder": "Re-enter your password"
+      },
+      "terms": {
+        "text": "I agree to the",
+        "termsLink": "Terms of Service",
+        "privacyLink": "Privacy Policy"
+      },
+      "and": "and",
+      "registerButton": "Create account",
+      "registerButtonLoading": "Creating account...",
+      "fillDemo": "Fill with demo data",
+      "demoTitle": "Demo data",
+      "demoDescription": "Click below to auto-fill the form for testing",
+      "demo": {
+        "data": {
+          "firstName": "Anna",
+          "lastName": "Tester",
+          "email": "anna.test@example.com",
+          "password": "test1234"
+        }
+      },
+      "support": "Need assistance? Contact support@beauty-platform.com",
+      "successMessage": "Registration successful! Please sign in.",
+      "hero": {
+        "highlight": "Beauty Design Corp • Membership",
+        "titleLine1": "Join the",
+        "titleLine2": "inner circle",
+        "titleLine3": "of beauty",
+        "subtitle": "Early booking access, private events and effortless reward tracking in one elegant portal.",
+        "quote": "Beauty Design Corp made loyalty effortless — bonuses appear right after every visit.",
+        "author": "Elena, spa connoisseur",
+        "role": "Beauty Design Corp guest",
+        "stats": {
+          "members": "Active members",
+          "rituals": "Rituals completed",
+          "rewards": "Rewards redeemed"
+        }
+      },
+      "errors": {
+        "unknownError": "Something went wrong. Please try again.",
+        "emailExists": "This email is already registered.",
+        "weakPassword": "Password must be at least 8 characters.",
+        "networkError": "Network error. Please try again.",
+        "nameRequired": "First and last name are required.",
+        "passwordMismatch": "Passwords do not match.",
+        "termsRequired": "You must accept the terms to continue."
+      }
+    },
+    "home": {
+      "brand": "Beauty Platform",
+      "header": {
+        "login": "Login",
+        "register": "Register"
+      },
+      "hero": {
+        "title": "Book your favorite beauty salon",
+        "subtitle": "Find the best salons, book online and enjoy quality services from professional specialists",
+        "cta": "Start booking"
+      },
+      "features": {
+        "title": "Why choose us",
+        "booking": {
+          "title": "Online booking",
+          "description": "Book with a specialist at a convenient time without calls and waiting"
+        },
+        "masters": {
+          "title": "Best specialists",
+          "description": "We work only with verified salons and qualified professionals"
+        },
+        "reviews": {
+          "title": "Client reviews",
+          "description": "Read real reviews and choose the best specialist by rating"
+        }
+      },
+      "cta": {
+        "title": "Ready to book a procedure?",
+        "subtitle": "Create an account and find the perfect beauty salon near you",
+        "button": "Register now"
+      },
+      "footer": {
+        "copyright": "© 2025 Beauty Platform. Your path to beauty starts here."
+      }
+    },
+    "salonDetails": {
+      "back": "Back to My Salons",
+      "loading": "Loading salon details...",
+      "error": {
+        "title": "We couldn't load this salon",
+        "description": "Please check your connection and try again."
+      },
+      "notFound": {
+        "title": "Salon not found",
+        "description": "We couldn't find any information about this salon."
+      },
+      "joinedAt": "Client since",
+      "rating": "{{rating}} rating · {{count}} reviews",
+      "services": {
+        "title": "Services",
+        "subtitle": "Choose a treatment to start your booking.",
+        "noDescription": "Details will be available soon.",
+        "duration": "{{duration}} min",
+        "bookAction": "Book this service",
+        "empty": "The salon has not published services yet. Please check again later."
+      },
+      "actions": {
+        "bookFallback": "Book an appointment"
+      }
+    },
+    "booking": {
+      "title": "Book an appointment",
+      "subtitle": "Pick the service, specialist and time that work best for you.",
+      "back": "Back",
+      "sections": {
+        "client": {
+          "title": "Your profile",
+          "description": "We pre-fill your details from the client portal."
+        },
+        "service": {
+          "title": "Service",
+          "description": "Select a service to calculate duration and price."
+        },
+        "staff": {
+          "title": "Specialist",
+          "description": "Pick the specialist you want to work with."
+        },
+        "schedule": {
+          "title": "Schedule",
+          "description": "Choose the desired date and start time."
+        },
+        "notes": {
+          "title": "Notes for the salon",
+          "placeholder": "Add preferences, allergies or other important details (optional)."
+        },
+        "payment": {
+          "title": "Payment",
+          "description": "Choose how you would like to pay today."
+        }
+      },
+      "labels": {
+        "name": "Full name",
+        "email": "Email",
+        "phone": "Phone",
+        "selectService": "Select service",
+        "selectStaff": "Select specialist",
+        "date": "Date",
+        "startTime": "Start time",
+        "endTime": "End time"
+      },
+      "placeholders": {
+        "service": "Choose a service",
+        "staff": "Choose a specialist",
+        "startTime": "Choose a start time"
+      },
+      "helpers": {
+        "duration": "Estimated duration: {{duration}} minutes"
+      },
+      "messages": {
+        "loadingServices": "Loading services...",
+        "loadingStaff": "Loading specialists...",
+        "availabilityLoading": "Checking availability...",
+        "availabilityError": "We couldn't load availability. Please try again.",
+        "noSlotsTitle": "No available slots",
+        "noSlots": "There are no available times on this day. Please pick another date.",
+        "validation": {
+          "service": "Please choose a service.",
+          "staff": "Please choose a specialist.",
+          "date": "Please choose a date.",
+          "time": "Please choose a start time.",
+          "tenant": "Salon identifier is missing. Please open the booking from the salon page.",
+          "email": "We could not detect your email. Please re-login and try again."
+        },
+        "conflict": "This time slot is no longer available. Please choose another slot.",
+        "slotUnavailableTitle": "Time slot unavailable",
+        "success": "Appointment booked successfully! Redirecting to your upcoming visits...",
+        "errorGeneric": "We couldn't create the appointment. Please try again in a moment.",
+        "paymentIntentError": "Could not initialize card payment. Please try again later.",
+        "paymentFailed": "Card payment failed. Please try another card or payment method.",
+        "paymentIncomplete": "Payment was not completed. Please try again.",
+        "invalidPrice": "Selected service has no price configured."
+      },
+      "alerts": {
+        "validationTitle": "Check the form",
+        "errorTitle": "Something went wrong",
+        "successTitle": "All set!"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "submit": "Confirm booking",
+        "submitting": "Saving..."
+      },
+      "payment": {
+        "methods": {
+          "card": "Card (Stripe)",
+          "cash": "Pay with cash"
+        },
+        "summary": {
+          "service": "Service price",
+          "total": "Total due today"
+        },
+        "status": {
+          "preparing": "Preparing secure payment...",
+          "processing": "Processing payment..."
+        },
+        "cardUnavailable": "Card payments are temporarily unavailable."
+      }
+    }
+  },
+  "common": {
+    "loyaltyTiers": {
+      "bronze": "Bronze",
+      "silver": "Silver",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "loading": "Loading...",
+    "notAssigned": "Not assigned",
+    "notAvailable": "Not available"
+  },
+  "email": "Email",
+  "password": "Password",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "phone": "Phone",
+  "dashboard": "Dashboard",
+  "bookings": "Bookings",
+  "favorites": "Favorites",
+  "profile": "Profile",
+  "logout": "Logout"
+}

@@ -1,0 +1,1840 @@
+{
+  "common": {
+    "loading": "Ładowanie...",
+    "error": "Błąd",
+    "success": "Sukces",
+    "cancel": "Anuluj",
+    "save": "Zapisz",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "add": "Dodaj",
+    "close": "Zamknij",
+    "yes": "Tak",
+    "no": "Nie",
+    "ok": "OK",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "previous": "Poprzedni",
+    "search": "Szukaj",
+    "filter": "Filtruj",
+    "clear": "Wyczyść",
+    "reset": "Resetuj",
+    "refresh": "Odśwież",
+    "open": "Otwórz",
+    "find": "Znajdź",
+    "active": "Aktywni",
+    "inactive": "Nieaktywni",
+    "noResults": "Brak wyników",
+    "tryDifferentFilters": "Spróbuj zmienić filtry wyszukiwania",
+    "weekdays": {
+      "monday": "Poniedziałek",
+      "tuesday": "Wtorek",
+      "wednesday": "Środa",
+      "thursday": "Czwartek",
+      "friday": "Piątek",
+      "saturday": "Sobota",
+      "sunday": "Niedziela"
+    }
+  },
+  "calendar": {
+    "loading": "Ładowanie kalendarza...",
+    "weekdays": {
+      "short": {
+        "monday": "Pon",
+        "tuesday": "Wt",
+        "wednesday": "Śr",
+        "thursday": "Czw",
+        "friday": "Pt",
+        "saturday": "Sob",
+        "sunday": "Nie"
+      }
+    }
+  },
+  "schedule": {
+    "common": {
+      "timezoneLabel": "Strefa czasowa: {{timezone}}",
+      "start": "Start",
+      "end": "Koniec",
+      "off": "—",
+      "offDay": "Dzień wolny",
+      "working": "Dzień pracujący"
+    },
+    "unavailable": {
+      "appointmentConflict": "Zarezerwowane dla innego terminu",
+      "salonClosed": "Salon zamknięty",
+      "staffOff": "Pracownik niedostępny",
+      "outsideHours": "Poza godzinami pracy",
+      "default": "Niedostępne"
+    },
+    "availability": {
+      "checking": "Sprawdzanie dostępności slotów...",
+      "loadFailed": "Nie udało się pobrać dostępności: {{error}}",
+      "slotAvailable": "Ten termin jest dostępny",
+      "slotUnavailableHint": "Wybierz inny termin lub pracownika.",
+      "legendTitle": "Legenda dostępności",
+      "selectPrompt": "Wybierz usługi i pracownika, aby sprawdzić dostępność slotów.",
+      "timezoneLabel": "Strefa czasowa: {{timezone}}",
+      "dateMismatch": "Wybierz datę, aby sprawdzić dostępność",
+      "slotNotFound": "Slot nie jest dostępny"
+    },
+    "working_hours": "Godziny pracy",
+    "working_hours_legend": "Ustaw godziny pracy na każdy dzień tygodnia",
+    "start_time_aria": "Godzina rozpoczęcia dla {{day}}",
+    "end_time_aria": "Godzina zakończenia dla {{day}}",
+    "is_working_day_aria": "Czy {{day}} jest dniem pracującym?",
+    "save_schedule": "Zapisz grafik",
+    "cancel": "Anuluj",
+    "time_format_hint": "Format: HH:mm (24-godzinny)",
+    "field_required": "To pole jest wymagane",
+    "error_invalid_time": "Nieprawidłowy format czasu (HH:mm)",
+    "error_end_before_start": "Godzina zakończenia musi być późniejsza od rozpoczęcia",
+    "error_overlap": "Godziny nachodzą na inny przedział"
+  },
+  "app": {
+    "title": "Beauty CRM",
+    "subtitle": "Salon Piękności",
+    "adminProfile": "Administrator",
+    "adminEmail": "admin@salon.com"
+  },
+  "navigation": {
+    "dashboard": "Panel główny",
+    "calendar": "Kalendarz",
+    "services": "Usługi",
+    "clients": "Klienci",
+    "team": "Zespół",
+    "salon": "Salon",
+    "payments": "Płatności",
+    "analytics": "Analityka",
+    "settings": "Ustawienia",
+    "salonSettings": "Ustawienia salonu",
+    "help": "Pomoc",
+    "userSettings": "Ustawienia użytkownika"
+  },
+  "salonSettings": {
+    "schedule": {
+      "title": "Godziny pracy salonu",
+      "subtitle": "Te godziny wykorzystuje kalendarz i portal klienta.",
+      "help": "Po zapisaniu niedostępne terminy zostaną ukryte.",
+      "unsaved": "Niezapisane zmiany",
+      "synced": "Grafik jest zsynchronizowany",
+      "reset": "Resetuj",
+      "save": "Zapisz grafik",
+      "success": "Godziny pracy zaktualizowane",
+      "error": "Nie udało się zapisać godzin pracy",
+      "resetToast": "Zmiany grafiku cofnięto"
+    }
+  },
+  "tenantSwitcher": {
+    "dropdown": {
+      "current": "Aktualny salon",
+      "other": "Pozostałe salony",
+      "noOther": "Brak dodatkowych salonów",
+      "actions": "Akcje"
+    },
+    "actions": {
+      "register": "Zarejestruj nowy salon",
+      "inviteOwner": "Aby dodać właściciela, przejdź do ustawień salonu",
+      "openSettings": "Ustawienia salonu",
+      "addExisting": "Dodaj istniejący salon",
+      "theme": "Motyw"
+    },
+    "toast": {
+      "loading": "Przełączanie salonu...",
+      "switched": "Salon przełączony",
+      "error": "Nie udało się przełączyć salonu"
+    },
+    "roles": {
+      "OWNER": "Właściciel",
+      "MANAGER": "Menedżer",
+      "STAFF": "Pracownik",
+      "RECEPTIONIST": "Recepcjonista",
+      "ACCOUNTANT": "Księgowy",
+      "owner": "Właściciel",
+      "manager": "Menedżer",
+      "staff": "Pracownik",
+      "receptionist": "Recepcjonista",
+      "accountant": "Księgowy"
+    }
+  },
+  "dashboard": {
+    "welcome": "Witamy w Beauty CRM!",
+    "subtitle": "Panel zarządzania salonem piękności",
+    "stats": {
+      "appointmentsToday": "Wizyty dzisiaj",
+      "activeClients": "Aktywni klienci",
+      "monthlyRevenue": "Przychód miesięczny",
+      "staffOccupancy": "Obłożenie personelu"
+    },
+    "quickActions": "Szybkie działania",
+    "quickActionsDescription": "Główne operacje systemu CRM",
+    "newAppointment": "Nowa wizyta",
+    "addClient": "Dodaj klienta",
+    "exportCsv": "Eksport CSV",
+    "exportXlsx": "Eksport XLSX",
+    "exportSuccess": "Plik z klientami jest gotowy",
+    "exportError": "Nie udało się wyeksportować klientów",
+    "exporting": "Eksportowanie...",
+    "reportsAnalytics": "Raporty i analityka",
+    "clientSearch": "Wyszukiwanie klientów",
+    "clientSearchDescription": "Znajdź klienta po imieniu lub telefonie",
+    "clientSearchPlaceholder": "Wprowadź imię lub numer telefonu...",
+    "findClient": "Znajdź klienta",
+    "recentClients": "Ostatni klienci:",
+    "emptyState": {
+      "title": "Utwórz swój pierwszy salon",
+      "subtitle": "Jesteś zalogowany, ale musisz ukończyć onboarding, aby odblokować CRM.",
+      "stepsTitle": "Co dalej?",
+      "stepsSubtitle": "Kreator w kilka minut skonfiguruje salon, usługi i zespół.",
+      "steps": {
+        "owners": "Potwierdź dane właściciela i zweryfikuj hasło",
+        "ownersDescription": "E-mail pobieramy z Twojego konta i pozostaje on zablokowany ze względów bezpieczeństwa.",
+        "salon": "Opisz salon i wybierz świadczone usługi",
+        "salonDescription": "Dobierzemy kategorie i presety na podstawie wybranych kierunków.",
+        "finish": "Uzyskaj pełny dostęp do CRM",
+        "finishDescription": "Po zakończeniu kreatora zostaniesz przeniesiony bezpośrednio do panelu."
+      },
+      "cta": "Utwórz salon"
+    }
+  },
+  "calendar": {
+    "title": "Kalendarz",
+    "subtitle": "Zarządzanie wizytami",
+    "monthNames": [
+      "Styczeń",
+      "Luty",
+      "Marzec",
+      "Kwiecień",
+      "Maj",
+      "Czerwiec",
+      "Lipiec",
+      "Sierpień",
+      "Wrzesień",
+      "Październik",
+      "Listopad",
+      "Grudzień"
+    ],
+    "dayNames": [
+      "Niedziela",
+      "Poniedziałek",
+      "Wtorek",
+      "Środa",
+      "Czwartek",
+      "Piątek",
+      "Sobota"
+    ],
+    "dayNamesShort": [
+      "Nie",
+      "Pon",
+      "Wto",
+      "Śro",
+      "Czw",
+      "Pią",
+      "Sob"
+    ],
+    "today": "Dzisiaj",
+    "newAppointment": "Nowa wizyta",
+    "noAppointments": "Brak wizyt na ten dzień",
+    "filters": "Filtry",
+    "views": {
+      "day": "Dzień",
+      "week": "Tydzień",
+      "month": "Miesiąc",
+      "staff": "Według pracowników"
+    },
+    "errorLoading": "Nie udało się załadować wizyt",
+    "offlineMode": "Kalendarz działa w trybie offline",
+    "retry": "Spróbuj ponownie"
+  },
+  "services": {
+    "title": "Usługi",
+    "subtitle": "Zarządzanie usługami salonu",
+    "addService": "Dodaj usługę",
+    "editService": "Edytuj usługę",
+    "deleteService": "Usuń usługę",
+    "serviceName": "Nazwa usługi",
+    "servicePrice": "Cena",
+    "serviceDuration": "Czas trwania",
+    "serviceDescription": "Opis",
+    "serviceCategory": "Kategoria",
+    "emptyTitle": "Brak usług",
+    "emptyDescription": "Dodaj pierwszą usługę, aby rozpocząć umawianie wizyt."
+  },
+  "serviceCategories": {
+    "title": "Kategorie usług",
+    "subtitle": "Aktywnych usług: {{count}}",
+    "actions": {
+      "addCategory": "Dodaj kategorię",
+      "addSubcategory": "Dodaj podkategorię",
+      "edit": "Edytuj",
+      "delete": "Usuń",
+      "toggleCategory": "Przełącz kategorię",
+      "toggleSubcategory": "Przełącz podkategorię"
+    },
+    "status": {
+      "active": "Aktywna",
+      "disabled": "Wyłączona"
+    },
+    "badges": {
+      "defaultCategory": "Kategoria systemowa",
+      "defaultSubcategory": "Podkategoria systemowa",
+      "inactive": "Ukryta"
+    },
+    "meta": {
+      "servicesCount": "Usługi: {{count}}"
+    },
+    "empty": {
+      "subcategories": "Brak podkategorii — dodaj pierwszą, aby pogrupować usługi."
+    },
+    "drag": {
+      "category": "Przeciągnij kategorię, aby zmienić kolejność",
+      "subcategory": "Przeciągnij podkategorię, aby zmienić kolejność"
+    },
+    "confirm": {
+      "deleteCategory": "Usunąć kategorię „{{name}}”? Wszystkie usługi trafią do sekcji „Bez kategorii”.",
+      "deleteSubcategory": "Usunąć podkategorię „{{name}}” w kategorii „{{category}}”?"
+    },
+    "dialog": {
+      "editCategoryTitle": "Edycja kategorii",
+      "createCategoryTitle": "Nowa kategoria usług",
+      "editCategoryDescription": "Zaktualizuj nazwę, ikonę lub status kategorii.",
+      "createCategoryDescription": "Utwórz kategorię, aby grupować usługi według specjalizacji.",
+      "editSubcategoryTitle": "Edycja podkategorii w „{{category}}”",
+      "createSubcategoryTitle": "Nowa podkategoria w „{{category}}”",
+      "editSubcategoryDescription": "Zmień nazwę lub status podkategorii.",
+      "createSubcategoryDescription": "Dodaj podkategorię, aby dokładniej segmentować usługi."
+    },
+    "form": {
+      "save": "Zapisz",
+      "create": "Utwórz",
+      "cancel": "Anuluj",
+      "name": "Nazwa",
+      "namePlaceholder": "np. Pielęgnacja włosów",
+      "subcategoryName": "Nazwa podkategorii",
+      "subcategoryPlaceholder": "np. Koloryzacja",
+      "icon": "Ikona (opcjonalnie)",
+      "iconHint": "Krótka nazwa ikony lub emoji",
+      "iconPlaceholder": "np. scissors",
+      "isActiveLabel": "Kategoria dostępna",
+      "isActiveHint": "Wyłączone kategorie są ukryte na liście usług i w portalu klienta.",
+      "errors": {
+        "requiredName": "Wprowadź nazwę",
+        "generic": "Nie udało się zapisać danych. Spróbuj ponownie."
+      }
+    },
+    "toast": {
+      "categoryUpdated": "Kategoria „{{name}}” została zaktualizowana",
+      "categoryCreated": "Kategoria „{{name}}” została utworzona",
+      "categorySaveError": "Nie udało się zapisać kategorii",
+      "categoryDeleted": "Kategoria „{{name}}” została usunięta",
+      "categoryDeleteError": "Nie udało się usunąć kategorii",
+      "categoryEnabled": "Kategoria „{{name}}” została włączona",
+      "categoryDisabled": "Kategoria „{{name}}” została wyłączona",
+      "categoryToggleError": "Nie udało się zmienić statusu kategorii",
+      "subcategoryUpdated": "Podkategoria „{{name}}” została zaktualizowana",
+      "subcategoryCreated": "Podkategoria „{{name}}” została utworzona",
+      "subcategorySaveError": "Nie udało się zapisać podkategorii",
+      "subcategoryDeleted": "Podkategoria „{{name}}” została usunięta",
+      "subcategoryDeleteError": "Nie udało się usunąć podkategorii",
+      "subcategoryEnabled": "Podkategoria „{{name}}” została włączona",
+      "subcategoryDisabled": "Podkategoria „{{name}}” została wyłączona",
+      "subcategoryToggleError": "Nie udało się zmienić statusu podkategorii",
+      "orderSaved": "Kolejność kategorii została zaktualizowana",
+      "orderError": "Nie udało się zapisać kolejności kategorii",
+      "subcategoryOrderSaved": "Kolejność podkategorii została zaktualizowana",
+      "subcategoryOrderError": "Nie udało się zapisać kolejności podkategorii"
+    }
+  },
+  "clients": {
+    "title": "Klienci",
+    "subtitle": "Zarządzanie bazą klientów",
+    "addClient": "Dodaj klienta",
+    "importButton": "Import",
+    "import": {
+      "title": "Import klientów",
+      "description": "Prześlij plik CSV lub XLSX, aby zweryfikować dane przed importem do CRM.",
+      "uploadTitle": "Wybierz plik CSV lub XLSX",
+      "uploadHint": "Maksymalny rozmiar pliku to 5 MB. Obsługiwane są CSV (UTF-8) oraz XLSX.",
+      "selectedFile": "Wybrany plik",
+      "fileRequired": "Najpierw wybierz plik",
+      "uploading": "Wysyłanie...",
+      "startCheck": "Sprawdź plik",
+      "resetButton": "Resetuj",
+      "previewReady": "Plik został sprawdzony",
+      "previewFailed": "Nie udało się przetworzyć pliku. Sprawdź format i spróbuj ponownie.",
+      "previewSubtitle": "Wstępna weryfikacja zakończona",
+      "previewDescription": "Przejrzyj ostrzeżenia i błędy, aby przygotować plik do importu.",
+      "readyRowsTitle": "Wiersze do importu",
+      "readyRowsDescription": "Domyślnie importowane są tylko wiersze bez błędów. Możesz włączyć wiersze z ostrzeżeniami.",
+      "includeWarnings": "Importuj wiersze z ostrzeżeniami",
+      "commitButton": "Importuj gotowe wiersze",
+      "commitInProgress": "Importowanie...",
+      "commitSuccess": "Import zakończony",
+      "commitFailed": "Nie udało się zakończyć importu.",
+      "commitSummaryTitle": "Import zakończony",
+      "commitSummary": "Zaimportowano: {{imported}}, pominięto: {{skipped}}",
+      "commitResultTitle": "Wyniki według wierszy",
+      "commitResultHint": "Wyświetlono pierwsze {{count}} wierszy",
+      "commitReasonTitle": "Powód",
+      "commitReasonImported": "Utworzono nowego klienta",
+      "commitReasons": {
+        "NAME_REQUIRED": "Brak imienia i nazwiska",
+        "DUPLICATE_EMAIL": "Email już istnieje",
+        "DUPLICATE_PHONE": "Telefon już istnieje",
+        "DUPLICATE_CONSTRAINT": "Naruszenie unikalności",
+        "UNKNOWN_ERROR": "Nieznany błąd"
+      },
+      "previewTableTitle": "Pierwsze wiersze pliku",
+      "previewLimited": "Wyświetlono {{count}} z {{total}} wierszy",
+      "previewFull": "Wyświetlono wszystkie {{count}} wiersze",
+      "chooseAnother": "Wybierz inny plik",
+      "table": {
+        "name": "Imię i nazwisko",
+        "email": "Email",
+        "phone": "Telefon",
+        "status": "Status",
+        "issues": "Uwagi"
+      },
+      "noIssues": "Brak uwag",
+      "status": {
+        "ready": "Gotowe",
+        "warning": "Sprawdź",
+        "error": "Błąd"
+      },
+      "summary": {
+        "total": "Łącznie wierszy",
+        "ready": "Gotowe do importu",
+        "warnings": "Wymaga uwagi",
+        "errors": "Błędy",
+        "duplicates": "Duplikaty w bazie"
+      },
+      "nextStepTitle": "Kolejny krok",
+      "nextStepDescription": "Końcowy import z obsługą duplikatów będzie dostępny w następnej iteracji.",
+      "finishButton": "Gotowe",
+      "fileRequiredShort": "Wybierz plik",
+      "noData": "Brak danych"
+    },
+    "editClient": "Edytuj klienta",
+    "deleteClient": "Usuń klienta",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "phone": "Telefon",
+    "address": "Adres",
+    "birthday": "Data urodzenia",
+    "notes": "Notatki",
+    "lastVisit": "Ostatnia wizyta",
+    "totalVisits": "Łączna liczba wizyt",
+    "searchPlaceholder": "Szukaj klientów po imieniu, e-mailu lub telefonie...",
+    "filters": "Filtry",
+    "loading": "Ładowanie klientów...",
+    "errorLoading": "Błąd ładowania",
+    "retry": "Spróbuj ponownie",
+    "noClients": "Brak klientów",
+    "noClientsFound": "Nie znaleziono klientów",
+    "noResults": "Brak wyników dla \"{{query}}\"",
+    "emptyStateMessage": "Dodaj pierwszego klienta, aby rozpocząć",
+    "edit": "Edytuj",
+    "statusActive": "Aktywny",
+    "statusInactive": "Nieaktywny",
+    "notRecorded": "Brak danych",
+    "registrationDate": "Data rejestracji",
+    "visits": "Wizyty",
+    "bookAppointment": "Umów wizytę",
+    "call": "Zadzwoń"
+  },
+  "team": {
+    "title": "Zespół",
+    "subtitle": "Zarządzanie personelem salonu",
+    "addEmployee": "Dodaj pracownika",
+    "inviteEmployee": "Zaproś",
+    "addMember": "Dodaj członka zespołu",
+    "editMember": "Edytuj członka zespołu",
+    "deleteMember": "Usuń członka zespołu",
+    "memberName": "Imię",
+    "memberRole": "Rola",
+    "memberEmail": "Email",
+    "memberPhone": "Telefon",
+    "memberSpecialty": "Specjalizacja",
+    "memberSchedule": "Harmonogram",
+    "search": "Szukaj pracowników...",
+    "filterByRole": "Filtruj według roli",
+    "filterByStatus": "Filtruj według statusu",
+    "allRoles": "Wszystkie role",
+    "allStatuses": "Wszystkie statusy",
+    "viewProfile": "Zobacz profil",
+    "editProfile": "Edytuj",
+    "deactivate": "Dezaktywuj",
+    "noEmployees": "Brak pracowników",
+    "noEmployeesDesc": "Dodaj pierwszego pracownika aby rozpocząć",
+    "roles": {
+      "SALON_OWNER": "Właściciel salonu",
+      "MANAGER": "Menedżer",
+      "STAFF_MEMBER": "Pracownik",
+      "RECEPTIONIST": "Recepcjonista",
+      "ACCOUNTANT": "Księgowy"
+    },
+    "reviews": "opinii",
+    "services": "Usług",
+    "years": "Lat",
+    "growth": "Wzrost",
+    "online": "Online",
+    "languages": "Języki",
+    "specialties": {
+      "hair": "Fryzjerstwo",
+      "nails": "Manicure",
+      "makeup": "Makijaż",
+      "massage": "Masaż",
+      "skincare": "Pielęgnacja skóry"
+    },
+    "filters": {
+      "allStatuses": "Wszystkie statusy",
+      "allRoles": "Wszystkie role",
+      "role": "Rola",
+      "status": "Status",
+      "toggle": "Filtry"
+    },
+    "searchPlaceholder": "Szukaj po imieniu lub e-mailu",
+    "error": {
+      "title": "Nie udało się załadować zespołu",
+      "retry": "Spróbuj ponownie"
+    },
+    "empty": {
+      "title": "Zespół jest na razie pusty",
+      "filteredTitle": "Brak wyników",
+      "subtitle": "Zaproś pracowników, aby rozpocząć pracę w CRM",
+      "filterSubtitle": "Spróbuj zmienić kryteria filtrów"
+    },
+    "card": {
+      "tenureYears": "{{count}} lat",
+      "tenureMonths": "{{count}} mies.",
+      "recently": "Dołączył niedawno",
+      "recentlyShort": "Niedawno",
+      "unknownName": "Nowy pracownik",
+      "joined": "W zespole od",
+      "tenureLabel": "Sta ż w CRM",
+      "languages": "Języki",
+      "openProfile": "Otwórz profil"
+    },
+    "profile": {
+      "notFoundTitle": "Pracownik nie został znaleziony",
+      "notFoundSubtitle": "Wybierz pracownika na stronie zespołu",
+      "backToTeam": "Wróć do zespołu",
+      "back": "Wróć do zespołu",
+      "edit": "Edytuj",
+      "cancel": "Anuluj",
+      "save": "Zapisz",
+      "savedTitle": "Profil zaktualizowany",
+      "savedDescription": "Zmiany zostaną zapisane po integracji API",
+      "status": {
+        "active": "Aktywny",
+        "inactive": "Nieaktywny"
+      },
+      "subtitle": "Profil stylisty i personalne ustawienia CRM",
+      "metrics": {
+        "avgTicket": "Średni paragon",
+        "monthlyRevenue": "Miesięczny obrót",
+        "satisfaction": "Lojalność klientów"
+      },
+      "joined": "W zespole od",
+      "tenure": {
+        "years_one": "{{count}} rok",
+        "years_few": "{{count}} lata",
+        "years_many": "{{count}} lat",
+        "years_other": "{{count}} lat",
+        "months_one": "{{count}} miesiąc",
+        "months_few": "{{count}} miesiące",
+        "months_many": "{{count}} miesięcy",
+        "months_other": "{{count}} miesięcy"
+      },
+      "tabs": {
+        "overview": "Przegląd",
+        "schedule": "Grafik",
+        "settings": "Ustawienia"
+      },
+      "specialties": "Specjalizacje i usługi",
+      "specialtiesHint": "Określ główne obszary pracy stylisty i powiązane usługi",
+      "specialtiesEmpty": "Brak dodanych specjalizacji",
+      "bioPlaceholder": "Opisz styl pracy stylisty, certyfikaty i ulubione usługi",
+      "languagesTitle": "Języki komunikacji",
+      "languagesSubtitle": "Wybierz języki, w których stylista obsługuje klientów",
+      "accessTitle": "Uprawnienia i dostęp",
+      "accessSubtitle": "Zarządzaj dostępem do finansów i funkcji administracyjnych",
+      "permissions": {
+        "finances": "Dostęp do wskaźników finansowych",
+        "pricing": "Uprawnienie do zmiany cen usług",
+        "availableSoon": "Wkrótce"
+      },
+      "scheduleTitle": "Godziny pracy",
+      "scheduleSubtitle": "Zarządzaj dostępnością w kalendarzu CRM",
+      "scheduleEditor": {
+        "title": "Grafik pracownika",
+        "subtitle": "Dostosuj dostępność lub skopiuj godziny salonu.",
+        "readonly": "Tylko właściciel lub sam pracownik może edytować grafik.",
+        "unsaved": "Niezapisane zmiany",
+        "synced": "Grafik zsynchronizowany",
+        "copySalon": "Skopiuj godziny salonu",
+        "reset": "Resetuj",
+        "save": "Zapisz grafik",
+        "saveSuccess": "Grafik zaktualizowany",
+        "saveError": "Nie udało się zapisać grafiku",
+        "loadError": "Nie udało się wczytać grafiku",
+        "exceptions": {
+          "title": "Wyjątki i urlopy",
+          "subtitle": "Dodaj urlop, zwolnienie lekarskie lub niestandardowe godziny.",
+          "add": "Dodaj wyjątek",
+          "hideForm": "Ukryj formularz",
+          "typeLabel": "Typ wyjątku",
+          "reasonLabel": "Komentarz",
+          "reasonPlaceholder": "Np. urlop, szkolenie, wyjazd",
+          "startDate": "Data rozpoczęcia",
+          "endDate": "Data zakończenia",
+          "customStart": "Godzina startu",
+          "customEnd": "Godzina zakończenia",
+          "isWorkingDay": "Dzień pracujący",
+          "customWorking": "Dostępny w tych godzinach",
+          "customOff": "Zajęty – brak rezerwacji",
+          "save": "Zapisz wyjątek",
+          "validation": "Wybierz zakres dat",
+          "customValidation": "Podaj przedział czasu dla niestandardowych godzin",
+          "added": "Wyjątek dodany",
+          "error": "Nie udało się dodać wyjątku",
+          "removed": "Wyjątek usunięty",
+          "removeError": "Nie udało się usunąć wyjątku",
+          "empty": "Brak wyjątków",
+          "type": {
+            "day_off": "Dzień wolny / urlop",
+            "sick_leave": "Zwolnienie lekarskie",
+            "custom_hours": "Niestandardowe godziny"
+          },
+          "types": {
+            "dayOff": "Dzień wolny / urlop",
+            "sick": "Zwolnienie lekarskie",
+            "custom": "Niestandardowe godziny"
+          }
+        }
+      },
+      "weekDays": {
+        "monday": "Poniedziałek",
+        "tuesday": "Wtorek",
+        "wednesday": "Środa",
+        "thursday": "Czwartek",
+        "friday": "Piątek",
+        "saturday": "Sobota",
+        "sunday": "Niedziela"
+      },
+      "dayOff": "Dzień wolny",
+      "notesTitle": "Notatki dla zespołu",
+      "notesSubtitle": "Podziel się wskazówkami dotyczącymi pracy ze stylistą",
+      "notesPlaceholder": "Np.: preferuje wizyty przed 16:00, obsługuje klientów VIP, szkoli nowych stylistów",
+      "appearanceTitle": "Styl i kolory",
+      "appearanceSubtitle": "Dostosuj kolory akcentów karty stylisty w CRM",
+      "colorLabel": "Kolor akcentu",
+      "colorOptions": {
+        "indigo": "Indygo",
+        "violet": "Fiolet",
+        "pink": "Róż",
+        "coral": "Koral",
+        "amber": "Bursztyn",
+        "emerald": "Szmaragd",
+        "teal": "Turkus",
+        "slate": "Grafit"
+      },
+      "currencyTitle": "Waluta wyników",
+      "currencySubtitle": "Wyświetlaj KPI stylisty w najdogodniejszej walucie",
+      "currencyHint": "Ustawienie wpływa na kafelki analityki i dashboardy",
+      "defaultSpecialties": "Strzyżenia, koloryzacje, pielęgnacja"
+    }
+  },
+  "payments": {
+    "exportReport": "Eksportuj raport",
+    "metrics": {
+      "today": "Dzisiaj",
+      "thisWeek": "W tym tygodniu",
+      "thisMonth": "W tym miesiącu",
+      "averageBill": "Średni rachunek"
+    },
+    "filters": {
+      "title": "Filtry",
+      "allPeriods": "Wszystkie okresy",
+      "today": "Dzisiaj",
+      "week": "Tydzień",
+      "month": "Miesiąc",
+      "allMethods": "Wszystkie metody",
+      "card": "Karta",
+      "cash": "Gotówka",
+      "transfer": "Przelew"
+    },
+    "recentTransactions": "Ostatnie transakcje",
+    "table": {
+      "client": "Klient",
+      "service": "Usługa",
+      "amount": "Kwota",
+      "method": "Metoda",
+      "date": "Data",
+      "status": "Status"
+    },
+    "status": {
+      "completed": "Zakończono",
+      "pending": "Oczekuje"
+    },
+    "methods": {
+      "card": "Karta",
+      "cash": "Gotówka",
+      "transfer": "Przelew bankowy"
+    }
+  },
+  "analytics": {
+    "exportReport": "Eksportuj raport",
+    "metrics": {
+      "revenueMonth": "Przychód (miesiąc)",
+      "appointmentsMonth": "Wizyty (miesiąc)",
+      "newClients": "Nowi klienci",
+      "averageBill": "Średni rachunek"
+    },
+    "charts": {
+      "revenueByDay": "Przychody według dni",
+      "popularServices": "Popularne usługi",
+      "staffLoad": "Obciążenie personelu"
+    },
+    "comparison": {
+      "periodComparison": "Porównanie okresów",
+      "thisMonth": "Ten miesiąc",
+      "lastMonth": "Ostatni miesiąc",
+      "growth": "Wzrost"
+    },
+    "labels": {
+      "vsLastMonth": "względem ostatniego miesiąca",
+      "total": "Suma",
+      "avgTicket": "Śr. rachunek",
+      "conversion": "Konwersja",
+      "noData": "Wykres w trakcie opracowywania",
+      "workload": "Obciążenie",
+      "revenue": "Przychód",
+      "appointments": "Wizyty",
+      "records": "wizyt"
+    }
+  },
+  "language": {
+    "title": "Język interfejsu",
+    "current": "Aktualny język",
+    "switch": "Zmień język",
+    "languages": {
+      "en": "Angielski",
+      "pl": "Polski",
+      "ua": "Ukraiński",
+      "ru": "Rosyjski"
+    }
+  },
+  "currency": {
+    "title": "Waluta",
+    "current": "Aktualna waluta",
+    "switch": "Zmień walutę",
+    "currencies": {
+      "USD": "Dolar amerykański",
+      "EUR": "Euro",
+      "PLN": "Złoty polski",
+      "UAH": "Hrywna ukraińska"
+    }
+  },
+  "messages": {
+    "confirmDelete": "Czy na pewno chcesz to usunąć?",
+    "deleteSuccess": "Pomyślnie usunięto",
+    "saveSuccess": "Zmiany zapisane",
+    "networkError": "Błąd sieci, sprawdź połączenie",
+    "serverError": "Błąd serwera, spróbuj później",
+    "validationError": "Sprawdź czy pola są wypełnione poprawnie"
+  },
+  "login": {
+    "title": "Zaloguj się do swojego konta",
+    "subtitle": "Wprowadź swoje dane.",
+    "tagline": "Beauty Design Corp",
+    "salonLabel": "Salon",
+    "tabs": {
+      "login": "Logowanie",
+      "signup": "Rejestracja"
+    },
+    "fields": {
+      "email": "Adres email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Hasło",
+      "passwordPlaceholder": "Wprowadź hasło",
+      "firstName": "Imię",
+      "firstNamePlaceholder": "Imię",
+      "lastName": "Nazwisko",
+      "lastNamePlaceholder": "Nazwisko",
+      "phone": "Telefon (opcjonalnie)",
+      "phonePlaceholder": "+48 600 000 000"
+    },
+    "validation": {
+      "required": "Wypełnij wszystkie wymagane pola",
+      "passwordLength": "Hasło musi mieć co najmniej 6 znaków"
+    },
+    "buttons": {
+      "signIn": "Zaloguj się",
+      "signingIn": "Logowanie...",
+      "rememberMe": "Zapamiętaj mnie",
+      "forgotPassword": "Zapomniałeś hasła?",
+      "or": "lub",
+      "google": "Kontynuuj z Google",
+      "signUp": "Utwórz konto",
+      "signingUp": "Tworzenie konta..."
+    },
+    "divider": {
+      "login": "lub kontynuuj z e-mailem",
+      "signup": "Wypełnij formularz, aby utworzyć konto"
+    },
+    "password": {
+      "hint": "Minimum 6 znaków. Twoje hasło jest szyfrowane."
+    },
+    "error": {
+      "title": "Błąd logowania",
+      "generic": "Wystąpił błąd podczas logowania.",
+      "invalidCredentials": "Nieprawidłowy email lub hasło.",
+      "unexpected": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie.",
+      "signupFailed": "Nie udało się utworzyć konta. Spróbuj ponownie.",
+      "mustRegisterSalon": "Stwórz salon w CRM, aby zalogować się przez Google",
+      "mustRegisterFirst": "Stwórz konto, aby zalogować się przez Google",
+      "emailConflict": "Ten adres email jest już powiązany z innym kontem Google",
+      "turnstile": "Potwierdź, że nie jesteś robotem, zanim przejdziesz dalej."
+    },
+    "testData": {
+      "title": "Dane testowe",
+      "email": "Email",
+      "password": "Hasło",
+      "fill": "Wypełnij danymi testowymi"
+    },
+    "debug": {
+      "redirecting": "Przekierowuję...",
+      "info": "Informacje debugowania"
+    },
+    "noPublicRegistration": "Nie masz konta salonu? Zaloguj się profilem klienta i uruchom kreator z poziomu CRM.",
+    "links": {
+      "noAccount": "Nie masz konta?",
+      "signUp": "Zarejestruj się",
+      "haveAccount": "Masz już konto?",
+      "backToLogin": "Zaloguj się"
+    },
+    "switch": {
+      "haveAccount": "Masz już konto?",
+      "needAccount": "Nowy w Beauty Platform?",
+      "login": "Zaloguj się",
+      "signup": "Utwórz konto"
+    },
+    "disclaimer": "Kontynuując, akceptujesz regulamin i politykę prywatności Beauty Platform.",
+    "signup": {
+      "title": "Utwórz konto",
+      "subtitle": "Użyj danych konta klienta, aby kontynuować konfigurację CRM.",
+      "passwordHint": "Minimum 6 znaków"
+    },
+    "hero": {
+      "highlight": "Beauty Platform • 2025",
+      "title": "Prowadź salon bez stresu",
+      "titleLine1": "Prowadź",
+      "titleLine2": "swój salon",
+      "titleLine3": "bez stresu",
+      "subtitle": "Planuj grafik, zarządzaj zespołem i automatyzuj marketing z jednego miejsca.",
+      "quote": "Beauty Platform przejęło rutynę. My skupiliśmy się na gościach.",
+      "author": "Anna, sieć ManiTime",
+      "role": "Właścicielka",
+      "stats": {
+        "salons": "Aktywnych salonów",
+        "bookings": "Rezerwacji miesięcznie",
+        "countries": "Krajów"
+      }
+    }
+  },
+  "userSettings": {
+    "appearanceTitle": "Wygląd interfejsu",
+    "appearanceDescription": "Wybierz schemat kolorów i tryb wyświetlania",
+    "themeRedirectTitle": "Motyw przeniesiony do ekranu „Motyw”",
+    "themeRedirectSubtitle": "Skorzystaj z listy salonów → Motyw lub otwórz dedykowaną stronę, aby ustawić wygląd salonu.",
+    "openTheme": "Otwórz „Motyw”",
+    "themeNote": "Motyw stosuje się na poziomie salonu i jest współdzielony przez wszystkich użytkowników salonu.",
+    "displayMode": "Tryb wyświetlania",
+    "modeLight": "Jasny",
+    "modeDark": "Ciemny",
+    "modeSystem": "Systemowy",
+    "themeChanged": "Motyw zaktualizowany",
+    "modeChanged": "Tryb ustawiony",
+    "languageTitle": "Język interfejsu",
+    "languageDescription": "Wybierz preferowany język interfejsu aplikacji",
+    "languageNote": "Zmiany zostaną zastosowane natychmiast",
+    "languageChanged": "Język zmieniony na",
+    "languageChangeFailed": "Nie udało się zmienić języka",
+    "notificationsTitle": "Ustawienia powiadomień",
+    "notificationsDescription": "Zarządzaj sposobami otrzymywania powiadomień o ważnych wydarzeniach",
+    "notificationsUnavailable": "Ustawienia powiadomień są niedostępne w tym środowisku",
+    "emailNotifications": "Powiadomienia Email",
+    "emailNotificationsDescription": "Otrzymuj powiadomienia na adres email",
+    "smsNotifications": "Powiadomienia SMS",
+    "smsNotificationsDescription": "Otrzymuj powiadomienia przez SMS",
+    "pushNotifications": "Powiadomienia Push",
+    "pushNotificationsDescription": "Otrzymuj powiadomienia w przeglądarce",
+    "saveNotifications": "Zapisz ustawienia powiadomień",
+    "saving": "Zapisywanie...",
+    "notificationsSaved": "Ustawienia powiadomień zapisane",
+    "notificationsLoadFailed": "Nie udało się wczytać ustawień powiadomień",
+    "notificationsSaveFailed": "Nie udało się zapisać ustawień powiadomień",
+    "additionalSettingsTitle": "Dodatkowe ustawienia",
+    "additionalSettingsDescription": "Inne opcje personalizacji (w przygotowaniu)",
+    "additionalSettingsPlaceholder": "Dodatkowe ustawienia będą dostępne w przyszłych aktualizacjach"
+  },
+  "appointments": {
+    "title": "Wizyty",
+    "subtitle": "Przegląd grafiku",
+    "description": "{{count}} wizyt w wybranym zakresie",
+    "newAppointment": "Nowa wizyta",
+    "createAppointment": "Utwórz wizytę",
+    "refresh": "Odśwież",
+    "view": "Zobacz",
+    "edit": "Edytuj",
+    "searchPlaceholder": "Szukaj klienta, usługi lub pracownika...",
+    "filterByDate": "Filtruj według daty",
+    "filterByStatus": "Filtruj według statusu",
+    "allStatuses": "Wszystkie statusy",
+    "loading": "Ładowanie wizyt...",
+    "errorLoading": "Błąd ładowania",
+    "retry": "Spróbuj ponownie",
+    "noAppointments": "Brak wizyt",
+    "noAppointmentsFound": "Nie znaleziono wizyt",
+    "noResults": "Nie znaleziono wyników dla \"{{query}}\"",
+    "emptyStateMessage": "Utwórz pierwszą wizytę aby rozpocząć",
+    "minutesShort": "min",
+    "stats": {
+      "total": "Razem",
+      "active": "Aktywne",
+      "cancelled": "Anulowane",
+      "revenue": "Przychód"
+    },
+    "dateFilter": "Filtr daty",
+    "datePresets": {
+      "any": "Dowolna data",
+      "today": "Dzisiaj",
+      "tomorrow": "Jutro"
+    },
+    "count": "{{count}} wizyt",
+    "items": "wizyt",
+    "statuses": {
+      "PENDING": "Oczekująca",
+      "CONFIRMED": "Potwierdzona",
+      "IN_PROGRESS": "W trakcie",
+      "COMPLETED": "Ukończona",
+      "CANCELED": "Anulowana"
+    },
+    "statusShort": {
+      "PENDING": "Oczek.",
+      "CONFIRMED": "Potw.",
+      "IN_PROGRESS": "W trakcie",
+      "COMPLETED": "Zakoń.",
+      "CANCELED": "Anul."
+    }
+  },
+  "appointmentForm": {
+    "createTitle": "Nowa wizyta",
+    "editTitle": "Edytuj wizytę",
+  "sections": {
+    "client": "Klient",
+    "services": "Usługi",
+    "staff": "Pracownik",
+    "dateTime": "Data i godzina",
+    "schedule": "Harmonogram",
+    "notes": "Notatki",
+    "status": "Status wizyty"
+  },
+  "searchClient": "Szukaj klienta",
+  "selectedCount": "Wybrano: {{count}}",
+  "placeholders": {
+    "selectClient": "Wybierz klienta",
+    "notes": "Dodatkowe informacje o wizycie..."
+  },
+  "messages": {
+      "loading": "Ładowanie...",
+      "formLoadFailed": "Nie udało się załadować danych formularza",
+      "appointmentLoadFailed": "Nie udało się załadować danych wizyty",
+      "editNotImplemented": "Edycja wizyt nie jest jeszcze dostępna",
+      "createFailed": "Nie udało się utworzyć wizyty",
+      "saveFailed": "Nie udało się zapisać wizyty",
+      "noStaff": "Brak dostępnych pracowników",
+      "noStaffAvailable": "Brak dostępnych pracowników",
+      "autoRoundedHint": "Godzina jest zaokrąglana do 15 minut (00, 15, 30, 45)",
+      "autoCalculatedHint": "Obliczane automatycznie"
+    },
+    "validation": {
+      "selectClient": "Wybierz klienta",
+      "selectService": "Wybierz co najmniej jedną usługę",
+      "selectStaff": "Wybierz pracownika",
+      "selectDateTime": "Podaj datę i godzinę",
+      "serviceNeedsStaff": "Dodaj pracowników do usług: {{services}}"
+    },
+    "toast": {
+      "createSuccess": "Wizyta została utworzona! Numer: {{number}}",
+      "updateSuccess": "Wizyta została zaktualizowana"
+    },
+    "buttons": {
+      "create": "Utwórz wizytę",
+      "saveChanges": "Zapisz zmiany",
+      "creating": "Tworzenie..."
+    },
+  "statusSelected": "Wybrano: {{status}}",
+  "durationShort": "{{duration}} min",
+  "total": "Razem",
+  "date": "Data",
+  "startTime": "Czas rozpoczęcia",
+  "endTime": "Czas zakończenia",
+  "autoCalculated": "Obliczane automatycznie",
+  "roles": {
+    "SALON_OWNER": "Właściciel",
+    "MANAGER": "Manager",
+    "STAFF_MEMBER": "Pracownik",
+    "RECEPTIONIST": "Recepcjonista"
+  },
+  "staff": {
+    "supportsServicesLabel": "Wykonuje: {{services}}",
+    "notAvailableForSelected": "Nie wykonuje wybranych usług",
+    "noTeamForServices": "Żaden pracownik nie wykonuje usług: {{services}}. Zaktualizuj profil zespołu, aby przypisać usługi.",
+    "assignStaffHint": "Dodaj pracowników do usług: {{services}}",
+    "unknownService": "usługa"
+  },
+  "labels": {
+    "date": "Data",
+    "start": "Start",
+    "end": "Koniec"
+  },
+  "appointmentSummary": {
+    "title": "Podsumowanie wizyty",
+    "totalDuration": "Łączny czas",
+    "emptyLine1": "Wybierz klienta, usługi i pracowników",
+    "emptyLine2": "aby zobaczyć podsumowanie"
+  },
+  "fallbacks": {
+    "serviceName": "Nazwa usługi"
+  },  
+    "clientSection": {
+      "emailLabel": "Email klienta *",
+      "check": "Sprawdź klienta",
+      "checking": "Sprawdzanie...",
+      "found": "Klient znaleziony. Dane pobrane z ClientProfile.",
+      "registered": "Klient jest zarejestrowany w systemie",
+      "new": "Nowy klient — uzupełnij dane poniżej.",
+      "avatarAlt": "Avatar klienta {{name}}",
+      "phone": "Telefon",
+      "birthdate": "Data urodzenia",
+      "notesLabel": "Notatki salonu",
+      "notesPlaceholder": "Dodaj notatki widoczne tylko w CRM salonu",
+      "newNotesPlaceholder": "Opcjonalna informacja o kliencie lub wizycie",
+      "errors": {
+        "empty": "Podaj email klienta",
+        "invalid": "Niepoprawny format email",
+        "notChecked": "Sprawdź email klienta",
+        "checkFailed": "Nie udało się sprawdzić emaila klienta"
+      },
+      "toast": {
+        "found": "Klient znaleziony: {{name}}",
+        "new": "Nowy klient — uzupełnij dane",
+        "error": "Błąd sprawdzania emaila"
+      }
+    },
+    "detailsPage": {
+      "viewTitle": "Szczegóły wizyty",
+      "subtitle": "Aktualne dane z CRM",
+      "backToList": "Wizyty",
+      "editAction": "Edytuj",
+      "refreshAction": "Odśwież dane",
+      "scheduleCard": "Harmonogram",
+      "servicesCard": "Usługi",
+      "clientCard": "Klient",
+      "staffCard": "Specjalista",
+      "paymentsCard": "Płatności",
+      "notesCard": "Notatki",
+      "communicationsCard": "Komunikacja",
+      "activityCard": "Aktywność",
+      "notesEmpty": "Brak notatek",
+      "communicationsEmpty": "Brak wysłanych komunikatów",
+      "activityEmpty": "Brak aktywności",
+      "dangerZone": "Strefa ostrzegawcza",
+      "cancelAction": "Anuluj wizytę",
+      "cancelDescription": "Zwolnimy slot i poinformujemy klienta.",
+      "cancelConfirm": "Czy na pewno anulować tę wizytę?",
+      "cancelSuccess": "Wizyta została anulowana",
+      "cancelFailed": "Nie udało się anulować wizyty",
+      "statusLabel": "Status",
+      "durationLabel": "Czas trwania",
+      "totalLabel": "Suma",
+      "outstandingLabel": "Saldo do zapłaty",
+      "lastUpdated": "Zaktualizowano {{value}}",
+      "startTime": "Czas rozpoczęcia",
+      "endTime": "Czas zakończenia",
+      "duration": "Czas trwania",
+      "minutes": "min"
+    }
+  },
+  "settings": {
+    "sections": {
+      "profile": "Profil salonu",
+      "profile_description": "Ta nazwa jest wyświetlana w interfejsie i dokumentach.",
+      "branding": "Logo salonu",
+      "branding_description": "Obraz jest wyświetlany w nagłówku CRM i na stronach publicznych.",
+      "gallery": "Galeria salonu",
+      "gallery_description": "Dodawaj zdjęcia swoich prac, wnętrza i zespołu. Obrazy nie wpływają na logo.",
+      "security": "Bezpieczeństwo",
+      "notifications": "Powiadomienia"
+    },
+    "buttons": {
+      "uploadLogo": "Prześlij logo",
+      "replaceLogo": "Zmień logo",
+      "removeLogo": "Usuń logo",
+      "saveChanges": "Zapisz",
+      "cancel": "Anuluj",
+      "selectFiles": "Wybierz pliki"
+    },
+    "toasts": {
+      "logoUpdated": "Logo zaktualizowane",
+      "logoRemoved": "Logo usunięte",
+      "galleryUpdated": "Dodano {{count}} obrazów",
+      "galleryImageDeleted": "Obraz usunięty",
+      "settingsSaved": "Nazwa salonu zaktualizowana!",
+      "errorGeneric": "Wystąpił błąd podczas zapisywania",
+      "errorUpdateName": "Nie udało się zaktualizować nazwy",
+      "errorUploadLogo": "Błąd przesyłania logo",
+      "errorRemoveLogo": "Nie udało się usunąć logo",
+      "errorFetchGallery": "Nie udało się załadować galerii obrazów",
+      "errorUploadGallery": "Błąd przesyłania obrazów",
+      "errorDeleteGalleryImage": "Nie udało się usunąć obrazu"
+    },
+    "validations": {
+      "salonName": "Nazwa salonu",
+      "salonAddress": "Adres salonu",
+      "requiredField": "Nazwa musi mieć co najmniej 3 znaki",
+      "unsupportedFileType": "Nieobsługiwany typ pliku. Dozwolone: JPG, PNG, SVG, WebP",
+      "maxSizeExceeded": "Plik jest za duży. Maksymalny rozmiar: 5MB"
+    },
+    "gallery": {
+      "addPhoto": "Dodaj zdjęcie",
+      "dragHint": "Przeciągnij i upuść obrazy tutaj",
+      "orSelect": "Lub wybierz z urządzenia (JPG, PNG, WebP, SVG)",
+      "emptyStateTitle": "Brak obrazów. Dodaj pierwsze zdjęcia swojego salonu!",
+      "emptyStateDescription": "Tutaj będą wyświetlane zdjęcia Twojego salonu.",
+      "loading": "Ładowanie obrazów...",
+      "uploading": "Przesyłanie i optymalizacja obrazów...",
+      "open": "Otwórz",
+      "delete": "Usuń"
+    },
+    "toggles": {
+      "darkMode": "Tryb ciemny",
+      "themeColor": "Kolor motywu",
+      "staffNotifications": "Powiadomienia dla personelu",
+      "clientNotifications": "Powiadomienia dla klientów"
+    },
+    "labels": {
+      "noLogo": "Logo nie zostało jeszcze przesłane",
+      "nameHint": "Minimum 3 znaki. Walutę i język można zmienić w górnym menu."
+    },
+    "roleManagement": {
+      "title": "Zarządzanie rolami",
+      "description": "Zarządzaj właścicielami salonu i poziomami dostępu zespołu.",
+      "ownersTitle": "Właściciele salonu",
+      "ownersDescription": "Główny właściciel i współwłaściciele z dostępem do krytycznych ustawień.",
+      "emptyOwners": "Nie dodano jeszcze właścicieli.",
+      "addOwner": "Dodaj współwłaściciela",
+      "primaryBadge": "Główny właściciel",
+      "shareLabel": "{{value}}% udziału",
+      "ownersFallbackEmail": "Brak adresu email",
+      "staffTitle": "Role zespołu",
+      "staffDescription": "Przegląd członków personelu i przypisanych ról.",
+      "emptyStaff": "Brak pracowników.",
+      "manageRoles": "Zarządzaj rolami",
+      "loading": "Ładowanie danych ról...",
+      "errorLoading": "Nie udało się załadować danych ról.",
+      "retry": "Spróbuj ponownie",
+      "rolesLabel": "Role",
+      "openMenu": "Otwórz menu",
+      "grantRole": "Przyznaj rolę",
+      "revokeRole": "Odbierz rolę",
+      "noActionsAvailable": "Brak dostępnych działań",
+      "cancel": "Anuluj",
+      "confirm": "Potwierdź",
+      "confirmGrantTitle": "Potwierdź przyznanie roli",
+      "confirmGrantDescription": "Czy na pewno chcesz przyznać rolę {{role}} użytkownikowi {{name}}? To da mu podwyższone uprawnienia.",
+      "confirmRevokeTitle": "Potwierdź odebranie roli",
+      "confirmRevokeDescription": "Czy na pewno chcesz odebrać rolę {{role}} użytkownikowi {{name}}? Straci on powiązane uprawnienia.",
+      "toast": {
+        "error": "Błąd",
+        "roleGranted": "Rola została pomyślnie przyznana",
+        "roleGrantedDescription": "Rola {{role}} została przyznana użytkownikowi",
+        "grantError": "Nie udało się przyznać roli",
+        "roleRevoked": "Rola została pomyślnie odebrana",
+        "roleRevokedDescription": "Rola {{role}} została odebrana użytkownikowi",
+        "revokeError": "Nie udało się odebrać roli",
+        "coOwnerAdded": "Współwłaściciel został pomyślnie dodany",
+        "coOwnerAddedDescription": "Nowy współwłaściciel został dodany z {{share}}% udziałem",
+        "addCoOwnerError": "Nie udało się dodać współwłaściciela",
+        "alreadyOwner": "Użytkownik jest już właścicielem",
+        "alreadyOwnerDescription": "Ten użytkownik ma już uprawnienia właściciela",
+        "userNotFound": "Nie znaleziono użytkownika",
+        "userNotFoundDescription": "Podany ID użytkownika nie istnieje"
+      },
+      "addCoOwnerModal": {
+        "title": "Dodaj współwłaściciela",
+        "description": "Dodaj nowego współwłaściciela do tego salonu z określonym procentem udziału",
+        "userIdLabel": "ID użytkownika",
+        "userIdPlaceholder": "Wprowadź ID użytkownika (np. cm...)",
+        "userIdHint": "ID użytkownika można znaleźć na liście personelu lub w profilu użytkownika",
+        "userIdRequired": "Wymagane ID użytkownika",
+        "shareLabel": "Udział właścicielski",
+        "shareHint": "Udział właścicielski określa procent podziału zysku",
+        "cancel": "Anuluj",
+        "add": "Dodaj współwłaściciela",
+        "adding": "Dodawanie...",
+        "error": "Nie udało się dodać współwłaściciela"
+      }
+    }
+  },
+  "notifications": {
+    "title": "Powiadomienia",
+    "filters": {
+      "title": "Filtry",
+      "all": "Wszystkie",
+      "unread": "Nieprzeczytane",
+      "important": "Ważne"
+    },
+    "status": {
+      "read": "Przeczytane",
+      "delivered": "Dostarczone",
+      "sent": "Wysłane",
+      "pending": "Oczekujące",
+      "error": "Błąd"
+    },
+    "types": {
+      "EMAIL": "Email",
+      "SMS": "SMS",
+      "PUSH": "Push",
+      "IN_APP": "W aplikacji",
+      "WEBHOOK": "Webhook"
+    },
+    "actions": {
+      "markAllAsRead": "Oznacz wszystkie jako przeczytane",
+      "clearFilters": "Wyczyść filtry",
+      "viewDetails": "Zobacz szczegóły",
+      "retry": "Spróbuj ponownie",
+      "markAsRead": "Oznacz jako przeczytane",
+      "markAsUnread": "Oznacz jako nieprzeczytane",
+      "delete": "Usuń powiadomienie"
+    },
+    "emptyState": {
+      "all_title": "Nie masz jeszcze żadnych powiadomień",
+      "all_description": "Nowe powiadomienia pojawią się tutaj.",
+      "unread_title": "Wszystkie powiadomienia zostały przeczytane",
+      "unread_description": "Jesteś na bieżąco!",
+      "important_title": "Brak ważnych powiadomień",
+      "important_description": "Powiadomienia oznaczone jako ważne lub pilne pojawią się tutaj."
+    },
+    "time": {
+      "justNow": "Przed chwilą",
+      "minutesAgo": "{{count}} min temu",
+      "hoursAgo": "{{count}} godz. temu",
+      "daysAgo": "{{count}} dni temu"
+    },
+    "priority": {
+      "URGENT": "Pilne",
+      "HIGH": "Ważne"
+    },
+    "found_plural": "Znaleziono powiadomień: {{count}}",
+    "noNotifications": "Brak powiadomień do wyświetlenia",
+    "loading": "Ładowanie powiadomień...",
+    "error_title": "Błąd ładowania",
+    "success_marked_as_read": "Oznaczono jako przeczytane",
+    "error_marked_as_read": "Nie udało się oznaczyć jako przeczytane",
+    "info_deleted": "Powiadomienie usunięte",
+    "error_deleted": "Nie udało się usunąć powiadomienia",
+    "success_marked_all_as_read": "Oznaczono {{count}} powiadomień jako przeczytane"
+  },
+  "help": {
+    "sections": {
+      "title": "Pomoc i wsparcie",
+      "description": "Znajdź odpowiedzi na swoje pytania i uzyskaj pomoc od naszego zespołu wsparcia.",
+      "categories": "Kategorie",
+      "contact": "Potrzebujesz pomocy?",
+      "contact_description": "Skontaktuj się z naszym zespołem wsparcia",
+      "links": "Przydatne linki",
+      "faq": "Często zadawane pytania"
+    },
+    "categories": {
+      "all": "Wszystkie",
+      "appointments": "Wizyty",
+      "clients": "Klienci",
+      "services": "Usługi",
+      "staff": "Personel",
+      "payments": "Płatności",
+      "system": "System",
+      "integrations": "Integracje"
+    },
+    "faq": {
+      "appointments_create": {
+        "question": "Jak utworzyć nową wizytę для klienta?",
+        "answer": "Przejdź do sekcji \"Kalendarz\" lub \"Wizyty\", kliknij przycisk \"Nowa wizyta\". Wybierz klienta, usługę, pracownika i godzinę. System automatycznie sprawdzi dostępność pracownika i zaproponuje dogodne terminy."
+      },
+      "appointments_modify": {
+        "question": "Jak zmienić lub anulować istniejącą wizytę?",
+        "answer": "Otwórz wizytę w kalendarzu lub na liście wizyt, kliknij przycisk \"Edytuj\". Możesz zmienić godzinę, pracownika lub usługę. Aby anulować wizytę, użyj przycisku \"Anuluj wizytę\" i podaj powód anulowania."
+      },
+      "clients_add": {
+        "question": "Jak dodać nowego klienta do bazy danych?",
+        "answer": "Przejdź do sekcji \"Klienci\", kliknij \"Dodaj klienta\". Wypełnij wymagane pola: imię, nazwisko, numer telefonu. Dodatkowo możesz podać adres e-mail, datę urodzenia i notatki o kliencie."
+      },
+      "clients_history": {
+        "question": "Jak znaleźć historię wizyt klienta?",
+        "answer": "Otwórz kartę klienta i przejdź do zakładki \"Historia\". Wyświetlone zostaną wszystkie przeszłe i przyszłe wizyty klienta, a także ogólne statystyki wizyt i wydana kwota."
+      },
+      "services_create": {
+        "question": "Jak utworzyć nową usługę?",
+        "answer": "W sekcji \"Usługi\" kliknij \"Dodaj usługę\". Podaj nazwę, czas trwania, koszt i opis. Możesz przypisać usługę do konkretnych pracowników lub udostępnić ją wszystkim."
+      },
+      "services_price": {
+        "question": "Jak zmienić cenę usługi?",
+        "answer": "Otwórz kartę usługi, kliknij \"Edytuj\" i zaktualizuj koszt. Zmiana ceny не wpływa на już utworzone wizyty - zachowują one cenę z momentu utworzenia."
+      },
+      "staff_add": {
+        "question": "Jak dodać nowego pracownika?",
+        "answer": "Przejdź do sekcji \"Personel\", kliknij \"Dodaj pracownika\". Wypełnij dane, skonfiguruj harmonogram pracy i przypisz usługi, które może wykonywać pracownik."
+      },
+      "staff_schedule": {
+        "question": "Jak skonfigurować harmonogram pracy pracownika?",
+        "answer": "W karcie pracownika przejdź do zakładki \"Harmonogram\". Ustaw dni robocze, godziny rozpoczęcia i zakończenia pracy, dodaj przerwy i dni wolne."
+      },
+      "payments_accept": {
+        "question": "Jak przyjąć płatność od klienta?",
+        "answer": "W karcie wizyty kliknij \"Zapłać\". Wybierz metodę płatności (gotówka, karta, online). Po potwierdzeniu system automatycznie zaktualizuje status wizyty i utworzy paragon."
+      },
+      "payments_reports": {
+        "question": "Jak przeglądać raporty finansowe?",
+        "answer": "Sekcja \"Analityka\" zawiera szczegółowe statystyki finansowe: przychody według dni, popularne usługi, obciążenie personelu. Możesz eksportować raporty do Excela lub PDF."
+      },
+      "system_notifications": {
+        "question": "Jak skonfigurować powiadomienia?",
+        "answer": "Przejdź do \"Ustawienia\" → \"Powiadomienia\". Skonfiguruj automatyczne przypomnienia dla klientów przez SMS lub e-mail o określonej godzinie przed wizytą. Możesz także włączyć powiadomienia dla personelu."
+      },
+      "system_password": {
+        "question": "Zapomniałem hasła, jak odzyskać dostęp?",
+        "answer": "Na stronie logowania kliknij \"Zapomniałeś hasła?\", podaj swój adres e-mail. Otrzymasz wiadomość e-mail z linkiem do zresetowania hasła. Jeśli wiadomość nie dotrze, sprawdź folder \"Spam\"."
+      }
+    },
+    "actions": {
+      "searchPlaceholder": "Szukaj pytań i odpowiedzi...",
+      "contactSupport": "Skontaktuj się z pomocą techniczną",
+      "openGuide": "Otwórz przewodnik"
+    },
+    "contact": {
+      "title": "Potrzebujesz pomocy?",
+      "emailLabel": "Wsparcie e-mail",
+      "phoneLabel": "Wsparcie telefoniczne",
+      "hoursLabel": "Pon-Pt: 9:00 - 18:00 (UTC+1)",
+      "chatLabel": "Czat na żywo",
+      "chatDescription": "Dostępny w godzinach pracy"
+    },
+    "resources": {
+      "title": "Przydatne linki",
+      "documentation": "Baza wiedzy",
+      "videoTutorials": "Samouczki wideo",
+      "community": "Forum społeczności",
+      "apiDocs": "Dokumentacja API"
+    },
+    "emptySearch": {
+      "noResultsTitle": "Brak wyników dla \"{{query}}\"",
+      "noResultsDescription": "Spróbuj użyć innych słów kluczowych lub sprawdź pisownię."
+    },
+    "misc": {
+      "lastUpdated": "Ostatnia aktualizacja",
+      "readMore": "Czytaj więcej",
+      "found_one": "Znaleziono {{count}} pytanie",
+      "found_few": "Znaleziono {{count}} pytania",
+      "found_many": "Znaleziono {{count}} pytań",
+      "inCategory": "w kategorii \"{{category}}\""
+    }
+  },
+  "themeCustomizer": {
+    "title": "Dostosuj kolory motywu",
+    "description": "Spersonalizuj kolory semantyczne zgodnie z identyfikacją twojego salonu",
+    "customActive": "Motyw niestandardowy aktywny",
+    "successColor": "Kolor sukcesu",
+    "successDesc": "Używany dla pozytywnych akcji i potwierdzeń",
+    "warningColor": "Kolor ostrzegawczy",
+    "warningDesc": "Używany dla komunikatów ostrzegawczych",
+    "errorColor": "Kolor błędu",
+    "errorDesc": "Używany dla błędów i działań destrukcyjnych",
+    "infoColor": "Kolor informacyjny",
+    "infoDesc": "Używany dla komunikatów informacyjnych i wyróżnień",
+    "preview": "Podgląd",
+    "previewLabels": {
+      "success": "Sukces",
+      "warning": "Ostrzeżenie",
+      "error": "Błąd",
+      "info": "Informacja"
+    },
+    "apply": "Zastosuj zmiany",
+    "reset": "Przywróć domyślne",
+    "export": "Eksportuj",
+    "import": "Importuj",
+    "importError": "Nie udało się zaimportować motywu. Sprawdź format pliku.",
+    "note": "Niestandardowe kolory są zapisywane automatycznie i stosowane w całym interfejsie CRM.",
+    "pickColor": "Wybierz kolor dla {{label}}",
+    "done": "Gotowe"
+  },
+  "servicesPage": {
+    "searchPlaceholder": "Szukaj usług...",
+    "filters": "Filtry",
+    "priceLabel": "Cena",
+    "durationLabel": "Czas trwania",
+    "minutesShort": "min",
+    "price": {
+      "all": "Wszystkie ceny",
+      "low": "Do 50 zł",
+      "medium": "50–150 zł",
+      "high": "Powyżej 150 zł"
+    },
+    "duration": {
+      "all": "Dowolny czas",
+      "short": "Do 30 minut",
+      "medium": "30–90 minut",
+      "long": "Powyżej 90 minut"
+    },
+    "resetFilters": "Zresetuj filtry",
+    "manageCategories": "Zarządzaj kategoriami",
+    "onlyActiveLabel": "Tylko aktywne",
+    "filterAll": "Wszystkie usługi",
+    "filterUncategorized": "Bez kategorii",
+    "uncategorized": "Bez kategorii",
+    "withoutSubcategory": "Bez podkategorii",
+    "badges": {
+      "defaultService": "Domyślna",
+      "inactive": "Ukryta",
+      "defaultCategory": "Kategoria systemowa",
+      "inactiveCategory": "Kategoria wyłączona",
+      "defaultSubcategory": "Podkategoria systemowa",
+      "inactiveSubcategory": "Podkategoria wyłączona"
+    },
+    "status": {
+      "active": "Aktywna",
+      "inactive": "Wyłączona"
+    },
+    "toggleAria": "Przełącz dostępność usługi \"{{name}}\"",
+    "toastEnabled": "Usługa \"{{name}}\" jest ponownie widoczna",
+    "toastDisabled": "Usługa \"{{name}}\" została ukryta",
+    "toastDeleted": "Usługa \"{{name}}\" została usunięta",
+    "errorToggle": "Nie udało się zaktualizować statusu usługi",
+    "emptyFilteredTitle": "Brak usług spełniających bieżące filtry",
+    "emptyFilteredDescription": "Dostosuj filtry lub wyczyść wyszukiwanie, aby zobaczyć wszystkie usługi.",
+    "deleteConfirm": "Usunąć usługę \"{{name}}\"?",
+    "deleteError": "Nie udało się usunąć usługi."
+  },
+  "registration": {
+    "title": "Stwórz swój salon piękności",
+    "subtitle": "Dołącz do tysięcy salonów na całym świecie",
+    "security": "Twoje dane są chronione 256-bitowym szyfrowaniem SSL",
+    "continue": "Kontynuuj →",
+    "back": "Wstecz",
+    "saving": "Zapisywanie...",
+    "processing": "Przetwarzanie...",
+    "optional": "opcjonalne",
+    "steps": {
+      "owner": "Właściciel",
+      "salon": "Salon",
+      "location": "Lokalizacja",
+      "services": "Usługi",
+      "pricing": "Cennik",
+      "activation": "Aktywacja"
+    },
+    "progress": "Postęp rejestracji",
+    "motivation": {
+      "start": "Stwórzmy Twój salon!",
+      "progress": "Świetnie! Kontynuujemy konfigurację",
+      "final": "Prawie gotowe! Potwierdź swoje dane"
+    },
+    "owner": {
+      "title": "Opowiedz o sobie",
+      "subtitle": "Te informacje są potrzebne do utworzenia konta",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "phone": "Telefon",
+      "language": "Język interfejsu",
+      "firstNamePlaceholder": "Wprowadź swoje imię",
+      "lastNamePlaceholder": "Wprowadź swoje nazwisko",
+      "emailPlaceholder": "twoj@email.com",
+      "phonePlaceholder": "+48 123 456 789",
+      "emailNote": "Ten email będzie używany do logowania w systemie",
+      "phoneNote": "Wymagany do weryfikacji SMS",
+      "privacy": "Rejestrując się, akceptujesz warunki korzystania i politykę prywatności",
+      "checking": "Sprawdzanie danych...",
+      "selected": "wybrano",
+      "emailNoteAuthenticated": "Ten e-mail jest powiązany z Twoim kontem i nie można go zmienić"
+    },
+    "salon": {
+      "title": "Opowiedz o swoim biznesie",
+      "subtitle": "Nazwa, którą zobaczą Twoi klienci",
+      "salonName": "Nazwa salonu",
+      "website": "Strona internetowa",
+      "businessType": "Jak pracujesz z klientami?",
+      "salonNamePlaceholder": "Studio piękności \"Glamour\"",
+      "websitePlaceholder": "www.twoj-salon.pl",
+      "websiteNote": "Jeśli nie masz strony, pomożemy stworzyć piękną stronę",
+      "help": "Nie wiesz co wybrać? Zawsze możesz zmienić ustawienia później",
+      "businessTypes": {
+        "salon": {
+          "title": "Klienci przychodzą do salonu",
+          "description": "Stacjonarny salon z stałym adresem"
+        },
+        "mobile": {
+          "title": "Mobilny mistrz",
+          "description": "Wyjeżdżam do klientów do domu"
+        },
+        "home": {
+          "title": "Pracuję w domu",
+          "description": "Przyjmuję klientów w domu"
+        },
+        "online": {
+          "title": "Konsultacje online",
+          "description": "Wideokonferencje i usługi online"
+        }
+      },
+      "hero": {
+        "title": "Stwórz profil swojego biznesu",
+        "subtitle": "Pomóż klientom znaleźć właśnie Twój salon",
+        "feature1": "Stacjonarny salon piękności",
+        "feature2": "Usługi mobilne na wyjazd",
+        "feature3": "Praca w domu",
+        "feature4": "Konsultacje online"
+      }
+    },
+    "location": {
+      "title": "Gdzie znajduje się Twój biznes?",
+      "subtitle": "Skonfigurujemy system pod Twój region",
+      "country": "Kraj",
+      "currency": "Waluta",
+      "address": "Adres salonu",
+      "street": "Ulica i numer",
+      "city": "Miasto",
+      "postalCode": "Kod pocztowy",
+      "countryPlaceholder": "Wybierz kraj",
+      "currencyNote": "Wszystkie ceny będą wyświetlane w tej walucie",
+      "addressNote": "Adres pomoże klientom Cię znaleźć",
+      "streetPlaceholder": "ul. Piękna 10",
+      "cityPlaceholder": "Warszawa",
+      "postalCodePlaceholder": "00-001",
+      "detectLocation": "Wykryj lokalizację",
+      "detecting": "Wykrywanie..."
+    },
+    "services": {
+      "title": "Jakie usługi świadczysz?",
+      "subtitle": "Wybierz do 5 głównych kierunków swojego biznesu",
+      "categoriesTitle": "Kategorie usług",
+      "selected": "wybrano",
+      "popular": "Popularne",
+      "other": "Inne kierunki",
+      "teamSizeTitle": "Wielkość Twojego zespołu",
+      "help": "Wybrane kategorie pomogą dostosować system do Twojego biznesu",
+      "categories": {
+        "hair": {
+          "title": "Usługi fryzjerskie",
+          "description": "Cięcie, układanie, koloryzacja"
+        },
+        "nails": {
+          "title": "Manicure i pedicure",
+          "description": "Pielęgnacja paznokci, wzornictwo"
+        },
+        "brows": {
+          "title": "Brwi i rzęsy",
+          "description": "Korekta, koloryzacja, przedłużanie"
+        },
+        "massage": {
+          "title": "Masaż i SPA",
+          "description": "Relaksacja, pielęgnacja ciała"
+        },
+        "makeup": {
+          "title": "Wizaż i makijaż",
+          "description": "Makijaż wieczorowy, ślubny"
+        },
+        "cosmetology": {
+          "title": "Kosmetologia",
+          "description": "Czyszczenie, peeling, zabiegi"
+        },
+        "aesthetic": {
+          "title": "Medycyna estetyczna",
+          "description": "Zastrzyki, konturowanie"
+        },
+        "fitness": {
+          "title": "Fitness i joga",
+          "description": "Treningi personalne, joga"
+        }
+      },
+      "teamSizes": {
+        "solo": {
+          "title": "Pracuję sam",
+          "description": "Indywidualny przedsiębiorca"
+        },
+        "small": {
+          "title": "Mam zespół 2-5 osób",
+          "description": "Mały zespół mistrzów"
+        },
+        "medium": {
+          "title": "Średni salon 6-15 osób",
+          "description": "Pełnoprawny salon piękności"
+        },
+        "large": {
+          "title": "Duży salon 16+ osób",
+          "description": "Sieć salonów lub duże centrum"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Wybierz plan taryfowy",
+      "subtitle": "Zacznij od bezpłatnego okresu 7 dni",
+      "trialTitle": "7 dni za darmo dla wszystkich planów!",
+      "trialFeature1": "Pełny dostęp do wszystkich funkcji",
+      "trialFeature2": "Bez ograniczeń klientów",
+      "trialFeature3": "Anulowanie w dowolnym momencie",
+      "popular": "Popularny",
+      "recommended": "Polecamy",
+      "selected": "Wybrano",
+      "selectPlan": "Wybierz plan",
+      "selectedPlan": "Wybrałeś plan",
+      "planInfo": "Otrzymasz 7 dni bezpłatnego dostępu do wszystkich funkcji. Możesz anulować w dowolnym momencie bez opłat.",
+      "thenPrice": "następnie",
+      "perMonth": "miesięcznie",
+      "month": "mies",
+      "freeTrial": "7 dni za darmo",
+      "startTrial": "Rozpocznij bezpłatny okres →",
+      "changeAnytime": "Możesz zmienić plan w dowolnym momencie",
+      "noCommitment": "Bez zobowiązań. Anulowanie jednym kliknięciem.",
+      "plans": {
+        "starter": {
+          "name": "STARTER",
+          "subtitle": "Bezpłatnie przez 7 dni",
+          "price": "Bezpłatnie",
+          "features": {
+            "team": "1 właściciel + do 2 mistrzów",
+            "calendar": "Podstawowy kalendarz wizyt",
+            "clients": "Do 50 klientów",
+            "support": "Wsparcie email"
+          }
+        },
+        "team": {
+          "name": "TEAM",
+          "subtitle": "Dla małych zespołów",
+          "features": {
+            "team": "Do 5 pracowników",
+            "calendar": "Pełny kalendarz",
+            "clients": "Nieograniczeni klienci",
+            "sms": "Powiadomienia SMS",
+            "analytics": "Podstawowa analityka",
+            "support": "Priorytetowe wsparcie"
+          }
+        },
+        "business": {
+          "name": "BUSINESS",
+          "subtitle": "Dla profesjonalnych salonów",
+          "features": {
+            "team": "Do 10 pracowników",
+            "analytics": "Zaawansowana analityka",
+            "social": "Integracje z mediami społecznościowymi",
+            "booking": "Rezerwacje online dla klientów",
+            "multi": "Wielooddziałowość",
+            "crm": "Rozszerzony CRM"
+          }
+        },
+        "enterprise": {
+          "name": "ENTERPRISE",
+          "subtitle": "Dla dużych sieci",
+          "features": {
+            "team": "Do 25 pracowników",
+            "api": "Dostęp do API",
+            "manager": "Osobisty menedżer",
+            "integrations": "Niestandardowe integracje",
+            "whitelabel": "Rozwiązania white-label",
+            "priority": "Priorytetowe wsparcie 24/7"
+          }
+        }
+      }
+    },
+    "activation": {
+      "emailTitle": "Sprawdzamy Twój email",
+      "emailSubtitle": "Wysłaliśmy list na",
+      "emailSent": "Email wysłany!",
+      "emailSending": "Wysyłanie emaila...",
+      "emailInstructions": "Sprawdź folder \"Spam\", jeśli list nie dotarł",
+      "smsTitle": "Potwierdź numer telefonu",
+      "smsSubtitle": "Wysłaliśmy kod na",
+      "sendSMS": "Wyślij kod SMS",
+      "smsSending": "Wysyłanie SMS...",
+      "enterCode": "Wprowadź kod z SMS",
+      "resendIn": "Ponowne wysłanie za",
+      "seconds": "sek",
+      "resendSMS": "Wyślij kod ponownie",
+      "testCode": "Do testowania użyj kodu:",
+      "verifyCode": "Potwierdź kod",
+      "termsTitle": "Ostatni krok!",
+      "termsSubtitle": "Zapoznaj się z warunkami korzystania",
+      "termsOfService": "Warunki korzystania Beauty Platform",
+      "term1": "Otrzymujesz dostęp do systemu zarządzania salonem piękności",
+      "term2": "Dane osobowe są chronione zgodnie z GDPR",
+      "term3": "Płatność dokonywana jest miesięcznie zgodnie z wybranym planem",
+      "term4": "Anulowanie subskrypcji możliwe w dowolnym momencie",
+      "term5": "Wsparcie techniczne dostępne w godzinach pracy",
+      "acceptTerms": "Akceptuję",
+      "termsLink": "warunki korzystania",
+      "and": "i",
+      "privacyLink": "politykę prywatności",
+      "subscribe": "Subskrybuj wiadomości o nowych funkcjach i aktualizacjach",
+      "createSalon": "Stwórz salon! 🎉",
+      "creating": "Tworzymy Twój salon...",
+      "creatingSubtitle": "Dostosowujemy system do Twoich potrzeb",
+      "step1": "Tworzenie użytkownika",
+      "step2": "Konfiguracja salonu",
+      "step3": "Przygotowanie miejsca pracy",
+      "waitMessage": "To zajmie tylko kilka sekund...",
+      "successAuthenticated": "Salon został utworzony pomyślnie 🎉",
+      "genericError": "Nie udało się utworzyć salonu"
+    },
+    "validation": {
+      "firstNameRequired": "Imię jest wymagane",
+      "lastNameRequired": "Nazwisko jest wymagane",
+      "emailRequired": "Email jest wymagany",
+      "emailInvalid": "Nieprawidłowy email",
+      "phoneRequired": "Numer telefonu jest wymagany",
+      "phoneInvalid": "Nieprawidłowy numer telefonu",
+      "salonNameRequired": "Nazwa salonu jest wymagana",
+      "salonNameTooShort": "Nazwa musi zawierać minimum 3 znaki",
+      "websiteInvalid": "Wprowadź prawidłowy adres URL",
+      "countryRequired": "Wybierz kraj",
+      "currencyRequired": "Wybierz walutę",
+      "serviceCategoriesRequired": "Wybierz przynajmniej jedną kategorię usług",
+      "serviceCategoriesMax": "Wybierz nie więcej niż 5 kategorii",
+      "planRequired": "Wybierz plan taryfowy",
+      "smsCodeRequired": "Wprowadź 6-cyfrowy kod z SMS",
+      "smsCodeInvalid": "Kod powinien zawierać tylko cyfry",
+      "smsCodeWrong": "Nieprawidłowy kod. Spróbuj ponownie.",
+      "termsRequired": "Konieczne jest zaakceptowanie warunków korzystania"
+    }
+  },
+  "createSalon": {
+    "title": "Utwórz salon w kilka minut",
+    "subtitle": "Wykorzystamy dane Twojego konta klienta. Dodaj informacje o salonie i wybierz obszary usług — przygotujemy kategorie i presety automatycznie.",
+    "badge": "Nowy kreator",
+    "sections": {
+      "owner": {
+        "title": "Właściciel salonu",
+        "subtitle": "Te dane zaktualizują Twój profil i będą widoczne w CRM."
+      },
+      "salon": {
+        "title": "Dane salonu",
+        "subtitle": "Kraj i nazwa pomagają ustawić walutę oraz lokalizację."
+      },
+      "services": {
+        "title": "Wybierz obszary usług",
+        "subtitle": "Możesz zaznaczyć kilka kierunków — utworzymy kategorie i domyślne usługi dla każdego.",
+        "counter": "Wybrano {{count}} usług",
+        "defaults": "{{categories}} kategorii, {{services}} usług",
+        "typeSubtitle": "Zaznacz usługi, od których chcesz zacząć",
+        "serviceMeta": "{{duration}} min · {{price}} ₴"
+      },
+      "confirm": {
+        "title": "Potwierdzenie",
+        "subtitle": "Sprawdź warunki i potwierdź utworzenie salonu.",
+        "notice": "Automatycznie utworzymy kategorie, usługi i dostęp. To zajmie mniej niż minutę."
+      }
+    },
+    "fields": {
+      "country": "Kraj",
+      "currency": "Waluta",
+      "accountPassword": "Hasło do konta",
+      "newPassword": "Utwórz hasło",
+      "confirmPassword": "Potwierdź hasło"
+    },
+    "hints": {
+      "password": "Wprowadź obecne hasło, aby potwierdzić utworzenie salonu.",
+      "newPassword": "To hasło chroni konto. Minimum 8 znaków.",
+      "confirmPassword": "Powtórz hasło, aby uniknąć literówek."
+    },
+    "actions": {
+      "back": "Powrót do pulpitu",
+      "cancel": "Anuluj",
+      "create": "Utwórz salon",
+      "creating": "Tworzymy..."
+    },
+    "summary": "Obszary: {{types}}, usługi: {{services}}",
+    "loading": {
+      "salonTypes": "Ładujemy obszary usług..."
+    },
+    "errors": {
+      "salonTypes": "Nie udało się pobrać obszarów usług",
+      "servicePresets": "Nie udało się pobrać listy usług"
+    },
+    "validation": {
+      "password": "Wprowadź hasło do konta",
+      "salonTypes": "Wybierz przynajmniej jeden obszar",
+      "newPassword": "Utwórz hasło do konta",
+      "passwordLength": "Hasło musi mieć co najmniej 8 znaków",
+      "confirmPassword": "Potwierdź swoje hasło",
+      "confirmPasswordMismatch": "Hasła nie są takie same"
+    },
+    "notifications": {
+      "validationError": "Sprawdź pola formularza",
+      "genericError": "Nie udało się utworzyć salonu"
+    },
+    "pricing": {
+      "title": "Subskrypcja i zespół",
+      "subtitle": "Salon + stanowiska pracowników. Płacisz dopiero po darmowym okresie.",
+      "staffCountLabel": "Liczba pracowników",
+      "staffCountHint": "0 — pracuję sam. Każdy pracownik to +25 PLN netto miesięcznie.",
+      "decreaseStaff": "Zmniejsz liczbę pracowników",
+      "increaseStaff": "Zwiększ liczbę pracowników",
+      "staffSoloLabel": "Właściciel pracuje sam (SOLO)",
+      "staffValueLabel": "{{count}} pracowników w abonamencie",
+      "baseLabel": "Abonament salonu",
+      "staffLabel": "Pracownicy",
+      "totalLabel": "Kwota po okresie trial",
+      "totalWithVatLabel": "Razem z VAT (23%)",
+      "vatNotice": "Kwoty netto. Stripe doliczy 23% VAT w Polsce.",
+      "trialBadge": "7 dni za darmo",
+      "trialDescription": "Przypomnimy o płatności 3 dni przed końcem okresu próbnego.",
+      "staffInfo": "Pracowników dodasz później w sekcji \"Zespół\" — cena zaktualizuje się automatycznie."
+    },
+    "salonTypes": {
+      "hair": {
+        "title": "Salon fryzjerski",
+        "description": "Strzyżenie, koloryzacja, stylizacja"
+      },
+      "nails": {
+        "title": "Salon paznokci",
+        "description": "Manicure, pedicure, zdobienia"
+      },
+      "massage": {
+        "title": "Masaż & SPA",
+        "description": "Terapie manualne i rytuały relaksacyjne"
+      },
+      "barbershop": {
+        "title": "Barber shop",
+        "description": "Męskie strzyżenia i broda"
+      },
+      "pet_grooming": {
+        "title": "Grooming zwierząt",
+        "description": "Pielęgnacja psów i kotów"
+      },
+      "wellness": {
+        "title": "Centrum wellness",
+        "description": "Regeneracja i relaks"
+      },
+      "cosmetology": {
+        "title": "Klinika urody",
+        "description": "Kosmetologia, zabiegi iniekcyjne"
+      },
+      "brow_lash": {
+        "title": "Studio brwi i rzęs",
+        "description": "Stylizacja brwi, rzęs i makijaż"
+      },
+      "mixed": {
+        "title": "Własny format",
+        "description": "Łącz dowolne kategorie"
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "project": {
+    "name": "Beauty Platform",
+    "version": "1.0.0",
+    "company": "Design Corporation Sp. z o.o.",
+    "description": "Enterprise SaaS платформа для салонов красоты",
+    "repository": "https://github.com/DesignCorporation/Beauty-Platform"
+  },
+
+  "environment": {
+    "language": "ru",
+    "market": "Poland/EU",
+    "currency": "EUR",
+    "timezone": "Europe/Warsaw",
+    "locales": ["pl", "en", "ru", "ua"]
+  },
+
+  "architecture": {
+    "type": "monorepo",
+    "pattern": "microservices",
+    "multiTenant": true,
+    "orchestrator": "node.js",
+    "database": "postgresql"
+  },
+
+  "services": {
+    "orchestrator": {
+      "port": 6030,
+      "url": "http://localhost:6030"
+    },
+    "apiGateway": {
+      "port": 6020,
+      "url": "http://localhost:6020"
+    },
+    "backend": {
+      "authService": { "port": 6021 },
+      "crmApi": { "port": 6022 },
+      "paymentService": { "port": 6024 },
+      "mcpServer": { "port": 6025 },
+      "imagesApi": { "port": 6026 },
+      "backupService": { "port": 6027 },
+      "notificationService": { "port": 6028 }
+    },
+    "frontend": {
+      "landingPage": { "port": 6000, "url": "https://beauty.designcorp.eu" },
+      "salonCrm": { "port": 6001, "url": "https://salon.beauty.designcorp.eu" },
+      "adminPanel": { "port": 6002, "url": "https://admin.beauty.designcorp.eu" },
+      "clientBooking": { "port": 6003, "url": "https://client.beauty.designcorp.eu" }
+    }
+  },
+
+  "database": {
+    "host": "localhost",
+    "port": 6100,
+    "name": "beauty_platform_new",
+    "user": "beauty_platform_user"
+  },
+
+  "testing": {
+    "testTenantId": "cmem0a46l00009f1i8v2nz6qz",
+    "testUsers": {
+      "superAdmin": {
+        "email": "admin@beauty-platform.com",
+        "password": "admin123"
+      },
+      "salonOwner": {
+        "email": "owner@beauty-test-salon.ru",
+        "password": "owner123"
+      }
+    }
+  },
+
+  "commands": {
+    "mcp": {
+      "smartMemory": "curl 'http://localhost:6025/mcp/smart-memory'",
+      "search": "curl 'http://localhost:6025/mcp/search?q={query}'"
+    },
+    "orchestrator": {
+      "statusAll": "curl http://localhost:6030/orchestrator/status-all | jq",
+      "status": ".codex/scripts/service-ops.sh status {service}",
+      "restart": ".codex/scripts/service-ops.sh restart {service}",
+      "logs": ".codex/scripts/service-ops.sh logs {service} {lines}",
+      "health": ".codex/scripts/service-ops.sh health"
+    },
+    "build": {
+      "backend": "pnpm --filter @beauty-platform/{service} build",
+      "frontend": "pnpm --filter {app} build",
+      "salonCrm": "pnpm --filter salon-crm build"
+    },
+    "database": {
+      "tables": ".codex/scripts/db-ops.sh tables",
+      "stats": ".codex/scripts/db-ops.sh stats",
+      "backup": ".codex/scripts/db-ops.sh backup",
+      "prismaGenerate": ".codex/scripts/db-ops.sh generate",
+      "prismaMigrate": ".codex/scripts/db-ops.sh migrate {name}",
+      "prismaStudio": ".codex/scripts/db-ops.sh studio"
+    },
+    "quality": {
+      "gatesAll": ".codex/scripts/quality-gates.sh",
+      "gatesScope": ".codex/scripts/quality-gates.sh --scope {package}",
+      "gatesSkipCoverage": ".codex/scripts/quality-gates.sh --skip-coverage"
+    },
+    "checklists": {
+      "deployment": "cat .codex/checklists/deployment.md",
+      "testing": "cat .codex/checklists/testing.md",
+      "codeReview": "cat .codex/checklists/code-review.md"
+    },
+    "guides": {
+      "github": "cat .codex/guides/github-workflow.md",
+      "orchestrator": "cat .codex/guides/orchestrator-api.md",
+      "mcp": "cat .codex/guides/mcp-usage.md"
+    },
+    "knowledge": {
+      "architecture": "cat .codex/knowledge/architecture-overview.md",
+      "testing": "cat .codex/knowledge/testing-strategy.md"
+    }
+  },
+
+  "workflows": {
+    "backendDevelopment": [
+      "1. Читать MCP Smart Memory",
+      "2. Проверить статус сервисов",
+      "3. Внести изменения",
+      "4. Build сервиса",
+      "5. Restart через orchestrator",
+      "6. Проверить логи",
+      "7. Обновить документацию"
+    ],
+    "frontendDevelopment": [
+      "1. Читать MCP Smart Memory",
+      "2. Внести изменения в компоненты",
+      "3. Build приложения",
+      "4. Проверить в браузере",
+      "5. Проверить responsive design",
+      "6. Проверить i18n (все языки)",
+      "7. Обновить документацию"
+    ],
+    "bugFix": [
+      "1. Воспроизвести баг",
+      "2. Проверить логи сервиса",
+      "3. Найти root cause",
+      "4. Написать fix",
+      "5. Протестировать fix",
+      "6. Build & restart",
+      "7. Verify в production",
+      "8. Документировать решение"
+    ],
+    "databaseChange": [
+      "1. Обновить Prisma schema",
+      "2. Создать migration (prisma migrate dev)",
+      "3. Проверить migration SQL",
+      "4. Применить к базе",
+      "5. Сгенерировать Prisma Client",
+      "6. Restart зависимых сервисов",
+      "7. Verify data integrity"
+    ]
+  },
+
+  "criticalRules": {
+    "security": [
+      "NO secrets в коде",
+      "httpOnly cookies для JWT",
+      "Zod validation для всех inputs",
+      "CSRF protection",
+      "XSS protection"
+    ],
+    "tenantIsolation": [
+      "ВСЕГДА tenantPrisma(tenantId)",
+      "НИКОГДА prisma.* прямые запросы",
+      "Валидация tenantId в middleware",
+      "NO cross-tenant доступ"
+    ],
+    "codeQuality": [
+      "TypeScript strict mode",
+      "NO any types",
+      "Proper error handling",
+      "React Query для server state",
+      "i18n для всех текстов"
+    ],
+    "deployment": [
+      "Build перед restart",
+      "Проверить логи после deploy",
+      "Health check после restart",
+      "Обновить CLAUDE.md"
+    ]
+  },
+
+  "templates": {
+    "backendTask": ".codex/templates/backend-task.md",
+    "frontendTask": ".codex/templates/frontend-task.md",
+    "bugFix": ".codex/templates/bug-fix.md",
+    "opsTask": ".codex/templates/ops-task.md"
+  },
+
+  "checklists": {
+    "codeReview": ".codex/checklists/code-review.md",
+    "deployment": ".codex/checklists/deployment.md",
+    "testing": ".codex/checklists/testing.md"
+  },
+
+  "guides": {
+    "github": ".codex/guides/github-workflow.md",
+    "githubToken": ".codex/guides/github-token-usage.md",
+    "database": "CODEX_DATABASE_WORKFLOW.md",
+    "orchestrator": ".codex/guides/orchestrator-api.md",
+    "mcp": ".codex/guides/mcp-usage.md",
+    "claudeOptimization": ".codex/guides/claude-optimization.md"
+  },
+
+  "knowledge": {
+    "architecture": ".codex/knowledge/architecture-overview.md",
+    "testing": ".codex/knowledge/testing-strategy.md"
+  },
+
+  "scripts": {
+    "serviceOps": ".codex/scripts/service-ops.sh",
+    "databaseOps": ".codex/scripts/db-ops.sh"
+  },
+
+  "documentation": {
+    "memory": "CLAUDE.md",
+    "quickReference": ".codex/QUICK_REFERENCE.md",
+    "adminPanel": "https://dev-admin.beauty.designcorp.eu/documentation",
+    "github": "https://github.com/DesignCorporation/Beauty-Platform/issues"
+  },
+
+  "integrations": {
+    "mcp": {
+      "enabled": true,
+      "server": "http://localhost:6025",
+      "autoSync": true,
+      "cacheTTL": 300
+    },
+    "github": {
+      "repository": "DesignCorporation/Beauty-Platform",
+      "tokenEnvVar": "GITHUB_TOKEN"
+    }
+  },
+
+  "preferences": {
+    "agent": {
+      "language": "ru",
+      "verbosity": "detailed",
+      "planningMode": true,
+      "mcpFirst": true
+    },
+    "output": {
+      "colorize": true,
+      "timestamps": true,
+      "lineNumbers": true
+    }
+  }
+}

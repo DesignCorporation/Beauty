@@ -1,0 +1,1458 @@
+// Beauty Platform Database Schema
+// Domain-Driven Design + Multi-tenant Architecture
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ========================================
+// CORE ENTITIES - Business Domain
+// ========================================
+
+// User Roles - Расширенная система ролей (LEGACY - используется для обратной совместимости)
+enum UserRole {
+  SUPER_ADMIN // Администратор всей платформы
+  SALON_OWNER // Владелец салона
+  MANAGER // Менеджер салона (между Owner и Staff)
+  STAFF_MEMBER // Мастер
+  RECEPTIONIST // Администратор ресепшена
+  ACCOUNTANT // Бухгалтер салона
+  CLIENT // Клиент салона
+}
+
+// Tenant-specific Roles - Новая система ролей для multi-tenant
+// Каждый user может иметь разные роли в разных tenant
+enum TenantRole {
+  OWNER // Владелец салона (полный доступ)
+  MANAGER // Менеджер (управление персоналом и записями)
+  STAFF // Мастер (только свои записи)
+  RECEPTIONIST // Администратор (записи и клиенты)
+  ACCOUNTANT // Бухгалтер (финансы и отчеты)
+}
+
+// Status для различных сущностей
+enum EntityStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  SUSPENDED
+  DELETED
+}
+
+// Language Support
+enum Language {
+  RU // Русский
+  EN // English
+  PL // Polski
+  UA // Українська
+}
+
+// Issue #82: Staff Specializations
+enum StaffSpecializationType {
+  BARBER // Барбер
+  STYLIST // Стилист
+  NAIL_MASTER // Мастер маникюра
+  COLORIST // Колорист
+  GROOMER // Груммер
+  MAKEUP_ARTIST // Визажист
+  MASSAGE_THERAPIST // Массажист
+  AESTHETIC_SPECIALIST // Эстетолог
+  PIERCER // Пирсер
+  TATTOO_ARTIST // Татуировщик
+}
+
+// Currency Support - включаем RUB временно для совместимости
+enum Currency {
+  USD // US Dollar
+  EUR // Euro
+  PLN // Польский злотый
+  UAH // Украинская гривна
+  RUB // Российский рубль (deprecated, но нужен для миграции)
+}
+
+// Типы салонов для пресетов услуг/категорий
+enum SalonType {
+  HAIR
+  NAILS
+  MASSAGE
+  BARBERSHOP
+  PET_GROOMING
+  WELLNESS
+  COSMETOLOGY
+  BROW_LASH
+  MIXED
+}
+
+// ========================================
+// TENANTS - Мультитенантность
+// ========================================
+
+model Tenant {
+  id          String  @id @default(cuid())
+  slug        String  @unique // URL slug для салона
+  name        String
+  description String?
+
+  // Contact Info
+  email   String?
+  phone   String?
+  website String?
+
+  // Address
+  country    String?
+  city       String?
+  address    String?
+  postalCode String?
+  billingCompanyName     String?  @map("billing_company_name")
+  billingVatId           String?  @map("billing_vat_id")
+  billingUseSalonAddress Boolean  @default(true) @map("billing_use_salon_address")
+  billingAddress         String?  @map("billing_address")
+  billingCity            String?  @map("billing_city")
+  billingPostalCode      String?  @map("billing_postal_code")
+  billingCountry         String?  @map("billing_country")
+
+  // Business Settings
+  currency  Currency  @default(PLN) // Стартуем с Польши
+  language  Language  @default(RU)
+  timezone  String    @default("Europe/Moscow")
+  salonType SalonType @default(MIXED)
+
+  // Branding
+  logoUrl String? @map("logo_url") // URL логотипа салона
+
+  // Salon Identification (NEW - для записей и постоянного invite кода)
+  salonNumber String? @unique @map("salon_number") // Постоянный 8-значный номер салона
+
+  // Status
+  status   EntityStatus @default(ACTIVE)
+  isActive Boolean      @default(true)
+
+  // Relationships
+  users                User[]
+  clients              Client[]
+  services             Service[]
+  appointments         Appointment[]
+  invitations          Invitation[]
+  userSalonAccess      UserSalonAccess[]
+  notifications        Notification[]
+  notificationSettings NotificationSettings[]
+  images               Image[] // Tenant-specific изображения
+  clientSalonRelations ClientSalonRelation[] // Client Portal: связь с клиентами
+  clientInvitations    ClientInvitation[] // Client Portal: приглашения клиентов
+  salonInviteCodes     SalonInviteCode[]
+  serviceCategories    ServiceCategory[]
+
+  // Multi-Tenant Relationships (NEW)
+  owners    TenantOwner[] // Владельцы салона (many-to-many)
+  userRoles UserTenantRole[] // Роли пользователей в этом салоне
+  
+  // Subscription
+  subscription Subscription?
+
+  // Schedule Management (Issue #73)
+  salonWorkingHours       SalonWorkingHour[]       @relation("SalonWorkingHours")
+  staffWorkingHours       StaffWorkingHour[]       @relation("StaffWorkingHours")
+  staffScheduleExceptions StaffScheduleException[] @relation("StaffScheduleExceptions")
+
+  // Audit
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  StaffServiceMap StaffServiceMap[]
+
+  @@map("tenants")
+}
+
+// ========================================
+// USERS - Система пользователей
+// ========================================
+
+model User {
+  id String @id @default(cuid())
+
+  // Tenant Isolation - КРИТИЧНО!
+  tenantId String?
+  tenant   Tenant? @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Auth Info
+  email                 String  @unique
+  password              String // bcrypt hash
+  passwordAutoGenerated Boolean @default(false) @map("password_auto_generated")
+  passwordResetToken     String?   @unique @map("password_reset_token")
+  passwordResetExpiresAt DateTime? @map("password_reset_expires_at")
+
+  // Personal Info
+  firstName String
+  lastName  String
+  phone     String?
+  avatar    String?
+
+  // Role & Permissions
+  role UserRole @default(CLIENT)
+
+  // Staff Settings (for staff members)
+  color      String? // Personal color for calendar (hex)
+  isActive   Boolean @default(true)
+  isBookable Boolean @default(true) // Можно ли записывать к этому пользователю (владелец/админ могут быть не-мастерами)
+
+  // Issue #82: Staff Specialization & Languages (updated for multi-select)
+  specializations StaffSpecializationType[] @default([]) // Multi-select: ["BARBER", "STYLIST"]
+  languages       String[]                  @default([]) // JSON array: ["PL", "EN", "RU"]
+
+  // Status
+  status        EntityStatus @default(PENDING)
+  emailVerified Boolean      @default(false)
+
+  // Auth Tokens
+  devices       Device[]
+  refreshTokens RefreshToken[]
+
+  // MFA (Multi-Factor Authentication) - для SUPER_ADMIN
+  mfaEnabled     Boolean @default(false)
+  mfaSecret      String? // TOTP secret (encrypted)
+  mfaBackupCodes String? // JSON array of hashed backup codes
+
+  // Relationships
+  createdAppointments  Appointment[]          @relation("AppointmentCreatedBy")
+  assignedAppointments Appointment[]          @relation("AppointmentAssignedTo")
+  appointmentStaff     AppointmentStaff[]     @relation("AppointmentStaff") // NEW: Issue #80
+  servicesAvailable    StaffServiceMap[]      @relation("StaffServices") // NEW: Issue #82
+  sentInvitations      Invitation[]           @relation("InviterInvitations")
+  salonAccess          UserSalonAccess[]
+  notifications        Notification[]
+  notificationSettings NotificationSettings[]
+
+  // Multi-Tenant Relationships (NEW - для multi-role архитектуры)
+  ownedTenants  TenantOwner[] // Салоны, которыми владеет user
+  tenantRoles   UserTenantRole[] // Роли user в разных tenant
+  clientProfile ClientProfile? // Профиль клиента (если user - клиент)
+
+  // Schedule Management (Issue #73)
+  staffWorkingHours       StaffWorkingHour[]       @relation("StaffWorkingHours")
+  staffScheduleExceptions StaffScheduleException[] @relation("StaffScheduleExceptions")
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+// JWT Refresh Tokens
+model RefreshToken {
+  id        String    @id @default(cuid())
+  token     String    @unique
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deviceId  String
+  device    Device    @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+  isUsed    Boolean   @default(false)
+  usedAt    DateTime?
+  expiresAt DateTime
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+  @@index([deviceId])
+  @@index([expiresAt])
+  @@map("refresh_tokens")
+}
+
+model Device {
+  id            String         @id @default(cuid())
+  userId        String
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deviceId      String
+  userAgent     String?
+  ipAddress     String?
+  deviceName    String?
+  isActive      Boolean        @default(true)
+  lastUsedAt    DateTime       @default(now())
+  createdAt     DateTime       @default(now())
+  refreshTokens RefreshToken[]
+
+  @@unique([userId, deviceId])
+  @@map("devices")
+}
+
+model Permission {
+  id          String  @id @default(cuid())
+  name        String  @unique
+  description String?
+  category    String
+  roles       Role[]
+
+  @@map("permissions")
+}
+
+model Role {
+  id          String       @id @default(cuid())
+  name        String       @unique
+  description String?
+  permissions Permission[]
+
+  @@map("roles")
+}
+
+// ========================================
+// MULTI-TENANT ROLE SYSTEM (NEW)
+// ========================================
+// Поддержка сценариев:
+// - Один email = множество ролей в разных салонах
+// - Владелец сети салонов
+// - Клиент + Владелец + Сотрудник одновременно
+
+// Владение салонами (Many-to-Many: User ↔ Tenant)
+model TenantOwner {
+  id String @id @default(cuid())
+
+  // Relationships
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Ownership Details
+  isPrimary Boolean @default(false) // Главный владелец (для выбора primary contact)
+  share     Int?    @default(100) // Доля владения в % (для co-ownership)
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tenantId, userId])
+  @@index([userId])
+  @@index([tenantId])
+  @@map("tenant_owners")
+}
+
+// Роли пользователя в tenant
+model UserTenantRole {
+  id String @id @default(cuid())
+
+  // Relationships
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Role Details
+  role     TenantRole // OWNER, MANAGER, STAFF, RECEPTIONIST, ACCOUNTANT
+  isActive Boolean    @default(true)
+
+  // Audit Trail
+  grantedAt DateTime  @default(now())
+  grantedBy String? // User ID кто выдал роль
+  revokedAt DateTime?
+  revokedBy String? // User ID кто отозвал роль
+
+  @@unique([userId, tenantId, role])
+  @@index([userId])
+  @@index([tenantId])
+  @@index([userId, isActive])
+  @@map("user_tenant_roles")
+}
+
+// ========================================
+// CLIENTS - Клиенты салонов (LEGACY)
+// ========================================
+// NOTE: Это legacy модель для старой системы.
+// Новая глобальная клиентская система использует ClientProfile + ClientSalonRelation
+
+model Client {
+  id String @id @default(cuid())
+
+  // Tenant Isolation
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Personal Info
+  name  String
+  email String?
+  phone String?
+
+  // Additional Info
+  notes    String?
+  birthday DateTime?
+
+  // Status
+  status EntityStatus @default(ACTIVE)
+
+  // Relationships
+  appointments Appointment[]
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tenantId, email])
+  @@index([tenantId, phone]) // Index для fraud detection (не unique!)
+  @@map("clients")
+}
+
+// ========================================
+// CLIENT PORTAL SYSTEM - Глобальная клиентская система (Issue #31)
+// ========================================
+// Добавлено: 05.10.2025
+// Email-based multi-tenant client management для Client Portal
+
+// Gender для клиентов
+enum Gender {
+  MALE // Мужской
+  FEMALE // Женский
+  OTHER // Другой
+  PREFER_NOT_TO_SAY // Предпочитаю не указывать
+}
+
+// Loyalty Tiers - 4 уровня программы лояльности
+enum LoyaltyTier {
+  BRONZE // 0-999 points
+  SILVER // 1000-4999 points
+  GOLD // 5000-9999 points
+  PLATINUM // 10000+ points
+}
+
+// Client Source - откуда пришел клиент
+enum ClientSource {
+  GOOGLE_OAUTH // Google OAuth регистрация
+  WALK_IN // Walk-in клиент (создан салоном)
+  REFERRAL // По реферальной ссылке
+  INSTAGRAM // Из Instagram
+  FACEBOOK // Из Facebook
+  WEBSITE // С веб-сайта салона
+  OTHER // Другой источник
+}
+
+// Глобальный профиль клиента (email = primary key)
+model ClientProfile {
+  email String @id @unique // Глобальный уникальный идентификатор
+
+  // Personal Info
+  firstName String
+  lastName  String
+  avatar    String?
+
+  // Phone Verification (обязательно после регистрации)
+  phone           String?
+  phoneVerified   Boolean   @default(false)
+  phoneVerifiedAt DateTime? @map("phone_verified_at")
+
+  // Personal Data
+  birthdate DateTime? // Для birthday campaigns
+  gender    Gender?
+
+  // OAuth Integration
+  googleId String? @unique @map("google_id") // Google OAuth ID
+
+  // Authentication (для email/password регистрации)
+  password String? @map("password") // Bcrypt hash (null для OAuth-only клиентов)
+
+  // User Account Link (NEW - для multi-role архитектуры)
+  // Связь с User account (опциональная - может быть null для legacy клиентов)
+  userId String? @unique @map("user_id")
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  // Platform Tracking
+  joinedPortalAt DateTime      @default(now()) @map("joined_portal_at") // Первая регистрация
+  source         ClientSource? // Источник регистрации
+  referredBy     String?       @map("referred_by") // Email клиента-реферера
+
+  // Referral Program
+  referralCode  String? @unique @map("referral_code") // Уникальный реферальный код (например: ANNA2024)
+  referralCount Int     @default(0) @map("referral_count") // Количество приглашенных друзей
+
+  // Preferences
+  preferredLanguage Language @default(RU) @map("preferred_language")
+  marketingConsent  Boolean  @default(false) @map("marketing_consent") // GDPR compliance
+
+  // Status
+  isActive Boolean      @default(true) @map("is_active")
+  status   EntityStatus @default(ACTIVE)
+
+  // Relationships
+  salonRelations ClientSalonRelation[] // Связь с салонами (многие-ко-многим)
+  notifications  ClientNotification[] // Уведомления клиентского портала
+
+  // Audit
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([googleId])
+  @@index([referralCode])
+  @@index([source])
+  @@map("client_profiles")
+}
+
+// Связь клиента с салоном (многие-ко-многим с доп. данными)
+model ClientSalonRelation {
+  id String @id @default(cuid())
+
+  // Связи
+  clientEmail String        @map("client_email") // Email клиента
+  client      ClientProfile @relation(fields: [clientEmail], references: [email], onDelete: Cascade)
+
+  tenantId String @map("tenant_id") // ID салона
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Salon-specific Notes
+  salonNotes String? @map("salon_notes") @db.Text // Заметки конкретного салона о клиенте
+
+  // Visit Tracking
+  visitCount    Int       @default(0) @map("visit_count") // Количество визитов
+  lastVisitAt   DateTime? @map("last_visit_at") // Последний визит
+  joinedSalonAt DateTime  @default(now()) @map("joined_salon_at") // Дата присоединения к салону
+
+  // Loyalty System (salon-specific)
+  loyaltyTier   LoyaltyTier @default(BRONZE) @map("loyalty_tier")
+  loyaltyPoints Int         @default(0) @map("loyalty_points") // Баллы лояльности (100 points = €1)
+  totalSpent    Decimal     @default(0) @map("total_spent") @db.Decimal(10, 2) // Общая сумма потраченная
+
+  // Status
+  isActive  Boolean @default(true) @map("is_active") // Активен ли в данном салоне
+  isPrimary Boolean @default(false) @map("is_primary") // Основной салон клиента
+
+  // Audit
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([clientEmail, tenantId]) // Клиент может быть привязан к салону только один раз
+  @@index([tenantId, loyaltyTier]) // Для фильтрации по loyalty tier
+  @@index([tenantId, lastVisitAt]) // Для сортировки по последнему визиту
+  @@index([clientEmail])
+  @@map("client_salon_relations")
+}
+
+// Приглашения клиентов к салонам
+model ClientInvitation {
+  id String @id @default(cuid())
+
+  // Салон, который приглашает клиента
+  tenantId String @map("tenant_id")
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Данные приглашаемого клиента
+  clientEmail String  @map("client_email")
+  clientPhone String? @map("client_phone")
+  clientName  String? @map("client_name") // Опционально
+
+  // Invitation Details
+  invitedBy       String? @map("invited_by") // Email сотрудника салона
+  personalMessage String? @map("personal_message") @db.Text
+
+  // Bonus для первого визита
+  firstVisitBonus    Int?     @map("first_visit_bonus") // Bonus loyalty points
+  firstVisitDiscount Decimal? @map("first_visit_discount") @db.Decimal(5, 2) // Скидка в %
+
+  // Статус и токены
+  status    InviteStatus @default(PENDING)
+  token     String       @unique @default(cuid()) // Уникальный токен приглашения
+  expiresAt DateTime     @map("expires_at") // Срок действия (30 дней)
+
+  // Timestamps
+  createdAt  DateTime  @default(now()) @map("created_at")
+  sentAt     DateTime? @map("sent_at")
+  acceptedAt DateTime? @map("accepted_at")
+  declinedAt DateTime? @map("declined_at")
+
+  @@index([tenantId, status])
+  @@index([clientEmail])
+  @@index([token])
+  @@map("client_invitations")
+}
+
+model SalonInviteCode {
+  id String @id @default(cuid())
+
+  tenantId String @map("tenant_id")
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  code String @unique
+
+  createdBy  String?   @map("created_by")
+  maxUses    Int?      @map("max_uses")
+  usageCount Int       @default(0) @map("usage_count")
+  expiresAt  DateTime? @map("expires_at")
+  lastUsedAt DateTime? @map("last_used_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([tenantId])
+  @@map("salon_invite_codes")
+}
+
+// ========================================
+// SERVICES & CATEGORIES - Услуги салона
+// ========================================
+
+model ServiceCategory {
+  id            String               @id @default(cuid())
+  tenantId      String
+  tenant        Tenant               @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  name          String
+  icon          String?
+  order         Int                  @default(0)
+  isDefault     Boolean              @default(false)
+  isActive      Boolean              @default(true)
+  subcategories ServiceSubcategory[]
+  services      Service[]
+  createdAt     DateTime             @default(now())
+  updatedAt     DateTime             @updatedAt
+
+  @@unique([tenantId, name])
+  @@index([tenantId, order])
+  @@map("service_categories")
+}
+
+model ServiceSubcategory {
+  id         String          @id @default(cuid())
+  categoryId String
+  category   ServiceCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  name       String
+  order      Int             @default(0)
+  isDefault  Boolean         @default(false)
+  isActive   Boolean         @default(true)
+  services   Service[]
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+
+  @@unique([categoryId, name])
+  @@index([categoryId, order])
+  @@map("service_subcategories")
+}
+
+model Service {
+  id String @id @default(cuid())
+
+  // Tenant Isolation
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Service Info
+  name          String
+  description   String?
+  duration      Int // В минутах
+  price         Decimal             @db.Decimal(10, 2)
+  isDefault     Boolean             @default(false)
+  isActive      Boolean             @default(true)
+  categoryId    String?
+  category      ServiceCategory?    @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  subcategoryId String?
+  subcategory   ServiceSubcategory? @relation(fields: [subcategoryId], references: [id], onDelete: SetNull)
+
+  // Status
+  status EntityStatus @default(ACTIVE)
+
+  // Relationships
+  appointments        Appointment[]
+  appointmentServices AppointmentService[] @relation("AppointmentServices")
+  staffAvailable      StaffServiceMap[]    @relation("StaffServices") // NEW: Issue #82
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([tenantId, categoryId])
+  @@index([tenantId, subcategoryId])
+  @@map("services")
+}
+
+// ========================================
+// STAFF SERVICES - Issue #82: M:N Junction Table
+// ========================================
+
+model StaffServiceMap {
+  id String @id @default(cuid())
+
+  // Tenant Isolation - КРИТИЧНО!
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Staff ↔ Service relationship
+  staffId String
+  staff   User   @relation("StaffServices", fields: [staffId], references: [id], onDelete: Cascade)
+
+  serviceId String
+  service   Service @relation("StaffServices", fields: [serviceId], references: [id], onDelete: Cascade)
+
+  // Optional metadata
+  notes    String?
+  isActive Boolean @default(true)
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Constraints
+  @@unique([tenantId, staffId, serviceId]) // Prevent duplicate staff-service per tenant
+  @@index([tenantId])
+  @@index([staffId])
+  @@index([serviceId])
+  @@map("staff_service_map")
+}
+
+// ========================================
+// APPOINTMENTS - Записи
+// ========================================
+
+enum AppointmentStatus {
+  PENDING // Ожидает подтверждения
+  CONFIRMED // Подтверждена
+  IN_PROGRESS // В процессе
+  COMPLETED // Завершена
+  CANCELLED // Отменена
+  NO_SHOW // Не пришел
+}
+
+enum PaymentMethod {
+  CARD
+  CASH
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  CANCELLED
+}
+
+model Appointment {
+  id                String @id @default(cuid())
+  appointmentNumber String // Уникальный номер записи
+
+  // Tenant Isolation
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Appointment Info
+  date    DateTime // Дата записи
+  startAt DateTime // Время начала (UTC)
+  endAt   DateTime // Время окончания (вычисляется из суммарной длительности)
+
+  // Relationships
+  clientId String
+  client   Client @relation(fields: [clientId], references: [id], onDelete: Restrict)
+
+  // LEGACY - для backward compatibility (миграция по-новому)
+  serviceId String?
+  service   Service? @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+
+  // NEW - Multiple Services Support (Issue #79)
+  appointmentServices AppointmentService[] @relation("AppointmentServices")
+
+  // Calculated fields from services
+  totalDuration Int     @default(0) // Сумма длительностей всех услуг (в минутах)
+  totalPrice    Decimal @default(0) @db.Decimal(10, 2) // Сумма цен всех услуг
+  currency      String  @default("PLN") // Валюта (из услуг)
+
+  // LEGACY - для backward compatibility (миграция по-новому)
+  assignedToId String?
+  assignedTo   User?   @relation("AppointmentAssignedTo", fields: [assignedToId], references: [id], onDelete: SetNull)
+
+  // NEW - Multiple Staff Support (Issue #80)
+  staffMembers AppointmentStaff[] @relation("AppointmentStaff")
+
+  // Status & Notes
+  status AppointmentStatus @default(PENDING)
+  notes  String?
+
+  // Payments
+  paymentMethod PaymentMethod @default(CASH)
+  paymentStatus PaymentStatus @default(PENDING)
+  paymentId     String?
+  payment       Payment?      @relation("AppointmentPayment")
+
+  // Audit Trail
+  createdById String?
+  createdBy   User?   @relation("AppointmentCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([tenantId, appointmentNumber])
+  @@index([tenantId, startAt]) // Для быстрого поиска по датам
+  @@map("appointments")
+}
+
+// ========================================
+// APPOINTMENT SERVICES - Многие-ко-многим (Issue #79)
+// ========================================
+// Snapshot услуг в момент создания записи (для стабильности цен и длительности)
+
+model AppointmentService {
+  id String @id @default(cuid())
+
+  // Relationships
+  appointmentId String
+  appointment   Appointment @relation("AppointmentServices", fields: [appointmentId], references: [id], onDelete: Cascade)
+
+  serviceId String // Ссылка на Service (опциональна, если услуга была удалена)
+  service   Service? @relation("AppointmentServices", fields: [serviceId], references: [id], onDelete: SetNull)
+
+  // Snapshot fields (сохраняем состояние на момент создания записи)
+  name     String // Название услуги (snapshot)
+  price    Decimal @db.Decimal(10, 2) // Цена в момент записи (snapshot)
+  duration Int // Длительность в минутах (snapshot)
+  currency String  @default("PLN") // Валюта услуги
+
+  // Audit
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([appointmentId, serviceId])
+  @@index([appointmentId])
+  @@index([serviceId])
+  @@map("appointment_services")
+}
+
+// ========================================
+// APPOINTMENT STAFF - Многие-ко-многим (Issue #80)
+// ========================================
+// M:N junction таблица для поддержки множественных мастеров на запись
+
+model AppointmentStaff {
+  id String @id @default(cuid())
+
+  // Relationships
+  appointmentId String
+  appointment   Appointment @relation("AppointmentStaff", fields: [appointmentId], references: [id], onDelete: Cascade)
+
+  staffId String
+  staff   User   @relation("AppointmentStaff", fields: [staffId], references: [id], onDelete: Restrict)
+
+  // Staff role/position in this appointment (for future expansion)
+  role String? // "primary", "assistant", "trainer"
+
+  // Order/sequence (for sorting multiple staff)
+  sequenceOrder Int @default(0)
+
+  // Status tracking
+  confirmedAt DateTime? @map("confirmed_at") // When staff confirmed the appointment
+  confirmedBy String?   @map("confirmed_by") // Staff self-confirmation vs owner-assigned
+
+  // Audit
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([appointmentId, staffId]) // Prevent duplicate staff per appointment
+  @@index([appointmentId])
+  @@index([staffId])
+  @@map("appointment_staff")
+}
+
+// ========================================
+// STAFF INVITATION SYSTEM
+// ========================================
+
+// Статусы приглашений
+enum InviteStatus {
+  PENDING // Отправлено, ждем ответа
+  ACCEPTED // Принято мастером
+  DECLINED // Отклонено мастером
+  EXPIRED // Истек срок действия
+  REVOKED // Отозвано владельцем салона
+}
+
+// Приглашения для мастеров
+model Invitation {
+  id String @id @default(cuid())
+
+  // Салон, который приглашает
+  tenantId      String
+  tenant        Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  inviterUserId String // Кто отправил приглашение
+  inviter       User   @relation("InviterInvitations", fields: [inviterUserId], references: [id], onDelete: Cascade)
+
+  // Данные приглашаемого мастера
+  masterEmail     String
+  masterPhone     String?
+  masterName      String
+  personalMessage String? // Личное сообщение от владельца
+
+  // Настройки доступа
+  role        UserRole @default(STAFF_MEMBER)
+  permissions String[] @default(["calendar.view", "appointments.manage"])
+
+  // Статус и токены
+  status    InviteStatus @default(PENDING)
+  token     String       @unique @default(cuid())
+  expiresAt DateTime // Срок действия (7 дней)
+
+  // Связь с созданным доступом
+  userSalonAccess UserSalonAccess[]
+
+  // Timestamps
+  createdAt  DateTime  @default(now())
+  sentAt     DateTime?
+  acceptedAt DateTime?
+  declinedAt DateTime?
+
+  @@map("invitations")
+}
+
+// Связь мастер-салон (многие-ко-многим)
+model UserSalonAccess {
+  id String @id @default(cuid())
+
+  // Связи
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  // Права и роли
+  role        UserRole
+  permissions String[] // Детальные разрешения
+  isOwner     Boolean  @default(false) // Владелец салона
+  isActive    Boolean  @default(true) // Активный сотрудник
+
+  // Связь с приглашением
+  invitationId String? // Ссылка на исходное приглашение
+  invitation   Invitation? @relation(fields: [invitationId], references: [id], onDelete: SetNull)
+
+  // Настройки работы
+  priority       Int     @default(1) // Приоритет салона (1 = основной)
+  canSeeFinances Boolean @default(false) // Доступ к финансам
+  workingHours   Json? // Рабочие часы в данном салоне
+
+  // Timestamps
+  createdAt    DateTime @default(now())
+  lastActiveAt DateTime @default(now())
+
+  @@unique([userId, tenantId])
+  @@map("user_salon_access")
+}
+
+// ========================================
+// NOTIFICATION CENTER
+// ========================================
+
+enum NotificationType {
+  EMAIL
+  SMS
+  PUSH
+  IN_APP
+  WEBHOOK
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  DELIVERED
+  FAILED
+  READ
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model Notification {
+  id String @id @default(cuid())
+
+  tenantId String  @map("tenant_id")
+  tenant   Tenant  @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  userId String    @map("user_id")
+  user   User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  type     NotificationType
+  title    String
+  message  String
+  metadata Json?
+
+  priority NotificationPriority @default(MEDIUM)
+  status   NotificationStatus   @default(PENDING)
+
+  sentAt      DateTime? @map("sent_at")
+  deliveredAt DateTime? @map("delivered_at")
+  readAt      DateTime? @map("read_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([tenantId, userId])
+  @@index([tenantId, status])
+  @@map("notifications")
+}
+
+model NotificationSettings {
+  id String @id @default(cuid())
+
+  tenantId String @map("tenant_id")
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  userId String @map("user_id")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  emailEnabled  Boolean @default(true)  @map("email_enabled")
+  smsEnabled    Boolean @default(true)  @map("sms_enabled")
+  pushEnabled   Boolean @default(true)  @map("push_enabled")
+
+  appointmentReminders Boolean @default(true)  @map("appointment_reminders")
+  promotionalEmails    Boolean @default(false) @map("promotional_emails")
+  systemNotifications  Boolean @default(true)  @map("system_notifications")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([tenantId, userId])
+  @@index([tenantId])
+  @@map("notification_settings")
+}
+
+// ========================================
+// IMAGES - Tenant-isolated File Storage
+// ========================================
+
+model Image {
+  id       String @id @default(cuid())
+  tenantId String @map("tenant_id")
+  tenant   Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  entityType String @map("entity_type")
+  entityId   String? @map("entity_id")
+
+  filename     String
+  originalName String @map("original_name")
+  mimeType     String @map("mime_type")
+  size         Int
+
+  path         String
+  url          String
+  thumbnailUrl String? @map("thumbnail_url")
+  originalUrl  String  @map("original_url")
+
+  displayName String? @map("display_name")
+  altText     String? @map("alt_text")
+  width       Int?
+  height      Int?
+
+  optimizedSize Int? @map("optimized_size")
+  uploadedBy    String? @map("uploaded_by")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([tenantId, entityType])
+  @@index([tenantId, entityId])
+  @@index([tenantId, createdAt])
+  @@map("images")
+}
+
+// ========================================
+// SCHEDULE MANAGEMENT (Issue #73-74)
+// ========================================
+
+enum ScheduleExceptionType {
+  DAY_OFF
+  SICK_LEAVE
+  CUSTOM_HOURS
+}
+
+model SalonWorkingHour {
+  id String @id @default(cuid())
+
+  tenantId String
+  tenant   Tenant @relation("SalonWorkingHours", fields: [tenantId], references: [id], onDelete: Cascade)
+
+  dayOfWeek Int @default(0)
+  startTime String @map("start_time")
+  endTime   String @map("end_time")
+  isWorkingDay Boolean @default(true) @map("is_working_day")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([tenantId, dayOfWeek])
+  @@index([tenantId])
+  @@map("salon_working_hours")
+}
+
+model StaffWorkingHour {
+  id String @id @default(cuid())
+
+  tenantId String
+  tenant   Tenant @relation("StaffWorkingHours", fields: [tenantId], references: [id], onDelete: Cascade)
+
+  staffId String
+  staff   User   @relation("StaffWorkingHours", fields: [staffId], references: [id], onDelete: Cascade)
+
+  dayOfWeek Int @default(0)
+  startTime String @map("start_time")
+  endTime   String @map("end_time")
+  isWorkingDay Boolean @default(true) @map("is_working_day")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([staffId, dayOfWeek])
+  @@index([tenantId])
+  @@map("staff_working_hours")
+}
+
+model StaffScheduleException {
+  id String @id @default(cuid())
+
+  tenantId String
+  tenant   Tenant @relation("StaffScheduleExceptions", fields: [tenantId], references: [id], onDelete: Cascade)
+
+  staffId String?
+  staff   User?  @relation("StaffScheduleExceptions", fields: [staffId], references: [id], onDelete: Cascade)
+
+  startDate DateTime @map("start_date")
+  endDate   DateTime @map("end_date")
+  type      ScheduleExceptionType
+
+  customStartTime String?  @map("custom_start_time")
+  customEndTime   String?  @map("custom_end_time")
+  isWorkingDay    Boolean? @map("is_working_day")
+  reason          String?
+  createdBy       String? @map("created_by")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([tenantId])
+  @@index([staffId])
+  @@index([startDate])
+  @@index([endDate])
+  @@map("staff_schedule_exceptions")
+}
+
+// ========================================
+// CLIENT PORTAL NOTIFICATIONS
+// ========================================
+
+enum ClientNotificationType {
+  APPOINTMENT_CONFIRMED
+  APPOINTMENT_REMINDER
+  APPOINTMENT_CANCELLED
+  APPOINTMENT_RESCHEDULED
+  LOYALTY_POINTS_EARNED
+  LOYALTY_TIER_UPGRADED
+  BIRTHDAY_REWARD
+  REFERRAL_BONUS
+  MARKETING_PROMOTION
+  PAYMENT_RECEIPT
+}
+
+model ClientNotification {
+  id          String                 @id @default(cuid())
+  clientEmail String                 @map("client_email")
+  type        ClientNotificationType
+  priority    NotificationPriority   @default(MEDIUM)
+  title       String
+  message     String                 @db.Text
+  metadata    Json?
+
+  readAt      DateTime? @map("read_at")
+  deliveredAt DateTime? @map("delivered_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  expiresAt   DateTime? @map("expires_at")
+
+  client ClientProfile @relation(fields: [clientEmail], references: [email], onDelete: Cascade)
+
+  @@index([clientEmail, readAt])
+  @@index([clientEmail, createdAt])
+  @@map("client_notifications")
+}
+
+
+// ========================================
+// AUDIT & LOGGING
+// ========================================
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  DELETE
+  LOGIN
+  LOGOUT
+  REFRESH_TOKEN
+  EXPORT
+  IMPORT
+}
+
+model AuditLog {
+  id String @id @default(cuid())
+
+  // Tenant Context
+  tenantId String?
+
+  // Action Info
+  action     AuditAction
+  entityType String // "User", "Appointment", etc.
+  entityId   String? // ID сущности
+
+  // User Context
+  userId   String?
+  userRole UserRole?
+
+  // Changes
+  oldValues Json? // Старые значения
+  newValues Json? // Новые значения
+
+  // Technical Info
+  ipAddress String?
+  userAgent String?
+
+  // Timestamp
+  createdAt DateTime @default(now())
+
+  @@map("audit_logs")
+}
+
+// ========================================
+// PAYMENT SERVICE - Stage 5 Models
+// ========================================
+
+// 💰 Платежи и транзакции
+model Payment {
+  id       String @id @default(cuid())
+  tenantId String @map("tenant_id") // 🔐 КРИТИЧНО: Tenant isolation
+
+  // Provider data (generic)
+  provider   String // stripe, paypal, etc.
+  providerId String? @map("provider_id") // Provider's payment ID
+
+  // Customer reference
+  customerId String? @map("customer_id") // БД использует snake_case
+
+  // Сумма и валюта (integer in cents/units)
+  amount   Int // Amount in cents/units
+  currency String @default("EUR") // EUR, PLN, USD
+
+  // Статус
+  status String // PENDING, SUCCEEDED, FAILED, CANCELLED
+
+  // Metadata
+  metadata  Json? // Дополнительные данные от Provider
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  appointmentId String?        @unique @map("appointment_id")
+  appointment   Appointment?   @relation("AppointmentPayment", fields: [appointmentId], references: [id], onDelete: SetNull)
+  refunds       Refund[] // Payment can have multiple refunds
+  events        PaymentEvent[] // Payment can have multiple events
+  invoiceEmails InvoiceEmail[] // Payment can have multiple invoice emails
+
+  // Subscription Relation
+  subscriptionId String?       @map("subscription_id")
+  subscription   Subscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId])
+  @@index([status])
+  @@map("payments")
+}
+
+// 🧾 Инвойсы для PDF генерации
+model Invoice {
+  id             String  @id @default(cuid())
+  tenantId       String  @map("tenant_id") // 🔐 КРИТИЧНО: Tenant isolation
+  subscriptionId String?
+  paymentId      String?
+
+  // Номер инвойса
+  invoiceNumber String @unique
+
+  // Суммы
+  subtotal    Decimal @db.Decimal(10, 2)
+  taxAmount   Decimal @default(0) @db.Decimal(10, 2)
+  totalAmount Decimal @db.Decimal(10, 2)
+  currency    String  @default("EUR")
+
+  // Периоды
+  periodStart DateTime
+  periodEnd   DateTime
+  dueDate     DateTime
+
+  // Статус
+  status String // DRAFT, SENT, PAID, OVERDUE, CANCELLED
+
+  // PDF
+  pdfUrl String? // URL к сгенерированному PDF
+
+  // Metadata
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([tenantId])
+  @@index([subscriptionId])
+  @@index([invoiceNumber])
+  @@index([status])
+  @@map("invoices")
+}
+
+// 🔄 Возвраты средств (Stage 5)
+model Refund {
+  id        String @id @default(cuid())
+  tenantId  String @map("tenant_id") // 🔐 КРИТИЧНО: Tenant isolation
+  paymentId String @map("payment_id") // Reference to Payment
+
+  // Provider refund data
+  provider         String // "stripe" | "paypal"
+  providerRefundId String? @map("provider_refund_id") // Provider's refund ID
+
+  // Amount and currency
+  amount   Int // Amount in cents/units
+  currency String @default("EUR")
+
+  // Status tracking
+  status String  @default("pending") // pending, succeeded, failed
+  reason String? // Optional refund reason
+
+  // Metadata
+  metadata  Json? // Additional provider data
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  payment Payment?       @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+  events  PaymentEvent[] // For webhook deduplication
+
+  @@index([tenantId])
+  @@index([paymentId])
+  @@index([providerRefundId])
+  @@index([status])
+  @@map("refunds")
+}
+
+// 📧 Email delivery tracking (Stage 5)
+model InvoiceEmail {
+  id        String @id @default(uuid())
+  tenantId  String @map("tenant_id") // 🔐 КРИТИЧНО: Tenant isolation
+  paymentId String @map("payment_id") // Reference to Payment
+
+  // Email data
+  to      String // Recipient email address
+  subject String? // Email subject
+  status  String  @default("queued") // queued | sent | failed
+
+  // Provider response
+  providerResponse Json? @map("provider_response") // Provider response data
+
+  // Timestamps
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  payment Payment @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId])
+  @@index([paymentId])
+  @@index([status])
+  @@map("invoice_emails")
+}
+
+// 📝 Payment events for webhook deduplication (Stage 5)
+model PaymentEvent {
+  id       String  @id @default(cuid())
+  tenantId String? @map("tenant_id") // Optional: events can be global
+
+  // Provider event data
+  provider  String // "stripe" | "paypal"
+  eventType String @map("event_type") // Provider event type
+  eventId   String @unique @map("event_id") // Provider event ID (for deduplication)
+
+  // Related entities
+  paymentId String? @map("payment_id") // Optional payment reference
+  refundId  String? @map("refund_id") // Optional refund reference
+
+  // Event payload
+  payload   Json // Full webhook payload
+  processed Boolean @default(false)
+
+  // Metadata
+  receivedAt DateTime @default(now()) @map("received_at")
+
+  // Relations
+  payment Payment? @relation(fields: [paymentId], references: [id], onDelete: SetNull)
+  refund  Refund?  @relation(fields: [refundId], references: [id], onDelete: SetNull)
+
+  @@index([eventId]) // For fast deduplication lookup
+  @@index([provider, eventType])
+  @@index([paymentId])
+  @@index([refundId])
+  @@map("payment_events")
+}
+
+// 🔑 Idempotency keys for API requests (24h TTL)
+model IdempotencyKey {
+  key         String   @id // Client-provided idempotency key (primary key in DB)
+  tenantId    String   @map("tenant_id") // Tenant isolation
+  requestHash String   @map("request_hash") // SHA256 of request data
+  response    Json // Cached response
+  expiresAt   DateTime @map("expires_at") // Auto-cleanup after 24h
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([tenantId]) // Tenant filtering
+  @@index([expiresAt]) // For cleanup queries
+  @@map("idempotency_keys")
+}
+
+// ========================================
+// SUBSCRIPTIONS - Модель подписок (B2B)
+// ========================================
+
+enum SubscriptionStatus {
+  TRIAL
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  UNPAID
+}
+
+enum SubscriptionPlan {
+  BASIC
+  PRO
+  ENTERPRISE
+}
+
+model Subscription {
+  id        String   @id @default(cuid())
+  tenantId  String   @unique @map("tenant_id")
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  
+  plan      SubscriptionPlan @default(BASIC)
+  status    SubscriptionStatus @default(TRIAL)
+  currency  Currency          @default(PLN)
+  
+  stripeCustomerId String? @map("stripe_customer_id")
+  stripeSubscriptionId String? @map("stripe_subscription_id")
+
+  basePriceCents      Int       @default(10000) @map("base_price_cents")
+  staffSeatPriceCents Int       @default(2500)  @map("staff_seat_price_cents")
+  staffSeatCount      Int       @default(0)     @map("staff_seat_count")
+  discountPercent     Int       @default(0)     @map("discount_percent")
+  discountEndsAt      DateTime? @map("discount_ends_at")
+  netAmountCents      Int       @default(0)     @map("net_amount_cents")
+  grossAmountCents    Int       @default(0)     @map("gross_amount_cents")
+  vatRateBps          Int       @default(2300)  @map("vat_rate_bps")
+  pastDueSince        DateTime? @map("past_due_since")
+  gracePeriodEndsAt   DateTime? @map("grace_period_ends_at")
+  lastBillingDate     DateTime? @map("last_billing_date")
+  lastWarningSentAt   DateTime? @map("last_warning_sent_at")
+  
+  currentPeriodStart DateTime @default(now()) @map("current_period_start")
+  currentPeriodEnd   DateTime? @map("current_period_end")
+  
+  cancelAtPeriodEnd Boolean @default(false) @map("cancel_at_period_end")
+  canceledAt        DateTime? @map("canceled_at")
+  
+  trialEndsAt       DateTime? @map("trial_ends_at")
+  
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  
+  payments  Payment[] // Relation to payments
+
+  @@map("subscriptions")
+}

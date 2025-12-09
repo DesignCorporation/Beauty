@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2025-11-22T00:00:00Z",
+  "services": {
+    "api-gateway": {
+      "id": "api-gateway",
+      "type": "gateway",
+      "port": "6020",
+      "host": "0.0.0.0",
+      "health": "/health",
+      "description": "Entry point and proxy for all HTTP/WS traffic",
+      "routes": [
+        {
+          "gatewayPath": "/api/salon/csrf-token",
+          "targetService": "salon-api",
+          "targetPath": "/api/csrf-token",
+          "methods": ["GET"],
+          "public": true
+        },
+        {
+          "gatewayPath": "/api/salon",
+          "targetService": "salon-api",
+          "pathRewrite": {
+            "^/api/salon": "/api"
+          },
+          "description": "Salon API proxy"
+        },
+        {
+          "gatewayPath": "/api/auth",
+          "targetService": "auth-service",
+          "pathRewrite": {
+            "^/api/auth": "/auth"
+          },
+          "description": "Auth service proxy"
+        },
+        {
+          "gatewayPath": "/api/notifications",
+          "targetService": "notification-service",
+          "pathRewrite": {
+            "^/api/notifications": "/api/notifications"
+          },
+          "description": "Notification API proxy"
+        },
+        {
+          "gatewayPath": "/api/images",
+          "targetService": "images-api",
+          "description": "Images API proxy"
+        },
+        {
+          "gatewayPath": "/api/payments",
+          "targetService": "payment-service",
+          "description": "Payment service proxy"
+        }
+      ],
+      "websocket": {
+        "path": "/api/socket.io",
+        "targetService": "notification-service",
+        "description": "Socket.IO notifications"
+      }
+    },
+    "salon-api": {
+      "id": "salon-api",
+      "type": "backend",
+      "port": "6022",
+      "host": "localhost",
+      "health": "/health",
+      "description": "Salon core API",
+      "routes": [
+        { "gatewayPath": "/api/salon/csrf-token", "targetService": "salon-api", "targetPath": "/api/csrf-token", "methods": ["GET"], "public": true },
+        { "gatewayPath": "/api/salon/available-slots", "targetService": "salon-api", "targetPath": "/api/schedule/available-slots", "methods": ["GET"], "public": true },
+        { "gatewayPath": "/api/salon/staff/:id/schedule", "targetService": "salon-api", "targetPath": "/api/staff/:id/schedule", "methods": ["GET"] }
+      ]
+    },
+    "auth-service": {
+      "id": "auth-service",
+      "type": "backend",
+      "port": "6021",
+      "host": "localhost",
+      "health": "/health",
+      "description": "Auth and identity"
+    },
+    "notification-service": {
+      "id": "notification-service",
+      "type": "backend",
+      "port": "6028",
+      "host": "localhost",
+      "health": "/health",
+      "description": "Notifications + Socket.IO"
+    },
+    "payment-service": {
+      "id": "payment-service",
+      "type": "backend",
+      "port": "6029",
+      "host": "localhost",
+      "health": "/health",
+      "description": "Payments/Invoices"
+    },
+    "images-api": {
+      "id": "images-api",
+      "type": "backend",
+      "port": "6026",
+      "host": "localhost",
+      "health": "/health",
+      "description": "Images upload/processing"
+    },
+    "backup-service": {
+      "id": "backup-service",
+      "type": "backend",
+      "port": "6027",
+      "host": "localhost",
+      "health": "/health",
+      "description": "Backup/restore"
+    }
+  }
+}

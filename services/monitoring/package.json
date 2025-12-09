@@ -1,0 +1,31 @@
+{
+  "name": "@beauty-platform/monitoring",
+  "version": "1.0.0",
+  "description": "Beauty Platform Health Monitoring & Auto-Recovery Service",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "1.6.7",
+    "dockerode": "4.0.2",
+    "express": "4.18.2",
+    "node-cron": "3.0.3",
+    "pino": "8.17.2",
+    "redis": "4.6.13"
+  },
+  "devDependencies": {
+    "@types/dockerode": "3.3.24",
+    "@types/express": "4.17.21",
+    "@types/node": "20.11.24",
+    "@types/node-cron": "3.0.11",
+    "tsx": "4.7.0",
+    "typescript": "5.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+[Unit]
+Description=Beauty Platform - Images API (prod)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/beauty-dev/services/images-api
+Environment=NODE_ENV=production
+Environment=PORT=7026
+EnvironmentFile=/opt/beauty-dev/.env.production
+ExecStart=/usr/bin/node dist/server.js
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beauty-images-api
+
+[Install]
+WantedBy=multi-user.target

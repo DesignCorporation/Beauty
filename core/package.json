@@ -1,0 +1,35 @@
+{
+  "name": "@beauty/core",
+  "version": "1.0.0",
+  "description": "Beauty Platform Core - Domain logic and shared components",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "dependencies": {
+    "@prisma/client": "catalog:",
+    "date-fns": "catalog:",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}

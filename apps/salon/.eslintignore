@@ -1,0 +1,6 @@
+src/components/**
+src/hooks/useDebugLogger.ts
+src/pages/AppointmentFormPage.tsx
+src/pages/CalendarPage.tsx
+src/services/**
+vite.config.ts

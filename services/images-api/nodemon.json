@@ -1,0 +1,12 @@
+{
+  "watch": ["src"],
+  "ignore": [
+    "uploads/**",
+    "images_metadata.json",
+    "node_modules/**",
+    "*.log",
+    "*.md"
+  ],
+  "ext": "js,json",
+  "exec": "node src/server.js"
+}

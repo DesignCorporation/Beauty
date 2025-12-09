@@ -1,0 +1,1730 @@
+{
+  "common": {
+    "loading": "Завантаження...",
+    "error": "Помилка",
+    "success": "Успіх",
+    "cancel": "Скасувати",
+    "save": "Зберегти",
+    "delete": "Видалити",
+    "edit": "Редагувати",
+    "add": "Додати",
+    "close": "Закрити",
+    "yes": "Так",
+    "no": "Ні",
+    "ok": "OK",
+    "back": "Назад",
+    "next": "Далі",
+    "previous": "Попередній",
+    "search": "Пошук",
+    "filter": "Фільтр",
+    "clear": "Очистити",
+    "reset": "Скинути",
+    "refresh": "Оновити",
+    "open": "Відкрити",
+    "find": "Знайти",
+    "active": "Активні",
+    "inactive": "Неактивні",
+    "noResults": "Немає результатів",
+    "tryDifferentFilters": "Спробуйте змінити фільтри пошуку",
+    "weekdays": {
+      "monday": "Понеділок",
+      "tuesday": "Вівторок",
+      "wednesday": "Середа",
+      "thursday": "Четвер",
+      "friday": "П'ятниця",
+      "saturday": "Субота",
+      "sunday": "Неділя"
+    }
+  },
+  "calendar": {
+    "loading": "Завантаження календаря...",
+    "weekdays": {
+      "short": {
+        "monday": "Пн",
+        "tuesday": "Вт",
+        "wednesday": "Ср",
+        "thursday": "Чт",
+        "friday": "Пт",
+        "saturday": "Сб",
+        "sunday": "Нд"
+      }
+    }
+  },
+  "schedule": {
+    "common": {
+      "timezoneLabel": "Часовий пояс: {{timezone}}",
+      "start": "Початок",
+      "end": "Завершення",
+      "off": "—",
+      "offDay": "Вихідний",
+      "working": "Робочий день"
+    },
+    "unavailable": {
+      "appointmentConflict": "Зайнято іншим записом",
+      "salonClosed": "Салон закритий",
+      "staffOff": "Майстер недоступний",
+      "outsideHours": "Поза робочими годинами",
+      "default": "Недоступно"
+    },
+    "availability": {
+      "checking": "Перевірка доступності слотів...",
+      "loadFailed": "Не вдалося отримати доступність: {{error}}",
+      "slotAvailable": "Цей час доступний",
+      "slotUnavailableHint": "Оберіть інший час або майстра.",
+      "legendTitle": "Легенда доступності",
+      "selectPrompt": "Оберіть послуги та майстра, щоб перевірити доступність.",
+      "timezoneLabel": "Часовий пояс: {{timezone}}",
+      "dateMismatch": "Оберіть дату для перевірки доступності",
+      "slotNotFound": "Слот недоступний"
+    },
+    "working_hours": "Робочі години",
+    "working_hours_legend": "Встановіть робочі години для кожного дня тижня",
+    "start_time_aria": "Час початку для {{day}}",
+    "end_time_aria": "Час завершення для {{day}}",
+    "is_working_day_aria": "{{day}} — робочий день?",
+    "save_schedule": "Зберегти розклад",
+    "cancel": "Скасувати",
+    "time_format_hint": "Формат: ГГ:хх (24-годинний)",
+    "field_required": "Це поле обовʼязкове",
+    "error_invalid_time": "Невірний формат часу (ГГ:хх)",
+    "error_end_before_start": "Час завершення має бути пізніше часу початку",
+    "error_overlap": "Час перекривається з іншим інтервалом"
+  },
+  "app": {
+    "title": "Beauty CRM",
+    "subtitle": "Салон краси",
+    "adminProfile": "Адміністратор",
+    "adminEmail": "admin@salon.com"
+  },
+  "navigation": {
+    "dashboard": "Головна панель",
+    "calendar": "Календар",
+    "services": "Послуги",
+    "clients": "Клієнти",
+    "team": "Команда",
+    "salon": "Салон",
+    "payments": "Платежі",
+    "analytics": "Аналітика",
+    "settings": "Налаштування",
+    "salonSettings": "Налаштування салону",
+    "help": "Допомога",
+    "userSettings": "Налаштування користувача"
+  },
+  "salonSettings": {
+    "schedule": {
+      "title": "Години роботи салону",
+      "subtitle": "Ці години використовують календар та клієнтський портал.",
+      "help": "Після збереження недоступні слоти будуть приховані.",
+      "unsaved": "Є незбережені зміни",
+      "synced": "Графік синхронізовано",
+      "reset": "Скинути",
+      "save": "Зберегти графік",
+      "success": "Години роботи оновлені",
+      "error": "Не вдалося зберегти години роботи",
+      "resetToast": "Зміни графіку скасовано"
+    }
+  },
+  "tenantSwitcher": {
+    "dropdown": {
+      "current": "Поточний салон",
+      "other": "Інші салони",
+      "noOther": "Немає інших салонів",
+      "actions": "Дії"
+    },
+    "actions": {
+      "register": "Зареєструвати новий салон",
+      "inviteOwner": "Щоб додати власника, перейдіть до налаштувань салону",
+      "openSettings": "Налаштування салону",
+      "addExisting": "Додати існуючий салон",
+      "theme": "Тема"
+    },
+    "toast": {
+      "loading": "Перемикаємо салон...",
+      "switched": "Салон перемкнено",
+      "error": "Не вдалося перемкнути салон"
+    },
+    "roles": {
+      "OWNER": "Власник",
+      "MANAGER": "Менеджер",
+      "STAFF": "Працівник",
+      "RECEPTIONIST": "Адміністратор",
+      "ACCOUNTANT": "Бухгалтер",
+      "owner": "Власник",
+      "manager": "Менеджер",
+      "staff": "Працівник",
+      "receptionist": "Адміністратор",
+      "accountant": "Бухгалтер"
+    }
+  },
+  "dashboard": {
+    "welcome": "Ласкаво просимо до Beauty CRM!",
+    "subtitle": "Панель управління салоном краси",
+    "stats": {
+      "appointmentsToday": "Записи сьогодні",
+      "activeClients": "Активні клієнти",
+      "monthlyRevenue": "Місячний дохід",
+      "staffOccupancy": "Завантаженість персоналу"
+    },
+    "quickActions": "Швидкі дії",
+    "quickActionsDescription": "Основні операції CRM системи",
+    "newAppointment": "Новий запис",
+    "addClient": "Додати клієнта",
+    "exportCsv": "Експорт CSV",
+    "exportXlsx": "Експорт XLSX",
+    "exportSuccess": "Файл з клієнтами готовий",
+    "exportError": "Не вдалося експортувати клієнтів",
+    "exporting": "Експорт...",
+    "reportsAnalytics": "Звіти та аналітика",
+    "clientSearch": "Пошук клієнтів",
+    "clientSearchDescription": "Знайти клієнта за ім'ям або телефоном",
+    "clientSearchPlaceholder": "Введіть ім'я або номер телефону...",
+    "findClient": "Знайти клієнта",
+    "recentClients": "Останні клієнти:",
+    "emptyState": {
+      "title": "Створіть свій перший салон",
+      "subtitle": "Ви увійшли в систему, але потрібно пройти майстер, щоб відкрити доступ до CRM.",
+      "stepsTitle": "Що далі?",
+      "stepsSubtitle": "Майстер за кілька хвилин налаштує салон, послуги та команду.",
+      "steps": {
+        "owners": "Підтвердіть дані власника та введіть поточний пароль",
+        "ownersDescription": "Ми використовуємо email з вашого облікового запису та блокуємо його для безпеки.",
+        "salon": "Опишіть салон і виберіть надані послуги",
+        "salonDescription": "Ми підготуємо категорії та пресети залежно від обраних напрямів.",
+        "finish": "Отримайте повний доступ до робочого простору",
+        "finishDescription": "Після завершення майстер автоматично перенаправить вас на панель."
+      },
+      "cta": "Створити салон"
+    }
+  },
+  "calendar": {
+    "title": "Календар",
+    "subtitle": "Управління записами",
+    "monthNames": [
+      "Січень",
+      "Лютий",
+      "Березень",
+      "Квітень",
+      "Травень",
+      "Червень",
+      "Липень",
+      "Серпень",
+      "Вересень",
+      "Жовтень",
+      "Листопад",
+      "Грудень"
+    ],
+    "dayNames": [
+      "Неділя",
+      "Понеділок",
+      "Вівторок",
+      "Середа",
+      "Четвер",
+      "П'ятниця",
+      "Субота"
+    ],
+    "dayNamesShort": [
+      "Нд",
+      "Пн",
+      "Вт",
+      "Ср",
+      "Чт",
+      "Пт",
+      "Сб"
+    ],
+    "today": "Сьогодні",
+    "newAppointment": "Новий запис",
+    "noAppointments": "Немає записів на цей день",
+    "filters": "Фільтри",
+    "views": {
+      "day": "День",
+      "week": "Тиждень",
+      "month": "Місяць",
+      "staff": "За майстрами"
+    },
+    "errorLoading": "Не вдалося завантажити записи",
+    "offlineMode": "Календар працює в автономному режимі",
+    "retry": "Спробувати знову"
+  },
+  "services": {
+    "title": "Послуги",
+    "subtitle": "Управління послугами салону",
+    "addService": "Додати послугу",
+    "editService": "Редагувати послугу",
+    "deleteService": "Видалити послугу",
+    "serviceName": "Назва послуги",
+    "servicePrice": "Ціна",
+    "serviceDuration": "Тривалість",
+    "serviceDescription": "Опис",
+    "serviceCategory": "Категорія",
+    "emptyTitle": "Послуг поки немає",
+    "emptyDescription": "Додайте першу послугу, щоб почати записувати клієнтів."
+  },
+  "clients": {
+    "title": "Клієнти",
+    "subtitle": "Управління базою клієнтів",
+    "addClient": "Додати клієнта",
+    "importButton": "Імпорт",
+    "import": {
+      "title": "Імпорт клієнтів",
+      "description": "Завантажте файл CSV або XLSX, щоб перевірити дані перед імпортом у CRM.",
+      "uploadTitle": "Виберіть файл CSV або XLSX",
+      "uploadHint": "Максимальний розмір файлу — 5 МБ. Підтримуються формати UTF-8 CSV та XLSX.",
+      "selectedFile": "Вибрано файл",
+      "fileRequired": "Спочатку виберіть файл",
+      "uploading": "Завантаження...",
+      "startCheck": "Перевірити файл",
+      "resetButton": "Скинути",
+      "previewReady": "Файл успішно перевірено",
+      "previewFailed": "Не вдалося обробити файл. Перевірте формат і спробуйте ще раз.",
+      "previewSubtitle": "Попередня перевірка завершена",
+      "previewDescription": "Перегляньте попередження та помилки, щоб підготувати файл до імпорту.",
+      "readyRowsTitle": "Рядки для імпорту",
+      "readyRowsDescription": "За замовчуванням імпортуються лише рядки без помилок. Можна ввімкнути рядки з попередженнями.",
+      "includeWarnings": "Імпортувати рядки з попередженнями",
+      "commitButton": "Імпортувати готові рядки",
+      "commitInProgress": "Імпорт...",
+      "commitSuccess": "Імпорт завершено",
+      "commitFailed": "Не вдалося завершити імпорт.",
+      "commitSummaryTitle": "Імпорт завершено",
+      "commitSummary": "Створено: {{imported}}, пропущено: {{skipped}}",
+      "commitResultTitle": "Результати по рядках",
+      "commitResultHint": "Показано перші {{count}} рядків",
+      "commitReasonTitle": "Причина",
+      "commitReasonImported": "Створено нового клієнта",
+      "commitReasons": {
+        "NAME_REQUIRED": "Не вказано ім’я",
+        "DUPLICATE_EMAIL": "Email уже існує",
+        "DUPLICATE_PHONE": "Телефон уже існує",
+        "DUPLICATE_CONSTRAINT": "Порушення унікальності",
+        "UNKNOWN_ERROR": "Невідома помилка"
+      },
+      "previewTableTitle": "Перші рядки файлу",
+      "previewLimited": "Показано {{count}} із {{total}} рядків",
+      "previewFull": "Показано всі {{count}} рядків",
+      "chooseAnother": "Вибрати інший файл",
+      "table": {
+        "name": "Ім’я",
+        "email": "Email",
+        "phone": "Телефон",
+        "status": "Статус",
+        "issues": "Зауваження"
+      },
+      "noIssues": "Без зауважень",
+      "status": {
+        "ready": "Готово",
+        "warning": "Перевірити",
+        "error": "Помилка"
+      },
+      "summary": {
+        "total": "Усього рядків",
+        "ready": "Готові до імпорту",
+        "warnings": "Потребує уваги",
+        "errors": "Помилки",
+        "duplicates": "Дублікати в базі"
+      },
+      "nextStepTitle": "Наступний крок",
+      "nextStepDescription": "Фінальний імпорт з вибором дублікатів з’явиться у наступній ітерації.",
+      "finishButton": "Готово",
+      "fileRequiredShort": "Виберіть файл",
+      "noData": "Немає даних"
+    },
+    "editClient": "Редагувати клієнта",
+    "deleteClient": "Видалити клієнта",
+    "firstName": "Ім'я",
+    "lastName": "Прізвище",
+    "email": "Email",
+    "phone": "Телефон",
+    "address": "Адреса",
+    "birthday": "День народження",
+    "notes": "Нотатки",
+    "lastVisit": "Останній візит",
+    "totalVisits": "Загальна кількість візитів",
+    "searchPlaceholder": "Пошук клієнтів за ім'ям, email або телефоном...",
+    "filters": "Фільтри",
+    "loading": "Завантаження клієнтів...",
+    "errorLoading": "Помилка завантаження",
+    "retry": "Спробувати ще раз",
+    "noClients": "Немає клієнтів",
+    "noClientsFound": "Клієнтів не знайдено",
+    "noResults": "За запитом \"{{query}}\" нічого не знайдено",
+    "emptyStateMessage": "Додайте першого клієнта, щоб розпочати роботу",
+    "edit": "Редагувати",
+    "statusActive": "Активний",
+    "statusInactive": "Неактивний",
+    "notRecorded": "Не вказано",
+    "registrationDate": "Дата реєстрації",
+    "visits": "Візитів",
+    "bookAppointment": "Записати",
+    "call": "Подзвонити"
+  },
+  "team": {
+    "title": "Команда",
+    "subtitle": "Управління персоналом салону",
+    "addEmployee": "Додати співробітника",
+    "inviteEmployee": "Запросити",
+    "addMember": "Додати члена команди",
+    "editMember": "Редагувати члена команди",
+    "deleteMember": "Видалити члена команди",
+    "memberName": "Ім'я",
+    "memberRole": "Роль",
+    "memberEmail": "Email",
+    "memberPhone": "Телефон",
+    "memberSpecialty": "Спеціалізація",
+    "memberSchedule": "Розклад",
+    "search": "Пошук співробітників...",
+    "filterByRole": "Фільтрувати за роллю",
+    "filterByStatus": "Фільтрувати за статусом",
+    "allRoles": "Всі ролі",
+    "allStatuses": "Всі статуси",
+    "viewProfile": "Переглянути профіль",
+    "editProfile": "Редагувати",
+    "deactivate": "Деактивувати",
+    "noEmployees": "Немає співробітників",
+    "noEmployeesDesc": "Додайте першого співробітника для початку роботи",
+    "roles": {
+      "SALON_OWNER": "Власник салону",
+      "MANAGER": "Менеджер",
+      "STAFF_MEMBER": "Майстер",
+      "RECEPTIONIST": "Адміністратор",
+      "ACCOUNTANT": "Бухгалтер"
+    },
+    "reviews": "відгуків",
+    "services": "Послуг",
+    "years": "Років",
+    "growth": "Зростання",
+    "online": "Онлайн",
+    "languages": "Мови",
+    "specialties": {
+      "hair": "Перукарство",
+      "nails": "Манікюр",
+      "makeup": "Макіяж",
+      "massage": "Масаж",
+      "skincare": "Догляд за шкірою"
+    },
+    "filters": {
+      "allStatuses": "Усі статуси",
+      "allRoles": "Усі ролі",
+      "role": "Роль",
+      "status": "Статус",
+      "toggle": "Фільтри"
+    },
+    "searchPlaceholder": "Пошук за іменем або email",
+    "error": {
+      "title": "Не вдалося завантажити команду",
+      "retry": "Спробувати ще раз"
+    },
+    "empty": {
+      "title": "Команда поки порожня",
+      "filteredTitle": "Результатів не знайдено",
+      "subtitle": "Запросіть співробітників, щоб почати роботу в CRM",
+      "filterSubtitle": "Спробуйте змінити фільтри"
+    },
+    "card": {
+      "tenureYears": "{{count}} років",
+      "tenureMonths": "{{count}} міс",
+      "recently": "Нещодавно приєднався",
+      "recentlyShort": "Нещодавно",
+      "unknownName": "Новий співробітник",
+      "joined": "У команді з",
+      "tenureLabel": "Стаж у CRM",
+      "languages": "Мови",
+      "openProfile": "Відкрити профіль"
+    },
+    "profile": {
+      "notFoundTitle": "Співробітника не знайдено",
+      "notFoundSubtitle": "Виберіть співробітника на сторінці команди",
+      "backToTeam": "Назад до команди",
+      "back": "Назад до команди",
+      "edit": "Редагувати",
+      "cancel": "Скасувати",
+      "save": "Зберегти",
+      "savedTitle": "Профіль оновлено",
+      "savedDescription": "Зміни будуть збережені після інтеграції API",
+      "status": {
+        "active": "Активний",
+        "inactive": "Неактивний"
+      },
+      "subtitle": "Профіль майстра та персональні налаштування CRM",
+      "metrics": {
+        "avgTicket": "Середній чек",
+        "monthlyRevenue": "Місячний оборот",
+        "satisfaction": "Лояльність клієнтів"
+      },
+      "joined": "У команді з",
+      "tenure": {
+        "years_one": "{{count}} рік",
+        "years_few": "{{count}} роки",
+        "years_many": "{{count}} років",
+        "years_other": "{{count}} років",
+        "months_one": "{{count}} місяць",
+        "months_few": "{{count}} місяці",
+        "months_many": "{{count}} місяців",
+        "months_other": "{{count}} місяців"
+      },
+      "tabs": {
+        "overview": "Огляд",
+        "schedule": "Розклад",
+        "settings": "Налаштування"
+      },
+      "specialties": "Експертиза та послуги",
+      "specialtiesHint": "Вкажіть ключові напрями роботи майстра та пов'язані послуги",
+      "specialtiesEmpty": "Спеціалізації ще не додані",
+      "bioPlaceholder": "Опишіть стиль роботи майстра, сертифікати та улюблені послуги",
+      "languagesTitle": "Мови спілкування",
+      "languagesSubtitle": "Оберіть мови, якими майстер спілкується з клієнтами",
+      "accessTitle": "Права та доступ",
+      "accessSubtitle": "Керуйте доступом до фінансових даних і адміністративних функцій",
+      "permissions": {
+        "finances": "Доступ до фінансових показників",
+        "pricing": "Право змінювати ціни послуг",
+        "availableSoon": "Скоро"
+      },
+      "scheduleTitle": "Робочі години",
+      "scheduleSubtitle": "Керуйте доступністю майстра в календарі CRM",
+      "scheduleEditor": {
+        "title": "Графік майстра",
+        "subtitle": "Налаштуйте індивідуальну доступність або скопіюйте години салону.",
+        "readonly": "Тільки власник або сам майстер може змінювати графік.",
+        "unsaved": "Є незбережені зміни",
+        "synced": "Графік синхронізовано",
+        "copySalon": "Скопіювати години салону",
+        "reset": "Скинути",
+        "save": "Зберегти графік",
+        "saveSuccess": "Графік оновлено",
+        "saveError": "Не вдалося зберегти графік",
+        "loadError": "Не вдалося завантажити графік",
+        "exceptions": {
+          "title": "Винятки та відпустки",
+          "subtitle": "Додайте відпустку, лікарняний або кастомні години.",
+          "add": "Додати виняток",
+          "hideForm": "Сховати форму",
+          "typeLabel": "Тип винятку",
+          "reasonLabel": "Коментар",
+          "reasonPlaceholder": "Наприклад: відпустка, навчання або виїзд",
+          "startDate": "Дата початку",
+          "endDate": "Дата завершення",
+          "customStart": "Час початку",
+          "customEnd": "Час завершення",
+          "isWorkingDay": "Робочий день",
+          "customWorking": "Працює за цими годинами",
+          "customOff": "Зайнято — записи недоступні",
+          "save": "Зберегти виняток",
+          "validation": "Виберіть діапазон дат",
+          "customValidation": "Вкажіть проміжок часу для кастомних годин",
+          "added": "Виняток додано",
+          "error": "Не вдалося додати виняток",
+          "removed": "Виняток видалено",
+          "removeError": "Не вдалося видалити виняток",
+          "empty": "Поки немає винятків",
+          "type": {
+            "day_off": "Вихідний / відпустка",
+            "sick_leave": "Лікарняний",
+            "custom_hours": "Кастомні години"
+          },
+          "types": {
+            "dayOff": "Вихідний / відпустка",
+            "sick": "Лікарняний",
+            "custom": "Кастомні години"
+          }
+        }
+      },
+      "weekDays": {
+        "monday": "Понеділок",
+        "tuesday": "Вівторок",
+        "wednesday": "Середа",
+        "thursday": "Четвер",
+        "friday": "Пʼятниця",
+        "saturday": "Субота",
+        "sunday": "Неділя"
+      },
+      "dayOff": "Вихідний",
+      "notesTitle": "Нотатки для команди",
+      "notesSubtitle": "Поділіться рекомендаціями щодо роботи з майстром",
+      "notesPlaceholder": "Наприклад: надає перевагу записам до 16:00, веде VIP-клієнтів, допомагає новачкам",
+      "appearanceTitle": "Стиль і кольори",
+      "appearanceSubtitle": "Налаштуйте акцентні кольори картки майстра в CRM",
+      "colorLabel": "Акцентний колір",
+      "colorOptions": {
+        "indigo": "Індиго",
+        "violet": "Фіолетовий",
+        "pink": "Рожевий",
+        "coral": "Кораловий",
+        "amber": "Бурштиновий",
+        "emerald": "Смарагдовий",
+        "teal": "Бірюзовий",
+        "slate": "Сланцевий"
+      },
+      "currencyTitle": "Валюта показників",
+      "currencySubtitle": "Відображайте KPI майстра у зручній валюті",
+      "currencyHint": "Налаштування впливає на аналітичні блоки та дашборди",
+      "defaultSpecialties": "Стрижки, фарбування, догляд"
+    }
+  },
+  "payments": {
+    "exportReport": "Експорт звіту",
+    "metrics": {
+      "today": "Сьогодні",
+      "thisWeek": "За тиждень",
+      "thisMonth": "За місяць",
+      "averageBill": "Середній чек"
+    },
+    "filters": {
+      "title": "Фільтри",
+      "allPeriods": "Всі періоди",
+      "today": "Сьогодні",
+      "week": "Тиждень",
+      "month": "Місяць",
+      "allMethods": "Всі методи",
+      "card": "Карта",
+      "cash": "Готівка",
+      "transfer": "Переказ"
+    },
+    "recentTransactions": "Останні операції",
+    "table": {
+      "client": "Клієнт",
+      "service": "Послуга",
+      "amount": "Сума",
+      "method": "Спосіб",
+      "date": "Дата",
+      "status": "Статус"
+    },
+    "status": {
+      "completed": "Завершено",
+      "pending": "Очікує"
+    },
+    "methods": {
+      "card": "Карта",
+      "cash": "Готівка",
+      "transfer": "Банківський переказ"
+    }
+  },
+  "analytics": {
+    "exportReport": "Експорт звіту",
+    "metrics": {
+      "revenueMonth": "Виручка (місяць)",
+      "appointmentsMonth": "Записи (місяць)",
+      "newClients": "Нові клієнти",
+      "averageBill": "Середній чек"
+    },
+    "charts": {
+      "revenueByDay": "Виручка по днях",
+      "popularServices": "Популярні послуги",
+      "staffLoad": "Завантаження майстрів"
+    },
+    "comparison": {
+      "periodComparison": "Порівняння періодів",
+      "thisMonth": "Цей місяць",
+      "lastMonth": "Минулий місяць",
+      "growth": "Зростання"
+    },
+    "labels": {
+      "vsLastMonth": "до минулого місяця",
+      "total": "Всього",
+      "avgTicket": "Сер. чек",
+      "conversion": "Конверсія",
+      "noData": "Графік у розробці",
+      "workload": "Завантаження",
+      "revenue": "Виручка",
+      "appointments": "Записів",
+      "records": "записів"
+    }
+  },
+  "language": {
+    "title": "Мова інтерфейсу",
+    "current": "Поточна мова",
+    "switch": "Змінити мову",
+    "languages": {
+      "en": "Англійська",
+      "pl": "Польська",
+      "ua": "Українська",
+      "ru": "Російська"
+    }
+  },
+  "currency": {
+    "title": "Валюта",
+    "current": "Поточна валюта",
+    "switch": "Змінити валюту",
+    "currencies": {
+      "USD": "Долар США",
+      "EUR": "Євро",
+      "PLN": "Польський злотий",
+      "UAH": "Українська гривня"
+    }
+  },
+  "messages": {
+    "confirmDelete": "Ви впевнені, що хочете це видалити?",
+    "deleteSuccess": "Успішно видалено",
+    "saveSuccess": "Зміни збережено",
+    "networkError": "Помилка мережі, перевірте з'єднання",
+    "serverError": "Помилка сервера, спробуйте пізніше",
+    "validationError": "Перевірте, чи правильно заповнені поля"
+  },
+  "login": {
+    "title": "Увійдіть до свого облікового запису",
+    "subtitle": "Будь ласка, введіть дані.",
+    "tagline": "Beauty Design Corp",
+    "salonLabel": "Салон",
+    "tabs": {
+      "login": "Вхід",
+      "signup": "Реєстрація"
+    },
+    "fields": {
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Пароль",
+      "passwordPlaceholder": "Введіть пароль",
+      "firstName": "Імʼя",
+      "firstNamePlaceholder": "Імʼя",
+      "lastName": "Прізвище",
+      "lastNamePlaceholder": "Прізвище",
+      "phone": "Телефон (опційно)",
+      "phonePlaceholder": "+48 600 000 000"
+    },
+    "validation": {
+      "required": "Заповніть усі обов'язкові поля",
+      "passwordLength": "Пароль має містити щонайменше 6 символів"
+    },
+    "buttons": {
+      "signIn": "Увійти",
+      "signingIn": "Вхід...",
+      "rememberMe": "Запам'ятати мене",
+      "forgotPassword": "Забули пароль?",
+      "or": "або",
+      "google": "Продовжити через Google",
+      "signUp": "Створити акаунт",
+      "signingUp": "Створення акаунта..."
+    },
+    "divider": {
+      "login": "або продовжуйте з email",
+      "signup": "Заповніть форму, щоб створити акаунт"
+    },
+    "password": {
+      "hint": "Мінімум 6 символів. Ми шифруємо ваш пароль."
+    },
+    "error": {
+      "title": "Помилка входу",
+      "generic": "Під час входу сталася помилка.",
+      "invalidCredentials": "Невірний email або пароль.",
+      "unexpected": "Сталася непередбачена помилка. Спробуйте ще раз.",
+      "signupFailed": "Не вдалося створити акаунт. Спробуйте ще раз.",
+      "mustRegisterSalon": "Спочатку створіть салон у CRM, щоб увійти через Google",
+      "mustRegisterFirst": "Спочатку створіть акаунт, щоб увійти через Google",
+      "emailConflict": "Цей email уже пов'язаний з іншим обліковим записом Google",
+      "turnstile": "Підтвердьте, що ви не робот, перш ніж продовжити."
+    },
+    "testData": {
+      "title": "Тестові дані",
+      "email": "Email",
+      "password": "Пароль",
+      "fill": "Заповнити тестовими даними"
+    },
+    "debug": {
+      "redirecting": "Перенаправляємо...",
+      "info": "Налагоджувальна інформація"
+    },
+    "noPublicRegistration": "Немає акаунта салону? Увійдіть через клієнтський профіль — майстер реєстрації з’явиться всередині CRM.",
+    "links": {
+      "noAccount": "Немає акаунта?",
+      "signUp": "Зареєструватися",
+      "haveAccount": "Вже маєте акаунт?",
+      "backToLogin": "Увійти"
+    },
+    "switch": {
+      "haveAccount": "Вже маєте акаунт?",
+      "needAccount": "Вперше в Beauty Platform?",
+      "login": "Увійти",
+      "signup": "Створити акаунт"
+    },
+    "disclaimer": "Продовжуючи, ви погоджуєтесь з умовами та політикою конфіденційності Beauty Platform.",
+    "signup": {
+      "title": "Створіть акаунт",
+      "subtitle": "Використовуйте клієнтський профіль, щоб продовжити налаштування CRM.",
+      "passwordHint": "Мінімум 6 символів"
+    },
+    "hero": {
+      "highlight": "Beauty Platform • 2025",
+      "title": "Керуйте салоном без стресу",
+      "titleLine1": "Керуйте",
+      "titleLine2": "салоном",
+      "titleLine3": "без стресу",
+      "subtitle": "Плануйте графік, керуйте командою та автоматизуйте маркетинг з одного місця.",
+      "quote": "Beauty Platform взяла на себе рутину — ми зосередилися на гостях.",
+      "author": "Анна, мережа ManiTime",
+      "role": "Власниця студії",
+      "stats": {
+        "salons": "Активних салонів",
+        "bookings": "Записів на місяць",
+        "countries": "Країн"
+      }
+    }
+  },
+  "userSettings": {
+    "appearanceTitle": "Оформлення інтерфейсу",
+    "appearanceDescription": "Оберіть колірну схему та режим відображення",
+    "themeRedirectTitle": "Тему перенесено до екрана «Тема»",
+    "themeRedirectSubtitle": "Скористайтеся списком салонів → «Тема» або відкрийте окрему сторінку, щоб налаштувати оформлення салону.",
+    "openTheme": "Відкрити «Тема»",
+    "themeNote": "Тема застосовується на рівні салону й спільна для всіх користувачів цього салону.",
+    "displayMode": "Режим відображення",
+    "modeLight": "Світлий",
+    "modeDark": "Темний",
+    "modeSystem": "Як у системі",
+    "themeChanged": "Тему оновлено",
+    "modeChanged": "Режим встановлено",
+    "languageTitle": "Мова інтерфейсу",
+    "languageDescription": "Оберіть бажану мову інтерфейсу додатку",
+    "languageNote": "Зміни набудуть чинності негайно",
+    "languageChanged": "Мову змінено на",
+    "languageChangeFailed": "Не вдалося змінити мову",
+    "notificationsTitle": "Налаштування сповіщень",
+    "notificationsDescription": "Керуйте способами отримання сповіщень про важливі події",
+    "notificationsUnavailable": "Налаштування сповіщень недоступні в цьому середовищі",
+    "emailNotifications": "Email сповіщення",
+    "emailNotificationsDescription": "Отримувати сповіщення на електронну пошту",
+    "smsNotifications": "SMS сповіщення",
+    "smsNotificationsDescription": "Отримувати сповіщення через SMS",
+    "pushNotifications": "Push сповіщення",
+    "pushNotificationsDescription": "Отримувати спливаючі сповіщення в браузері",
+    "saveNotifications": "Зберегти налаштування сповіщень",
+    "saving": "Збереження...",
+    "notificationsSaved": "Налаштування сповіщень збережено",
+    "notificationsLoadFailed": "Не вдалося завантажити налаштування сповіщень",
+    "notificationsSaveFailed": "Не вдалося зберегти налаштування сповіщень",
+    "additionalSettingsTitle": "Додаткові налаштування",
+    "additionalSettingsDescription": "Інші параметри персоналізації (в розробці)",
+    "additionalSettingsPlaceholder": "Додаткові налаштування будуть доступні в наступних оновленнях"
+  },
+  "appointments": {
+    "title": "Записи",
+    "subtitle": "Огляд розкладу",
+    "description": "{{count}} записів у вибраному діапазоні",
+    "newAppointment": "Новий запис",
+    "createAppointment": "Створити запис",
+    "refresh": "Оновити",
+    "view": "Переглянути",
+    "edit": "Редагувати",
+    "searchPlaceholder": "Пошук за клієнтом, послугою або майстром...",
+    "filterByDate": "Фільтр за датою",
+    "filterByStatus": "Фільтр за статусом",
+    "allStatuses": "Всі статуси",
+    "loading": "Завантаження записів...",
+    "errorLoading": "Помилка завантаження",
+    "retry": "Спробувати знову",
+    "noAppointments": "Немає записів",
+    "noAppointmentsFound": "Записи не знайдено",
+    "noResults": "Нічого не знайдено за запитом \"{{query}}\"",
+    "emptyStateMessage": "Створіть перший запис для початку роботи",
+    "minutesShort": "хв",
+    "stats": {
+      "total": "Всього",
+      "active": "Активні",
+      "cancelled": "Скасовано",
+      "revenue": "Дохід"
+    },
+    "dateFilter": "Фільтр за датою",
+    "datePresets": {
+      "any": "Будь-яка дата",
+      "today": "Сьогодні",
+      "tomorrow": "Завтра"
+    },
+    "count": "{{count}} записів",
+    "items": "записів",
+    "statuses": {
+      "PENDING": "Очікується",
+      "CONFIRMED": "Підтверджено",
+      "IN_PROGRESS": "Виконується",
+      "COMPLETED": "Завершено",
+      "CANCELED": "Скасовано"
+    },
+    "statusShort": {
+      "PENDING": "Очік.",
+      "CONFIRMED": "Підтв.",
+      "IN_PROGRESS": "В процесі",
+      "COMPLETED": "Заверш.",
+      "CANCELED": "Скас."
+    }
+  },
+  "appointmentForm": {
+    "createTitle": "Нова запис",
+    "editTitle": "Редагувати запис",
+  "sections": {
+    "client": "Клієнт",
+    "services": "Послуги",
+    "staff": "Майстер",
+    "dateTime": "Дата та час",
+    "schedule": "Розклад",
+    "notes": "Нотатки",
+    "status": "Статус запису"
+  },
+  "searchClient": "Пошук клієнта",
+  "selectedCount": "Вибрано: {{count}}",
+    "placeholders": {
+      "selectClient": "Виберіть клієнта",
+      "notes": "Додаткова інформація про запис..."
+    },
+    "messages": {
+      "loading": "Завантаження...",
+      "formLoadFailed": "Не вдалося завантажити дані форми",
+      "appointmentLoadFailed": "Не вдалося завантажити дані запису",
+      "editNotImplemented": "Редагування записів ще не реалізовано",
+      "createFailed": "Не вдалося створити запис",
+      "saveFailed": "Не вдалося зберегти запис",
+      "noStaff": "Немає доступних майстрів",
+      "noStaffAvailable": "Немає доступних майстрів",
+      "autoRoundedHint": "Час автоматично округлюється до 15 хвилин (00, 15, 30, 45)",
+      "autoCalculatedHint": "Обчислюється автоматично"
+    },
+    "validation": {
+      "selectClient": "Виберіть клієнта",
+      "selectService": "Виберіть щонайменше одну послугу",
+      "selectStaff": "Виберіть майстра",
+      "selectDateTime": "Укажіть дату та час",
+      "serviceNeedsStaff": "Додайте майстрів для послуг: {{services}}"
+    },
+    "toast": {
+      "createSuccess": "Запис успішно створено! Номер: {{number}}",
+      "updateSuccess": "Запис оновлено"
+    },
+    "buttons": {
+      "create": "Створити запис",
+      "saveChanges": "Зберегти зміни",
+      "creating": "Створення..."
+    },
+  "statusSelected": "Вибрано: {{status}}",
+  "durationShort": "{{duration}} хв",
+  "total": "Разом",
+  "date": "Дата",
+  "startTime": "Час початку",
+  "endTime": "Час завершення",
+  "autoCalculated": "Обчислюється автоматично",
+  "roles": {
+    "SALON_OWNER": "Власник",
+    "MANAGER": "Менеджер",
+    "STAFF_MEMBER": "Майстер",
+    "RECEPTIONIST": "Адміністратор"
+  },
+  "staff": {
+    "supportsServicesLabel": "Виконує: {{services}}",
+    "notAvailableForSelected": "Не виконує обрані послуги",
+    "noTeamForServices": "Ніхто з майстрів ще не виконує: {{services}}. Призначте послуги в профілі команди.",
+    "assignStaffHint": "Додайте майстрів до послуг: {{services}}",
+    "unknownService": "послуга"
+  },
+  "labels": {
+    "date": "Дата",
+    "start": "Початок",
+    "end": "Кінець"
+  },
+  "appointmentSummary": {
+    "title": "Підсумок запису",
+    "totalDuration": "Загальний час",
+    "emptyLine1": "Оберіть клієнта, послуги та майстрів",
+    "emptyLine2": "щоб побачити підсумок"
+  },
+    "fallbacks": {
+      "serviceName": "Назва послуги"
+    },
+    "clientSection": {
+      "emailLabel": "Email клієнта *",
+      "check": "Перевірити клієнта",
+      "checking": "Перевірка...",
+      "found": "Клієнта знайдено. Дані синхронізовано з ClientProfile.",
+      "registered": "Клієнт зареєстрований у системі",
+      "new": "Новий клієнт — заповніть дані нижче.",
+      "avatarAlt": "Аватар клієнта {{name}}",
+      "phone": "Телефон",
+      "birthdate": "Дата народження",
+      "notesLabel": "Нотатки салону",
+      "notesPlaceholder": "Додайте нотатки, які видно лише в CRM салону",
+      "newNotesPlaceholder": "Додаткова інформація про клієнта або запис",
+      "errors": {
+        "empty": "Вкажіть email клієнта",
+        "invalid": "Невірний формат email",
+        "notChecked": "Перевірте email клієнта",
+        "checkFailed": "Не вдалося перевірити email клієнта"
+      },
+      "toast": {
+        "found": "Клієнта знайдено: {{name}}",
+        "new": "Новий клієнт — заповніть дані",
+        "error": "Помилка перевірки email"
+      }
+    },
+    "detailsPage": {
+      "viewTitle": "Деталі запису",
+      "subtitle": "Актуальні дані CRM",
+      "backToList": "Записи",
+      "editAction": "Редагувати",
+      "refreshAction": "Оновити дані",
+      "scheduleCard": "Розклад",
+      "servicesCard": "Послуги",
+      "clientCard": "Клієнт",
+      "staffCard": "Майстер",
+      "paymentsCard": "Платежі",
+      "notesCard": "Нотатки",
+      "communicationsCard": "Комунікації",
+      "activityCard": "Активність",
+      "notesEmpty": "Нотаток ще немає",
+      "communicationsEmpty": "Комунікацій ще немає",
+      "activityEmpty": "Активність відсутня",
+      "dangerZone": "Небезпечна зона",
+      "cancelAction": "Скасувати запис",
+      "cancelDescription": "Звільнимо слот і повідомимо клієнта.",
+      "cancelConfirm": "Скасувати цей запис?",
+      "cancelSuccess": "Запис скасовано",
+      "cancelFailed": "Не вдалося скасувати запис",
+      "statusLabel": "Статус",
+      "durationLabel": "Тривалість",
+      "totalLabel": "Сума",
+      "outstandingLabel": "Заборгованість",
+      "lastUpdated": "Оновлено {{value}}",
+      "startTime": "Час початку",
+      "endTime": "Час закінчення",
+      "duration": "Тривалість",
+      "minutes": "хв"
+    }
+  },
+  "settings": {
+    "sections": {
+      "profile": "Профіль салону",
+      "profile_description": "Ця назва відображається в інтерфейсі та документах.",
+      "branding": "Логотип салону",
+      "branding_description": "Зображення відображається в шапці CRM та на публічних сторінках.",
+      "gallery": "Галерея салону",
+      "gallery_description": "Додавайте фотографії робіт, інтер’єру та команди. Зображення не впливають на логотип.",
+      "security": "Безпека",
+      "notifications": "Сповіщення"
+    },
+    "buttons": {
+      "uploadLogo": "Завантажити логотип",
+      "replaceLogo": "Замінити логотип",
+      "removeLogo": "Видалити логотип",
+      "saveChanges": "Зберегти",
+      "cancel": "Скасувати",
+      "selectFiles": "Вибрати файли"
+    },
+    "toasts": {
+      "logoUpdated": "Логотип оновлено",
+      "logoRemoved": "Логотип видалено",
+      "galleryUpdated": "Додано {{count}} зображень",
+      "galleryImageDeleted": "Зображення видалено",
+      "settingsSaved": "Назву салону оновлено!",
+      "errorGeneric": "Сталася помилка під час збереження",
+      "errorUpdateName": "Не вдалося оновити назву",
+      "errorUploadLogo": "Помилка завантаження логотипа",
+      "errorRemoveLogo": "Не вдалося видалити логотип",
+      "errorFetchGallery": "Не вдалося завантажити галерею зображень",
+      "errorUploadGallery": "Помилка завантаження зображень",
+      "errorDeleteGalleryImage": "Не вдалося видалити зображення"
+    },
+    "validations": {
+      "salonName": "Назва салону",
+      "salonAddress": "Адреса салону",
+      "requiredField": "Назва повинна містити щонайменше 3 символи",
+      "unsupportedFileType": "Непідтримуваний тип файлу. Дозволені: JPG, PNG, SVG, WebP",
+      "maxSizeExceeded": "Файл занадто великий. Максимальний розмір: 5MB"
+    },
+    "gallery": {
+      "addPhoto": "Додати фото",
+      "dragHint": "Перетягніть зображення сюди",
+      "orSelect": "Або виберіть на пристрої (JPG, PNG, WebP, SVG)",
+      "emptyStateTitle": "Поки що немає зображень. Додайте перші фотографії салону!",
+      "emptyStateDescription": "Тут будуть відображатися фотографії вашого салону.",
+      "loading": "Завантажуємо зображення...",
+      "uploading": "Завантаження та оптимізація зображень...",
+      "open": "Відкрити",
+      "delete": "Видалити"
+    },
+    "toggles": {
+      "darkMode": "Темний режим",
+      "themeColor": "Колір теми",
+      "staffNotifications": "Сповіщення для персоналу",
+      "clientNotifications": "Сповіщення для клієнтів"
+    },
+    "labels": {
+      "noLogo": "Логотип ще не завантажено",
+      "nameHint": "Мінімум 3 символи. Валюту та мову можна перемикати у верхньому меню."
+    },
+    "roleManagement": {
+      "title": "Управління ролями",
+      "description": "Керуйте власниками салону та рівнями доступу команди.",
+      "ownersTitle": "Власники салону",
+      "ownersDescription": "Основний власник і співвласники з доступом до критичних налаштувань.",
+      "emptyOwners": "Власників ще не додано.",
+      "addOwner": "Додати співвласника",
+      "primaryBadge": "Основний власник",
+      "shareLabel": "Частка {{value}}%",
+      "ownersFallbackEmail": "Email не вказано",
+      "staffTitle": "Ролі команди",
+      "staffDescription": "Огляд співробітників та призначених їм ролей.",
+      "emptyStaff": "Співробітників ще не додано.",
+      "manageRoles": "Керувати ролями",
+      "loading": "Завантаження даних про ролі...",
+      "errorLoading": "Не вдалося завантажити дані про ролі.",
+      "retry": "Спробувати знову",
+      "rolesLabel": "Ролі",
+      "openMenu": "Відкрити меню",
+      "grantRole": "Призначити роль",
+      "revokeRole": "Відкликати роль",
+      "noActionsAvailable": "Немає доступних дій",
+      "cancel": "Скасувати",
+      "confirm": "Підтвердити",
+      "confirmGrantTitle": "Підтвердіть призначення ролі",
+      "confirmGrantDescription": "Ви впевнені, що хочете призначити роль {{role}} користувачу {{name}}? Це надасть йому підвищені права доступу.",
+      "confirmRevokeTitle": "Підтвердіть відкликання ролі",
+      "confirmRevokeDescription": "Ви впевнені, що хочете відкликати роль {{role}} у користувача {{name}}? Він втратить пов'язані з нею права доступу.",
+      "toast": {
+        "error": "Помилка",
+        "roleGranted": "Роль успішно призначена",
+        "roleGrantedDescription": "Роль {{role}} була призначена користувачу",
+        "grantError": "Не вдалося призначити роль",
+        "roleRevoked": "Роль успішно відкликана",
+        "roleRevokedDescription": "Роль {{role}} була відкликана у користувача",
+        "revokeError": "Не вдалося відкликати роль",
+        "coOwnerAdded": "Співвласник успішно доданий",
+        "coOwnerAddedDescription": "Новий співвласник доданий з часткою володіння {{share}}%",
+        "addCoOwnerError": "Не вдалося додати співвласника",
+        "alreadyOwner": "Користувач вже є власником",
+        "alreadyOwnerDescription": "Цей користувач вже має права власника",
+        "userNotFound": "Користувача не знайдено",
+        "userNotFoundDescription": "Вказаний ID користувача не існує"
+      },
+      "addCoOwnerModal": {
+        "title": "Додати співвласника",
+        "description": "Додайте нового співвласника до цього салону з зазначенням відсотка частки володіння",
+        "userIdLabel": "ID користувача",
+        "userIdPlaceholder": "Введіть ID користувача (наприклад, cm...)",
+        "userIdHint": "ID користувача можна знайти в списку персоналу або профілі користувача",
+        "userIdRequired": "Необхідно вказати ID користувача",
+        "shareLabel": "Частка володіння",
+        "shareHint": "Частка володіння визначає відсоток розподілу прибутку",
+        "cancel": "Скасувати",
+        "add": "Додати співвласника",
+        "adding": "Додавання...",
+        "error": "Не вдалося додати співвласника"
+      }
+    }
+  },
+  "notifications": {
+    "title": "Сповіщення",
+    "filters": {
+      "title": "Фільтри",
+      "all": "Всі",
+      "unread": "Непрочитані",
+      "important": "Важливі"
+    },
+    "status": {
+      "read": "Прочитано",
+      "delivered": "Доставлено",
+      "sent": "Надіслано",
+      "pending": "Очікує",
+      "error": "Помилка"
+    },
+    "types": {
+      "EMAIL": "Email",
+      "SMS": "SMS",
+      "PUSH": "Push",
+      "IN_APP": "В додатку",
+      "WEBHOOK": "Webhook"
+    },
+    "actions": {
+      "markAllAsRead": "Позначити всі як прочитані",
+      "clearFilters": "Очистити фільтри",
+      "viewDetails": "Детальніше",
+      "retry": "Спробувати знову",
+      "markAsRead": "Позначити як прочитане",
+      "markAsUnread": "Позначити як непрочитане",
+      "delete": "Видалити сповіщення"
+    },
+    "emptyState": {
+      "all_title": "У вас ще немає сповіщень",
+      "all_description": "Нові сповіщення з’являться тут.",
+      "unread_title": "Всі сповіщення прочитані",
+      "unread_description": "Ви все переглянули!",
+      "important_title": "Немає важливих сповіщень",
+      "important_description": "Сповіщення, позначені як важливі або термінові, з’являться тут."
+    },
+    "time": {
+      "justNow": "Щойно",
+      "minutesAgo": "{{count}} хв тому",
+      "hoursAgo": "{{count}} год тому",
+      "daysAgo": "{{count}} дн тому"
+    },
+    "priority": {
+      "URGENT": "Терміново",
+      "HIGH": "Важливо"
+    },
+    "found_plural": "Знайдено сповіщень: {{count}}",
+    "noNotifications": "Немає сповіщень для відображення",
+    "loading": "Завантаження сповіщень...",
+    "error_title": "Помилка завантаження",
+    "success_marked_as_read": "Позначено як прочитане",
+    "error_marked_as_read": "Не вдалося позначити як прочитане",
+    "info_deleted": "Сповіщення видалено",
+    "error_deleted": "Не вдалося видалити сповіщення",
+    "success_marked_all_as_read": "Позначено {{count}} сповіщень як прочитані"
+  },
+  "help": {
+    "sections": {
+      "title": "Допомога та підтримка",
+      "description": "Знайдіть відповіді на свої запитання та отримайте допомогу від нашої служби підтримки.",
+      "categories": "Категорії",
+      "contact": "Потрібна допомога?",
+      "contact_description": "Зв’яжіться з нашою службою підтримки",
+      "links": "Корисні посилання",
+      "faq": "Часті запитання"
+    },
+    "categories": {
+      "all": "Всі",
+      "appointments": "Записи",
+      "clients": "Клієнти",
+      "services": "Послуги",
+      "staff": "Персонал",
+      "payments": "Оплата",
+      "system": "Система",
+      "integrations": "Інтеграції"
+    },
+    "faq": {
+      "appointments_create": {
+        "question": "Як створити новий запис для клієнта?",
+        "answer": "Перейдіть до розділу \"Календар\" або \"Записи\", натисніть кнопку \"Новий запис\". Виберіть клієнта, послугу, майстра та час. Система автоматично перевірить доступність майстра та запропонує зручні часові слоти."
+      },
+      "appointments_modify": {
+        "question": "Як змінити або скасувати існуючий запис?",
+        "answer": "Відкрийте запис у календарі або у списку записів, натисніть кнопку \"Змінити\". Ви можете змінити час, майстра або послугу. Щоб скасувати запис, скористайтеся кнопкою \"Скасувати запис\" і вкажіть причину скасування."
+      },
+      "clients_add": {
+        "question": "Як додати нового клієнта до бази даних?",
+        "answer": "Перейдіть до розділу \"Клієнти\", натисніть \"Додати клієнта\". Заповніть обов’язкові поля: ім’я, прізвище, номер телефону. Додатково можна вказати електронну пошту, дату народження та нотатки про клієнта."
+      },
+      "clients_history": {
+        "question": "Як знайти історію відвідувань клієнта?",
+        "answer": "Відкрийте картку клієнта та перейдіть на вкладку \"Історія\". Тут відображаються всі минулі та майбутні записи клієнта, а також можна переглянути загальну статистику відвідувань та витрачену суму."
+      },
+      "services_create": {
+        "question": "Як створити нову послугу?",
+        "answer": "У розділі \"Послуги\" натисніть \"Додати послугу\". Вкажіть назву, тривалість, вартість та опис. Ви можете призначити послугу конкретним майстрам або зробити її доступною для всіх."
+      },
+      "services_price": {
+        "question": "Як змінити ціну на послугу?",
+        "answer": "Відкрийте картку послуги, натисніть \"Змінити\" та оновіть вартість. Зміна ціни не впливає на вже створені записи - вони зберігають ціну на момент створення."
+      },
+      "staff_add": {
+        "question": "Як додати нового майстра?",
+        "answer": "Перейдіть до розділу \"Персонал\", натисніть \"Додати майстра\". Заповніть дані, налаштуйте графік роботи та призначте послуги, які може виконувати майстер."
+      },
+      "staff_schedule": {
+        "question": "Як налаштувати розклад роботи майстра?",
+        "answer": "У картці майстра перейдіть на вкладку \"Розклад\". Встановіть робочі дні, час початку та закінчення роботи, додайте перерви та вихідні дні."
+      },
+      "payments_accept": {
+        "question": "Як прийняти оплату від клієнта?",
+        "answer": "У картці запису натисніть \"Оплатити\". Виберіть спосіб оплати (готівка, картка, онлайн). Після підтвердження система автоматично оновить статус запису та створить чек."
+      },
+      "payments_reports": {
+        "question": "Як переглянути фінансову звітність?",
+        "answer": "Розділ \"Аналітика\" містить детальну фінансову статистику: виручка за днями, популярні послуги, завантаження майстрів. Ви можете експортувати звіти в Excel або PDF."
+      },
+      "system_notifications": {
+        "question": "Як налаштувати сповіщення?",
+        "answer": "Перейдіть до \"Налаштування\" → \"Сповіщення\". Налаштуйте автоматичні нагадування клієнтам за допомогою SMS або електронної пошти за певний час до візиту. Також можна увімкнути сповіщення для персоналу."
+      },
+      "system_password": {
+        "question": "Забув пароль, як відновити доступ?",
+        "answer": "На сторінці входу натисніть \"Забули пароль?\", введіть свою електронну пошту. Ви отримаєте лист з посиланням для скидання пароля. Якщо лист не надійшов, перевірте папку \"Спам\"."
+      }
+    },
+    "actions": {
+      "searchPlaceholder": "Пошук за питаннями та відповідями...",
+      "contactSupport": "Зв’язатися з підтримкою",
+      "openGuide": "Відкрити посібник"
+    },
+    "contact": {
+      "title": "Потрібна допомога?",
+      "emailLabel": "Підтримка по email",
+      "phoneLabel": "Підтримка по телефону",
+      "hoursLabel": "Пн-Пт: 9:00 - 18:00 (UTC+1)",
+      "chatLabel": "Онлайн-чат",
+      "chatDescription": "Доступний у робочий час"
+    },
+    "resources": {
+      "title": "Корисні посилання",
+      "documentation": "База знань",
+      "videoTutorials": "Відеоуроки",
+      "community": "Форум спільноти",
+      "apiDocs": "Документація API"
+    },
+    "emptySearch": {
+      "noResultsTitle": "За запитом \"{{query}}\" нічого не знайдено",
+      "noResultsDescription": "Спробуйте використати інші ключові слова або перевірте правопис."
+    },
+    "misc": {
+      "lastUpdated": "Останнє оновлення",
+      "readMore": "Читати далі",
+      "found_one": "Знайдено {{count}} запитання",
+      "found_few": "Знайдено {{count}} запитання",
+      "found_many": "Знайдено {{count}} запитань",
+      "inCategory": "у категорії \"{{category}}\""
+    }
+  },
+  "themeCustomizer": {
+    "title": "Налаштування кольорів теми",
+    "description": "Налаштуйте семантичні кольори під бренд вашого салону",
+    "customActive": "Користувацька тема активна",
+    "successColor": "Колір успіху",
+    "successDesc": "Використовується для позитивних дій та підтверджень",
+    "warningColor": "Попереджувальний колір",
+    "warningDesc": "Використовується для попереджень та обережних повідомлень",
+    "errorColor": "Колір помилки",
+    "errorDesc": "Використовується для помилок та критичних дій",
+    "infoColor": "Інформаційний колір",
+    "infoDesc": "Використовується для інформаційних повідомлень та підказок",
+    "preview": "Попередній перегляд",
+    "previewLabels": {
+      "success": "Успіх",
+      "warning": "Попередження",
+      "error": "Помилка",
+      "info": "Інформація"
+    },
+    "apply": "Застосувати зміни",
+    "reset": "Скинути до стандарту",
+    "export": "Експорт",
+    "import": "Імпорт",
+    "importError": "Не вдалося імпортувати тему. Перевірте формат файлу.",
+    "note": "Користувацькі кольори зберігаються автоматично й застосовуються в усьому інтерфейсі CRM.",
+    "pickColor": "Обрати колір для {{label}}",
+    "done": "Готово"
+  },
+  "servicesPage": {
+    "searchPlaceholder": "Пошук послуг...",
+    "filters": "Фільтри",
+    "priceLabel": "Ціна",
+    "durationLabel": "Тривалість",
+    "minutesShort": "хв",
+    "price": {
+      "all": "Усі ціни",
+      "low": "До 50 ₴",
+      "medium": "50–150 ₴",
+      "high": "Понад 150 ₴"
+    },
+    "duration": {
+      "all": "Будь-яка тривалість",
+      "short": "До 30 хвилин",
+      "medium": "30–90 хвилин",
+      "long": "Понад 90 хвилин"
+    },
+    "resetFilters": "Скинути фільтри",
+    "deleteConfirm": "Видалити послугу «{{name}}»?",
+    "deleteError": "Не вдалося видалити послугу."
+  },
+  "registration": {
+    "title": "Створіть свій салон краси",
+    "subtitle": "Приєднуйтесь до тисяч салонів по всьому світу",
+    "security": "Ваші дані захищені 256-бітним шифруванням SSL",
+    "continue": "Продовжити →",
+    "back": "Назад",
+    "saving": "Зберігаємо...",
+    "processing": "Обробляємо...",
+    "optional": "необов'язково",
+    "steps": {
+      "owner": "Власник",
+      "salon": "Салон",
+      "location": "Локація",
+      "services": "Послуги",
+      "pricing": "Тарифи",
+      "activation": "Активація"
+    },
+    "progress": "Прогрес реєстрації",
+    "motivation": {
+      "start": "Давайте створимо ваш салон!",
+      "progress": "Чудово! Продовжуємо налаштування",
+      "final": "Майже готово! Підтвердіть ваші дані"
+    },
+    "owner": {
+      "title": "Розкажіть про себе",
+      "subtitle": "Ця інформація потрібна для створення облікового запису",
+      "firstName": "Ім'я",
+      "lastName": "Прізвище",
+      "email": "Email",
+      "phone": "Телефон",
+      "language": "Мова інтерфейсу",
+      "firstNamePlaceholder": "Введіть ваше ім'я",
+      "lastNamePlaceholder": "Введіть ваше прізвище",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+380 12 345 6789",
+      "emailNote": "Цей email буде використовуватися для входу в систему",
+      "phoneNote": "Необхідний для SMS верифікації",
+      "privacy": "Реєструючись, ви погоджуєтесь з умовами використання та політикою конфіденційності",
+      "checking": "Перевіряємо дані...",
+      "selected": "вибрано",
+      "emailNoteAuthenticated": "Ця електронна адреса прив’язана до вашого облікового запису і не може бути змінена"
+    },
+    "salon": {
+      "title": "Розкажіть про ваш бізнес",
+      "subtitle": "Назва, яку побачать ваші клієнти",
+      "salonName": "Назва салону",
+      "website": "Веб-сайт",
+      "businessType": "Як ви працюєте з клієнтами?",
+      "salonNamePlaceholder": "Студія краси \"Гламур\"",
+      "websitePlaceholder": "www.ваш-салон.com",
+      "websiteNote": "Якщо у вас немає сайту, ми допоможемо створити красиву сторінку",
+      "help": "Не знаєте, що вибрати? Ви завжди зможете змінити налаштування пізніше",
+      "businessTypes": {
+        "salon": {
+          "title": "Клієнти приходять до салону",
+          "description": "Стаціонарний салон з постійною адресою"
+        },
+        "mobile": {
+          "title": "Мобільний майстер",
+          "description": "Виїжджаю до клієнтів додому"
+        },
+        "home": {
+          "title": "Працюю вдома",
+          "description": "Приймаю клієнтів у себе вдома"
+        },
+        "online": {
+          "title": "Онлайн консультації",
+          "description": "Відеоконсультації та онлайн послуги"
+        }
+      },
+      "hero": {
+        "title": "Створіть профіль вашого бізнесу",
+        "subtitle": "Допоможіть клієнтам знайти саме ваш салон",
+        "feature1": "Стаціонарний салон краси",
+        "feature2": "Мобільні послуги на виїзд",
+        "feature3": "Робота вдома",
+        "feature4": "Онлайн консультації"
+      }
+    },
+    "location": {
+      "title": "Де знаходиться ваш бізнес?",
+      "subtitle": "Налаштуємо систему під ваш регіон",
+      "country": "Країна",
+      "currency": "Валюта",
+      "address": "Адреса салону",
+      "street": "Вулиця і будинок",
+      "city": "Місто",
+      "postalCode": "Поштовий індекс",
+      "countryPlaceholder": "Виберіть країну",
+      "currencyNote": "Всі ціни будуть відображатися в цій валюті",
+      "addressNote": "Адреса допоможе клієнтам знайти вас",
+      "streetPlaceholder": "вул. Хрещатик, буд. 10",
+      "cityPlaceholder": "Київ",
+      "postalCodePlaceholder": "01001",
+      "detectLocation": "Визначити місцезнаходження",
+      "detecting": "Визначаємо..."
+    },
+    "services": {
+      "title": "Які послуги ви надаєте?",
+      "subtitle": "Виберіть до 5 основних напрямків вашого бізнесу",
+      "categoriesTitle": "Категорії послуг",
+      "selected": "вибрано",
+      "popular": "Популярні",
+      "other": "Інші напрямки",
+      "teamSizeTitle": "Розмір вашої команди",
+      "help": "Вибрані категорії допоможуть налаштувати систему під ваш бізнес",
+      "categories": {
+        "hair": {
+          "title": "Перукарські послуги",
+          "description": "Стрижки, укладки, фарбування"
+        },
+        "nails": {
+          "title": "Манікюр і педикюр",
+          "description": "Догляд за нігтями, дизайн"
+        },
+        "brows": {
+          "title": "Брови і вії",
+          "description": "Корекція, фарбування, нарощування"
+        },
+        "massage": {
+          "title": "Масаж і SPA",
+          "description": "Релаксація, догляд за тілом"
+        },
+        "makeup": {
+          "title": "Візаж і макіяж",
+          "description": "Вечірній, весільний макіяж"
+        },
+        "cosmetology": {
+          "title": "Косметологія",
+          "description": "Чистки, пілінги, догляд"
+        },
+        "aesthetic": {
+          "title": "Естетична медицина",
+          "description": "Ін'єкції, контурна пластика"
+        },
+        "fitness": {
+          "title": "Фітнес і йога",
+          "description": "Персональні тренування, йога"
+        }
+      },
+      "teamSizes": {
+        "solo": {
+          "title": "Я працюю один",
+          "description": "Індивідуальний підприємець"
+        },
+        "small": {
+          "title": "У мене є команда 2-5 осіб",
+          "description": "Невелика команда майстрів"
+        },
+        "medium": {
+          "title": "Середній салон 6-15 осіб",
+          "description": "Повноцінний салон краси"
+        },
+        "large": {
+          "title": "Великий салон 16+ осіб",
+          "description": "Мережа салонів або великий центр"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Виберіть тарифний план",
+      "subtitle": "Почніть з безкоштовного періоду 7 днів",
+      "trialTitle": "7 днів безкоштовно для всіх планів!",
+      "trialFeature1": "Повний доступ до всіх функцій",
+      "trialFeature2": "Без обмежень по клієнтах",
+      "trialFeature3": "Скасування в будь-який момент",
+      "popular": "Популярний",
+      "recommended": "Рекомендуємо",
+      "selected": "Вибрано",
+      "selectPlan": "Вибрати план",
+      "selectedPlan": "Ви вибрали план",
+      "planInfo": "Ви отримаєте 7 днів безкоштовного доступу до всіх функцій. Скасувати можна в будь-який момент без комісій.",
+      "thenPrice": "потім",
+      "perMonth": "на місяць",
+      "month": "міс",
+      "freeTrial": "7 днів безкоштовно",
+      "startTrial": "Почати безкоштовний період →",
+      "changeAnytime": "Ви можете змінити план в будь-який момент",
+      "noCommitment": "Ніяких зобов'язань. Скасування в один клік.",
+      "plans": {
+        "starter": {
+          "name": "STARTER",
+          "subtitle": "Безкоштовно 7 днів",
+          "price": "Безкоштовно",
+          "features": {
+            "team": "1 власник + до 2 майстрів",
+            "calendar": "Базовий календар записів",
+            "clients": "До 50 клієнтів",
+            "support": "Email підтримка"
+          }
+        },
+        "team": {
+          "name": "TEAM",
+          "subtitle": "Для невеликих команд",
+          "features": {
+            "team": "До 5 співробітників",
+            "calendar": "Повний календар",
+            "clients": "Необмежено клієнтів",
+            "sms": "SMS сповіщення",
+            "analytics": "Базова аналітика",
+            "support": "Пріоритетна підтримка"
+          }
+        },
+        "business": {
+          "name": "BUSINESS",
+          "subtitle": "Для професійних салонів",
+          "features": {
+            "team": "До 10 співробітників",
+            "analytics": "Поглиблена аналітика",
+            "social": "Інтеграції з соцмережами",
+            "booking": "Онлайн запис для клієнтів",
+            "multi": "Багатофіліальність",
+            "crm": "Розширена CRM"
+          }
+        },
+        "enterprise": {
+          "name": "ENTERPRISE",
+          "subtitle": "Для великих мереж",
+          "features": {
+            "team": "До 25 співробітників",
+            "api": "API доступ",
+            "manager": "Персональний менеджер",
+            "integrations": "Кастомні інтеграції",
+            "whitelabel": "White-label рішення",
+            "priority": "Пріоритетна підтримка 24/7"
+          }
+        }
+      }
+    },
+    "activation": {
+      "emailTitle": "Перевіряємо ваш email",
+      "emailSubtitle": "Ми надіслали лист на",
+      "emailSent": "Email надіслано!",
+      "emailSending": "Надсилаємо email...",
+      "emailInstructions": "Перевірте папку \"Спам\", якщо лист не надійшов",
+      "smsTitle": "Підтвердіть номер телефону",
+      "smsSubtitle": "Ми надіслали код на",
+      "sendSMS": "Надіслати SMS код",
+      "smsSending": "Надсилаємо SMS...",
+      "enterCode": "Введіть код з SMS",
+      "resendIn": "Повторна відправка через",
+      "seconds": "сек",
+      "resendSMS": "Надіслати код повторно",
+      "testCode": "Для тестування використовуйте код:",
+      "verifyCode": "Підтвердити код",
+      "termsTitle": "Останній крок!",
+      "termsSubtitle": "Ознайомтесь з умовами використання",
+      "termsOfService": "Умови використання Beauty Platform",
+      "term1": "Ви отримуєте доступ до системи управління салоном краси",
+      "term2": "Персональні дані захищені відповідно до GDPR",
+      "term3": "Оплата проводиться щомісяця відповідно до обраного тарифу",
+      "term4": "Скасування підписки можливе в будь-який момент",
+      "term5": "Технічна підтримка доступна в робочі години",
+      "acceptTerms": "Я приймаю",
+      "termsLink": "умови використання",
+      "and": "і",
+      "privacyLink": "політику конфіденційності",
+      "subscribe": "Підписатися на новини про нові функції та оновлення",
+      "createSalon": "Створити салон! 🎉",
+      "creating": "Створюємо ваш салон...",
+      "creatingSubtitle": "Налаштовуємо систему під ваші потреби",
+      "step1": "Створення користувача",
+      "step2": "Налаштування салону",
+      "step3": "Підготовка робочого місця",
+      "waitMessage": "Це займе всього кілька секунд...",
+      "successAuthenticated": "Салон успішно створено 🎉",
+      "genericError": "Не вдалося створити салон"
+    },
+    "validation": {
+      "firstNameRequired": "Ім'я обов'язкове",
+      "lastNameRequired": "Прізвище обов'язкове",
+      "emailRequired": "Email обов'язковий",
+      "emailInvalid": "Некоректний email",
+      "phoneRequired": "Номер телефону обов'язковий",
+      "phoneInvalid": "Некоректний номер телефону",
+      "salonNameRequired": "Назва салону обов'язкова",
+      "salonNameTooShort": "Назва повинна містити мінімум 3 символи",
+      "websiteInvalid": "Введіть коректний URL сайту",
+      "countryRequired": "Виберіть країну",
+      "currencyRequired": "Виберіть валюту",
+      "serviceCategoriesRequired": "Виберіть хоча б одну категорію послуг",
+      "serviceCategoriesMax": "Виберіть не більше 5 категорій",
+      "planRequired": "Виберіть тарифний план",
+      "smsCodeRequired": "Введіть 6-значний код з SMS",
+      "smsCodeInvalid": "Код повинен містити тільки цифри",
+      "smsCodeWrong": "Невірний код. Спробуйте ще раз.",
+      "termsRequired": "Необхідно прийняти умови використання"
+    }
+  },
+  "createSalon": {
+    "title": "Створіть салон за кілька хвилин",
+    "subtitle": "Ми використовуємо дані вашого клієнтського облікового запису. Додайте інформацію про салон і оберіть напрями — система підготує категорії та послуги автоматично.",
+    "badge": "Новий майстер реєстрації",
+    "sections": {
+      "owner": {
+        "title": "Власник салону",
+        "subtitle": "Ці дані оновлять ваш профіль і відображатимуться в CRM."
+      },
+      "salon": {
+        "title": "Інформація про салон",
+        "subtitle": "Назва та країна допомагають налаштувати валюту та локалізацію."
+      },
+      "services": {
+        "title": "Оберіть напрями послуг",
+        "subtitle": "Можна обрати кілька напрямів — ми створимо категорії та стандартні послуги для кожного.",
+        "counter": "Вибрано {{count}} послуг",
+        "defaults": "{{categories}} категорій, {{services}} послуг",
+        "typeSubtitle": "Позначте послуги, з яких хочете розпочати",
+        "serviceMeta": "{{duration}} хв · {{price}} ₴"
+      },
+      "confirm": {
+        "title": "Підтвердження",
+        "subtitle": "Ознайомтесь з умовами та підтвердіть створення салону.",
+        "notice": "Після відправлення ми автоматично створимо категорії, послуги та доступ. Це займе менше хвилини."
+      }
+    },
+    "fields": {
+      "country": "Країна",
+      "currency": "Валюта",
+      "accountPassword": "Пароль облікового запису",
+      "newPassword": "Створіть пароль",
+      "confirmPassword": "Підтвердіть пароль"
+    },
+    "hints": {
+      "password": "Введіть поточний пароль, щоб підтвердити створення салону.",
+      "newPassword": "Цей пароль захищає акаунт. Мінімум 8 символів.",
+      "confirmPassword": "Повторіть пароль, щоб уникнути помилок."
+    },
+    "actions": {
+      "back": "Повернутися на дашборд",
+      "cancel": "Скасувати",
+      "create": "Створити салон",
+      "creating": "Створюємо..."
+    },
+    "summary": "Напрямів: {{types}}, послуг: {{services}}",
+    "loading": {
+      "salonTypes": "Завантажуємо напрями..."
+    },
+    "errors": {
+      "salonTypes": "Не вдалося завантажити напрями салону",
+      "servicePresets": "Не вдалося завантажити перелік послуг"
+    },
+    "validation": {
+      "password": "Введіть пароль вашого облікового запису",
+      "salonTypes": "Оберіть щонайменше один напрям",
+      "newPassword": "Створіть пароль для акаунта",
+      "passwordLength": "Пароль повинен містити щонайменше 8 символів",
+      "confirmPassword": "Підтвердіть пароль",
+      "confirmPasswordMismatch": "Паролі не співпадають"
+    },
+    "notifications": {
+      "validationError": "Перевірте поля форми",
+      "genericError": "Не вдалося створити салон"
+    },
+    "pricing": {
+      "title": "Підписка та команда",
+      "subtitle": "Базовий салон + працівники. Оплата лише після безкоштовного періоду.",
+      "staffCountLabel": "Кількість працівників",
+      "staffCountHint": "0 — працюю сам. Кожен працівник +25 PLN нетто на місяць.",
+      "decreaseStaff": "Зменшити кількість працівників",
+      "increaseStaff": "Збільшити кількість працівників",
+      "staffSoloLabel": "Власник працює сам (SOLO)",
+      "staffValueLabel": "{{count}} працівників у підписці",
+      "baseLabel": "Підписка салону",
+      "staffLabel": "Працівники",
+      "totalLabel": "Сума після trial",
+      "totalWithVatLabel": "Сума з ПДВ (23%)",
+      "vatNotice": "Ціни нетто. Stripe додасть 23% ПДВ для Польщі.",
+      "trialBadge": "7 днів безкоштовно",
+      "trialDescription": "Нагадаємо за 3 дні до завершення пробного періоду.",
+      "staffInfo": "Додавайте команду пізніше в розділі «Команда» — сума оновиться автоматично."
+    },
+    "salonTypes": {
+      "hair": {
+        "title": "Перукарня",
+        "description": "Стрижки, фарбування, укладки"
+      },
+      "nails": {
+        "title": "Нейл-салон",
+        "description": "Манікюр, педикюр, дизайн"
+      },
+      "massage": {
+        "title": "Масаж та SPA",
+        "description": "Терапії та релакс-ритуали"
+      },
+      "barbershop": {
+        "title": "Барбершоп",
+        "description": "Чоловічі стрижки та догляд за бородою"
+      },
+      "pet_grooming": {
+        "title": "Грумінг",
+        "description": "Догляд за собаками та котами"
+      },
+      "wellness": {
+        "title": "Wellness-центр",
+        "description": "Відновлення та розслаблення"
+      },
+      "cosmetology": {
+        "title": "Косметологія",
+        "description": "Інʼєкції та апаратні процедури"
+      },
+      "brow_lash": {
+        "title": "Брови та вії",
+        "description": "Оформлення, ламінування, макіяж"
+      },
+      "mixed": {
+        "title": "Власний формат",
+        "description": "Комбінуйте потрібні напрямки"
+      }
+    }
+  }
+}

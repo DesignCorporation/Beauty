@@ -1,0 +1,20 @@
+[Unit]
+Description=Beauty Platform - Client frontend (prod)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/beauty-dev/apps/client
+Environment=NODE_ENV=production
+Environment=PORT=7003
+EnvironmentFile=/opt/beauty-dev/.env.production
+ExecStart=/usr/bin/node .output/server/index.mjs
+Restart=on-failure
+RestartSec=10s
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beauty-client
+
+[Install]
+WantedBy=multi-user.target

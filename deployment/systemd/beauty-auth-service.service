@@ -1,0 +1,22 @@
+[Unit]
+Description=Beauty Platform - Auth Service (prod)
+After=network.target postgresql-7100.service
+Wants=postgresql-7100.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/beauty-dev/services/auth-service
+Environment=NODE_ENV=production
+Environment=PORT=7021
+EnvironmentFile=/opt/beauty-dev/.env.production
+ExecStart=/usr/bin/node dist/server.js
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beauty-auth-service
+
+[Install]
+WantedBy=multi-user.target

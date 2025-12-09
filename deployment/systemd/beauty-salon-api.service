@@ -1,0 +1,22 @@
+[Unit]
+Description=Beauty Platform - Salon API (prod)
+After=network.target postgresql-7100.service
+Wants=postgresql-7100.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/beauty-dev/services/salon-api
+Environment=NODE_ENV=production
+Environment=PORT=7022
+EnvironmentFile=/opt/beauty-dev/.env.production
+ExecStart=/usr/bin/node dist/services/salon-api/src/server.js
+Restart=on-failure
+RestartSec=10s
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=beauty-salon-api
+
+[Install]
+WantedBy=multi-user.target

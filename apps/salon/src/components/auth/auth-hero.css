@@ -1,0 +1,42 @@
+.auth-hero-title {
+  font-family: 'Montserrat', 'Inter', 'system-ui', sans-serif;
+  font-weight: 100;
+  line-height: 1 !important;
+  letter-spacing: 0.06em;
+  background-size: 250% 250%;
+  animation: auth-hero-gold 12s ease-in-out infinite;
+  text-shadow: 0 10px 35px rgba(250, 204, 21, 0.35);
+}
+
+@keyframes auth-hero-gold {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.auth-hero-gallery {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.auth-hero-gallery-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
+  filter: saturate(1.15);
+}
+
+.auth-hero-gallery-layer.is-active {
+  opacity: 0.65;
+}

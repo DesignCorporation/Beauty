@@ -1,0 +1,1847 @@
+{
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка",
+    "success": "Успех",
+    "cancel": "Отменить",
+    "save": "Сохранить",
+    "delete": "Удалить",
+    "edit": "Редактировать",
+    "add": "Добавить",
+    "close": "Закрыть",
+    "yes": "Да",
+    "no": "Нет",
+    "ok": "OK",
+    "back": "Назад",
+    "next": "Далее",
+    "previous": "Предыдущий",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "clear": "Очистить",
+    "reset": "Сбросить",
+    "refresh": "Обновить",
+    "open": "Открыть",
+    "find": "Найти",
+    "active": "Активные",
+    "inactive": "Неактивные",
+    "noResults": "Нет результатов",
+    "tryDifferentFilters": "Попробуйте изменить фильтры поиска",
+    "weekdays": {
+      "monday": "Понедельник",
+      "tuesday": "Вторник",
+      "wednesday": "Среда",
+      "thursday": "Четверг",
+      "friday": "Пятница",
+      "saturday": "Суббота",
+      "sunday": "Воскресенье"
+    }
+  },
+  "calendar": {
+    "loading": "Загрузка календаря...",
+    "weekdays": {
+      "short": {
+        "monday": "Пн",
+        "tuesday": "Вт",
+        "wednesday": "Ср",
+        "thursday": "Чт",
+        "friday": "Пт",
+        "saturday": "Сб",
+        "sunday": "Вс"
+      }
+    }
+  },
+  "schedule": {
+    "common": {
+      "timezoneLabel": "Часовой пояс: {{timezone}}",
+      "start": "Начало",
+      "end": "Окончание",
+      "off": "—",
+      "offDay": "Выходной",
+      "working": "Рабочий день"
+    },
+    "unavailable": {
+      "appointmentConflict": "Занято другой записью",
+      "salonClosed": "Салон закрыт",
+      "staffOff": "Мастер недоступен",
+      "outsideHours": "За пределами рабочих часов",
+      "default": "Недоступно"
+    },
+    "availability": {
+      "checking": "Проверяем доступность слотов...",
+      "loadFailed": "Не удалось загрузить доступность: {{error}}",
+      "slotAvailable": "Это время доступно",
+      "slotUnavailableHint": "Выберите другое время или мастера.",
+      "legendTitle": "Легенда доступности",
+      "selectPrompt": "Выберите услуги и мастера, чтобы проверить доступность.",
+      "timezoneLabel": "Часовой пояс: {{timezone}}",
+      "dateMismatch": "Выберите дату, чтобы проверить доступность",
+      "slotNotFound": "Слот недоступен"
+    },
+    "working_hours": "Рабочие часы",
+    "working_hours_legend": "Установите рабочие часы для каждого дня недели",
+    "start_time_aria": "Время начала для {{day}}",
+    "end_time_aria": "Время окончания для {{day}}",
+    "is_working_day_aria": "{{day}} — рабочий день?",
+    "save_schedule": "Сохранить расписание",
+    "cancel": "Отмена",
+    "time_format_hint": "Формат: ЧЧ:мм (24-часовой формат)",
+    "field_required": "Это поле обязательно",
+    "error_invalid_time": "Неверный формат времени (ЧЧ:мм)",
+    "error_end_before_start": "Время окончания должно быть позже времени начала",
+    "error_overlap": "Время пересекается с другим интервалом"
+  },
+  "app": {
+    "title": "Beauty CRM",
+    "subtitle": "Салон красоты",
+    "adminProfile": "Администратор",
+    "adminEmail": "admin@salon.com",
+    "user": "Пользователь",
+    "userRole": "пользователь"
+  },
+  "navigation": {
+    "dashboard": "Главная панель",
+    "calendar": "Календарь",
+    "appointments": "Записи",
+    "services": "Услуги",
+    "clients": "Клиенты",
+    "team": "Команда",
+    "salon": "Салон",
+    "payments": "Платежи",
+    "analytics": "Аналитика",
+    "notifications": "Уведомления",
+    "settings": "Настройки",
+    "salonSettings": "Настройки салона",
+    "help": "Помощь",
+    "profile": "Профиль",
+    "userSettings": "Настройки пользователя",
+    "logout": "Выйти",
+    "addSalon": "Добавить салон"
+  },
+  "salonSettings": {
+    "schedule": {
+      "title": "Рабочие часы салона",
+      "subtitle": "Эти часы используют календарь и клиентский портал.",
+      "help": "Изменения вступают в силу сразу после сохранения и скрывают недоступные слоты.",
+      "unsaved": "Есть несохранённые изменения",
+      "synced": "График синхронизирован",
+      "reset": "Сбросить",
+      "save": "Сохранить график",
+      "success": "Рабочие часы обновлены",
+      "error": "Не удалось сохранить рабочие часы",
+      "resetToast": "Изменения графика отменены"
+    }
+  },
+  "tenantSwitcher": {
+    "dropdown": {
+      "current": "Текущий салон",
+      "other": "Другие салоны",
+      "noOther": "Других салонов нет",
+      "actions": "Действия"
+    },
+    "actions": {
+      "register": "Зарегистрировать новый салон",
+      "inviteOwner": "Чтобы добавить владельца, перейдите в настройки салона",
+      "openSettings": "Настройки салона",
+      "addExisting": "Добавить существующий салон",
+      "theme": "Тема"
+    },
+    "toast": {
+      "loading": "Переключаем салон...",
+      "switched": "Салон переключен",
+      "error": "Не удалось переключить салон"
+    },
+    "roles": {
+      "OWNER": "Владелец",
+      "MANAGER": "Управляющий",
+      "STAFF": "Сотрудник",
+      "RECEPTIONIST": "Администратор",
+      "ACCOUNTANT": "Бухгалтер",
+      "owner": "Владелец",
+      "manager": "Управляющий",
+      "staff": "Сотрудник",
+      "receptionist": "Администратор",
+      "accountant": "Бухгалтер"
+    }
+  },
+  "dashboard": {
+    "welcome": "Добро пожаловать в Beauty CRM!",
+    "subtitle": "Панель управления салоном красоты",
+    "stats": {
+      "appointmentsToday": "Записи сегодня",
+      "activeClients": "Активные клиенты",
+      "monthlyRevenue": "Месячный доход",
+      "staffOccupancy": "Загруженность персонала"
+    },
+    "quickActions": "Быстрые действия",
+    "quickActionsDescription": "Основные операции CRM системы",
+    "newAppointment": "Новая запись",
+    "addClient": "Добавить клиента",
+    "exportCsv": "Экспорт CSV",
+    "exportXlsx": "Экспорт XLSX",
+    "exportSuccess": "Файл с клиентами готов",
+    "exportError": "Не удалось экспортировать клиентов",
+    "exporting": "Экспорт...",
+    "reportsAnalytics": "Отчеты и аналитика",
+    "clientSearch": "Поиск клиентов",
+    "clientSearchDescription": "Найти клиента по имени или телефону",
+    "clientSearchPlaceholder": "Введите имя или номер телефона...",
+    "findClient": "Найти клиента",
+    "recentClients": "Последние клиенты:",
+    "emptyState": {
+      "title": "Создайте свой первый салон",
+      "subtitle": "Вы вошли в систему, но необходимо пройти мастер, чтобы получить доступ к CRM.",
+      "stepsTitle": "Что будет дальше?",
+      "stepsSubtitle": "Мастер за несколько минут настроит салон, услуги и команду.",
+      "steps": {
+        "owners": "Подтвердите данные владельца и введите текущий пароль",
+        "ownersDescription": "Мы используем email из вашего аккаунта и блокируем его для безопасности.",
+        "salon": "Опишите салон и выберите предоставляемые услуги",
+        "salonDescription": "Мы подготовим категории и пресеты в зависимости от выбранных направлений.",
+        "finish": "Получите полный доступ к рабочему пространству",
+        "finishDescription": "После завершения мастер автоматически переведёт вас на панель управления."
+      },
+      "cta": "Создать салон"
+    }
+  },
+  "calendar": {
+    "title": "Календарь",
+    "subtitle": "Управление записями",
+    "monthNames": [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь"
+    ],
+    "dayNames": [
+      "Воскресенье",
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница",
+      "Суббота"
+    ],
+    "dayNamesShort": [
+      "Вс",
+      "Пн",
+      "Вт",
+      "Ср",
+      "Чт",
+      "Пт",
+      "Сб"
+    ],
+    "today": "Сегодня",
+    "newAppointment": "Новая запись",
+    "noAppointments": "Нет записей на этот день",
+    "filters": "Фильтры",
+    "views": {
+      "day": "День",
+      "week": "Неделя",
+      "month": "Месяц",
+      "staff": "По мастерам"
+    },
+    "errorLoading": "Не удалось загрузить записи",
+    "offlineMode": "Календарь работает в автономном режиме",
+    "retry": "Попробовать снова"
+  },
+  "services": {
+    "title": "Услуги",
+    "subtitle": "Управление услугами салона",
+    "addService": "Добавить услугу",
+    "editService": "Редактировать услугу",
+    "deleteService": "Удалить услугу",
+    "serviceName": "Название услуги",
+    "servicePrice": "Цена",
+    "serviceDuration": "Длительность",
+    "serviceDescription": "Описание",
+    "serviceCategory": "Категория",
+    "emptyTitle": "Услуг пока нет",
+    "emptyDescription": "Добавьте первую услугу, чтобы начать записывать клиентов."
+  },
+  "serviceCategories": {
+    "title": "Категории услуг",
+    "subtitle": "Активных услуг: {{count}}",
+    "actions": {
+      "addCategory": "Добавить категорию",
+      "addSubcategory": "Добавить подкатегорию",
+      "edit": "Редактировать",
+      "delete": "Удалить",
+      "toggleCategory": "Переключить категорию",
+      "toggleSubcategory": "Переключить подкатегорию"
+    },
+    "status": {
+      "active": "Активна",
+      "disabled": "Отключена"
+    },
+    "badges": {
+      "defaultCategory": "Системная",
+      "defaultSubcategory": "Системная подкатегория",
+      "inactive": "Отключено"
+    },
+    "meta": {
+      "servicesCount": "Услуг: {{count}}"
+    },
+    "empty": {
+      "subcategories": "Нет подкатегорий — добавьте первую, чтобы сгруппировать услуги."
+    },
+    "drag": {
+      "category": "Перетащите категорию, чтобы изменить порядок",
+      "subcategory": "Перетащите подкатегорию, чтобы изменить порядок"
+    },
+    "confirm": {
+      "deleteCategory": "Удалить категорию «{{name}}»? Все услуги будут перенесены в блок «Без категории».",
+      "deleteSubcategory": "Удалить подкатегорию «{{name}}» в категории «{{category}}»?"
+    },
+    "dialog": {
+      "editCategoryTitle": "Редактирование категории",
+      "createCategoryTitle": "Новая категория услуг",
+      "editCategoryDescription": "Обновите название, иконку или статус категории.",
+      "createCategoryDescription": "Создайте категорию, чтобы группировать услуги по направлениям.",
+      "editSubcategoryTitle": "Редактирование подкатегории «{{category}}»",
+      "createSubcategoryTitle": "Новая подкатегория в «{{category}}»",
+      "editSubcategoryDescription": "Обновите название или статус подкатегории.",
+      "createSubcategoryDescription": "Добавьте подкатегорию, чтобы точнее сегментировать услуги."
+    },
+    "form": {
+      "save": "Сохранить",
+      "create": "Создать",
+      "cancel": "Отменить",
+      "name": "Название",
+      "namePlaceholder": "Например: Уход за волосами",
+      "subcategoryName": "Название подкатегории",
+      "subcategoryPlaceholder": "Например: Окрашивание",
+      "icon": "Иконка (необязательно)",
+      "iconHint": "Короткое имя иконки или emoji",
+      "iconPlaceholder": "Например: scissors",
+      "isActiveLabel": "Категория доступна",
+      "isActiveHint": "Отключённые категории скрываются в сервисах и на портале.",
+      "errors": {
+        "requiredName": "Введите название",
+        "generic": "Не удалось сохранить данные. Попробуйте ещё раз."
+      }
+    },
+    "toast": {
+      "categoryUpdated": "Категория «{{name}}» обновлена",
+      "categoryCreated": "Категория «{{name}}» создана",
+      "categorySaveError": "Не удалось сохранить категорию",
+      "categoryDeleted": "Категория «{{name}}» удалена",
+      "categoryDeleteError": "Не удалось удалить категорию",
+      "categoryEnabled": "Категория «{{name}}» включена",
+      "categoryDisabled": "Категория «{{name}}» отключена",
+      "categoryToggleError": "Не удалось изменить статус категории",
+      "subcategoryUpdated": "Подкатегория «{{name}}» обновлена",
+      "subcategoryCreated": "Подкатегория «{{name}}» создана",
+      "subcategorySaveError": "Не удалось сохранить подкатегорию",
+      "subcategoryDeleted": "Подкатегория «{{name}}» удалена",
+      "subcategoryDeleteError": "Не удалось удалить подкатегорию",
+      "subcategoryEnabled": "Подкатегория «{{name}}» включена",
+      "subcategoryDisabled": "Подкатегория «{{name}}» отключена",
+      "subcategoryToggleError": "Не удалось изменить статус подкатегории",
+      "orderSaved": "Порядок категорий обновлён",
+      "orderError": "Не удалось сохранить порядок категорий",
+      "subcategoryOrderSaved": "Порядок подкатегорий обновлён",
+      "subcategoryOrderError": "Не удалось сохранить порядок подкатегорий"
+    }
+  },
+  "clients": {
+    "title": "Клиенты",
+    "subtitle": "Управление базой клиентов",
+    "addClient": "Добавить клиента",
+    "importButton": "Импорт",
+    "import": {
+      "title": "Импорт клиентов",
+      "description": "Загрузите CSV или XLSX файл, чтобы проверить данные перед импортом в CRM.",
+      "uploadTitle": "Выберите CSV или XLSX файл",
+      "uploadHint": "Максимальный размер файла — 5 МБ. Поддерживаются UTF-8 CSV и XLSX.",
+      "selectedFile": "Выбран файл",
+      "fileRequired": "Сначала выберите файл для загрузки",
+      "uploading": "Загрузка...",
+      "startCheck": "Проверить файл",
+      "resetButton": "Сбросить",
+      "previewReady": "Файл успешно проверен",
+      "previewFailed": "Не удалось обработать файл. Проверьте формат и попробуйте снова.",
+      "previewSubtitle": "Предварительная проверка выполнена",
+      "previewDescription": "Изучите найденные ошибки и предупреждения, чтобы подготовить файл к импорту.",
+      "readyRowsTitle": "Строки для импорта",
+      "readyRowsDescription": "По умолчанию импортируются только строки без ошибок. Можно включить строки с предупреждениями.",
+      "includeWarnings": "Импортировать строки с предупреждениями",
+      "commitButton": "Импортировать готовые строки",
+      "commitInProgress": "Импорт...",
+      "commitSuccess": "Импорт завершён",
+      "commitFailed": "Не удалось завершить импорт.",
+      "commitSummaryTitle": "Импорт завершён",
+      "commitSummary": "Создано: {{imported}}, пропущено: {{skipped}}",
+      "commitResultTitle": "Результаты по строкам",
+      "commitResultHint": "Показаны первые {{count}} строк результата",
+      "commitReasonTitle": "Причина",
+      "commitReasonImported": "Создан новый клиент",
+      "commitReasons": {
+        "NAME_REQUIRED": "Не указано имя",
+        "DUPLICATE_EMAIL": "Email уже существует",
+        "DUPLICATE_PHONE": "Телефон уже существует",
+        "DUPLICATE_CONSTRAINT": "Конфликт уникальности",
+        "UNKNOWN_ERROR": "Неизвестная ошибка"
+      },
+      "previewTableTitle": "Первые строки файла",
+      "previewLimited": "Показаны {{count}} из {{total}} строк",
+      "previewFull": "Показаны все {{count}} строк",
+      "chooseAnother": "Выбрать другой файл",
+      "table": {
+        "name": "Имя",
+        "email": "Email",
+        "phone": "Телефон",
+        "status": "Статус",
+        "issues": "Замечания"
+      },
+      "noIssues": "Без замечаний",
+      "status": {
+        "ready": "Готово",
+        "warning": "Проверить",
+        "error": "Ошибка"
+      },
+      "summary": {
+        "total": "Всего строк",
+        "ready": "Готово к импорту",
+        "warnings": "Требует внимания",
+        "errors": "Ошибки",
+        "duplicates": "Дубликаты в базе"
+      },
+      "nextStepTitle": "Следующий шаг",
+      "nextStepDescription": "Финальный импорт с выбором дубликатов появится на следующем этапе разработки.",
+      "finishButton": "Готово",
+      "fileRequiredShort": "Выберите файл",
+      "noData": "Нет данных"
+    },
+    "editClient": "Редактировать клиента",
+    "deleteClient": "Удалить клиента",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "email": "Email",
+    "phone": "Телефон",
+    "address": "Адрес",
+    "birthday": "День рождения",
+    "notes": "Заметки",
+    "lastVisit": "Последний визит",
+    "totalVisits": "Общее количество визитов",
+    "searchPlaceholder": "Поиск клиентов по имени, email или телефону...",
+    "filters": "Фильтры",
+    "loading": "Загрузка клиентов...",
+    "errorLoading": "Ошибка загрузки",
+    "retry": "Попробовать снова",
+    "noClients": "Нет клиентов",
+    "noClientsFound": "Клиенты не найдены",
+    "noResults": "По запросу \"{{query}}\" ничего не найдено",
+    "emptyStateMessage": "Добавьте первого клиента для начала работы",
+    "edit": "Редактировать",
+    "statusActive": "Активен",
+    "statusInactive": "Неактивен",
+    "notRecorded": "Не записан",
+    "registrationDate": "Дата регистрации",
+    "visits": "Визитов",
+    "bookAppointment": "Записать",
+    "call": "Позвонить",
+    "clientNotFound": "Клиент не найден",
+    "clientNotFoundMessage": "Клиент с указанным ID не существует или был удален",
+    "backToClients": "Назад к клиентам",
+    "portalClient": "Клиент портала",
+    "information": "Информация",
+    "appointmentHistory": "История записей",
+    "contactInformation": "Контактная информация",
+    "notSpecified": "Не указано",
+    "statistics": "Статистика",
+    "status": "Статус",
+    "appointmentHistoryTitle": "История записей",
+    "appointmentHistoryMessage": "Здесь будет отображаться история записей клиента",
+    "viewAppointments": "Посмотреть записи"
+  },
+  "team": {
+    "title": "Команда",
+    "subtitle": "Управление сотрудниками салона",
+    "addEmployee": "Добавить сотрудника",
+    "inviteEmployee": "Пригласить",
+    "addMember": "Добавить члена команды",
+    "editMember": "Редактировать члена команды",
+    "deleteMember": "Удалить члена команды",
+    "memberName": "Имя",
+    "memberRole": "Роль",
+    "memberEmail": "Email",
+    "memberPhone": "Телефон",
+    "memberSpecialty": "Специализация",
+    "memberSchedule": "Расписание",
+    "search": "Поиск сотрудников...",
+    "filterByRole": "Фильтр по роли",
+    "filterByStatus": "Фильтр по статусу",
+    "allRoles": "Все роли",
+    "allStatuses": "Все статусы",
+    "viewProfile": "Просмотр профиля",
+    "editProfile": "Редактировать",
+    "deactivate": "Деактивировать",
+    "noEmployees": "Нет сотрудников",
+    "noEmployeesDesc": "Добавьте первого сотрудника для начала работы",
+    "roles": {
+      "SALON_OWNER": "Владелец салона",
+      "MANAGER": "Менеджер",
+      "STAFF_MEMBER": "Мастер",
+      "RECEPTIONIST": "Администратор",
+      "ACCOUNTANT": "Бухгалтер"
+    },
+    "reviews": "отзывов",
+    "services": "Услуг",
+    "years": "Лет",
+    "growth": "Рост",
+    "online": "Онлайн",
+    "specialties": {
+      "hair": "Стрижки",
+      "nails": "Маникюр",
+      "makeup": "Макияж",
+      "massage": "Массаж",
+      "skincare": "Уход за кожей"
+    },
+    "filters": {
+      "allStatuses": "Все статусы",
+      "allRoles": "Все роли",
+      "role": "Роль",
+      "status": "Статус",
+      "toggle": "Фильтры"
+    },
+    "searchPlaceholder": "Поиск по имени или email",
+    "error": {
+      "title": "Не удалось загрузить команду",
+      "retry": "Попробовать снова"
+    },
+    "empty": {
+      "title": "Команда пока пустая",
+      "filteredTitle": "Ничего не найдено",
+      "subtitle": "Пригласите сотрудников, чтобы начать работать в CRM",
+      "filterSubtitle": "Измените параметры фильтрации"
+    },
+    "card": {
+      "tenureYears": "{{count}} лет",
+      "tenureMonths": "{{count}} мес",
+      "recently": "Недавно присоединился",
+      "recentlyShort": "Недавно",
+      "unknownName": "Новый сотрудник",
+      "joined": "В команде с",
+      "tenureLabel": "Стаж в CRM",
+      "languages": "Языки",
+      "openProfile": "Открыть профиль"
+    },
+    "profile": {
+      "notFoundTitle": "Сотрудник не найден",
+      "notFoundSubtitle": "Выберите сотрудника на странице команды",
+      "backToTeam": "Вернуться к команде",
+      "back": "Назад к команде",
+      "edit": "Редактировать",
+      "cancel": "Отмена",
+      "save": "Сохранить",
+      "savedTitle": "Профиль обновлён",
+      "savedDescription": "Изменения сохранятся после подключения API",
+      "status": {
+        "active": "Активен",
+        "inactive": "Неактивен"
+      },
+      "subtitle": "Профиль мастера и персональные настройки CRM",
+      "metrics": {
+        "avgTicket": "Средний чек",
+        "monthlyRevenue": "Месячный оборот",
+        "satisfaction": "Лояльность клиентов"
+      },
+      "joined": "В команде с",
+      "tenure": {
+        "years_one": "{{count}} год",
+        "years_few": "{{count}} года",
+        "years_many": "{{count}} лет",
+        "years_other": "{{count}} лет",
+        "months_one": "{{count}} месяц",
+        "months_few": "{{count}} месяца",
+        "months_many": "{{count}} месяцев",
+        "months_other": "{{count}} месяцев"
+      },
+      "tabs": {
+        "overview": "Обзор",
+        "schedule": "Расписание",
+        "settings": "Настройки"
+      },
+      "specialties": "Экспертиза и услуги",
+      "specialtiesHint": "Укажите ключевые направления работы мастера и связанные услуги",
+      "specialtiesEmpty": "Специализации пока не указаны",
+      "bioPlaceholder": "Опишите стиль работы мастера, сертификаты и любимые услуги",
+      "languagesTitle": "Языки общения",
+      "languagesSubtitle": "Выберите языки, на которых мастер принимает клиентов",
+      "accessTitle": "Права и доступ",
+      "accessSubtitle": "Управляйте доступом к финансовым данным и административным функциям",
+      "permissions": {
+        "finances": "Доступ к финансовым показателям",
+        "pricing": "Право изменять цены услуг",
+        "availableSoon": "Скоро"
+      },
+      "scheduleTitle": "Рабочие часы",
+      "scheduleSubtitle": "Настраивайте доступность мастера в календаре CRM",
+      "scheduleEditor": {
+        "title": "Рабочие часы мастера",
+        "subtitle": "Настройте индивидуальный график или скопируйте часы салона.",
+        "readonly": "Только владелец или сам мастер могут изменять расписание.",
+        "unsaved": "Изменения не сохранены",
+        "synced": "График синхронизирован",
+        "copySalon": "Скопировать часы салона",
+        "reset": "Сбросить",
+        "save": "Сохранить график",
+        "saveSuccess": "Расписание обновлено",
+        "saveError": "Не удалось сохранить расписание",
+        "loadError": "Не удалось загрузить расписание",
+        "exceptions": {
+          "title": "Исключения и отпуска",
+          "subtitle": "Добавьте отпуск, больничный или кастомные часы.",
+          "add": "Добавить исключение",
+          "hideForm": "Скрыть форму",
+          "typeLabel": "Тип исключения",
+          "reasonLabel": "Комментарий",
+          "reasonPlaceholder": "Например: отпуск, обучение или выезд",
+          "startDate": "Дата начала",
+          "endDate": "Дата окончания",
+          "customStart": "Начало",
+          "customEnd": "Окончание",
+          "isWorkingDay": "Рабочий день",
+          "customWorking": "Работает по этим часам",
+          "customOff": "Занят, записи недоступны",
+          "save": "Сохранить исключение",
+          "validation": "Выберите даты исключения",
+          "customValidation": "Укажите время для кастомных часов",
+          "added": "Исключение добавлено",
+          "error": "Не удалось создать исключение",
+          "removed": "Исключение удалено",
+          "removeError": "Не удалось удалить исключение",
+          "empty": "Пока нет исключений",
+          "type": {
+            "day_off": "Выходной / отпуск",
+            "sick_leave": "Больничный",
+            "custom_hours": "Кастомные часы"
+          },
+          "types": {
+            "dayOff": "Выходной / отпуск",
+            "sick": "Больничный",
+            "custom": "Кастомные часы"
+          }
+        }
+      },
+      "weekDays": {
+        "monday": "Понедельник",
+        "tuesday": "Вторник",
+        "wednesday": "Среда",
+        "thursday": "Четверг",
+        "friday": "Пятница",
+        "saturday": "Суббота",
+        "sunday": "Воскресенье"
+      },
+      "dayOff": "Выходной",
+      "notesTitle": "Заметки для команды",
+      "notesSubtitle": "Поделитесь рекомендациями по работе с мастером",
+      "notesPlaceholder": "Например: предпочитает встречи до 16:00, ведёт VIP-клиентов, помогает новичкам",
+      "appearanceTitle": "Стиль и цвета",
+      "appearanceSubtitle": "Настройте акцентные цвета карточки мастера в CRM",
+      "colorLabel": "Акцентный цвет",
+      "colorOptions": {
+        "indigo": "Индиго",
+        "violet": "Фиолетовый",
+        "pink": "Розовый",
+        "coral": "Коралловый",
+        "amber": "Янтарный",
+        "emerald": "Изумрудный",
+        "teal": "Бирюзовый",
+        "slate": "Сланцевый"
+      },
+      "currencyTitle": "Валюта показателей",
+      "currencySubtitle": "Отображайте KPI мастера в удобной валюте",
+      "currencyHint": "Настройка влияет на блоки аналитики и дашборды",
+      "defaultSpecialties": "Стрижки, окрашивание, уход"
+    }
+  },
+  "payments": {
+    "exportReport": "Экспорт отчета",
+    "metrics": {
+      "today": "Сегодня",
+      "thisWeek": "За неделю",
+      "thisMonth": "За месяц",
+      "averageBill": "Средний чек"
+    },
+    "filters": {
+      "title": "Фильтры",
+      "allPeriods": "Все периоды",
+      "today": "Сегодня",
+      "week": "Неделя",
+      "month": "Месяц",
+      "allMethods": "Все методы",
+      "card": "Карта",
+      "cash": "Наличные",
+      "transfer": "Перевод"
+    },
+    "recentTransactions": "Последние операции",
+    "table": {
+      "client": "Клиент",
+      "service": "Услуга",
+      "amount": "Сумма",
+      "method": "Способ",
+      "date": "Дата",
+      "status": "Статус"
+    },
+    "status": {
+      "completed": "Завершен",
+      "pending": "Ожидает"
+    },
+    "methods": {
+      "card": "Карта",
+      "cash": "Наличные"
+    }
+  },
+  "analytics": {
+    "exportReport": "Экспорт отчета",
+    "metrics": {
+      "revenueMonth": "Выручка (месяц)",
+      "appointmentsMonth": "Записи (месяць)",
+      "newClients": "Новые клиенты",
+      "averageBill": "Средний чек"
+    },
+    "charts": {
+      "revenueByDay": "Выручка по дням",
+      "popularServices": "Популярные услуги",
+      "staffLoad": "Загрузка мастеров"
+    },
+    "comparison": {
+      "periodComparison": "Сравнение периодов",
+      "thisMonth": "Этот месяц",
+      "lastMonth": "Прошлый месяц",
+      "growth": "Рост"
+    },
+    "labels": {
+      "vsLastMonth": "к прошлому месяцу",
+      "total": "Всего",
+      "avgTicket": "Сред. чек",
+      "conversion": "Конверсия",
+      "noData": "График в разработке",
+      "workload": "Загрузка",
+      "revenue": "Выручка",
+      "appointments": "Записей",
+      "records": "записи"
+    }
+  },
+  "language": {
+    "title": "Язык интерфейса",
+    "current": "Текущий язык",
+    "switch": "Изменить язык",
+    "languages": {
+      "en": "Английский",
+      "pl": "Польский",
+      "ua": "Украинский",
+      "ru": "Русский"
+    }
+  },
+  "currency": {
+    "title": "Валюта",
+    "current": "Текущая валюта",
+    "switch": "Сменить валюту",
+    "currencies": {
+      "USD": "Доллар США",
+      "EUR": "Евро",
+      "PLN": "Польский злотый",
+      "UAH": "Украинская гривна"
+    }
+  },
+  "messages": {
+    "confirmDelete": "Вы уверены, что хотите это удалить?",
+    "deleteSuccess": "Успешно удалено",
+    "saveSuccess": "Изменения сохранены",
+    "networkError": "Ошибка сети, проверьте соединение",
+    "serverError": "Ошибка сервера, попробуйте позже",
+    "validationError": "Проверьте, правильно ли заполнены поля"
+  },
+  "login": {
+    "title": "Вход в систему",
+    "subtitle": "Пожалуйста, введите данные для входа.",
+    "tagline": "Beauty Design Corp",
+    "salonLabel": "Салон",
+    "tabs": {
+      "login": "Вход",
+      "signup": "Регистрация"
+    },
+    "fields": {
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Пароль",
+      "passwordPlaceholder": "Введите пароль",
+      "firstName": "Имя",
+      "firstNamePlaceholder": "Имя",
+      "lastName": "Фамилия",
+      "lastNamePlaceholder": "Фамилия",
+      "phone": "Телефон (опционально)",
+      "phonePlaceholder": "+48 600 000 000"
+    },
+    "validation": {
+      "required": "Заполните все обязательные поля",
+      "passwordLength": "Пароль должен быть не короче 6 символов"
+    },
+    "buttons": {
+      "signIn": "Войти",
+      "signingIn": "Вход...",
+      "rememberMe": "Запомнить меня",
+      "forgotPassword": "Забыли пароль?",
+      "or": "или",
+      "google": "Продолжить через Google",
+      "signUp": "Зарегистрироваться",
+      "signingUp": "Регистрация..."
+    },
+    "divider": {
+      "login": "или продолжите с email",
+      "signup": "Заполните форму регистрации"
+    },
+    "password": {
+      "hint": "Минимум 6 символов. Мы шифруем ваш пароль."
+    },
+    "error": {
+      "title": "Ошибка входа",
+      "generic": "Произошла ошибка во время входа.",
+      "invalidCredentials": "Неверный email или пароль.",
+      "unexpected": "Произошла непредвиденная ошибка. Попробуйте ещё раз.",
+      "signupFailed": "Не удалось создать аккаунт. Попробуйте снова.",
+      "mustRegisterSalon": "Сначала создайте салон в CRM, чтобы войти через Google",
+      "mustRegisterFirst": "Сначала создайте аккаунт, чтобы войти через Google",
+      "emailConflict": "Этот email уже привязан к другому Google аккаунту",
+      "turnstile": "Подтвердите, что вы не робот, прежде чем продолжить."
+    },
+    "testData": {
+      "title": "Тестовые данные",
+      "email": "Email",
+      "password": "Пароль",
+      "fill": "Заполнить тестовыми данными"
+    },
+    "debug": {
+      "redirecting": "Перенаправляем...",
+      "info": "Отладочная информация"
+    },
+    "noPublicRegistration": "Нет аккаунта салона? Войдите через клиентскую учётную запись — мастер регистрации появится внутри CRM.",
+    "links": {
+      "noAccount": "Нет аккаунта?",
+      "signUp": "Зарегистрироваться",
+      "haveAccount": "Уже есть аккаунт?",
+      "backToLogin": "Войти"
+    },
+    "switch": {
+      "haveAccount": "У вас уже есть аккаунт?",
+      "needAccount": "Впервые в Beauty Platform?",
+      "login": "Войти",
+      "signup": "Создать аккаунт"
+    },
+    "disclaimer": "Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности Beauty Platform.",
+    "signup": {
+      "title": "Создайте аккаунт",
+      "subtitle": "Используйте клиентскую учётную запись, чтобы продолжить регистрацию салона в CRM.",
+      "passwordHint": "Минимум 6 символов"
+    },
+    "hero": {
+      "highlight": "Beauty Platform • 2025",
+      "title": "Управляйте салоном без стресса",
+      "titleLine1": "Управляйте",
+      "titleLine2": "салоном",
+      "titleLine3": "без стресса",
+      "subtitle": "Планируйте расписание, управляйте командой и автоматизируйте маркетинг в одном окне.",
+      "quote": "Beauty Platform взяла на себя рутину — мы сосредоточились на гостях.",
+      "author": "Анна, сеть ManiTime",
+      "role": "Владелица студии",
+      "stats": {
+        "salons": "Активных салонов",
+        "bookings": "Записей в месяц",
+        "countries": "Стран"
+      }
+    }
+  },
+  "registration": {
+    "title": "Создайте свой салон красоты",
+    "subtitle": "Присоединяйтесь к тысячам салонов по всему миру",
+    "security": "Ваши данные защищены 256-битным шифрованием SSL",
+    "continue": "Продолжить →",
+    "back": "Назад",
+    "saving": "Сохраняем...",
+    "processing": "Обрабатываем...",
+    "optional": "необязательно",
+    "steps": {
+      "owner": "Владелец",
+      "salon": "Салон",
+      "location": "Локация",
+      "services": "Услуги",
+      "pricing": "Тарифы",
+      "activation": "Активация"
+    },
+    "progress": "Прогресс регистрации",
+    "motivation": {
+      "start": "Давайте создадим ваш салон!",
+      "progress": "Отлично! Продолжаем настройку",
+      "final": "Почти готово! Подтвердите ваши данные"
+    },
+    "owner": {
+      "title": "Расскажите о себе",
+      "subtitle": "Эта информация нужна для создания аккаунта",
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "email": "Email",
+      "phone": "Телефон",
+      "language": "Язык интерфейса",
+      "firstNamePlaceholder": "Введите ваше имя",
+      "lastNamePlaceholder": "Введите вашу фамилию",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+7 123 456 789",
+      "emailNote": "Этот email будет использоваться для входа в систему",
+      "phoneNote": "Необходим для SMS верификации",
+      "privacy": "Регистрируясь, вы соглашаетесь с условиями использования и политикой конфиденциальности",
+      "checking": "Проверяем данные...",
+      "selected": "выбрано",
+      "emailNoteAuthenticated": "Этот email привязан к вашему аккаунту и не может быть изменен"
+    },
+    "salon": {
+      "title": "Расскажите о вашем бизнесе",
+      "subtitle": "Название, которое увидят ваши клиенты",
+      "salonName": "Название салона",
+      "website": "Веб-сайт",
+      "businessType": "Как вы работаете с клиентами?",
+      "salonNamePlaceholder": "Студия красоты \"Глэмур\"",
+      "websitePlaceholder": "www.ваш-салон.рф",
+      "websiteNote": "Если у вас нет сайта, мы поможем создать красивую страницу",
+      "businessTypes": {
+        "salon": {
+          "title": "Салон красоты",
+          "description": "У меня есть физическое помещение"
+        },
+        "mobile": {
+          "title": "Выездные услуги",
+          "description": "Выезжаю к клиентам"
+        },
+        "home": {
+          "title": "Работаю дома",
+          "description": "Принимаю клиентов у себя"
+        },
+        "online": {
+          "title": "Онлайн консультации",
+          "description": "Виртуальные услуги"
+        }
+      }
+    },
+    "location": {
+      "title": "Где находится ваш бизнес?",
+      "subtitle": "Настроим систему под ваш регион",
+      "country": "Страна",
+      "currency": "Валюта",
+      "address": "Адрес салона",
+      "street": "Улица и дом",
+      "city": "Город",
+      "postalCode": "Почтовый индекс",
+      "countryPlaceholder": "Выберите страну",
+      "currencyNote": "Все цены будут отображаться в этой валюте",
+      "addressNote": "Адрес поможет клиентам найти вас",
+      "streetPlaceholder": "ул. Пушкина, д. 10",
+      "cityPlaceholder": "Москва",
+      "postalCodePlaceholder": "123456",
+      "detectLocation": "Определить местоположение",
+      "detecting": "Определяем..."
+    },
+    "services": {
+      "title": "Какие услуги вы предоставляете?",
+      "subtitle": "Выберите до 5 основных направлений вашего бизнеса",
+      "categoriesTitle": "Категории услуг",
+      "selected": "выбрано",
+      "popular": "Популярные",
+      "other": "Другие направления",
+      "teamSizeTitle": "Размер вашей команды",
+      "help": "Выбранные категории помогут настроить систему под ваш бизнес",
+      "categories": {
+        "hair": {
+          "title": "Парикмахерские услуги",
+          "description": "Стрижки, укладки, окрашивание"
+        },
+        "nails": {
+          "title": "Маникюр и педикюр",
+          "description": "Уход за ногтями, дизайн"
+        },
+        "brows": {
+          "title": "Брови и ресницы",
+          "description": "Коррекция, окрашивание, наращивание"
+        },
+        "massage": {
+          "title": "Массаж и SPA",
+          "description": "Релаксация, уход за телом"
+        },
+        "makeup": {
+          "title": "Визаж и макияж",
+          "description": "Вечерний, свадебный макияж"
+        },
+        "cosmetology": {
+          "title": "Косметология",
+          "description": "Чистки, пилинги, уходы"
+        },
+        "aesthetic": {
+          "title": "Эстетическая медицина",
+          "description": "Инъекции, контурная пластика"
+        },
+        "fitness": {
+          "title": "Фитнес и йога",
+          "description": "Персональные тренировки, йога"
+        }
+      },
+      "teamSizes": {
+        "solo": {
+          "title": "Я работаю один",
+          "description": "Индивидуальный предприниматель"
+        },
+        "small": {
+          "title": "У меня есть команда 2-5 человек",
+          "description": "Небольшая команда мастеров"
+        },
+        "medium": {
+          "title": "Средний салон 6-15 человек",
+          "description": "Полноценный салон красоты"
+        },
+        "large": {
+          "title": "Крупный салон 16+ человек",
+          "description": "Сеть салонов или большой центр"
+        }
+      }
+    },
+    "pricing": {
+      "title": "Выберите тарифный план",
+      "subtitle": "Начните с бесплатного периода 7 дней",
+      "trialTitle": "7 дней бесплатно для всех планов!",
+      "trialFeature1": "Полный доступ ко всем функциям",
+      "trialFeature2": "Без ограничений по клиентам",
+      "trialFeature3": "Отмена в любое время",
+      "popular": "Популярный",
+      "recommended": "Рекомендуем",
+      "selected": "Выбрано",
+      "selectPlan": "Выбрать план",
+      "selectedPlan": "Вы выбрали план",
+      "planInfo": "Вы получите 7 дней бесплатного доступа ко всем функциям. Отменить можно в любое время без комиссий.",
+      "thenPrice": "потом",
+      "perMonth": "в месяц",
+      "month": "мес",
+      "freeTrial": "7 дней бесплатно",
+      "startTrial": "Начать бесплатный период →",
+      "changeAnytime": "Вы можете изменить план в любое время",
+      "noCommitment": "Никаких обязательств. Отмена в один клик.",
+      "plans": {
+        "starter": {
+          "name": "STARTER",
+          "subtitle": "Бесплатно 7 дней",
+          "price": "Бесплатно",
+          "features": {
+            "team": "1 владелец + до 2 мастеров",
+            "calendar": "Базовый календарь записей",
+            "clients": "До 50 клиентов",
+            "support": "Email поддержка"
+          }
+        },
+        "team": {
+          "name": "TEAM",
+          "subtitle": "Для небольших команд",
+          "features": {
+            "team": "До 5 сотрудников",
+            "calendar": "Полный календарь",
+            "clients": "Неограниченно клиентов",
+            "sms": "SMS уведомления",
+            "analytics": "Базовая аналитика",
+            "support": "Приоритетная поддержка"
+          }
+        },
+        "business": {
+          "name": "BUSINESS",
+          "subtitle": "Для профессиональных салонов",
+          "features": {
+            "team": "До 10 сотрудников",
+            "analytics": "Продвинутая аналитика",
+            "social": "Интеграции с соцсетями",
+            "booking": "Онлайн запись для клиентов",
+            "multi": "Многофилиальность",
+            "crm": "Расширенная CRM"
+          }
+        },
+        "enterprise": {
+          "name": "ENTERPRISE",
+          "subtitle": "Для больших сетей",
+          "features": {
+            "team": "До 25 сотрудников",
+            "api": "API доступ",
+            "manager": "Персональный менеджер",
+            "integrations": "Кастомные интеграции",
+            "whitelabel": "White-label решения",
+            "priority": "Приоритетная поддержка 24/7"
+          }
+        }
+      }
+    },
+    "activation": {
+      "emailTitle": "Проверяем ваш email",
+      "emailSubtitle": "Мы отправили письмо на",
+      "emailSent": "Email отправлен!",
+      "emailSending": "Отправляем email...",
+      "emailInstructions": "Проверьте папку \"Спам\", если письмо не пришло",
+      "smsTitle": "Подтвердите номер телефона",
+      "smsSubtitle": "Мы отправили код на",
+      "sendSMS": "Отправить SMS код",
+      "smsSending": "Отправляем SMS...",
+      "enterCode": "Введите код из SMS",
+      "resendIn": "Повторная отправка через",
+      "seconds": "сек",
+      "resendSMS": "Отправить код повторно",
+      "testCode": "Для тестирования используйте код:",
+      "verifyCode": "Подтвердить код",
+      "termsTitle": "Последний шаг!",
+      "termsSubtitle": "Ознакомьтесь с условиями использования",
+      "termsOfService": "Условия использования Beauty Platform",
+      "term1": "Вы получаете доступ к системе управления салоном красоты",
+      "term2": "Персональные данные защищены согласно GDPR",
+      "term3": "Оплата производится ежемесячно согласно выбранному тарифу",
+      "term4": "Отмена подписки возможна в любое время",
+      "term5": "Техническая поддержка доступна в рабочие часы",
+      "acceptTerms": "Я принимаю",
+      "termsLink": "условия использования",
+      "and": "и",
+      "privacyLink": "политику конфиденциальности",
+      "subscribe": "Подписаться на новости о новых функциях и обновлениях",
+      "createSalon": "Создать салон! 🎉",
+      "creating": "Создаем ваш салон...",
+      "creatingSubtitle": "Настраиваем систему под ваши потребности",
+      "step1": "Создание пользователя",
+      "step2": "Настройка салона",
+      "step3": "Подготовка рабочего места",
+      "waitMessage": "Это займет всего несколько секунд...",
+      "successAuthenticated": "Салон успешно создан 🎉",
+      "genericError": "Не удалось создать салон"
+    },
+    "validation": {
+      "firstNameRequired": "Имя обязательно",
+      "lastNameRequired": "Фамилия обязательна",
+      "emailRequired": "Email обязателен",
+      "emailInvalid": "Некорректный email",
+      "phoneRequired": "Номер телефона обязателен",
+      "phoneInvalid": "Некорректный номер телефона",
+      "salonNameRequired": "Название салона обязательно",
+      "countryRequired": "Выберите страну",
+      "currencyRequired": "Выберите валюту",
+      "serviceCategoriesRequired": "Выберите хотя бы одну категорию услуг",
+      "serviceCategoriesMax": "Выберите не более 5 категорий",
+      "planRequired": "Выберите тарифный план",
+      "smsCodeRequired": "Введите 6-значный код из SMS",
+      "smsCodeInvalid": "Код должен содержать только цифры",
+      "smsCodeWrong": "Неверный код. Попробуйте еще раз.",
+      "termsRequired": "Необходимо принять условия использования"
+    }
+  },
+  "userSettings": {
+    "appearanceTitle": "Оформление интерфейса",
+    "appearanceDescription": "Выберите цветовую схему и режим отображения",
+    "themeRedirectTitle": "Тема перенесена в меню «Тема»",
+    "themeRedirectSubtitle": "Выберите «Тема» в выпадающем списке салонов или откройте отдельный экран, чтобы настроить оформление салона.",
+    "openTheme": "Открыть «Тема»",
+    "themeNote": "Тема применяется на уровне салона и сохраняется для всех пользователей этого салона.",
+    "displayMode": "Режим отображения",
+    "modeLight": "Светлая",
+    "modeDark": "Тёмная",
+    "modeSystem": "Как в системе",
+    "themeChanged": "Тема обновлена",
+    "modeChanged": "Режим установлен",
+    "languageTitle": "Язык интерфейса",
+    "languageDescription": "Выберите предпочитаемый язык для интерфейса приложения",
+    "languageNote": "Изменения вступят в силу немедленно",
+    "languageChanged": "Язык изменен на",
+    "languageChangeFailed": "Не удалось изменить язык",
+    "notificationsTitle": "Настройки уведомлений",
+    "notificationsDescription": "Управляйте способами получения уведомлений о важных событиях",
+    "notificationsUnavailable": "Настройки уведомлений недоступны в этой среде",
+    "emailNotifications": "Email уведомления",
+    "emailNotificationsDescription": "Получать уведомления на электронную почту",
+    "smsNotifications": "SMS уведомления",
+    "smsNotificationsDescription": "Получать уведомления по SMS",
+    "pushNotifications": "Push уведомления",
+    "pushNotificationsDescription": "Получать всплывающие уведомления в браузере",
+    "saveNotifications": "Сохранить настройки уведомлений",
+    "saving": "Сохранение...",
+    "notificationsSaved": "Настройки уведомлений сохранены",
+    "notificationsLoadFailed": "Не удалось загрузить настройки уведомлений",
+    "notificationsSaveFailed": "Не удалось сохранить настройки уведомлений",
+    "additionalSettingsTitle": "Дополнительные настройки",
+    "additionalSettingsDescription": "Другие параметры персонализации (в разработке)",
+    "additionalSettingsPlaceholder": "Дополнительные настройки будут доступны в следующих обновлениях"
+  },
+  "appointments": {
+    "title": "Записи",
+    "subtitle": "Обзор расписания",
+    "description": "{{count}} записей в выбранном диапазоне",
+    "newAppointment": "Новая запись",
+    "createAppointment": "Создать запись",
+    "refresh": "Обновить",
+    "view": "Просмотр",
+    "edit": "Изменить",
+    "searchPlaceholder": "Поиск",
+    "filterByDate": "Фильтр по дате",
+    "filterByStatus": "Фильтр по статусу",
+    "allStatuses": "Все статусы",
+    "loading": "Загрузка записей...",
+    "errorLoading": "Ошибка загрузки",
+    "retry": "Попробовать снова",
+    "noAppointments": "Нет записей",
+    "noAppointmentsFound": "Записи не найдены",
+    "noResults": "По запросу \"{{query}}\" ничего не найдено",
+    "emptyStateMessage": "Создайте первую запись для начала работы",
+    "minutesShort": "мин",
+    "stats": {
+      "total": "Всего",
+      "active": "В работе",
+      "cancelled": "Отменено",
+      "revenue": "Выручка"
+    },
+    "dateFilter": "Фильтр по дате",
+    "datePresets": {
+      "any": "Любая дата",
+      "today": "Сегодня",
+      "tomorrow": "Завтра"
+    },
+    "count": "{{count}} записей",
+    "items": "записей",
+    "statuses": {
+      "PENDING": "Ожидает",
+      "CONFIRMED": "Подтверждена",
+      "IN_PROGRESS": "Выполняется",
+      "COMPLETED": "Завершена",
+      "CANCELED": "Отменена"
+    },
+    "statusShort": {
+      "PENDING": "Ожид.",
+      "CONFIRMED": "Подтв.",
+      "IN_PROGRESS": "Вып.",
+      "COMPLETED": "Заверш.",
+      "CANCELED": "Отмен."
+    }
+  },
+  "appointmentForm": {
+    "createTitle": "Новая запись",
+    "editTitle": "Редактировать запись",
+  "sections": {
+    "client": "Клиент",
+    "services": "Услуги",
+    "staff": "Мастер",
+    "dateTime": "Дата и время",
+    "schedule": "Расписание",
+    "notes": "Заметки",
+    "status": "Статус записи"
+  },
+  "searchClient": "Поиск клиента",
+  "selectedCount": "Выбрано: {{count}}",
+  "placeholders": {
+    "selectClient": "Выберите клиента",
+    "notes": "Дополнительная информация о записи..."
+  },
+  "messages": {
+      "loading": "Загрузка...",
+      "formLoadFailed": "Не удалось загрузить данные формы",
+      "appointmentLoadFailed": "Не удалось загрузить данные записи",
+      "editNotImplemented": "Редактирование записей пока не реализовано",
+      "createFailed": "Не удалось создать запись",
+      "saveFailed": "Не удалось сохранить запись",
+      "noStaff": "Мастера не найдены",
+      "noStaffAvailable": "Нет доступных мастеров",
+      "autoRoundedHint": "Автоматически округляется до 15 минут (00, 15, 30, 45)",
+      "autoCalculatedHint": "Рассчитывается автоматически"
+    },
+    "validation": {
+      "selectClient": "Выберите клиента",
+      "selectService": "Выберите хотя бы одну услугу",
+      "selectStaff": "Выберите мастера",
+      "selectDateTime": "Укажите дату и время",
+      "serviceNeedsStaff": "Добавьте мастеров для услуг: {{services}}"
+    },
+    "toast": {
+      "createSuccess": "Запись успешно создана! Номер: {{number}}",
+      "updateSuccess": "Запись обновлена"
+    },
+    "buttons": {
+      "create": "Создать запись",
+      "saveChanges": "Сохранить изменения",
+      "creating": "Создание..."
+    },
+  "statusSelected": "Выбран: {{status}}",
+  "durationShort": "{{duration}} мин",
+  "total": "Итого",
+  "date": "Дата",
+  "startTime": "Время начала",
+  "endTime": "Время окончания",
+  "autoCalculated": "Рассчитывается автоматически",
+  "roles": {
+    "SALON_OWNER": "Владелец",
+    "MANAGER": "Менеджер",
+    "STAFF_MEMBER": "Мастер",
+    "RECEPTIONIST": "Администратор"
+  },
+  "staff": {
+    "supportsServicesLabel": "Выполняет: {{services}}",
+    "notAvailableForSelected": "Не выполняет выбранные услуги",
+    "noTeamForServices": "Ни один мастер пока не выполняет услуги: {{services}}. Настройте услуги мастеров в профиле команды.",
+    "assignStaffHint": "Добавьте мастеров для услуг: {{services}}",
+    "unknownService": "услуга"
+  },
+  "labels": {
+    "date": "Дата",
+    "start": "Начало",
+    "end": "Конец"
+  },
+  "appointmentSummary": {
+    "title": "Подытог записи",
+    "totalDuration": "Суммарное время",
+    "emptyLine1": "Выберите клиента, услуги и мастеров",
+    "emptyLine2": "чтобы увидеть подытог"
+  },
+  "fallbacks": {
+    "serviceName": "Название услуги"
+  },
+  "clientSection": {
+    "emailLabel": "Email клиента *",
+    "check": "Проверить клиента",
+    "checking": "Проверка...",
+    "found": "Клиент найден. Данные подтянуты из ClientProfile.",
+    "registered": "Клиент зарегистрирован в системе",
+    "new": "Новый клиент — заполните данные",
+    "avatarAlt": "Аватар клиента {{name}}",
+    "phone": "Телефон",
+    "birthdate": "День рождения",
+    "notesLabel": "Заметки салона",
+    "notesPlaceholder": "Ваши заметки о клиенте",
+    "newNotesPlaceholder": "Дополнительная информация о клиенте или записи",
+    "errors": {
+      "empty": "Укажите email клиента",
+      "invalid": "Неверный формат email",
+      "notChecked": "Проверьте email клиента",
+      "checkFailed": "Не удалось проверить email клиента"
+    },
+    "toast": {
+      "found": "Клиент найден: {{name}}",
+      "new": "Новый клиент — заполните данные",
+      "error": "Ошибка проверки email"
+    }
+  },
+    "detailsPage": {
+      "viewTitle": "Детали записи",
+      "subtitle": "Актуальные данные CRM",
+      "backToList": "Записи",
+      "editAction": "Редактировать",
+      "refreshAction": "Обновить данные",
+      "scheduleCard": "Расписание",
+      "servicesCard": "Услуги",
+      "clientCard": "Клиент",
+      "staffCard": "Мастер",
+      "paymentsCard": "Платежи",
+      "notesCard": "Заметки",
+      "communicationsCard": "Коммуникации",
+      "activityCard": "Активность",
+      "notesEmpty": "Заметок пока нет",
+      "communicationsEmpty": "Коммуникаций пока нет",
+      "activityEmpty": "Активность пока отсутствует",
+      "dangerZone": "Опасная зона",
+      "cancelAction": "Отменить запись",
+      "cancelDescription": "Освободим слот и уведомим клиента.",
+      "cancelConfirm": "Отменить эту запись?",
+      "cancelSuccess": "Запись отменена",
+      "cancelFailed": "Не удалось отменить запись",
+      "statusLabel": "Статус",
+      "durationLabel": "Длительность",
+      "totalLabel": "Сумма",
+      "outstandingLabel": "Задолженность",
+      "lastUpdated": "Обновлено {{value}}",
+      "startTime": "Начало",
+      "endTime": "Конец",
+      "duration": "Длительность",
+      "minutes": "мин"
+    }
+  },
+  "settings": {
+    "sections": {
+      "profile": "Профиль салона",
+      "profile_description": "Это название отображается в интерфейсе и документах.",
+      "branding": "Логотип салона",
+      "branding_description": "Изображение отображается в шапке CRM и на публичных страницах.",
+      "gallery": "Галерея салона",
+      "gallery_description": "Добавляйте фотографии работ, интерьера и команды. Изображения не влияют на логотип.",
+      "security": "Безопасность",
+      "notifications": "Уведомления"
+    },
+    "buttons": {
+      "uploadLogo": "Загрузить логотип",
+      "replaceLogo": "Заменить логотип",
+      "removeLogo": "Удалить логотип",
+      "saveChanges": "Сохранить",
+      "cancel": "Отмена",
+      "selectFiles": "Выбрать файлы"
+    },
+    "toasts": {
+      "logoUpdated": "Логотип обновлен",
+      "logoRemoved": "Логотип удален",
+      "galleryUpdated": "Добавлено {{count}} изображений",
+      "galleryImageDeleted": "Изображение удалено",
+      "settingsSaved": "Название салона обновлено!",
+      "errorGeneric": "Произошла ошибка при сохранении",
+      "errorUpdateName": "Не удалось обновить название",
+      "errorUploadLogo": "Ошибка при загрузке логотипа",
+      "errorRemoveLogo": "Не удалось удалить логотип",
+      "errorFetchGallery": "Не удалось загрузить галерею изображений",
+      "errorUploadGallery": "Ошибка при загрузке изображений",
+      "errorDeleteGalleryImage": "Не удалось удалить изображение"
+    },
+    "validations": {
+      "salonName": "Название салона",
+      "salonAddress": "Адрес салона",
+      "requiredField": "Название должно содержать минимум 3 символа",
+      "unsupportedFileType": "Неподдерживаемый тип файла. Разрешены: JPG, PNG, SVG, WebP",
+      "maxSizeExceeded": "Файл слишком большой. Максимальный размер: 5MB"
+    },
+    "gallery": {
+      "addPhoto": "Добавить фото",
+      "dragHint": "Перетащите изображения сюда",
+      "orSelect": "Или выберите на устройстве (JPG, PNG, WebP, SVG)",
+      "emptyStateTitle": "Пока нет изображений. Добавьте первые фотографии салона!",
+      "emptyStateDescription": "Здесь будут отображаться фотографии вашего салона.",
+      "loading": "Загружаем изображения...",
+      "uploading": "Загрузка и оптимизация изображений...",
+      "open": "Открыть",
+      "delete": "Удалить"
+    },
+    "toggles": {
+      "darkMode": "Темный режим",
+      "themeColor": "Цвет темы",
+      "staffNotifications": "Уведомления для персонала",
+      "clientNotifications": "Уведомления для клиентов"
+    },
+    "labels": {
+      "noLogo": "Логотип пока не загружен",
+      "nameHint": "Минимум 3 символа. Валюту и язык можно переключать из верхнего меню."
+    },
+    "roleManagement": {
+      "title": "Управление ролями",
+      "description": "Управляйте владельцами салона и уровнями доступа команды.",
+      "ownersTitle": "Владельцы салона",
+      "ownersDescription": "Основной владелец и совладельцы с доступом к критическим настройкам.",
+      "emptyOwners": "Владельцы еще не добавлены.",
+      "addOwner": "Добавить совладельца",
+      "primaryBadge": "Основной владелец",
+      "shareLabel": "Доля {{value}}%",
+      "ownersFallbackEmail": "Email не указан",
+      "staffTitle": "Роли команды",
+      "staffDescription": "Обзор сотрудников и назначенных им ролей.",
+      "emptyStaff": "Сотрудники еще не добавлены.",
+      "manageRoles": "Управлять ролями",
+      "loading": "Загружаем данные о ролях...",
+      "errorLoading": "Не удалось загрузить данные о ролях.",
+      "retry": "Повторить",
+      "rolesLabel": "Роли",
+      "openMenu": "Открыть меню",
+      "grantRole": "Назначить роль",
+      "revokeRole": "Отозвать роль",
+      "noActionsAvailable": "Нет доступных действий",
+      "cancel": "Отмена",
+      "confirm": "Подтвердить",
+      "confirmGrantTitle": "Подтвердите назначение роли",
+      "confirmGrantDescription": "Вы уверены, что хотите назначить роль {{role}} пользователю {{name}}? Это предоставит ему повышенные права доступа.",
+      "confirmRevokeTitle": "Подтвердите отзыв роли",
+      "confirmRevokeDescription": "Вы уверены, что хотите отозвать роль {{role}} у пользователя {{name}}? Он потеряет связанные с ней права доступа.",
+      "toast": {
+        "error": "Ошибка",
+        "roleGranted": "Роль успешно назначена",
+        "roleGrantedDescription": "Роль {{role}} была назначена пользователю",
+        "grantError": "Не удалось назначить роль",
+        "roleRevoked": "Роль успешно отозвана",
+        "roleRevokedDescription": "Роль {{role}} была отозвана у пользователя",
+        "revokeError": "Не удалось отозвать роль",
+        "coOwnerAdded": "Совладелец успешно добавлен",
+        "coOwnerAddedDescription": "Новый совладелец добавлен с долей владения {{share}}%",
+        "addCoOwnerError": "Не удалось добавить совладельца",
+        "alreadyOwner": "Пользователь уже является владельцем",
+        "alreadyOwnerDescription": "Этот пользователь уже имеет права владельца",
+        "userNotFound": "Пользователь не найден",
+        "userNotFoundDescription": "Указанный ID пользователя не существует"
+      },
+      "addCoOwnerModal": {
+        "title": "Добавить совладельца",
+        "description": "Добавьте нового совладельца в этот салон с указанием процента доли владения",
+        "userIdLabel": "ID пользователя",
+        "userIdPlaceholder": "Введите ID пользователя (например, cm...)",
+        "userIdHint": "ID пользователя можно найти в списке персонала или профиле пользователя",
+        "userIdRequired": "Необходимо указать ID пользователя",
+        "shareLabel": "Доля владения",
+        "shareHint": "Доля владения определяет процент распределения прибыли",
+        "cancel": "Отмена",
+        "add": "Добавить совладельца",
+        "adding": "Добавление...",
+        "error": "Не удалось добавить совладельца"
+      }
+    }
+  },
+  "notifications": {
+    "title": "Уведомления",
+    "filters": {
+      "title": "Фильтры",
+      "all": "Все",
+      "unread": "Непрочитанные",
+      "important": "Важные"
+    },
+    "status": {
+      "read": "Прочитано",
+      "delivered": "Доставлено",
+      "sent": "Отправлено",
+      "pending": "Ожидает",
+      "error": "Ошибка"
+    },
+    "types": {
+      "EMAIL": "Email",
+      "SMS": "SMS",
+      "PUSH": "Push",
+      "IN_APP": "В приложении",
+      "WEBHOOK": "Webhook"
+    },
+    "actions": {
+      "markAllAsRead": "Отметить все как прочитанные",
+      "clearFilters": "Очистить фильтры",
+      "viewDetails": "Подробнее",
+      "retry": "Попробовать снова",
+      "markAsRead": "Отметить как прочитанное",
+      "markAsUnread": "Отметить как непрочитанное",
+      "delete": "Удалить уведомление"
+    },
+    "emptyState": {
+      "all_title": "У вас пока нет уведомлений",
+      "all_description": "Новые уведомления будут отображаться здесь.",
+      "unread_title": "Все уведомления прочитаны",
+      "unread_description": "Вы все просмотрели!",
+      "important_title": "Нет важных уведомлений",
+      "important_description": "Уведомления, отмеченные как важные или срочные, появятся здесь."
+    },
+    "time": {
+      "justNow": "Только что",
+      "minutesAgo": "{{count}} мин назад",
+      "hoursAgo": "{{count}} ч назад",
+      "daysAgo": "{{count}} дн назад"
+    },
+    "priority": {
+      "URGENT": "Срочно",
+      "HIGH": "Важно"
+    },
+    "found_plural": "Найдено уведомлений: {{count}}",
+    "noNotifications": "Нет уведомлений для отображения",
+    "loading": "Загрузка уведомлений...",
+    "error_title": "Ошибка загрузки",
+    "success_marked_as_read": "Отмечено как прочитанное",
+    "error_marked_as_read": "Не удалось отметить как прочитанное",
+    "info_deleted": "Уведомление удалено",
+    "error_deleted": "Не удалось удалить уведомление",
+    "success_marked_all_as_read": "Отмечено {{count}} уведомлений как прочитанные"
+  },
+  "help": {
+    "sections": {
+      "title": "Помощь и поддержка",
+      "description": "Найдите ответы на свои вопросы и получите помощь от нашей службы поддержки.",
+      "categories": "Категории",
+      "contact": "Нужна помощь?",
+      "contact_description": "Свяжитесь с нашей службой поддержки",
+      "links": "Полезные ссылки",
+      "faq": "Часто задаваемые вопросы"
+    },
+    "categories": {
+      "all": "Все",
+      "appointments": "Записи",
+      "clients": "Клиенты",
+      "services": "Услуги",
+      "staff": "Персонал",
+      "payments": "Оплата",
+      "system": "Система",
+      "integrations": "Интеграции"
+    },
+    "faq": {
+      "appointments_create": {
+        "question": "Как создать новую запись для клиента?",
+        "answer": "Перейдите в раздел \"Календарь\" или \"Записи\", нажмите кнопку \"Новая запись\". Выберите клиента, услугу, мастера и время. Система автоматически проверит доступность мастера и предложит удобные временные слоты."
+      },
+      "appointments_modify": {
+        "question": "Как изменить или отменить существующую запись?",
+        "answer": "Откройте запись в календаре или в списке записей, нажмите кнопку \"Изменить\". Вы можете изменить время, мастера или услугу. Для отмены записи используйте кнопку \"Отменить запись\" и укажите причину отмены."
+      },
+      "clients_add": {
+        "question": "Как добавить нового клиента в базу?",
+        "answer": "Перейдите в раздел \"Клиенты\", нажмите \"Добавить клиента\". Заполните обязательные поля: имя, фамилию, телефон. Дополнительно можно указать email, дату рождения и заметки о клиенте."
+      },
+      "clients_history": {
+        "question": "Как найти историю посещений клиента?",
+        "answer": "Откройте карточку клиента и перейдите на вкладку \"История\". Здесь отображаются все прошлые и будущие записи клиента, а также можно посмотреть общую статистику посещений и потраченную сумму."
+      },
+      "services_create": {
+        "question": "Как создать новую услугу?",
+        "answer": "В разделе \"Услуги\" нажмите \"Добавить услугу\". Укажите название, длительность, стоимость и описание. Вы можете назначить услугу конкретным мастерам или сделать доступной для всех."
+      },
+      "services_price": {
+        "question": "Как изменить цену на услугу?",
+        "answer": "Откройте карточку услуги, нажмите \"Изменить\" и обновите стоимость. Изменение цены не влияет на уже созданные записи - они сохраняют цену на момент создания."
+      },
+      "staff_add": {
+        "question": "Как добавить нового мастера?",
+        "answer": "Перейдите в раздел \"Персонал\", нажмите \"Добавить мастера\". Заполните данные, настройте график работы и назначьте услуги, которые может выполнять мастер."
+      },
+      "staff_schedule": {
+        "question": "Как настроить расписание работы мастера?",
+        "answer": "В карточке мастера перейдите на вкладку \"Расписание\". Установите рабочие дни, время начала и окончания работы, добавьте перерывы и выходные дни."
+      },
+      "payments_accept": {
+        "question": "Как принять оплату от клиента?",
+        "answer": "В карточке записи нажмите \"Оплатить\". Выберите способ оплаты (наличные, карта, онлайн). После подтверждения система автоматически обновит статус записи и создаст чек."
+      },
+      "payments_reports": {
+        "question": "Как посмотреть финансовую отчетность?",
+        "answer": "Раздел \"Аналитика\" содержит детальную финансовую статистику: выручка по дням, популярные услуги, загрузка мастеров. Вы можете экспортировать отчеты в Excel или PDF."
+      },
+      "system_notifications": {
+        "question": "Как настроить уведомления?",
+        "answer": "Перейдите в \"Настройки\" → \"Уведомления\". Настройте автоматические напоминания клиентам по SMS или email за определенное время до визита. Также можно включить уведомления для персонала."
+      },
+      "system_password": {
+        "question": "Забыл пароль, как восстановить доступ?",
+        "answer": "На странице входа нажмите \"Забыли пароль?\", введите email. Вам придет письмо со ссылкой для сброса пароля. Если письмо не пришло, проверьте папку \"Спам\"."
+      }
+    },
+    "actions": {
+      "searchPlaceholder": "Поиск по вопросам и ответам...",
+      "contactSupport": "Связаться с поддержкой",
+      "openGuide": "Открыть руководство"
+    },
+    "contact": {
+      "title": "Нужна помощь?",
+      "emailLabel": "Email поддержка",
+      "phoneLabel": "Телефон поддержки",
+      "hoursLabel": "Пн-Пт: 9:00 - 18:00 (UTC+1)",
+      "chatLabel": "Онлайн чат",
+      "chatDescription": "Доступен в рабочие часы"
+    },
+    "resources": {
+      "title": "Полезные ссылки",
+      "documentation": "База знаний",
+      "videoTutorials": "Видео-уроки",
+      "community": "Форум сообщества",
+      "apiDocs": "API документация"
+    },
+    "emptySearch": {
+      "noResultsTitle": "По запросу \"{{query}}\" ничего не найдено",
+      "noResultsDescription": "Попробуйте использовать другие ключевые слова или проверьте правописание."
+    },
+    "misc": {
+      "lastUpdated": "Последнее обновление",
+      "readMore": "Читать далее",
+      "found_one": "Найден {{count}} вопрос",
+      "found_few": "Найдено {{count}} вопроса",
+      "found_many": "Найдено {{count}} вопросов",
+      "inCategory": "в категории \"{{category}}\""
+    }
+  },
+  "themeCustomizer": {
+    "title": "Настройка цветовой темы",
+    "description": "Настройте семантические цвета под бренд вашего салона",
+    "customActive": "Пользовательская тема активна",
+    "successColor": "Цвет успеха",
+    "successDesc": "Используется для успешных действий и подтверждений",
+    "warningColor": "Предупредительный цвет",
+    "warningDesc": "Используется для предупреждений и сообщений с предостережением",
+    "errorColor": "Цвет ошибки",
+    "errorDesc": "Используется для ошибок и критичных действий",
+    "infoColor": "Информационный цвет",
+    "infoDesc": "Используется для информационных сообщений и подсказок",
+    "preview": "Предпросмотр",
+    "previewLabels": {
+      "success": "Успех",
+      "warning": "Предупреждение",
+      "error": "Ошибка",
+      "info": "Информация"
+    },
+    "apply": "Применить изменения",
+    "reset": "Сбросить по умолчанию",
+    "export": "Экспорт",
+    "import": "Импорт",
+    "importError": "Не удалось импортировать тему. Проверьте формат файла.",
+    "note": "Пользовательские цвета сохраняются автоматически и применяются ко всему интерфейсу CRM.",
+    "pickColor": "Выбрать цвет для {{label}}",
+    "done": "Готово"
+  },
+  "servicesPage": {
+    "searchPlaceholder": "Поиск услуг...",
+    "filters": "Фильтры",
+    "priceLabel": "Цена",
+    "durationLabel": "Длительность",
+    "minutesShort": "мин",
+    "price": {
+      "all": "Все цены",
+      "low": "До 50 ₽",
+      "medium": "50–150 ₽",
+      "high": "Свыше 150 ₽"
+    },
+    "duration": {
+      "all": "Любая длительность",
+      "short": "До 30 минут",
+      "medium": "30–90 минут",
+      "long": "Свыше 90 минут"
+    },
+    "resetFilters": "Сбросить фильтры",
+    "manageCategories": "Управлять категориями",
+    "onlyActiveLabel": "Только активные",
+    "filterAll": "Все услуги",
+    "filterUncategorized": "Без категории",
+    "uncategorized": "Без категории",
+    "withoutSubcategory": "Без подкатегории",
+    "badges": {
+      "defaultService": "По умолчанию",
+      "inactive": "Выключено",
+      "defaultCategory": "Системная",
+      "inactiveCategory": "Категория отключена",
+      "defaultSubcategory": "Системная подкатегория",
+      "inactiveSubcategory": "Подкатегория отключена"
+    },
+    "status": {
+      "active": "Активна",
+      "inactive": "Отключена"
+    },
+    "toggleAria": "Переключить доступность услуги «{{name}}»",
+    "toastEnabled": "Услуга «{{name}}» снова доступна",
+    "toastDisabled": "Услуга «{{name}}» скрыта",
+    "toastDeleted": "Услуга «{{name}}» удалена",
+    "errorToggle": "Не удалось обновить статус услуги",
+    "emptyFilteredTitle": "Нет услуг по текущим фильтрам",
+    "emptyFilteredDescription": "Измените фильтры или сбросьте поиск, чтобы увидеть все услуги.",
+    "deleteConfirm": "Удалить услугу «{{name}}»?",
+    "deleteError": "Не удалось удалить услугу."
+  },
+  "createSalon": {
+    "title": "Создайте салон за пару минут",
+    "subtitle": "Мы используем данные вашей клиентской учётной записи. Добавьте информацию о салоне и выберите направления — система подготовит категории и услуги автоматически.",
+    "badge": "Новый мастер регистрации",
+    "sections": {
+      "owner": {
+        "title": "Владелец салона",
+        "subtitle": "Эти данные обновят профиль и будут отображаться в CRM."
+      },
+      "salon": {
+        "title": "Информация о салоне",
+        "subtitle": "Название и страна помогают настроить валюту и локализацию."
+      },
+      "services": {
+        "title": "Выберите направления услуг",
+        "subtitle": "Можно выбрать несколько направлений — мы создадим категории и пресеты для каждого.",
+        "counter": "{{count}} услуг выбрано",
+        "defaults": "{{categories}} категорий, {{services}} услуг",
+        "typeSubtitle": "Отметьте услуги, с которых хотите начать работу",
+        "serviceMeta": "{{duration}} мин · {{price}} ₴"
+      },
+      "confirm": {
+        "title": "Подтверждение",
+        "subtitle": "Ознакомьтесь с условиями и подтвердите создание новой инфраструктуры.",
+        "notice": "После отправки мы автоматически создадим категории, услуги и доступ. Это займёт меньше минуты."
+      }
+    },
+    "fields": {
+      "country": "Страна",
+      "currency": "Валюта",
+      "accountPassword": "Пароль аккаунта",
+      "newPassword": "Создайте пароль",
+      "confirmPassword": "Подтвердите пароль"
+    },
+    "hints": {
+      "password": "Введите текущий пароль, чтобы подтвердить создание салона.",
+      "newPassword": "Этот пароль защищает ваш аккаунт. Минимум 8 символов.",
+      "confirmPassword": "Повторите пароль, чтобы избежать опечаток."
+    },
+    "actions": {
+      "back": "Вернуться на дашборд",
+      "cancel": "Отмена",
+      "create": "Создать салон",
+      "creating": "Создаём..."
+    },
+    "summary": "Направлений: {{types}}, услуг: {{services}}",
+    "loading": {
+      "salonTypes": "Загружаем направления..."
+    },
+    "errors": {
+      "salonTypes": "Не удалось загрузить направления салона",
+      "servicePresets": "Не удалось загрузить список услуг"
+    },
+    "validation": {
+      "password": "Введите пароль от вашего аккаунта",
+      "salonTypes": "Выберите хотя бы одно направление",
+      "newPassword": "Создайте пароль для аккаунта",
+      "passwordLength": "Пароль должен содержать минимум 8 символов",
+      "confirmPassword": "Подтвердите пароль",
+      "confirmPasswordMismatch": "Пароли не совпадают"
+    },
+    "notifications": {
+      "validationError": "Проверьте форму и исправьте ошибки",
+      "genericError": "Не удалось создать салон"
+    },
+    "pricing": {
+      "title": "Подписка и команда",
+      "subtitle": "Базовый салон + сотрудники. Оплата только после бесплатного периода.",
+      "staffCountLabel": "Количество сотрудников",
+      "staffCountHint": "0 — работаю сам. Каждый сотрудник +25 PLN нетто в месяц.",
+      "decreaseStaff": "Уменьшить количество сотрудников",
+      "increaseStaff": "Увеличить количество сотрудников",
+      "staffSoloLabel": "Владелец работает сам (SOLO)",
+      "staffValueLabel": "{{count}} сотрудника(ов) добавлено",
+      "baseLabel": "Подписка на салон",
+      "staffLabel": "Сотрудники",
+      "totalLabel": "Сумма после trial",
+      "totalWithVatLabel": "Итого с VAT (23%)",
+      "vatNotice": "Цены нетто. При оплате в Stripe добавится VAT 23% (Польша).",
+      "trialBadge": "7 дней бесплатно",
+      "trialDescription": "Мы напомним об оплате за 3 дня до окончания триала.",
+      "staffInfo": "Сотрудников можно добавить позже в разделе «Команда» — сумма обновится автоматически."
+    },
+    "salonTypes": {
+      "hair": {
+        "title": "Парикмахерская",
+        "description": "Стрижки, окрашивание, укладки"
+      },
+      "nails": {
+        "title": "Ногтевой сервис",
+        "description": "Маникюр, педикюр, дизайн"
+      },
+      "massage": {
+        "title": "Массаж и SPA",
+        "description": "Терапия и релакс-ритуалы"
+      },
+      "barbershop": {
+        "title": "Барбершоп",
+        "description": "Стрижки, уход за бородой и усами"
+      },
+      "pet_grooming": {
+        "title": "Груминг",
+        "description": "Уход за собаками и кошками"
+      },
+      "wellness": {
+        "title": "Wellness-центр",
+        "description": "Восстановление и расслабление"
+      },
+      "cosmetology": {
+        "title": "Косметология",
+        "description": "Инъекции и аппаратные процедуры"
+      },
+      "brow_lash": {
+        "title": "Брови и ресницы",
+        "description": "Оформление бровей, ламинирование, макияж"
+      },
+      "mixed": {
+        "title": "Собственный формат",
+        "description": "Комбинируйте нужные направления"
+      }
+    }
+  }
+}

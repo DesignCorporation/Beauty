@@ -1,0 +1,526 @@
+/* Beauty Platform Theme Styles - расширенные CSS стили для тем */
+
+/* Базовые CSS переменные для enterprise тем */
+:root {
+  /* Базовые значения по умолчанию (будут переопределены JS) */
+  --primary-50: #f0f1ff;
+  --primary-100: #e4e6ff;
+  --primary-200: #cdd2fe;
+  --primary-300: #a6b0fc;
+  --primary-400: #7984f8;
+  --primary-500: #6366f1;
+  --primary-600: #524ce6;
+  --primary-700: #453dcb;
+  --primary-800: #3932a4;
+  --primary-900: #332e82;
+  --primary-950: #1f1c4f;
+
+  --accent-50: #fdf4ff;
+  --accent-100: #fae8ff;
+  --accent-500: #a855f7;
+  --accent-600: #9333ea;
+  --accent-700: #7c3aed;
+
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  --neutral-950: #020617;
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Специальные переменные для Beauty Platform */
+  --beauty-shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.08);
+  --beauty-shadow-elegant: 0 10px 15px -3px rgb(0 0 0 / 0.12);
+  --beauty-shadow-luxury: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+  --beauty-gradient-primary: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  --beauty-gradient-subtle: linear-gradient(135deg, var(--primary-50), var(--accent-50));
+}
+
+/* ✨ BEAUTY INDUSTRY THEMES - на основе исследования Кодекса */
+
+/* 🌸 Luxe Glam Theme - розово-персиковая гамма + золото */
+[data-theme="luxe-glam"] {
+  --primary-50: #fdf4f2;
+  --primary-100: #fae8e2;
+  --primary-200: #f7c6d9;
+  --primary-300: #ff9aa2;
+  --primary-400: #ff7882;
+  --primary-500: #f56565;
+  --primary-600: #e53e3e;
+  --primary-700: #c53030;
+  --primary-800: #9b2c2c;
+  --primary-900: #742a2a;
+  
+  --accent-50: #fffbeb;
+  --accent-100: #fef3c7;
+  --accent-200: #fde68a;
+  --accent-300: #fcd34d;
+  --accent-400: #c6a664;
+  --accent-500: #d69e2e;
+  --accent-600: #b7791f;
+  --accent-700: #975a16;
+  
+  --beauty-gradient-primary: linear-gradient(135deg, #f7c6d9, #c6a664);
+  --beauty-gradient-subtle: linear-gradient(135deg, #fdf4f2, #fffbeb);
+}
+
+/* 🌿 Organic Spa Theme - глубокие зелёные + тёплые металлики */
+[data-theme="organic-spa"] {
+  --primary-50: #f0fdf4;
+  --primary-100: #dcfce7;
+  --primary-200: #bbf7d0;
+  --primary-300: #86efac;
+  --primary-400: #4ade80;
+  --primary-500: #3a5a40;
+  --primary-600: #1e3932;
+  --primary-700: #15803d;
+  --primary-800: #166534;
+  --primary-900: #14532d;
+  
+  --accent-50: #f5f3ff;
+  --accent-100: #ede9fe;
+  --accent-200: #c7d2fe;
+  --accent-300: #a5b4fc;
+  --accent-400: #818cf8;
+  --accent-500: #6366f1;
+  --accent-600: #4f46e5;
+  --accent-700: #4338ca;
+  
+  --beauty-gradient-primary: linear-gradient(135deg, #3a5a40, #6366f1);
+  --beauty-gradient-subtle: linear-gradient(135deg, #f0fdf4, #f5f3ff);
+}
+
+/* 💎 Minimal Tech Theme - чистые белые/серые + холодный голубой */
+[data-theme="minimal-tech"] {
+  --primary-50: #f8fafc;
+  --primary-100: #f1f5f9;
+  --primary-200: #e2e8f0;
+  --primary-300: #cbd5e1;
+  --primary-400: #94a3b8;
+  --primary-500: #64748b;
+  --primary-600: #475569;
+  --primary-700: #334155;
+  --primary-800: #1e293b;
+  --primary-900: #0f172a;
+  
+  --accent-50: #f0f9ff;
+  --accent-100: #e0f2fe;
+  --accent-200: #bae6fd;
+  --accent-300: #7dd3fc;
+  --accent-400: #6fc0e8;
+  --accent-500: #0ea5e9;
+  --accent-600: #0284c7;
+  --accent-700: #0369a1;
+  
+  --beauty-gradient-primary: linear-gradient(135deg, #64748b, #6fc0e8);
+  --beauty-gradient-subtle: linear-gradient(135deg, #f8fafc, #f0f9ff);
+}
+
+/* 🔥 Urban Barber Theme - угольный, графитовый + медные акценты */
+[data-theme="urban-barber"] {
+  --primary-50: #f8fafc;
+  --primary-100: #f1f5f9;
+  --primary-200: #e2e8f0;
+  --primary-300: #cbd5e1;
+  --primary-400: #94a3b8;
+  --primary-500: #334155;
+  --primary-600: #1e293b;
+  --primary-700: #0f172a;
+  --primary-800: #020617;
+  --primary-900: #000000;
+  
+  --accent-50: #fef7f0;
+  --accent-100: #feecdc;
+  --accent-200: #fcd9bd;
+  --accent-300: #fdba8c;
+  --accent-400: #ff8a4c;
+  --accent-500: #ed8936;
+  --accent-600: #dd6b20;
+  --accent-700: #c05621;
+  
+  --beauty-gradient-primary: linear-gradient(135deg, #334155, #ed8936);
+  --beauty-gradient-subtle: linear-gradient(135deg, #f8fafc, #fef7f0);
+}
+
+/* Keyframes для анимаций */
+@keyframes beauty-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes beauty-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes beauty-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes beauty-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes beauty-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--primary-500);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary-500), 0 0 30px var(--primary-400);
+  }
+}
+
+@keyframes beauty-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Utility классы для Beauty Platform */
+.beauty-fade-in {
+  animation: beauty-fade-in var(--duration-normal) ease-out;
+}
+
+.beauty-scale-in {
+  animation: beauty-scale-in var(--duration-normal) ease-out;
+}
+
+.beauty-slide-in {
+  animation: beauty-slide-in var(--duration-normal) ease-out;
+}
+
+.beauty-pulse {
+  animation: beauty-pulse 2s ease-in-out infinite;
+}
+
+.beauty-glow {
+  animation: beauty-glow 2s ease-in-out infinite;
+}
+
+.beauty-float {
+  animation: beauty-float 3s ease-in-out infinite;
+}
+
+/* Градиенты */
+.beauty-gradient-primary {
+  background: var(--beauty-gradient-primary);
+}
+
+.beauty-gradient-subtle {
+  background: var(--beauty-gradient-subtle);
+}
+
+.beauty-gradient-text {
+  background: var(--beauty-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Тени */
+.beauty-shadow-soft {
+  box-shadow: var(--beauty-shadow-soft);
+}
+
+.beauty-shadow-elegant {
+  box-shadow: var(--beauty-shadow-elegant);
+}
+
+.beauty-shadow-luxury {
+  box-shadow: var(--beauty-shadow-luxury);
+}
+
+/* Hover эффекты */
+.beauty-hover-lift {
+  transition: transform var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out;
+}
+
+.beauty-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--beauty-shadow-elegant);
+}
+
+.beauty-hover-scale {
+  transition: transform var(--duration-fast) ease-out;
+}
+
+.beauty-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.beauty-hover-glow {
+  transition: box-shadow var(--duration-normal) ease-out;
+}
+
+.beauty-hover-glow:hover {
+  box-shadow: 0 0 20px color-mix(in srgb, var(--primary-500) 30%, transparent);
+}
+
+/* Стили для различных компонентов */
+
+/* Карточки */
+.beauty-card {
+  background: color-mix(in srgb, var(--neutral-50) 95%, transparent);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--beauty-shadow-soft);
+  transition: all var(--duration-normal) ease-out;
+}
+
+.beauty-card:hover {
+  border-color: var(--primary-300);
+  box-shadow: var(--beauty-shadow-elegant);
+}
+
+.dark .beauty-card {
+  background: color-mix(in srgb, var(--neutral-900) 95%, transparent);
+  border-color: var(--neutral-700);
+}
+
+.dark .beauty-card:hover {
+  border-color: var(--primary-600);
+}
+
+/* Кнопки премиум */
+.beauty-button-premium {
+  background: var(--beauty-gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all var(--duration-fast) ease-out;
+  box-shadow: var(--beauty-shadow-soft);
+}
+
+.beauty-button-premium:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--beauty-shadow-elegant);
+}
+
+.beauty-button-premium:active {
+  transform: translateY(0);
+}
+
+/* Поля ввода */
+.beauty-input {
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  transition: all var(--duration-fast) ease-out;
+}
+
+.beauty-input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-500) 20%, transparent);
+}
+
+.dark .beauty-input {
+  background: var(--neutral-900);
+  border-color: var(--neutral-700);
+  color: var(--neutral-100);
+}
+
+/* Sidebar стили */
+.beauty-sidebar {
+  background: linear-gradient(180deg, var(--neutral-50) 0%, var(--neutral-100) 100%);
+  border-right: 1px solid var(--neutral-200);
+}
+
+.dark .beauty-sidebar {
+  background: linear-gradient(180deg, var(--neutral-900) 0%, var(--neutral-950) 100%);
+  border-right-color: var(--neutral-800);
+}
+
+.beauty-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0.5rem;
+  border-radius: var(--radius-md);
+  color: var(--neutral-700);
+  text-decoration: none;
+  transition: all var(--duration-fast) ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.beauty-sidebar-item:hover {
+  background: color-mix(in srgb, var(--primary-500) 10%, transparent);
+  color: var(--primary-700);
+  transform: translateX(2px);
+}
+
+.beauty-sidebar-item.active {
+  background: color-mix(in srgb, var(--primary-500) 15%, transparent);
+  color: var(--primary-900);
+  font-weight: 600;
+}
+
+.beauty-sidebar-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-500);
+  border-radius: 0 2px 2px 0;
+}
+
+.dark .beauty-sidebar-item {
+  color: var(--neutral-300);
+}
+
+.dark .beauty-sidebar-item:hover {
+  color: var(--primary-300);
+}
+
+.dark .beauty-sidebar-item.active {
+  color: var(--primary-200);
+}
+
+/* Badge стили */
+.beauty-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.beauty-badge-primary {
+  background: color-mix(in srgb, var(--primary-500) 15%, transparent);
+  color: var(--primary-800);
+}
+
+.beauty-badge-success {
+  background: color-mix(in srgb, var(--success) 15%, transparent);
+  color: #047857;
+}
+
+.beauty-badge-warning {
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
+  color: #92400e;
+}
+
+.beauty-badge-error {
+  background: color-mix(in srgb, var(--error) 15%, transparent);
+  color: #b91c1c;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 640px) {
+  .beauty-card {
+    border-radius: var(--radius-md);
+    margin: 0.5rem;
+  }
+  
+  .beauty-sidebar-item {
+    padding: 0.5rem 0.75rem;
+    margin: 0.125rem 0.25rem;
+  }
+}
+
+/* Высокая контрастность для accessibility */
+@media (prefers-contrast: high) {
+  .beauty-card {
+    border-width: 2px;
+  }
+  
+  .beauty-input:focus {
+    box-shadow: 0 0 0 3px var(--primary-500);
+  }
+  
+  .beauty-sidebar-item.active::before {
+    width: 4px;
+  }
+}
+
+/* Анимации только если пользователь не предпочитает уменьшенное движение */
+@media (prefers-reduced-motion: reduce) {
+  .beauty-fade-in,
+  .beauty-scale-in,
+  .beauty-slide-in,
+  .beauty-pulse,
+  .beauty-glow,
+  .beauty-float,
+  .beauty-hover-lift,
+  .beauty-hover-scale {
+    animation: none;
+    transition: none;
+  }
+  
+  .beauty-hover-lift:hover,
+  .beauty-hover-scale:hover {
+    transform: none;
+  }
+}
+
+/* Print стили */
+@media print {
+  .beauty-gradient-primary,
+  .beauty-gradient-subtle {
+    background: var(--neutral-100) !important;
+    color: var(--neutral-900) !important;
+  }
+  
+  .beauty-card {
+    box-shadow: none;
+    border: 1px solid var(--neutral-400);
+  }
+}

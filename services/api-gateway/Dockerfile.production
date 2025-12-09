@@ -1,0 +1,62 @@
+# BEAUTY PLATFORM - API GATEWAY PRODUCTION DOCKERFILE
+# Optimized: TypeScript compiled on CI, only copy dist to container
+
+FROM node:20-alpine AS builder
+
+# Security: create non-root user
+RUN addgroup -g 1001 -S nodejs && adduser -S beauty -u 1001
+
+# Install pnpm
+RUN npm install -g pnpm
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+
+# Copy shared workspace packages (prepared by deploy script)
+COPY core ./core
+COPY packages ./packages
+
+# Install ONLY production dependencies
+RUN pnpm install --prod --no-frozen-lockfile
+
+# Copy pre-built dist from CI
+COPY dist ./dist
+
+# ===========================================
+# PRODUCTION STAGE
+# ===========================================
+
+FROM node:20-alpine AS production
+
+RUN apk update && apk add --no-cache curl && rm -rf /var/cache/apk/*
+
+RUN addgroup -g 1001 -S nodejs && adduser -S beauty -u 1001
+
+WORKDIR /app
+
+# Copy production artifacts
+COPY --from=builder --chown=beauty:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=beauty:nodejs /app/dist ./dist
+COPY --from=builder --chown=beauty:nodejs /app/package.json ./
+
+# Copy workspace packages (node_modules contains pnpm symlinks)
+COPY --from=builder --chown=beauty:nodejs /app/core ./core
+COPY --from=builder --chown=beauty:nodejs /app/packages ./packages
+
+# Logs
+RUN mkdir -p /app/logs && chown beauty:nodejs /app/logs
+
+USER beauty
+
+ENV NODE_ENV=production
+ENV PORT=6020
+
+# Health check
+HEALTHCHECK --interval=15s --timeout=10s --retries=3 \
+    CMD curl -f http://localhost:6020/health || exit 1
+
+EXPOSE 6020
+
+CMD ["node", "dist/server.js"]

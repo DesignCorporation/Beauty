@@ -1,0 +1,76 @@
+# BEAUTY PLATFORM - CRM API PRODUCTION DOCKERFILE
+# Optimized: TypeScript compiled on CI, only copy dist to container
+
+FROM node:20-bullseye-slim AS builder
+
+# Security
+RUN addgroup --gid 1001 nodejs && adduser --uid 1001 --gid 1001 --disabled-password --gecos "" beauty
+
+# System deps for Prisma (libssl1.1) and curl
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates openssl && rm -rf /var/lib/apt/lists/*
+
+# Install pnpm
+RUN npm install -g pnpm
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+
+# Copy shared workspace packages (prepared by deploy script)
+COPY core ./core
+COPY packages ./packages
+
+# Install ALL dependencies (including prisma CLI)
+RUN pnpm install --no-frozen-lockfile
+
+# Copy pre-built dist from CI
+COPY dist ./dist
+
+# Copy Prisma schema (from shared core)
+COPY core/database/prisma ./prisma
+
+# Generate Prisma Client
+ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
+RUN pnpm exec prisma generate --schema=./prisma/schema.prisma
+
+# Prune dev dependencies
+RUN CI=true pnpm prune --prod
+
+# ===========================================
+# PRODUCTION STAGE
+# ===========================================
+
+FROM node:20-bullseye-slim AS production
+
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates openssl && rm -rf /var/lib/apt/lists/*
+
+RUN addgroup --gid 1001 nodejs && adduser --uid 1001 --gid 1001 --disabled-password --gecos "" beauty
+
+WORKDIR /app
+
+COPY --from=builder --chown=beauty:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=beauty:nodejs /app/dist ./dist
+# Prisma artifacts are needed
+COPY --from=builder --chown=beauty:nodejs /app/prisma ./prisma
+COPY --from=builder --chown=beauty:nodejs /app/package.json ./
+
+# Copy workspace packages (needed for symlinks)
+COPY --from=builder --chown=beauty:nodejs /app/core ./core
+COPY --from=builder --chown=beauty:nodejs /app/packages ./packages
+
+# Logs
+RUN mkdir -p /app/logs && chown beauty:nodejs /app/logs
+
+USER beauty
+
+ENV NODE_ENV=production
+ENV PORT=6022
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+    CMD curl -f http://localhost:6022/health || exit 1
+
+EXPOSE 6022
+
+CMD ["node", "dist/services/crm-api/src/server.js"]

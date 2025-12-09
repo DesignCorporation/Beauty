@@ -1,0 +1,357 @@
+version: '3.8'
+
+# BEAUTY PLATFORM - ENTERPRISE PRODUCTION ARCHITECTURE
+# Multi-instance services with load balancing, health checks, and auto-recovery
+
+networks:
+  beauty-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  redis-data:
+  pgbouncer-config:
+
+services:
+  # ===========================================
+  # DATABASE LAYER - Connection Pooling + HA
+  # ===========================================
+  
+  postgres-primary:
+    image: postgres:16-alpine
+    container_name: beauty-postgres-primary
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME:?set DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER:?set DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?set DATABASE_PASSWORD}
+      POSTGRES_INITDB_ARGS: "--auth-host=md5"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    ports:
+      - "${POSTGRES_PORT:-7100}:5432"
+
+  pgbouncer:
+    image: pgbouncer/pgbouncer:latest
+    container_name: beauty-pgbouncer
+    restart: unless-stopped
+    environment:
+      DATABASES_HOST: postgres-primary
+      DATABASES_PORT: 5432
+      DATABASES_USER: ${DATABASE_USER:?set DATABASE_USER}
+      DATABASES_PASSWORD: ${DATABASE_PASSWORD:?set DATABASE_PASSWORD}
+      DATABASES_DBNAME: ${DATABASE_NAME:?set DATABASE_NAME}
+      POOL_MODE: transaction
+      MAX_CLIENT_CONN: 200
+      DEFAULT_POOL_SIZE: 20
+      SERVER_LIFETIME: 3600
+      SERVER_IDLE_TIMEOUT: 600
+    depends_on:
+      postgres-primary:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 6432"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    ports:
+      - "${PGBOUNCER_PORT:-7432}:6432"  # PgBouncer port (7xxx to avoid dev clash)
+
+  # ===========================================
+  # REDIS - Session Store + Caching
+  # ===========================================
+  
+  redis:
+    image: redis:7-alpine
+    container_name: beauty-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "${REDIS_PORT:-7379}:6379"
+
+  # ===========================================
+  # AUTH SERVICE - Multiple Instances + Load Balancing
+  # ===========================================
+  
+  auth-service-1:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile.production
+    container_name: beauty-auth-service-1
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=6021
+      - DATABASE_URL=${DATABASE_URL:?set DATABASE_URL}
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:?set JWT_SECRET}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:?set JWT_REFRESH_SECRET}
+      - MFA_MASTER_KEY=${MFA_MASTER_KEY:?set MFA_MASTER_KEY}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN:?set COOKIE_DOMAIN}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_CALLBACK_URL=${GOOGLE_CALLBACK_URL}
+      - GOOGLE_OWNER_CALLBACK_URL=${GOOGLE_OWNER_CALLBACK_URL}
+      - ENABLE_TRACING=false
+      - PRISMA_ENGINE_PROTOCOL=json
+      - PRISMA_TELEMETRY_DISABLED=true
+      - INSTANCE_ID=auth-1
+    depends_on:
+      pgbouncer:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6021/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+
+  auth-service-2:
+    build:
+      context: ./services/auth-service
+      dockerfile: Dockerfile.production
+    container_name: beauty-auth-service-2
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=6021
+      - DATABASE_URL=${DATABASE_URL:?set DATABASE_URL}
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:?set JWT_SECRET}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:?set JWT_REFRESH_SECRET}
+      - MFA_MASTER_KEY=${MFA_MASTER_KEY:?set MFA_MASTER_KEY}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN:?set COOKIE_DOMAIN}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_CALLBACK_URL=${GOOGLE_CALLBACK_URL}
+      - GOOGLE_OWNER_CALLBACK_URL=${GOOGLE_OWNER_CALLBACK_URL}
+      - ENABLE_TRACING=false
+      - PRISMA_ENGINE_PROTOCOL=json
+      - PRISMA_TELEMETRY_DISABLED=true
+      - INSTANCE_ID=auth-2
+    depends_on:
+      pgbouncer:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6021/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+
+  # ===========================================
+  # NGINX LOAD BALANCER - Auth Service HA
+  # ===========================================
+  
+  nginx-auth-lb:
+    image: nginx:alpine
+    container_name: beauty-nginx-auth-lb
+    restart: unless-stopped
+    volumes:
+      - ./docker/nginx/auth-lb.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      auth-service-1:
+        condition: service_healthy
+      auth-service-2:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:81/nginx-health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    ports:
+      - "${AUTH_LB_PORT:-7021}:80"  # External Auth Service port
+
+  # ===========================================
+  # API GATEWAY - Enhanced with Circuit Breaker
+  # ===========================================
+  
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+      dockerfile: Dockerfile.production
+    container_name: beauty-api-gateway
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=6020
+      - AUTH_SERVICE_URL=http://nginx-auth-lb
+      - REDIS_URL=redis://redis:6379
+      - CIRCUIT_BREAKER_ENABLED=true
+      - RATE_LIMIT_ENABLED=true
+      - HEALTH_CHECK_INTERVAL=30000
+    depends_on:
+      nginx-auth-lb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6020/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
+    ports:
+      - "${API_GATEWAY_PORT:-7020}:6020"
+
+  # ===========================================
+  # MONITORING & OBSERVABILITY
+  # ===========================================
+  
+  # health-monitor (disabled due to Docker context size issues - 1.7GB for small service)
+  # TODO: Create separate Docker context or .dockerignore to reduce size
+  # health-monitor:
+  #   build:
+  #     context: .
+  #     dockerfile: ./services/monitoring/Dockerfile
+  #   container_name: beauty-health-monitor
+  #   restart: unless-stopped
+  #   environment:
+  #     - NODE_ENV=production
+  #     - PORT=6030
+  #     - MONITORING_INTERVAL=30000
+  #     - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+  #     - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+  #     - SERVICES_TO_MONITOR=nginx-auth-lb,api-gateway,postgres-primary,redis
+  #   depends_on:
+  #     - api-gateway
+  #     - redis
+  #   networks:
+  #     - beauty-network
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #   ports:
+  #     - "${MONITOR_PORT:-6030}:6030"
+
+  # ===========================================
+  # ADMIN PANEL (существующий, интегрируем)
+  # ===========================================
+  
+  admin:
+    build:
+      context: ./apps/admin
+      dockerfile: Dockerfile.production
+    container_name: beauty-admin
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=6002
+      - VITE_API_URL=https://api.beauty.designcorp.eu/api
+      - VITE_AUTH_URL=https://api.beauty.designcorp.eu/api/auth
+    depends_on:
+      api-gateway:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    ports:
+      - "${ADMIN_PANEL_PORT:-7002}:6002"
+
+  # ===========================================
+  # CRM API (существующий, контейнеризуем)
+  # ===========================================
+  
+  salon-api:
+    build:
+      context: ./services/salon-api
+      dockerfile: Dockerfile.production
+    container_name: beauty-salon-api
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=6022
+      - DATABASE_URL=${DATABASE_URL:?set DATABASE_URL}
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:?set JWT_SECRET}
+    depends_on:
+      pgbouncer:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - beauty-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6022/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    ports:
+      - "${CRM_API_PORT:-7022}:6022"
+
+  # ===========================================
+  # SALON CRM UI
+  # ===========================================
+
+  salon:
+    image: nginx:alpine
+    container_name: beauty-salon
+    restart: unless-stopped
+    volumes:
+      - ./apps/salon/dist:/usr/share/nginx/html:ro
+      - ./docker/nginx/spa.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - beauty-network
+    ports:
+      - "${SALON_CRM_PORT:-7001}:80"
+
+  # ===========================================
+  # CLIENT BOOKING PORTAL
+  # ===========================================
+
+  client:
+    image: nginx:alpine
+    container_name: beauty-client
+    restart: unless-stopped
+    volumes:
+      - ./apps/client/dist:/usr/share/nginx/html:ro
+      - ./docker/nginx/spa.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - beauty-network
+    ports:
+      - "${CLIENT_BOOKING_PORT:-7003}:80"
