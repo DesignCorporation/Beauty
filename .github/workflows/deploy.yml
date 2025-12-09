@@ -1,133 +1,23 @@
-name: Production Deploy
+name: Deploy (manual)
 
 on:
-  push:
-    branches: [ "production" ]
   workflow_dispatch:
+    inputs:
+      target_branch:
+        description: "Branch to deploy"
+        required: true
+        default: "main"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Deploy to Production Server
-        uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: root
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            set -euo pipefail
-            
-            # Configuration
-            DEPLOY_DIR="/root/www-link/releases"
-            TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-            RELEASE_DIR="$DEPLOY_DIR/$TIMESTAMP"
-            SYMLINK_PATH="/root/www-link/beauty"
-            REPO_URL="git@github.com:DesignCorporation/Beauty-Platform.git"
-            BRANCH="production"
-            ENV_PATH="/root/www-link/storage/.env.production"
-            
-            echo "🚀 Starting deployment to $RELEASE_DIR..."
-            
-            # 1. Create release directory
-            mkdir -p "$RELEASE_DIR"
-            
-            # 2. Clone repository (using a shallow clone for speed)
-            # Note: Assuming public repo or authorized git credentials on server
-            # Ideally use a deploy token or SSH key forwarding
-            git clone --depth 1 --branch "$BRANCH" "$REPO_URL" "$RELEASE_DIR"
-            
-            # 3. Copy .env.production from storage (required)
-            if [ ! -f "$ENV_PATH" ]; then
-              echo "❌ Missing $ENV_PATH. Aborting deploy."
-              exit 1
-            fi
-            cp "$ENV_PATH" "$RELEASE_DIR/.env"
-            echo "✅ Loaded env from $ENV_PATH"
-            
-            # 4. Build code (dist) before Docker build
-            cd "$RELEASE_DIR"
-            # Keep compose project name stable between releases to avoid container name collisions
-            export COMPOSE_PROJECT_NAME="beauty"
-            
-            # Setup pnpm environment
-            export PNPM_HOME="/root/.local/share/pnpm"
-            export PATH="$PNPM_HOME:$PATH"
+          ref: ${{ inputs.target_branch }}
 
-            # Ensure pnpm is installed
-            if ! command -v pnpm >/dev/null 2>&1; then
-              echo "📦 pnpm not found in PATH. Attempting install..."
-              
-              # Try to remove existing binary to avoid ETXTBSY (Text file busy)
-              # unlink works even if process is running
-              rm -f "$PNPM_HOME/pnpm" || true
-              
-              curl -fsSL https://get.pnpm.io/install.sh | env PNPM_VERSION=9.0.0 sh -
-            else
-              echo "✅ pnpm is already installed: $(pnpm --version)"
-            fi
-            
-            echo "🏗️ Building TypeScript code (dist) before Docker build..."
-            chmod +x ./scripts/build-production.sh
-            ./scripts/build-production.sh
-
-            # 3.1. Prepare pnpm-lock.yaml and workspace config for services (Monorepo Fix)
-            # MOVE THIS AFTER BUILD to ensure 'dist' folders are copied!
-            echo "🔧 Copying pnpm-lock.yaml, workspace config, and shared packages to services..."
-            for service in services/auth-service services/api-gateway services/crm-api apps/admin-panel; do
-              cp "$RELEASE_DIR/pnpm-lock.yaml" "$RELEASE_DIR/$service/"
-              cp "$RELEASE_DIR/pnpm-workspace.yaml" "$RELEASE_DIR/$service/"
-              
-              # Copy shared libraries (now containing built 'dist')
-              # Use -u (update) or just overwrite
-              cp -r "$RELEASE_DIR/core" "$RELEASE_DIR/$service/"
-              cp -r "$RELEASE_DIR/packages" "$RELEASE_DIR/$service/"
-            done
-            
-            # 4.1 Validate compose config before build
-            docker-compose -p "$COMPOSE_PROJECT_NAME" -f docker-compose.production.yml config >/tmp/compose-validate.yml
-            echo "✅ docker-compose config validated"
-            
-            # 5. Build and Start Services
-            echo "🧹 Removing previously running beauty containers (if any)..."
-            docker ps -aq --filter "name=^beauty-" | xargs -r docker rm -f
-
-            echo "🏗️ Building and starting Docker containers..."
-            docker-compose -p "$COMPOSE_PROJECT_NAME" -f docker-compose.production.yml pull
-            docker-compose -p "$COMPOSE_PROJECT_NAME" -f docker-compose.production.yml up -d --build --remove-orphans
-            
-            # 5.1 Health checks
-            API_PORT="${API_GATEWAY_PORT:-7020}"
-            AUTH_PORT="${AUTH_LB_PORT:-7021}"
-            CRM_PORT="${CRM_API_PORT:-7022}"
-            
-            for url in \
-              "http://localhost:${API_PORT}/health" \
-              "http://localhost:${AUTH_PORT}/health" \
-              "http://localhost:${CRM_PORT}/health"
-            do
-              echo "🔍 Checking $url"
-              curl -f --max-time 10 "$url"
-            done
-            
-            # 6. Start Orchestrator
-            echo "🎵 Starting Orchestrator..."
-            chmod +x ./scripts/start-orchestrator.sh
-            # Ensure orchestrator port is set (fallback or from .env)
-            export ORCHESTRATOR_PORT=${ORCHESTRATOR_PORT:-7030} 
-            ./scripts/start-orchestrator.sh restart
-            
-            # 7. Switch Symlink (Atomic Switch)
-            echo "🔗 Switching symlink..."
-            ln -sfn "$RELEASE_DIR" "$SYMLINK_PATH"
-            
-            # 8. Cleanup Old Releases (keep last 5)
-            echo "🧹 Cleaning up old releases..."
-            cd "$DEPLOY_DIR"
-            ls -dt * | tail -n +6 | xargs -r rm -rf
-            
-            echo "✅ Deployment Successful!"
+      - name: Deploy placeholder
+        run: |
+          echo "TODO: add rsync/ssh deploy steps to /opt/beauty-prod"
+          echo "Requires secrets: SSH_HOST, SSH_USER, SSH_KEY, SSH_PATH"
